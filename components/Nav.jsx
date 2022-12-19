@@ -1,0 +1,167 @@
+import Image from "next/image";
+import React, { useState } from "react";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { AiOutlineClose } from "react-icons/ai";
+import { MdInsertChartOutlined } from "react-icons/md";
+import { ImStack } from "react-icons/im";
+import { RiCheckboxMultipleLine , RiPieChartLine} from "react-icons/ri";
+import { HiOutlineUsers} from "react-icons/hi";
+import Link from "next/link";
+
+function Nav() {
+  const [open, setOpen] = useState(false);
+ 
+
+  const elemente = [
+    {
+      Icon: MdInsertChartOutlined ,
+      name: "Dashboard",
+    },
+    {
+      Icon: ImStack,
+      name: "Lounchpad",
+    },
+    {
+      Icon: RiCheckboxMultipleLine,
+      name: "Crypto Insurance",
+    },
+    {
+      Icon: RiPieChartLine,
+      name: "Voting",
+    },
+    {
+      Icon: HiOutlineUsers,
+      name: "Stake",
+    },
+  ];
+
+  const socialMedia = [{name:"twitter", link: "https://twitter.com/meadowlaunch"}, {name:"discord", link:"https://t.co/FLNKZU3ujp"}, {name:"medium", link:"/"}];
+  
+  return (
+    <>
+      <div className=' md:hidden flex items-center justify-between px-[18px] fixed top-0 z-50 w-full h-[70px] bg-blue-2 '>
+        <Image src='/logo.svg' width={157.19} height={50.3} alt={"Meadown sui launchpad logo"} />
+        {!open ? (
+          <RxHamburgerMenu
+            onClick={() => setOpen(true)}
+            className='text-white text-[30px]'
+          />
+        ) : (
+          <AiOutlineClose
+            onClick={() => setOpen(false)}
+            className='text-white text-[30px]'
+          />
+        )}
+      </div>
+
+      {/* mobile nav open */}
+      <div
+        className={`${
+          !open
+            ? "fixed right-[100%]"
+            : " text-gray-4 fixed top-[70px] left-0 h-screen w-[100%] px-[29px]   overflow-y-scroll  flex  flex-col  bg-blue-2    duration-500 ease-in-out z-50 md:hidden"
+        }  `}
+      >
+        <div className='  mb-[111px] mt-[48px]  '>
+          <div className=' pb-[36px]  h-[276px] flex flex-col justify-between  border-b border-gray-4   '>
+            {elemente.map(({Icon , name} , i) => (
+              <button key={i} className='w-[246px]   flex items-center rounded-[12px] '>
+                <Icon className="mr-[16px]" />
+                <div className='text-[16px] nav-font font-normal   '>
+                  {name}
+                </div>
+              </button>
+            ))}
+          </div>
+          
+          <div className='py-[24.5px] text-[16px] nav-font flex flex-col items-between '>
+            <div className='h-[42px] py-[12px]  '>Docs</div>
+            <div className='h-[42px] py-[12px]  '>Team</div>
+          </div>
+        </div>
+
+        {/* butoane social*/}
+        <div className=' flex flex-col items-center w-full    '>
+          {/* butoane */}
+          <div className='w-[165px] flex justify-around h-[40px] mb-[35px] '>
+            {socialMedia.map(({name, link}, i) => (
+              <Link href={link} key={i}  className='rounded-full w-[40px] h-[40px] flex items-center justify-center bg-black '>
+                <Image src={`/${name}.svg`} width={20} height={16} alt={name} />
+              </Link>
+            ))}
+          </div>
+
+          {/* butoane */}
+          <div className='   flex flex-col justify-around space-y-[10px] w-full   '>
+            <button className=' bg-black  flex items-center justify-center h-[50px]  w-full rounded-[15px] btn-text '>
+              {" "}
+              Apply
+            </button>
+            <button className=' w-full flex items-center justify-center h-[50px] text-white bg-blue-1  rounded-[15px]  btn-text '>
+              Connect wallet
+            </button>
+          </div>
+        </div>
+      </div>
+      {/* mobile nav open */}
+
+      {/* big nav */}
+
+      <div className='text-gray-4 hidden md:flex flex-col relative w-[295px]  rounded-[28px] bg-blue-2  px-[24.5px] py-[30px]  '>
+        {/* logo */}
+        <Image
+          src='/logo.svg'
+          width={147.23}
+          height={47.11}
+          className='mb-[38px]'
+          alt="Meadown sui launchpad logo"
+        />
+
+        {/* sectiune */}
+        {/* frame */}
+
+        <div className='w-[246px] h-[384px]  mb-[220px] '>
+          <div className='w-[246px] h-[268px] flex flex-col  border-b border-blue-4   '>
+            {elemente.map(({Icon, name}, i) => (
+              <button key={i} className='w-[246px] h-[48px]  flex items-center rounded-[12px] hover:bg-black group'>
+               <Icon className=" mx-[20px] text-[24px] group-hover:text-blue-1 " />
+                <div className='text-[16px] nav-font font-normal  group-hover:text-blue-6 '>
+                  {name}
+                </div>
+              </button>
+            ))}
+          </div>
+          <div className='p-[24.5px] text-[16px]  nav-font flex flex-col items-between '>
+            <div className='h-[42px] py-[12px] pr-[16px] hover:text-blue-1 cursor-pointer'>Docs</div>
+            <div className='h-[42px] py-[12px] pr-[16px] hover:text-blue-1 cursor-pointer'>Team</div>
+          </div>
+        </div>
+
+        {/* butoane social*/}
+        <div className='flex flex-col items-center w-[246px] absolute bottom-[30px]  '>
+          {/* butoane */}
+          <div className='w-[140px] flex justify-around h-[40px] mb-[35px] '>
+            {socialMedia.map(({name, link}, i) => (
+              <Link href={link} key={i} className='rounded-full w-[40px] h-[40px] flex items-center justify-center bg-black '>
+                <Image src={`/${name}.svg`} width={20} height={16} alt={name} />
+              </Link>
+            ))}
+          </div>
+
+          {/* butoane */}
+          <div className='w-[246px] text-white h-[110px]  flex flex-col justify-around space-y-[10px]  text-[15px] '>
+            <button className='flex items-center justify-center h-[50px] border-white w-[246px] bg-black rounded-[15px] btn-text '>
+              {" "}
+              Apply
+            </button>
+            <button className='  flex items-center justify-center h-[50px] bg-blue-1 w-[246px] rounded-[15px]  btn-text '>
+              Connect wallet
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default Nav;
