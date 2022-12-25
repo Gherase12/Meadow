@@ -4,13 +4,14 @@ import "swiper/css";
 
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { projects } from "./../data/projects";
+import  Image  from 'next/image';
 
 function Carusel() {
   const [swiper, setSwiper] = React.useState(null);
 
   const swipeNext = () => {
     swiper.slideNext();
-    
   };
   const swipePreview = () => {
     swiper.slidePrev();
@@ -39,46 +40,22 @@ function Carusel() {
       </div>
       {/* lower part */}
       <div className='  h-[316px]  mb-[34px] relative w-full  '>
-        <img
-          src={"/object-1.svg"}
-          className='absolute left-[40vw] lg:left-[525px]  -top-[250px] w-[612px] h-[612px] bg-image-1   '
-          alt="big-object"
-        />
+        <div className='absolute left-[40vw] lg:left-[525px]  -top-[100px]   lg:-top-[250px] w-[400px] h-[400px] lg:w-[612px] lg:h-[612px] bg-image-1   '>
+          <Image fill src={"/object-1.svg"} alt='big-object' />
+        </div>
         <Swiper
           onSwiper={(s) => {
             setSwiper(s);
           }}
           slidesPerView={"auto"}
           spaceBetween={15}
-          
-          
           className='flex space-x-[15px] w-full  h-full  z-50 '
         >
-          <SwiperSlide >
-           <Card />
-          </SwiperSlide>
-          <SwiperSlide >
-          <Card />
-          </SwiperSlide>
-          <SwiperSlide >
-          <Card />
-          </SwiperSlide>
-          <SwiperSlide >
-          <Card />
-          </SwiperSlide>
-          <SwiperSlide >
-           <Card />
-          </SwiperSlide>
-          <SwiperSlide >
-          <Card />
-          </SwiperSlide>
-          <SwiperSlide >
-          <Card />
-          </SwiperSlide>
-          <SwiperSlide >
-          <Card />
-          </SwiperSlide>
-          
+          {projects.map(({ name, img }, i) => (
+            <SwiperSlide key={i}>
+              <Card name={name} img={img} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </>

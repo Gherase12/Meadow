@@ -2,18 +2,18 @@ import React from "react";
 import Image from "next/image";
 import LogoRounded from "./LogoRounded";
 
-function Card() {
+function Card({name, img }) {
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
   return (
     <div className=' -ml-[30px] lg:ml-0 z-20 scale-[0.8] lg:transform-none w-[306px] h-[308px] lg:h-[316px] bg-white rounded-[30px] py-[30px] px-[27px]'>
       <div className='flex justify-between items-center h-[50px]  mb-[26px]'>
         <div className='space-y-[10px]'>
-          <h2>Meadow</h2>
+          <h2>{name}</h2>
           <div className='w-[83px] h-[25px] flex flex-start space-x-[4px] opacity-60 '>
-            {icons.map((i , index) => (
+            {icons.map((icon , index) => (
               <Image
               key={index}
-                src={i}
+                src={icon}
                 width={18.43}
                 height={14.79}
                 className='text-gray-3'
@@ -23,7 +23,7 @@ function Card() {
           </div>
         </div>
         {/* logo */}
-        <LogoRounded />
+        <LogoRounded img={img}/>
       </div>
       {/* paragraf */}
       <p className='  font-[13px] w-[261px] h-[57px]  leading-[19px] text-gray-3 mb-[29px] '>

@@ -35,13 +35,13 @@ function VoteCard() {
       </div>
 
       {/* projects */}
-      <div className='overflow-x-hidden scrollbar-hide flex flex-col last:border-0 w-auto px-[20px] lg:px-0 overflow-y-scroll border-2 h-[210px]'>
+      <div className=' overflow-hidden  flex flex-col lg:flex-row  w-auto px-[20px] lg:px-0   h-[210px] lg:justify-between'>
         <Project />
         <Project />
         <Project />
-        <Project />
-        <Project />
+       
       </div>
+
     </div>
   );
 }
