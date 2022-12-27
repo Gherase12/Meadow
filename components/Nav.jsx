@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import {  useState } from 'react'
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
 import { MdInsertChartOutlined } from "react-icons/md";
@@ -8,10 +8,22 @@ import { RiCheckboxMultipleLine, RiPieChartLine } from "react-icons/ri";
 import { HiOutlineUsers } from "react-icons/hi";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { SignInButton } from "ethos-connect";
+
+
+import ConnectModal from './ConnectModal';
 
 function Nav({ path }) {
+  // nav open
   const [open, setOpen] = useState(false);
+  // connect wallet modal open
+  let [isOpen, setIsOpen] = useState(false);
+  function closeModal() {
+    setIsOpen(false)
+  }
+
+  function openModal() {
+    setIsOpen(true)
+  }
   console.log(path);
   const router = useRouter();
 
@@ -82,7 +94,7 @@ function Nav({ path }) {
         }  `}
       >
         <div className='   mt-[48px]  '>
-          <div className=' pb-[36px]  h-[276px] flex flex-col justify-between  border-b border-gray-4   '>
+          <div className=' pb-[36px]  h-[276px] flex flex-col justify-between  border-b border-gray-4/50   '>
             {elemente.map(({ Icon, name, pagePath }, i) => (
               <button
                 key={i}
@@ -153,7 +165,7 @@ function Nav({ path }) {
         {/* frame */}
 
         <div className='w-[246px] h-[384px]  mb-[220px] '>
-          <div className='w-[246px] h-[268px] flex flex-col  border-b border-blue-4   '>
+          <div className='w-[246px] h-[268px] flex flex-col  border-b border-blue-4/50   '>
             {elemente.map(({ Icon, name, pagePath }, i) => (
               <button
                 key={i}
@@ -199,15 +211,15 @@ function Nav({ path }) {
               Apply
             </button>
 
-            <SignInButton
+            <button
+            onClick={openModal}
             className='  flex items-center justify-center h-[50px] bg-blue-1 w-[246px] rounded-[15px]  btn-text '
-            >Connect wallet</SignInButton>
-            {/* <button className='  flex items-center justify-center h-[50px] bg-blue-1 w-[246px] rounded-[15px]  btn-text '>
-              Connect wallet
-            </button> */}
+            >Connect wallet</button>
+            
           </div>
         </div>
       </div>
+      <ConnectModal isOpen={isOpen} closeModal={closeModal} />
     </>
   );
 }

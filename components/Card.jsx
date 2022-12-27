@@ -1,11 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import LogoRounded from "./LogoRounded";
+import { useRouter } from 'next/navigation';
 
 function Card({name, img }) {
+  
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
+  const router = useRouter();
   return (
-    <div className=' -ml-[30px] lg:ml-0 z-20 scale-[0.8] lg:transform-none w-[306px] h-[308px] lg:h-[316px] bg-white rounded-[30px] py-[30px] px-[27px]'>
+    <div onClick={()=> router.push("project/meadow")} className='cursor-pointer -ml-[30px] lg:ml-0 z-20 scale-[0.8] lg:transform-none w-[306px] h-[308px] lg:h-[316px] bg-white rounded-[30px] py-[30px] px-[27px]'>
       <div className='flex justify-between items-center h-[50px]  mb-[26px]'>
         <div className='space-y-[10px]'>
           <h2>{name}</h2>
@@ -26,7 +29,7 @@ function Card({name, img }) {
         <LogoRounded img={img}/>
       </div>
       {/* paragraf */}
-      <p className='  font-[13px] w-[261px] h-[57px]  leading-[19px] text-gray-3 mb-[29px] '>
+      <p className='  text-[13px] w-[261px] h-[57px] font-normal  leading-[19px] text-gray-3 mb-[29px] '>
         Meadow is ready to launch the most fascinating tier 1 projects on the
         most scalable Layer 1 blockchain
       </p>

@@ -26,7 +26,7 @@ function Card({name, img}) {
         <LogoRounded img={img} />
       </div>
       {/* paragraf */}
-      <p className='  font-[13px] w-[261px] h-[57px]  leading-[19px] text-gray-3 mb-[29px] '>
+      <p className='  text-[13px] font-normal w-[261px] h-[57px]  leading-[19px] text-gray-3 mb-[29px] '>
         Meadow is ready to launch the most fascinating tier 1 projects on the
         most scalable Layer 1 blockchain
       </p>
@@ -34,14 +34,14 @@ function Card({name, img}) {
       <div className='text-black flex space-x-[35px] mb-[31px] '>
         {/* 1 */}
         <div className=' flex flex-col justify-start'>
-          <p className='w-[80px] font-black leading-[16px] text-[12px]  h-[16px] '>
+          <p className='w-[80px] font-extrabold leading-[16px] text-[12px]  h-[16px] '>
             Total Raise
           </p>
           <div className='font-[18px] leading-[23px]  '>$750,000</div>
         </div>
         {/* 2 */}
         <div className='flex flex-col justify-start'>
-          <p className='w-[80px] font-black leading-[16px] text-[12px]  h-[16px] '>
+          <p className='w-[80px] font-extrabold leading-[16px] text-[12px]  h-[16px] '>
             Total Price
           </p>
           <div className='font-[18px] leading-[23px]   '>$0.10</div>

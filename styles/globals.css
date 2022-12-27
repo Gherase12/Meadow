@@ -10,8 +10,7 @@ body {
   background: #f0f6fd;
 }
 
-h1,
-p {
+* {
   font-family: Avenir, sans-serif;
   font-style: normal;
 }
@@ -55,7 +54,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+ 
   width: 40.43px;
   height: 25px;
 
@@ -63,9 +62,10 @@ h2 {
 
   font-family: Avenir, sans-serif;
   font-style: normal;
-  font-weight: 900;
+  
   font-size: 14px;
   line-height: 19px;
+  z-index: 1;
 
   color: #8a9cb3;
 }

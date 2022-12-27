@@ -30,20 +30,13 @@ function Voting() {
               Vote for projects
             </h1>
           </div>
-          <div className='px-[30px] md:mx-0 font-avenir text-[16px] text-gray-2 bg-white-1 md:bg-white-1/0 relative font-normal mb-[21px] items-center font-avenir  leading-[24px]  lg:h-[52px] lg:w-[846px] z-40 '>
-            Meadow is a decentralized launchpad that will launch projects on the
-            Sui Network. The Sui Network will be one of the most unique Layer 1
-            networks. Meadow has been in the works for a number of months, and
-            it is at this point poised to cause a ruckus in the industry. The
-            experience that the Meadow teams bring to the table includes working
-            with various prominent incubators as well as top-tier businesses.
-            Before launching, all projects on Meadow will go through a rigorous
-            process of due diligence to ensure their legitimacy.
+          <div className='px-[30px] md:mx-0  text-[16px] text-gray-2 bg-white-1 md:bg-white-1/0 relative font-normal mb-[21px] items-center font-avenir  leading-[24px]  lg:h-[52px]  lg:w-[846px] z-40 '>
+          Meadow is a decentralized launchpad on the Sui Network, being of the most exciting Layer 1&apos;s, a team of experts came together to build Meadow.
           </div>
 
           {/* voting */}
-          <div className=' mt-[28px]  lg:mt-[100px] h-[620px]  bg-white rounded-t-[30px] px-[27px]  pt-[23px] lg:pt-[30px] z-40 relative '>
-            <div className='overflow-y-scroll scrollbar-hide   h-[600px] '>
+          <div className=' mt-[28px] h-[650px]   lg:h-[720px]  bg-white rounded-t-[30px] px-[27px]  pt-[23px] lg:pt-[30px] z-40 relative '>
+            <div className='overflow-y-scroll scrollbar-hide  h-[660px] '>
               {projects.map(({ name, img, type, score }, i) => (
                 <VoteProjectCard
                   key={i}

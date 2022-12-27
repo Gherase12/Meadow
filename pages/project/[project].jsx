@@ -57,8 +57,8 @@ function Project() {
         {/* project name */}
         <div className=' ml-[20px] lg:ml-0 space-x-[20px] items-center flex  mb-[24px]'>
           <Image
-          width={61}
-          height={61}
+            width={61}
+            height={61}
             src='/projects/meadow.svg'
             alt='meadow project'
             className=' rounded-full'
@@ -73,22 +73,20 @@ function Project() {
           <div className='flex flex-col space-y-[26px]  lg:w-[561.65px]'>
             {/* project description */}
             <div className='bg-white rounded-[30px] h-[349px] p-[30px]  '>
-              <div className='font-black text-[27px] leading-[110%] font-avenir mb-[10px]  '>
+              <div className='font-black text-[27px] leading-[110%] font-avenir mb-[20px]  '>
                 Project Summary
               </div>
               <p className=' overflow-y-scroll h-[265px] text-[15px] scrollbar-hide leading-[26px]   '>
-                Meadow is the first launchpad on the Aptos Network built to
-                drive the web 3.0 economy with its unique business model which
-                critically filters out projects, Meadow will launch the most
-                mind blowing projects, our team have a history of working with
-                tier 1 start-ups. working on numerous cryptocurrency projects
-                which have done tens of x&apos;s, being well connected when it comes
-                to launch strategies, marketing power, critical due-diligence we
-                are the best at it. With our expertise and history of
-                implementing successful launch strategies we will make sure
-                every single project is heavily vetted and benefits from our
-                resources, this will involve revisions for example overview of
-                valuation, tokenomics, utility, long term growth plan.
+                Meadow is a decentralized launchpad that will launch projects on
+                the Sui Network. The Sui Network will be one of the most unique
+                Layer 1 networks. Meadow has been in the works for a number of
+                months, and it is at this point poised to cause a ruckus in the
+                industry. The experience that the Meadow teams bring to the
+                table includes working with various prominent incubators as well
+                as top-tier businesses. Before launching, all projects on Meadow
+                will go through a rigorous process of due diligence to ensure
+                their legitimacy.
+               
               </p>
             </div>
             {/* project details */}
@@ -100,7 +98,11 @@ function Project() {
               <div className=' flex flex-col  '>
                 <div className=' h-[76px] flex space-x-[40px] '>
                   {prices.map(({ price, text }, i) => (
-                    <TokenSaleDetail key={i} upText={`$${price}`} downText={text} />
+                    <TokenSaleDetail
+                      key={i}
+                      upText={`$${price}`}
+                      downText={text}
+                    />
                   ))}
                 </div>
                 {/* dates */}
@@ -127,7 +129,7 @@ function Project() {
               <div className='font-black text-[27px] leading-[110%] font-avenir mb-[30px]  '>
                 IDO Details
               </div>
-              <div className='text-black flex space-x-[35px] mb-[31px] '>
+              <div className='text-black flex space-x-[35px] mb-[20px] '>
                 {/* 1 */}
                 <div className=' flex flex-col justify-start'>
                   <p className='w-[80px] font-black leading-[16px] text-[12px]  h-[16px] '>
@@ -158,7 +160,7 @@ function Project() {
                   Dec 8th 16:00 (UTC) - Dec 15th 24:00 (UTC)
                 </div>
               </div>
-              <button className='h-[40px] bg-black w-full mt-[10px] rounded-[14px] flex items-center justify-center space-x-[10px]  '>
+              <button className='h-[40px] bg-black w-full mt-[20px] rounded-[14px] flex items-center justify-center space-x-[10px]  '>
                 <div className='text-[18px] font-medium leading-[24px] text-white '>
                   Participate
                 </div>
@@ -167,7 +169,7 @@ function Project() {
                   className='rotate-90  '
                   width={14}
                   height={22}
-                  alt="upArrow"
+                  alt='upArrow'
                 />
               </button>
             </div>
