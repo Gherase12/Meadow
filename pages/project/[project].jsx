@@ -95,7 +95,7 @@ function Project() {
               <div className='font-black text-[27px] leading-[110%] font-avenir mb-[30px]  '>
                 Token Sale details
               </div>
-              <div className=' flex flex-col  '>
+              <div className=' flex flex-col scale-[0.8] '>
                 <div className=' h-[76px] flex space-x-[40px] '>
                   {prices.map(({ price, text }, i) => (
                     <TokenSaleDetail
