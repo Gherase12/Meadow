@@ -27,11 +27,11 @@ function Stake() {
         />
       </div>
       {/* page content */}
-      <div className='flex flex-col justify-center  items-center pb-[100px] '>
-        <div className='z-30 text-[32px] lg:text-[41px] font-black leading-[32px] lg:leading-[51px] mb-[22px] text-center '>
+      <div className=' z-30 flex flex-col justify-center  items-center pb-[100px] '>
+        <div className=' text-[32px] lg:text-[41px] font-black leading-[32px] lg:leading-[51px] mb-[22px] text-center '>
           Stake coming soon
         </div>
-        <div className='text-[14px] lg:text-[16px] text-center w-[325px] lg:w-[572px] mb-[51px]  '>
+        <div className='z-30 text-[14px] lg:text-[16px] text-center w-[325px] lg:w-[572px] mb-[51px]  '>
           Meadow is ready to launch the most fascinating tier 1 projects on the
           most scalable, safest Layer 1 blockchain, with a team of highly
           qualified experts who have trackrecord of success.
