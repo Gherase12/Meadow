@@ -2,13 +2,20 @@ import React from "react";
 import Image from "next/image";
 import LogoRounded from "./LogoRounded";
 import { useRouter } from 'next/navigation';
+import { AiFillLock } from 'react-icons/ai';
 
 function Card({name, img }) {
   
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
   const router = useRouter();
   return (
-    <div onClick={()=> router.push("project/meadow")} className=' cursor-pointer -ml-[30px] lg:ml-0 z-20 scale-[0.8] lg:transform-none w-[306px] h-[308px] lg:h-[316px] bg-white rounded-[30px] py-[30px] px-[27px]'>
+    <div onClick={()=> router.push("project/meadow")} className='relative cursor-pointer -ml-[30px] lg:ml-0 z-20 scale-[0.8] lg:transform-none w-[306px] h-[308px] lg:h-[316px] bg-white rounded-[30px] py-[30px] px-[27px]'>
+     {name != "Meadow" && (
+      <div className=" rounded-[30px] z-50 bg-black absolute left-0 right-0 top-0 bottom-0 flex items-center justify-center">
+       
+      <AiFillLock className="text-gray-2  text-[30px]" />
+      </div>
+     )}
       <div className='flex justify-between items-center h-[50px]  mb-[26px]'>
         <div className='space-y-[10px]'>
           <h2>{name}</h2>

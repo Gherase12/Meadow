@@ -24,12 +24,13 @@ function VoteCard() {
   return (
     <div className='relative w-full  lg:w-[591.99px]  lg:h-[310.52px] bg-white rounded-[30px] lg:py-[32px] lg:px-[30px] card1   '>
       {/* upper section mobile */}
+      
       <div className='absolute  left-0 -top-[47px] w-full  lg:hidden   flex justify-between  mb-[35px]'>
         <div className='w-[208px] h-[24px] font-bold text-[18px] leading-[24px] '>Vote for projects</div>
-        <Link href='/' className='flex space-x-[11px] '>
+        <Link href='/voting' className='cursor-pointer flex space-x-[11px] '>
           <p
             className='text-[15px] leading-[24px] text-blue-1 font-bold max-[375px]:text-[12px]'
-            href='/'
+            
           >
             View 
             
@@ -46,7 +47,7 @@ function VoteCard() {
       {/* upper section desktop */}
       <div className='hidden   lg:flex justify-between  mb-[35px]'>
         <h2 className='w-[208px] h-[24px] font-bold'>Vote for projects</h2>
-        <Link href='/' className='flex space-x-[11px]'>
+        <Link href='/voting' className='flex space-x-[11px]'>
           <p
             className='text-[15px] leading-[24px] text-blue-1 font-bold '
             href='/'

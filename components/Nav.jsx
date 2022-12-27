@@ -115,8 +115,8 @@ function Nav({ path }) {
           </div>
 
           <div className='py-[24.5px] text-[16px] nav-font flex flex-col items-between '>
-            <div className='h-[42px] py-[12px]  '>Docs</div>
-            <div className='h-[42px] py-[12px]  '>Team</div>
+            <Link href="https://meadow.gitbook.io/docs/" className='h-[42px] py-[12px]  '>Docs</Link>
+            <Link href="https://meadow.gitbook.io/docs/socials-and-links/team" className='h-[42px] py-[12px]  '>Team</Link>
           </div>
         </div>
 
@@ -141,7 +141,7 @@ function Nav({ path }) {
               {" "}
               Apply
             </button>
-            <button className=' w-full flex items-center justify-center h-[50px] text-white bg-blue-1  rounded-[15px]  btn-text '>
+            <button  onClick={()=>{openModal(); setOpen(false)}} className=' w-full flex items-center justify-center h-[50px] text-white bg-blue-1  rounded-[15px]  btn-text '>
               Connect wallet
             </button>
           </div>
@@ -180,12 +180,12 @@ function Nav({ path }) {
             ))}
           </div>
           <div className='p-[24.5px] text-[16px]  nav-font flex flex-col items-between '>
-            <div className='h-[42px] py-[12px] pr-[16px] hover:text-blue-1 cursor-pointer'>
+            <Link href="https://meadow.gitbook.io/docs/" className='h-[42px] py-[12px] pr-[16px] hover:text-blue-1 cursor-pointer'>
               Docs
-            </div>
-            <div className='h-[42px] py-[12px] pr-[16px] hover:text-blue-1 cursor-pointer'>
+            </Link>
+            <Link href="https://meadow.gitbook.io/docs/socials-and-links/team" className='h-[42px] py-[12px] pr-[16px] hover:text-blue-1 cursor-pointer'>
               Team
-            </div>
+            </Link>
           </div>
         </div>
 

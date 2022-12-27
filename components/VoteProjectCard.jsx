@@ -1,11 +1,21 @@
 import React from "react";
 import Image from "next/image";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { AiFillLock } from 'react-icons/ai';
 
 function VoteProjectCard({ index, name, type, img, score }) {
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
-
+  const notify = () => toast("Voted");
   return (
-    <div className='h-[75px] lg:h-[88px]  last:border-b-0 w-full  border-b-[1px] border-white-2 flex items-center justify-between  '>
+    <div className='relative h-[75px] lg:h-[88px]  last:border-b-0 w-full  border-b-[1px] border-white-2 flex items-center justify-between  '>
+      {name != "Meadow" && (
+      <div className=" rounded-[30px] z-50 bg-black absolute left-0 right-0 top-0 bottom-0 flex items-center justify-center">
+       
+      <AiFillLock className="text-gray-2  text-[30px]" />
+      </div>
+     )}
+      {/* <ToastContainer /> */}
       <div className='  flex space-x-[12px] lg:space-x-[18px] items-center scale-[0.8] md:transform-none -ml-[12px] lg:ml-0'>
         <p className='w-[18px] font-black text-[15px] leading-[24px] text-gray-3  '>
           #{index + 1}
@@ -50,19 +60,20 @@ function VoteProjectCard({ index, name, type, img, score }) {
               {score}
             </p>
           </div>
-          <button className='border-white-2 py-[11.5px] border-[1px] rounded-full flex justify-center space-x-[10px] items-center w-[82px]  '>
+          <button onClick={notify} className='border-white-2 py-[11.5px] border-[1px] rounded-full flex justify-center space-x-[10px] items-center w-[82px]  '>
             <Image
               src='/upArrow.svg'
               width={8}
               height={10}
               alt='upper arrow '
             />
-            <div className=' text-[14px] leading-[19px] font-medium text-gray-2 w-[30px] h-[19px]  '>
+            <div  className=' text-[14px] leading-[19px] font-medium text-gray-2 w-[30px] h-[19px]  '>
               Vote
             </div>
           </button>
         </div>
       </div>
+      
     </div>
   );
 }

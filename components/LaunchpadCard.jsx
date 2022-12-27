@@ -1,11 +1,18 @@
 import React from "react";
 import Image from "next/image";
 import LogoRounded from "./LogoRounded";
+import { AiFillLock } from 'react-icons/ai';
 
 function Card({name, img}) {
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
   return (
-    <div className='  z-20  h-[308px] lg:h-[308px] bg-white rounded-[30px] py-[27px] px-[27px]'>
+    <div className='relative  z-20  h-[308px] lg:h-[308px] bg-white rounded-[30px] py-[27px] px-[27px]'>
+      {name != "Meadow" && (
+      <div className=" rounded-[30px] z-50 bg-black absolute left-0 right-0 top-0 bottom-0 flex items-center justify-center">
+       
+      <AiFillLock className="text-gray-2  text-[30px]" />
+      </div>
+     )}
       <div className='flex justify-between items-center h-[50px]  mb-[26px]'>
         <div className='space-y-[10px]'>
           <h2>{name}</h2>
