@@ -59,7 +59,7 @@ function Project() {
           <Image
             width={61}
             height={61}
-            src='/projects/meadow.svg'
+            src='/meadow.svg'
             alt='meadow project'
             className=' rounded-full'
           />
