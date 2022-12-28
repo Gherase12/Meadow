@@ -182,14 +182,7 @@ function Calendar() {
                     ) && (
                       < >
                         <div className='w-[6px] h-[6px] rounded-full absolute bottom-[4px] left-[50%] translate-x-[-50%] bg-red '></div>
-                        <div onClick={()=> router.push("project/meadow")} className='w-[40px] cursor-pointer h-[40px]    absolute left-[50%] translate-x-[-50%] translate-y-[-200%] hidden z-50 group-hover:flex'>
-                          <Image
-                            src={`/projects/meadow.svg`}
-                            fill
-                            className=' rounded-[10px] z-50'
-                            alt={"bg-image"}
-                          />
-                        </div>
+                        
                       </>
                     )}
                   </div>

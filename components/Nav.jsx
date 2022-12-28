@@ -6,6 +6,8 @@ import { MdInsertChartOutlined } from "react-icons/md";
 import { ImStack } from "react-icons/im";
 import { RiCheckboxMultipleLine, RiPieChartLine } from "react-icons/ri";
 import { HiOutlineUsers } from "react-icons/hi";
+import { SlGameController } from "react-icons/sl";
+import { GrGamepad } from "react-icons/gr";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -42,6 +44,11 @@ function Nav({ path }) {
       Icon: RiCheckboxMultipleLine,
       name: "IDO insurance",
       pagePath: "ido-insurance",
+    },
+    {
+      Icon: SlGameController,
+      name: "Games",
+      pagePath: "games",
     },
     {
       Icon: RiPieChartLine,

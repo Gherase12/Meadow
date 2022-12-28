@@ -1,27 +1,23 @@
 import React from "react";
-import Image from "next/image";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AiFillLock } from 'react-icons/ai';
+import Link  from 'next/link';
+import Image  from 'next/image';
 
-function VoteProjectCard({ index, name, type, img, score }) {
+function VoteProjectCard({ index, name, type, img, score, twitter, discord }) {
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
   const notify = () => toast("Voted");
   return (
     <div className='relative h-[75px] lg:h-[88px]  last:border-b-0 w-full  border-b-[1px] border-white-2 flex items-center justify-between  '>
-      {name != "Meadow" && (
-      <div className=" rounded-[30px] z-50 bg-black absolute left-0 right-0 top-0 bottom-0 flex items-center justify-center">
-       
-      <AiFillLock className="text-gray-2  text-[30px]" />
-      </div>
-     )}
+      
       {/* <ToastContainer /> */}
       <div className='  flex space-x-[12px] lg:space-x-[18px] items-center scale-[0.8] md:transform-none -ml-[12px] lg:ml-0'>
         <p className='w-[18px] font-black text-[15px] leading-[24px] text-gray-3  '>
           #{index + 1}
         </p>
         <div className='w-[42px] relative  h-[42px]  lg:w-[60px] lg:h-[60px] '>
-          <Image fill src={`/projects/${img}.svg`} className="rounded-[14px]" alt={name} />
+          <Image fill src={`/partners/${img}.jpg`} className="rounded-[14px] object-cover " alt={name} />
         </div>
 
         {/*  */}
@@ -38,14 +34,17 @@ function VoteProjectCard({ index, name, type, img, score }) {
       <div className='flex space-x-[12px]  lg:w-[340px] lg:justify-between items-center scale-[0.8] md:transform-none -mr-[18px] lg:mr-0 '>
         <div className='w-[93px] h-[25px] hidden lg:flex flex-start space-x-[15px] opacity-60 '>
           {icons.map((i, index) => (
-            <Image
-              key={index}
-              src={i}
-              width={18.43}
-              height={14.79}
-              className='text-gray-3'
-              alt={"Meadown logo button"}
-            />
+            <Link href={twitter} key={i} >
+
+              <Image
+                
+                src={i}
+                width={18.43}
+                height={14.79}
+                className='text-gray-3'
+                alt={"Meadown logo button"}
+              />
+            </Link>
           ))}
         </div>
         <div className='flex space-x-[12px] lg:space-x-[17px]'>

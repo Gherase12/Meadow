@@ -67,7 +67,7 @@ function ConnectModal({isOpen, closeModal}) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all  flex items-center flex-col">
                   <Dialog.Title
                     as="h3"
                     className="text-[20px] font-bold  text-blue-1 "
@@ -90,10 +90,10 @@ function ConnectModal({isOpen, closeModal}) {
                     <button className="border-2 rounded-md shadow-lg">
                     <SignInButton
                       
-                      className="inline-flex justify-center   border-2   px-4 py-2 text-[15px] font-bold  "
+                      className="inline-flex justify-center   border-2   px-[45px] py-2 text-[15px] font-bold  "
                       onClick={closeModal}
                     >
-                        <Image src="/sui-logo.svg" alt="sui" className="mr-[60px]" width="40" height="40"/>
+                        <Image src="/sui-logo.svg" alt="sui" className="mx-auto " width="40" height="40"/>
                       
                     </SignInButton>
                     </button>

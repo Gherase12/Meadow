@@ -6,7 +6,7 @@ function LogoRounded({ img }) {
   return (
     <button onClick={()=> router.push("project/meadow")}>
       <Image
-        src={`/projects/${img}.svg`}
+        src={"/meadow.svg"}
         width={50}
         height={50}
         alt='Meadow sui launchpad logo'

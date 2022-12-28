@@ -26,8 +26,8 @@ function VoteCard() {
       {/* upper section mobile */}
       
       <div className='absolute  left-0 -top-[47px] w-full  lg:hidden   flex justify-between  mb-[35px]'>
-        <div className='w-[208px] h-[24px] font-bold text-[18px] leading-[24px] '>Vote for projects</div>
-        <Link href='/voting' className='cursor-pointer flex space-x-[11px] '>
+        <div className='w-[208px] h-[24px] font-bold text-[18px] leading-[24px] '>Upcoming Games</div>
+        <Link href='/games' className='cursor-pointer flex space-x-[11px] '>
           <p
             className='text-[15px] leading-[24px] text-blue-1 font-bold max-[375px]:text-[12px]'
             
@@ -46,13 +46,13 @@ function VoteCard() {
 
       {/* upper section desktop */}
       <div className='hidden   lg:flex justify-between  mb-[35px]'>
-        <h2 className='w-[208px] h-[24px] font-bold'>Vote for projects</h2>
-        <Link href='/voting' className='flex space-x-[11px]'>
+        <h2 className='w-[208px] h-[24px] font-bold'>Upcoming Games</h2>
+        <Link href='/games' className='flex space-x-[11px]'>
           <p
             className='text-[15px] leading-[24px] text-blue-1 font-bold '
             href='/'
           >
-            View All
+            View 
           </p>
           <Image
             src='/arrow-sm.svg'
@@ -65,8 +65,8 @@ function VoteCard() {
 
       {/* projects */}
       <div className='py-[20px] lg:py-0 overflow-hidden items-center space-y-[10px] lg:space-y-0  flex flex-col lg:flex-row  w-auto px-[20px] lg:px-0   lg:h-[210px] lg:justify-between'>
-        {projects.map(({ name, rateing, img }, i) => (
-          <Project key={i} index={i} name={name} rateing={rateing} img={img} />
+        {projects.map(({img }, i) => (
+          <Project key={i}  img={img} />
         ))}
       </div>
     </div>
