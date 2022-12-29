@@ -10,6 +10,7 @@ import { SlGameController } from "react-icons/sl";
 import { GrGamepad } from "react-icons/gr";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import {  EthosConnectStatus } from 'ethos-connect'
 
 
 import ConnectModal from './ConnectModal';
@@ -70,7 +71,7 @@ function Nav({ path }) {
 
   return (
     <>
-      <div className=' md:hidden flex items-center justify-between px-[18px] fixed top-0 z-50 w-full h-[70px] bg-blue-2 '>
+      <div className=' xl:hidden flex items-center justify-between px-[18px] fixed top-0 z-50 w-full h-[70px] bg-blue-2 '>
         <Link href='/'>
           <Image
             src='/logo.svg'
@@ -97,7 +98,7 @@ function Nav({ path }) {
         className={`${
           !open
             ? "fixed right-[100%]"
-            : " text-gray-4 fixed top-[70px] pb-[70px] left-0 h-screen w-[100%] px-[29px] justify-around  overflow-y-scroll  flex  flex-col    bg-blue-2    duration-500 ease-in-out z-50 md:hidden"
+            : " text-gray-4 fixed top-[70px] pb-[70px] left-0 h-screen w-[100%] px-[29px] justify-around  overflow-y-scroll  flex  flex-col    bg-blue-2    duration-500 ease-in-out z-50 xl:hidden"
         }  `}
       >
         <div className='   mt-[48px]  '>
@@ -144,11 +145,13 @@ function Nav({ path }) {
 
           {/* buttons */}
           <div className='   flex flex-col justify-around space-y-[10px] w-full   '>
-            <button className=' bg-black  flex items-center justify-center h-[50px]  w-full rounded-[15px] btn-text '>
+            <Link href="https://meadow-landing.vercel.app/" >
+            <button  className=' bg-black  flex items-center justify-center h-[50px]  w-full rounded-[15px] btn-text '>
               {" "}
-              Apply
+              Home
             </button>
-            <button  onClick={()=>{openModal(); setOpen(false)}} className=' w-full flex items-center justify-center h-[50px] text-white bg-blue-1  rounded-[15px]  btn-text '>
+            </Link>
+            <button   onClick={()=>{openModal(); setOpen(false)}} className=' w-full flex items-center justify-center h-[50px] text-white bg-blue-1  rounded-[15px]  btn-text '>
               Connect wallet
             </button>
           </div>
@@ -213,12 +216,16 @@ function Nav({ path }) {
 
           {/* buttons */}
           <div className='w-[246px] text-white h-[110px]  flex flex-col justify-around space-y-[10px]  text-[15px] '>
+          <Link href="https://meadow-landing.vercel.app/" >
+
             <button className='flex items-center justify-center h-[50px] border-white w-[246px] bg-black rounded-[15px] btn-text '>
               {" "}
-              Apply
+              Home
             </button>
+          </Link>
 
             <button
+           
             onClick={openModal}
             className='  flex items-center justify-center h-[50px] bg-blue-1 w-[246px] rounded-[15px]  btn-text '
             >Connect wallet</button>

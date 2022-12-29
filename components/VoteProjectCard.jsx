@@ -4,15 +4,19 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AiFillLock } from 'react-icons/ai';
 import Link  from 'next/link';
 import Image  from 'next/image';
+import {  EthosConnectStatus } from 'ethos-connect'
+
 
 function VoteProjectCard({ index, name, type, img, score, twitter, discord }) {
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
+  // console.log(EthosConnectStatus.NoConnection)
   const notify = () => toast("Voted");
   return (
     <div className='relative h-[75px] lg:h-[88px]  last:border-b-0 w-full  border-b-[1px] border-white-2 flex items-center justify-between  '>
       
-      {/* <ToastContainer /> */}
+     
       <div className='  flex space-x-[12px] lg:space-x-[18px] items-center scale-[0.8] md:transform-none -ml-[12px] lg:ml-0'>
+         <ToastContainer />
         <p className='w-[18px] font-black text-[15px] leading-[24px] text-gray-3  '>
           #{index + 1}
         </p>
@@ -59,7 +63,9 @@ function VoteProjectCard({ index, name, type, img, score, twitter, discord }) {
               {score}
             </p>
           </div>
-          <button onClick={notify} className='border-white-2 py-[11.5px] border-[1px] rounded-full flex justify-center space-x-[10px] items-center w-[82px]  '>
+          <button 
+          // disabled={EthosConnectStatus.NoConnection}
+          onClick={notify} className='border-white-2 cursor-pointer py-[11.5px] border-[1px] rounded-full flex justify-center space-x-[10px] items-center w-[82px]  '>
             <Image
               src='/upArrow.svg'
               width={8}

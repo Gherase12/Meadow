@@ -65,12 +65,12 @@ function Voting() {
             Voting
           </p>
           <div className='mx-[30px] md:mx-0 z-30   lg:mb-[17.26px] w-[347.89px] h-[68px] text-[5vw] lg:w-[708.49px]  lg:h-[102px] lg:text-[41px] font-black leading-[34px] lg:leading-[51px]  '>
-            <h1 className='text-black z-50 text-[32px] lg:text-[41px]'>
+            <h1 className='text-black relative  text-[32px] lg:text-[41px] z-40'>
               Most Engange Community on SUI
             </h1>
           </div>
           <div className='px-[30px] md:mx-0  text-[16px] text-gray-2 bg-white-1 md:bg-white-1/0 relative font-normal mb-[21px] items-center font-avenir  leading-[24px]  lg:h-[52px]  lg:w-[846px] z-40 '>
-          Meadow is a decentralized launchpad on the Sui Network, being of the most exciting Layer 1&apos;s, a team of experts came together to build Meadow.
+          In this section each community can also support the weekly project. To be able to vote you need to connect your SUI Wallet.
           </div>
 
           {/* voting */}
