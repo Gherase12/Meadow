@@ -64,6 +64,7 @@ function Card({ i }) {
           src={`/projects/project${i + 1}.png`}
           fill
           className='object-cover'
+          alt="project"
         />
       )}
 

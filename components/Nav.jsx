@@ -1,18 +1,24 @@
 import Image from "next/image";
-import {  useState } from 'react'
+import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { AiOutlineClose } from "react-icons/ai";
+import {
+  AiOutlineClose,
+  AiOutlineInstagram,
+  AiOutlineTwitter,
+} from "react-icons/ai";
 import { MdInsertChartOutlined } from "react-icons/md";
 import { ImStack } from "react-icons/im";
 import { RiCheckboxMultipleLine, RiPieChartLine } from "react-icons/ri";
 import { HiOutlineUsers } from "react-icons/hi";
 import { SlGameController } from "react-icons/sl";
-import { GrGamepad } from "react-icons/gr";
+import { FaDiscord } from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { ethos } from "ethos-connect";
 
-
-import ConnectModal from './ConnectModal';
+import ConnectModal from "./ConnectModal";
+import { ToastContainer } from "react-toastify";
+import { useAccount } from "wagmi";
 
 function Nav({ path }) {
   // nav open
@@ -20,11 +26,11 @@ function Nav({ path }) {
   // connect wallet modal open
   let [isOpen, setIsOpen] = useState(false);
   function closeModal() {
-    setIsOpen(false)
+    setIsOpen(false);
   }
 
   function openModal() {
-    setIsOpen(true)
+    setIsOpen(true);
   }
   console.log(path);
   const router = useRouter();
@@ -63,14 +69,29 @@ function Nav({ path }) {
   ];
 
   const socialMedia = [
-    { name: "twitter", link: "https://twitter.com/meadowlaunch" },
-    { name: "discord", link: "https://t.co/FLNKZU3ujp" },
-    { name: "medium", link: "/" },
+    {
+      name: "twitter",
+      Icon: AiOutlineTwitter,
+      link: "https://twitter.com/meadowlaunch",
+    },
+    { name: "discord", Icon: FaDiscord, link: "https://t.co/FLNKZU3ujp" },
+    {
+      name: "instagram",
+      Icon: AiOutlineInstagram,
+      link: "https://www.instagram.com/meadow_launch/",
+    },
   ];
+
+  //conection
+  const { isConnected } = useAccount();
+  const { status } = ethos.useWallet();
+
+  const isMetaMuskConnected = isConnected;
 
   return (
     <>
-      <div className=' md:hidden flex items-center justify-between px-[18px] fixed top-0 z-50 w-full h-[70px] bg-blue-2 '>
+      <ToastContainer />
+      <div className=' xl:hidden flex items-center justify-between px-[18px] fixed top-0 z-50 left-0 right-0 h-[70px] bg-blue-2 '>
         <Link href='/'>
           <Image
             src='/logo.svg'
@@ -97,7 +118,7 @@ function Nav({ path }) {
         className={`${
           !open
             ? "fixed right-[100%]"
-            : " text-gray-4 fixed top-[70px] pb-[70px] left-0 h-screen w-[100%] px-[29px] justify-around  overflow-y-scroll  flex  flex-col    bg-blue-2    duration-500 ease-in-out z-50 md:hidden"
+            : " text-gray-4 fixed top-[70px]  pb-[70px] left-0 h-screen  w-[100%] px-[29px] justify-around  overflow-y-scroll  flex  flex-col    bg-blue-2    duration-500 ease-in-out z-50 xl:hidden"
         }  `}
       >
         <div className='   mt-[48px]  '>
@@ -122,8 +143,18 @@ function Nav({ path }) {
           </div>
 
           <div className='py-[24.5px] text-[16px] nav-font flex flex-col items-between '>
-            <Link href="https://meadow.gitbook.io/docs/" className='h-[42px] py-[12px]  '>Docs</Link>
-            <Link href="https://meadow.gitbook.io/docs/socials-and-links/team" className='h-[42px] py-[12px]  '>Team</Link>
+            <Link
+              href='https://meadow.gitbook.io/docs/'
+              className='h-[42px] py-[12px]  '
+            >
+              Docs
+            </Link>
+            <Link
+              href='https://meadow.gitbook.io/docs/socials-and-links/team'
+              className='h-[42px] py-[12px]  '
+            >
+              Team
+            </Link>
           </div>
         </div>
 
@@ -131,24 +162,32 @@ function Nav({ path }) {
         <div className=' flex flex-col items-center w-full     '>
           {/* butoane */}
           <div className='w-[165px] flex justify-around h-[40px] mb-[35px] '>
-            {socialMedia.map(({ name, link }, i) => (
+            {socialMedia.map(({ name, Icon, link }, i) => (
               <Link
                 href={link}
                 key={i}
                 className='rounded-full w-[40px] h-[40px] flex items-center justify-center bg-black '
               >
-                <Image src={`/${name}.svg`} width={20} height={16} alt={name} />
+                <Icon />
               </Link>
             ))}
           </div>
 
           {/* buttons */}
           <div className='   flex flex-col justify-around space-y-[10px] w-full   '>
-            <button className=' bg-black  flex items-center justify-center h-[50px]  w-full rounded-[15px] btn-text '>
-              {" "}
-              Apply
-            </button>
-            <button  onClick={()=>{openModal(); setOpen(false)}} className=' w-full flex items-center justify-center h-[50px] text-white bg-blue-1  rounded-[15px]  btn-text '>
+            <Link href='https://meadow-landing.vercel.app/'>
+              <button className=' bg-black  flex items-center justify-center h-[50px] md:max-w-[200px] w-full rounded-[15px] btn-text '>
+                {" "}
+                Home
+              </button>
+            </Link>
+            <button
+              onClick={() => {
+                openModal();
+                setOpen(false);
+              }}
+              className=' w-full md:max-w-[200px] flex items-center justify-center h-[50px] text-white bg-blue-1  rounded-[15px]  btn-text '
+            >
               Connect wallet
             </button>
           </div>
@@ -187,10 +226,16 @@ function Nav({ path }) {
             ))}
           </div>
           <div className='p-[24.5px] text-[16px]  nav-font flex flex-col items-between '>
-            <Link href="https://meadow.gitbook.io/docs/" className='h-[42px] py-[12px] pr-[16px] hover:text-blue-1 cursor-pointer'>
+            <Link
+              href='https://meadow.gitbook.io/docs/'
+              className='h-[42px] py-[12px] pr-[16px] hover:text-blue-1 cursor-pointer'
+            >
               Docs
             </Link>
-            <Link href="https://meadow.gitbook.io/docs/socials-and-links/team" className='h-[42px] py-[12px] pr-[16px] hover:text-blue-1 cursor-pointer'>
+            <Link
+              href='https://meadow.gitbook.io/docs/socials-and-links/team'
+              className='h-[42px] py-[12px] pr-[16px] hover:text-blue-1 cursor-pointer'
+            >
               Team
             </Link>
           </div>
@@ -200,29 +245,34 @@ function Nav({ path }) {
         <div className='flex flex-col items-center w-[246px] absolute bottom-[30px]  '>
           {/* buttons */}
           <div className='w-[140px] flex justify-around h-[40px] mb-[35px] '>
-            {socialMedia.map(({ name, link }, i) => (
+            {socialMedia.map(({ name, link, Icon }, i) => (
               <Link
                 href={link}
                 key={i}
                 className='rounded-full w-[40px] h-[40px] flex items-center justify-center bg-black '
               >
-                <Image src={`/${name}.svg`} width={20} height={16} alt={name} />
+                <Icon />
               </Link>
             ))}
           </div>
 
           {/* buttons */}
           <div className='w-[246px] text-white h-[110px]  flex flex-col justify-around space-y-[10px]  text-[15px] '>
-            <button className='flex items-center justify-center h-[50px] border-white w-[246px] bg-black rounded-[15px] btn-text '>
-              {" "}
-              Apply
-            </button>
+            <Link href='https://meadow-landing.vercel.app/'>
+              <button className='flex items-center justify-center h-[50px] border-white w-[246px] bg-black rounded-[15px] btn-text '>
+                {" "}
+                Home
+              </button>
+            </Link>
 
             <button
-            onClick={openModal}
-            className='  flex items-center justify-center h-[50px] bg-blue-1 w-[246px] rounded-[15px]  btn-text '
-            >Connect wallet</button>
-            
+              onClick={openModal}
+              className='  flex items-center justify-center h-[50px] bg-blue-1 w-[246px] rounded-[15px]  btn-text '
+            >
+              {isMetaMuskConnected && status == "connected"
+                ? "Disconnect"
+                : "Connect wallet"}
+            </button>
           </div>
         </div>
       </div>

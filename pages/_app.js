@@ -1,14 +1,26 @@
+import { createClient, configureChains, goerli, WagmiConfig } from 'wagmi';
 import Head from "next/head";
 import "../styles/globals.css";
 import Nav from "./../components/Nav";
 import { useRouter } from "next/router";
 import { EthosConnectProvider } from "ethos-connect";
+import { publicProvider } from 'wagmi/providers/public';
+import { SessionProvider } from 'next-auth/react';
+
+const { provider, webSocketProvider } = configureChains([goerli], [publicProvider()]);
+const client = createClient({
+  provider,
+  webSocketProvider,
+  autoConnect: true,
+});
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   const currentPagePath = router.pathname;
 
   return (
+    <WagmiConfig client={client}>
+      <SessionProvider session={pageProps.session} refetchInterval={0}>
     <EthosConnectProvider
       ethosConfiguration={{
         hideEmailSignIn: true, // defaults to false
@@ -28,5 +40,7 @@ export default function App({ Component, pageProps }) {
         </div>
       </div>
     </EthosConnectProvider>
+    </SessionProvider>
+    </WagmiConfig>
   );
 }

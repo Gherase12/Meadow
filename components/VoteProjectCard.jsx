@@ -4,15 +4,22 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AiFillLock } from 'react-icons/ai';
 import Link  from 'next/link';
 import Image  from 'next/image';
+import {  EthosConnectStatus } from 'ethos-connect'
+import { ethos } from 'ethos-connect'
 
-function VoteProjectCard({ index, name, type, img, score, twitter, discord }) {
+
+function VoteProjectCard({ index, name, type, img,website, score, twitter, discord }) {
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
-  const notify = () => toast("Voted");
+  // console.log(EthosConnectStatus.NoConnection)
+  const { status } = ethos.useWallet()
+  console.log(status)
+  const notify = () => status == "connected" ? toast("Voted") : toast.error("Please connect your sui wallet") ;
   return (
     <div className='relative h-[75px] lg:h-[88px]  last:border-b-0 w-full  border-b-[1px] border-white-2 flex items-center justify-between  '>
       
-      {/* <ToastContainer /> */}
+     
       <div className='  flex space-x-[12px] lg:space-x-[18px] items-center scale-[0.8] md:transform-none -ml-[12px] lg:ml-0'>
+         <ToastContainer />
         <p className='w-[18px] font-black text-[15px] leading-[24px] text-gray-3  '>
           #{index + 1}
         </p>
@@ -34,7 +41,7 @@ function VoteProjectCard({ index, name, type, img, score, twitter, discord }) {
       <div className='flex space-x-[12px]  lg:w-[340px] lg:justify-between items-center scale-[0.8] md:transform-none -mr-[18px] lg:mr-0 '>
         <div className='w-[93px] h-[25px] hidden lg:flex flex-start space-x-[15px] opacity-60 '>
           {icons.map((i, index) => (
-            <Link href={twitter} key={i} >
+            <Link href={index == 1 ? twitter : (index == 0) ? website : discord } key={i} >
 
               <Image
                 
@@ -59,7 +66,9 @@ function VoteProjectCard({ index, name, type, img, score, twitter, discord }) {
               {score}
             </p>
           </div>
-          <button onClick={notify} className='border-white-2 py-[11.5px] border-[1px] rounded-full flex justify-center space-x-[10px] items-center w-[82px]  '>
+          <button 
+          
+          onClick={notify} className='border-white-2 cursor-pointer py-[11.5px] border-[1px] rounded-full flex justify-center space-x-[10px] items-center w-[82px]  '>
             <Image
               src='/upArrow.svg'
               width={8}
