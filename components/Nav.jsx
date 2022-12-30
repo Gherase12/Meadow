@@ -18,7 +18,7 @@ import { ethos } from "ethos-connect";
 
 import ConnectModal from "./ConnectModal";
 import { ToastContainer } from "react-toastify";
-import { useAccount } from "wagmi";
+import { useAccount } from 'wagmi';
 
 function Nav({ path }) {
   // nav open
@@ -82,12 +82,12 @@ function Nav({ path }) {
     },
   ];
 
-  //conection
-  const { isConnected } = useAccount();
-  const { status } = ethos.useWallet();
+    //conection
+    const { isConnected } = useAccount();
+    const { status } = ethos.useWallet();
 
-  const isMetaMuskConnected = isConnected;
-
+    const isMetaMuskConnected = isConnected;
+    
   return (
     <>
       <ToastContainer />
@@ -269,9 +269,7 @@ function Nav({ path }) {
               onClick={openModal}
               className='  flex items-center justify-center h-[50px] bg-blue-1 w-[246px] rounded-[15px]  btn-text '
             >
-              {isMetaMuskConnected && status == "connected"
-                ? "Disconnect"
-                : "Connect wallet"}
+             { (isMetaMuskConnected && status == "connected") ?  "Disconnect" : "Connect wallet" } 
             </button>
           </div>
         </div>
