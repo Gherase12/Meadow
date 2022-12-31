@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AiFillLock } from 'react-icons/ai';
@@ -8,12 +8,22 @@ import {  EthosConnectStatus } from 'ethos-connect'
 import { ethos } from 'ethos-connect'
 
 
-function VoteProjectCard({ index, name, type, img,website, score, twitter, discord }) {
+function VoteProjectCard({ index, name, type, img,website, twitter, discord }) {
+  const [score, setScore] = useState(0)
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
   // console.log(EthosConnectStatus.NoConnection)
+  const addVote = ()=> {
+    if(score == 0){
+      toast("Voted")
+      setScore(1)
+    }else{
+      setScore(0)
+
+    }
+  }
   const { status } = ethos.useWallet()
   console.log(status)
-  const notify = () => status == "connected" ? toast("Voted") : toast.error("Please connect your sui wallet") ;
+  const notify = () => status == "connected" ? addVote() : toast.error("Please connect your sui wallet") ;
   return (
     <div className='relative h-[75px] lg:h-[88px]  last:border-b-0 w-full  border-b-[1px] border-white-2 flex items-center justify-between  '>
       
