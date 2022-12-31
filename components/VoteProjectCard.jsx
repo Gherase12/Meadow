@@ -11,7 +11,7 @@ import { ethos } from 'ethos-connect'
 function VoteProjectCard({ index, name, type, img,website, twitter, discord }) {
   const [score, setScore] = useState(0)
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
-  // console.log(EthosConnectStatus.NoConnection)
+  
   const addVote = ()=> {
     if(score == 0){
       toast("Voted")
@@ -22,14 +22,13 @@ function VoteProjectCard({ index, name, type, img,website, twitter, discord }) {
     }
   }
   const { status } = ethos.useWallet()
-  console.log(status)
+  
   const notify = () => status == "connected" ? addVote() : toast.error("Please connect your sui wallet") ;
   return (
     <div className='relative h-[75px] lg:h-[88px]  last:border-b-0 w-full  border-b-[1px] border-white-2 flex items-center justify-between  '>
       
      
       <div className='  flex space-x-[12px] lg:space-x-[18px] items-center scale-[0.8] md:transform-none -ml-[12px] lg:ml-0'>
-         <ToastContainer />
         <p className='w-[18px] font-black text-[15px] leading-[24px] text-gray-3  '>
           #{index + 1}
         </p>

@@ -32,7 +32,7 @@ function Nav({ path }) {
   function openModal() {
     setIsOpen(true);
   }
-  console.log(path);
+  
   const router = useRouter();
 
   const elemente = [

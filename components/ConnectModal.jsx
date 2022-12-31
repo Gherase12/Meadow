@@ -15,15 +15,11 @@ function ConnectModal({ isOpen, closeModal }) {
   const { status, wallet } = ethos.useWallet();
 
   const { isConnected } = useAccount();
-  console.log(isConnected)
+  
 
-  // useEffect(() => {
-  //   if (status == "connected" && wallet.address ) {
-  //     toast.success(`Connected ${wallet?.address}`);
-  //   }
-  // }, [status, wallet?.address]);
+  
 
-  // console.log(wallet?.address);
+  
   
 
   return (
