@@ -71,7 +71,7 @@ function VoteProjectCard({
         <div className='w-[42px] relative  h-[42px]  lg:w-[60px] lg:h-[60px] '>
           <Image
             fill
-            src={img}
+            src={`/partners/${img}.jpg`}
             className='rounded-[14px] object-cover '
             alt={name}
           />

@@ -6,8 +6,9 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { projects } from "./../data/projects";
 import  Image  from 'next/image';
+import News from './News';
 
-function Carusel() {
+function Carusel({articles}) {
   const [swiper, setSwiper] = React.useState(null);
 
   const swipeNext = () => {
@@ -39,7 +40,10 @@ function Carusel() {
         </div>
       </div>
       {/* lower part */}
-      <div className='  h-[316px]  mb-[34px] relative lg:w-[1010px]  '>
+      <div className='  h-[316px]  mb-[34px] relative lg:w-[1510px]  '>
+        <div className="absolute right-0 hidden lg:flex 3xl:hidden" >
+            <News articles={articles} />
+        </div>
         <div className='absolute left-[40vw] lg:left-[525px]  -top-[100px]   lg:-top-[250px] w-[400px] h-[400px] lg:w-[612px] lg:h-[612px] bg-image-1   '>
           <Image fill src={"/object-1.svg"} alt='big-object' />
         </div>

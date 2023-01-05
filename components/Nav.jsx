@@ -11,6 +11,7 @@ import { ImStack } from "react-icons/im";
 import { RiCheckboxMultipleLine, RiPieChartLine } from "react-icons/ri";
 import { HiOutlineUsers } from "react-icons/hi";
 import { SlGameController } from "react-icons/sl";
+import { GiNewspaper } from "react-icons/gi";
 import { FaDiscord } from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -65,6 +66,11 @@ function Nav({ path }) {
       Icon: HiOutlineUsers,
       name: "Stake",
       pagePath: "stake",
+    },
+    {
+      Icon: GiNewspaper,
+      name: "News",
+      pagePath: "news",
     },
   ];
 
@@ -150,6 +156,12 @@ function Nav({ path }) {
               Docs
             </Link>
             <Link
+              href='https://drive.google.com/drive/folders/1r0gJEzF07XEQ4fGNcLycJUu-BK6uRl-a?usp=share_link'
+              className='h-[42px] py-[12px]  '
+            >
+              Brand Kit
+            </Link>
+            <Link
               href='https://meadow.gitbook.io/docs/socials-and-links/team'
               className='h-[42px] py-[12px]  '
             >
@@ -211,12 +223,12 @@ function Nav({ path }) {
         {/* frame */}
 
         <div className='w-[246px] h-[384px]  mb-[220px] '>
-          <div className='w-[246px] h-[268px] flex flex-col  border-b border-blue-4/50   '>
+          <div className='w-[246px] h-[368px] flex flex-col space-y-[10px]  border-b border-blue-4/50  pb-[10px] '>
             {elemente.map(({ Icon, name, pagePath }, i) => (
               <button
                 key={i}
                 onClick={() => router.push(`/${pagePath}`)}
-                className={`w-[246px] h-[48px] ${
+                className={`w-[246px] h-[88px]  ${
                   path == `/${pagePath}` && "text-blue-1 bg-black"
                 }  flex items-center rounded-[12px] hover:bg-black group`}
               >
@@ -231,6 +243,12 @@ function Nav({ path }) {
               className='h-[42px] py-[12px] pr-[16px] hover:text-blue-1 cursor-pointer'
             >
               Docs
+            </Link>
+            <Link
+              href='https://drive.google.com/drive/folders/1r0gJEzF07XEQ4fGNcLycJUu-BK6uRl-a?usp=share_link'
+              className='h-[42px] py-[12px]  hover:text-blue-1 cursor-pointer '
+            >
+              Brand Kit
             </Link>
             <Link
               href='https://meadow.gitbook.io/docs/socials-and-links/team'

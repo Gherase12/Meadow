@@ -7,6 +7,51 @@ import {prisma} from './../lib/prisma';
 
 
 function Voting({partner}) {
+
+  const projects = [
+    {
+      name: "Meadow ",
+      img:"meadow",
+      twitter:"https://twitter.com/meadowlaunch",
+      discord:"https://t.co/FLNKZU3ujp",
+      website:"https://meadow-landing.vercel.app/"
+    },
+    {
+      name: "Cetus ",
+      img:"certus",
+      twitter:"https://twitter.com/CetusProtocol",
+      discord:"https://discord.com/invite/cetusprotocol",
+      website: "https://app.cetus.zone/"
+    },
+    {
+      name: "Sui Name Service  ",
+      img:"sui-name-service",
+      twitter:"https://twitter.com/snsstork",
+      discord:"https://discord.com/invite/NSU5AWAeg5",
+      website:"https://sns.domains/"
+    },
+    {
+      name: "Wizard Land  ",
+      img:"wizard-land",
+      twitter:"https://twitter.com/WizardLandSui",
+      discord:"/",
+      website:"https://test-wizardland.vercel.app/"
+    },
+    {
+      name: "Baby Apes Society ",
+      img:"baby-apes",
+      twitter:"https://twitter.com/Babyapessociety",
+      discord:"https://discord.com/invite/babyapessociety",
+      website:"https://babyapessociety.com/"
+    },
+    {
+      name: "Ethos ",
+      img:"ethos",
+      twitter:"https://twitter.com/EthosWalletXYZ",
+      discord:"/",
+      website:"https://ethoswallet.xyz/"
+    },
+  ]
   
 
   return (
@@ -41,15 +86,15 @@ function Voting({partner}) {
           {/* voting */}
           <div className=' mt-[28px] h-[650px]   lg:h-[720px]  bg-white rounded-t-[30px] px-[27px]  pt-[23px] lg:pt-[30px] z-40 relative '>
             <div className='overflow-y-scroll scrollbar-hide  h-[660px] '>
-              {partner?.map(({ id, name,  image, website,votes, twitter, discord }, i) => (
+              {projects.map(({ id, name,  img, website,votes, twitter, discord }, i) => (
                 <VoteProjectCard
                   key={i}
                   index={i}
                   docId={id}
                   name={name}
-                  img={image}
+                  img={img}
                   website={website }
-                  votes={votes}
+                  votes={0}
                   twitter={twitter }
                   discord={discord }
                 />
@@ -64,7 +109,7 @@ function Voting({partner}) {
 
 
 export const getServerSideProps = async () => {
-  const partner = await prisma.partner.findMany()
+  const partner = await prisma.Partner.findMany()
   return { props: { partner } }
 }
 

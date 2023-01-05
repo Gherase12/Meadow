@@ -6,17 +6,21 @@ import Calendar from "./../components/Calendar";
 import Image from "next/image";
 
 import PageAnimation from "./../components/PageAnimation";
+import News from './../components/News';
 
-export default function Home() {
+export default function Home({news}) {
   const footerItems = [
     "Privacy Policy",
     "Teams of use",
     "Disclaimer",
     "Cookie Policy",
   ];
+
+ console.log(news)
+
   return (
     <PageAnimation>
-      <div className='lg:h-[947.31px]    w-full flex md:max-w-[1440px]  pr-0 overflow-hidden  mx-auto my-auto relative '>
+      <div className='lg:h-[947.31px]    w-full flex md:max-w-[1440px]   pr-0 overflow-hidden  mx-auto my-auto relative '>
         {/* small object */}
         <div className='fixed left-[100px] lg:left-[925px] lg:-top-[180px] top-0  w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px] '>
           <Image fill src={"/object-2.svg"} alt='big-object' />
@@ -32,7 +36,7 @@ export default function Home() {
           </div>
           {/* carusel */}
 
-          <Carusel />
+          <Carusel articles={news.articles.slice(0, 5)} />
           {/*  */}
 
           <div className='flex flex-col-reverse lg:flex-row lg:space-x-[34px]  pr-[30px] lg:pr-0 '>
@@ -41,6 +45,8 @@ export default function Home() {
 
             {/* calendar */}
             <Calendar />
+            {/* news */}
+            <News articles={news.articles.slice(0, 5)} />
           </div>
           {/* privacy.. */}
           <div className='  flex  justify-start  space-x-[14px] my-[32px] lg:mt-[18px]'>
@@ -58,3 +64,13 @@ export default function Home() {
     </PageAnimation>
   );
 }
+
+export const getServerSideProps = async () => {
+  const res = await fetch(
+    "https://newsapi.org/v2/everything?q=crypto&apiKey=64dcac9aeb734fd4a3b900eb3b1390d1"
+  );
+
+  const news = await res.json();
+
+  return { props: { news } };
+};
