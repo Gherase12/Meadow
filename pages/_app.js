@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }) {
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <link rel='icon' href='/logo-card.svg' />
         </Head>
-        <div className='lg:h-[947.31px]   md:p-[11px] w-full flex md:max-w-[1450px]  pr-0 overflow-hidden md:space-x-[62px] mx-auto my-auto '>
+        <div className='lg:h-[947.31px]    md:p-[11px] w-full flex md:max-w-[1450px]  pr-0 overflow-hidden md:space-x-[62px] mx-auto my-auto '>
           <Nav path={currentPagePath} />
 
           <Component {...pageProps} />

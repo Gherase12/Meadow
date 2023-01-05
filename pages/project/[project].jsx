@@ -37,7 +37,7 @@ function Project() {
     <div className='  w-screen'>
       <div className='fixed left-0 right-0  top-0 h-[340.86px] z-10'>
         <Image
-          src={"/bg-img.png"}
+          src={"/bg-img-1.png"}
           fill
           className='object-cover'
           alt={"bg-image"}
@@ -76,17 +76,9 @@ function Project() {
               <div className='font-black text-[27px] leading-[110%] font-avenir mb-[20px]  '>
                 Project Summary
               </div>
-              <p className=' overflow-y-scroll h-[265px] text-[15px] scrollbar-hide leading-[26px]   '>
-                Meadow is a decentralized launchpad that will launch projects on
-                the Sui Network. The Sui Network will be one of the most unique
-                Layer 1 networks. Meadow has been in the works for a number of
-                months, and it is at this point poised to cause a ruckus in the
-                industry. The experience that the Meadow teams bring to the
-                table includes working with various prominent incubators as well
-                as top-tier businesses. Before launching, all projects on Meadow
-                will go through a rigorous process of due diligence to ensure
-                their legitimacy.
-               
+              <p className=' overflow-y-scroll h-[265px] text-[15px] scrollbar-hide leading-[26px]  font-bold '>
+              Built for the next generation of users, Meadow will Incubate and launch the most anticipated projects on the Sui Network. With MystenLabs receiving a investment from the South Korean gaming giant NCSoft and Sui offering 0 latency. <br /> <br />
+              Sui Network is believed to be perfect for gaming, Meadow will utltise this network to host the most creative, game changing IGOS (Initial game offering). Meadow Team consist of Veterans and partners who bring years of qualified experience in the incubation space which puts us far ahead of our competition.
               </p>
             </div>
             {/* project details */}

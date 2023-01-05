@@ -26,9 +26,9 @@ export default function Home() {
           <p className='mt-[23px] md:mt-0 w-[88px] h-[23px] font-extrabold text-[17px] text-gray mb-[22.64px] '>
             Dashboard
           </p>
-          <div className=' max-[375px]:text-[1.5rem]  max-[375px]:w-auto max-[375px]:h-auto mb-[90px] z-20   lg:mb-[17.26px] w-[347.89px] h-[68px] text-[5vw] lg:w-[708.49px]  lg:h-[102px] lg:text-[41px] font-extrabold lg:font-extrabold leading-[34px] lg:leading-[51px]  '>
-            <h1 className='text-black'>The Next Generation Web 3.0</h1>
-            <h1 className='text-blue-1'>Multichain Launchpad</h1>
+          <div className=' max-[375px]:text-[1.5rem]  max-[375px]:w-auto max-[375px]:h-auto mb-[90px] z-20   lg:mb-[17.26px] w-[347.89px] h-[68px] text-[5vw] lg:w-[708.49px]  lg:h-[102px] lg:text-[41px] font-extrabold  leading-[34px] lg:leading-[51px]  '>
+            <h1 className='text-black lg:font-semibold'>The Next Generation Web 3.0</h1>
+            <h1 className='text-blue-1 lg:font-exterbold'>Multichain Launchpad</h1>
           </div>
           {/* carusel */}
 

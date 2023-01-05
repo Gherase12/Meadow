@@ -118,7 +118,7 @@ function Nav({ path }) {
         className={`${
           !open
             ? "fixed right-[100%]"
-            : " text-gray-4 fixed top-[70px]  pb-[70px] left-0 h-screen  w-[100%] px-[29px] justify-around  overflow-y-scroll  flex  flex-col    bg-blue-2    duration-500 ease-in-out z-50 xl:hidden"
+            : " text-gray-4 fixed top-[70px]   pb-[70px] left-0 h-screen  w-[100%] px-[29px] justify-around  overflow-y-scroll  flex  flex-col    bg-blue-2    duration-500 ease-in-out z-50 xl:hidden"
         }  `}
       >
         <div className='   mt-[48px]  '>
