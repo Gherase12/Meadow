@@ -39,7 +39,7 @@ export const getServerSideProps = async () => {
     "https://newsapi.org/v2/everything?q=crypto&apiKey=64dcac9aeb734fd4a3b900eb3b1390d1"
   );
 
-  const articleres = await fetch("http://localhost:3000/api/content");
+  const articleres = await fetch("https://meadow-delta.vercel.app/api/content");
   const content = await articleres.json();
 
   const news = await res.json();
