@@ -72,17 +72,18 @@ function Voting({projects}) {
 export const getServerSideProps = async () => {
  
 
-  
+  console.log("1")
   let formData = new FormData();
   formData.append('ak', "me1970323028719042ad");
   
   let p = null
 
   try {
+    console.log("1")
       await fetch("https://grandsoft.ro/api/pv", {
       method: "POST",
       body: formData,
-    }).then((res)=>res.json() ).then((data)=> p = data.data)
+    }).then((res)=>res.json() ).then((data)=> {p = data.data; console.log(data)})
 
   } catch (err) {
     console.log(err);
