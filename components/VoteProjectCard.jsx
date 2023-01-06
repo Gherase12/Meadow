@@ -46,8 +46,8 @@ function VoteProjectCard({
 
   const addVote = async (id) => {
     let formData = new FormData();
-    formData.append("ak", process.env.MEADOW_API_KEY);
-    formData.append("wallet", wallet?.address + "rgdddddfg");
+    formData.append("ak", "me1970323028719042ad");
+    formData.append("wallet", wallet?.address );
     formData.append("pid", id);
 
     try {
