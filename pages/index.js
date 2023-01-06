@@ -73,7 +73,7 @@ export default function Home({news}) {
 
 export const getServerSideProps = async () => {
   const res = await fetch(
-    `https://newsapi.org/v2/everything?q=crypto&apiKey=${process.env.NEWS_API_KEY}`
+    `https://newsapi.org/v2/everything?q=crypto&apiKey=64dcac9aeb734fd4a3b900eb3b1390d1`
   );
 
   const news = await res.json();
