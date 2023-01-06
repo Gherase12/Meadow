@@ -12,7 +12,7 @@ export default function handler(req, res) {
 let content
 
 
-let url = `https://newsapi.org/v2/everything?q=crypto&apiKey=${process.env.NEWS_API_KEY}`
+let url = `https://newsapi.org/v2/everything?q=crypto&apiKey=64dcac9aeb734fd4a3b900eb3b1390d1`
 
 
 axios.get(url).then(function(r1) {

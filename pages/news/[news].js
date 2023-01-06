@@ -70,7 +70,7 @@ function News({ news, content, id }) {
 export const getServerSideProps = async (params) => {
   const id = 0
   const res1 = await fetch(
-    `https://newsapi.org/v2/everything?q=crypto&apiKey=${process.env.NEWS_API_KEY}`
+    `https://newsapi.org/v2/everything?q=crypto&apiKey=64dcac9aeb734fd4a3b900eb3b1390d1`
   );
   const news = await res1.json();
 
