@@ -20,7 +20,7 @@ export default function Home({news}) {
 
   return (
     <PageAnimation>
-      <div className='lg:h-[947.31px]    w-full flex md:max-w-[1440px]   pr-0 overflow-hidden  mx-auto my-auto relative '>
+      <div className='lg:h-[947.31px]     w-full flex md:max-w-[1440px]   pr-0 overflow-hidden  mx-auto my-auto relative '>
         {/* small object */}
         <div className='fixed left-[100px] lg:left-[925px] lg:-top-[180px] top-0  w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px] '>
           <Image fill src={"/object-2.svg"} alt='big-object' />
@@ -39,14 +39,17 @@ export default function Home({news}) {
           <Carusel articles={news.articles.slice(0, 5)} />
           {/*  */}
 
-          <div className='flex flex-col-reverse lg:flex-row lg:space-x-[34px]  pr-[30px] lg:pr-0 '>
+          <div className='flex flex-col-reverse lg:flex-row lg:space-x-[34px]  pr-[30px] lg:pr-0  '>
             {/* 1 */}
             <VoteCard />
 
             {/* calendar */}
             <Calendar />
             {/* news */}
+            <div className="lg:hidden 3xl:flex  lg:h-[310px]">
+
             <News articles={news.articles.slice(0, 5)} />
+            </div>
           </div>
           {/* privacy.. */}
           <div className='  flex  justify-start  space-x-[14px] my-[32px] lg:mt-[18px]'>

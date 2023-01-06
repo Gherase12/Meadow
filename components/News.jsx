@@ -11,14 +11,15 @@ function News({articles}  ) {
 
 
   return (
-    <div className='relative z-[100]  w-full   lg:transform-none lg:w-[381.85px] h-[310.52px] bg-white rounded-[30px] mb-[80px] '>
+    <div className='relative z-[100]  w-full   lg:transform-none lg:w-[381.85px]  lg:h-[360px]   3xl:h-[310.52px]  rounded-[30px] mb-[80px] '>
       {/* top part */}
-      <div className='absolute    w-full     flex justify-between  mb-[35px]  px-[20px] py-[20px]'>
+      
+      <div className='absolute    w-full   text-white  flex justify-between  mb-[35px] z-40 px-[20px] py-[20px]'>
         <div className='w-[208px] h-[24px] font-bold text-[18px] leading-[24px] '>
           News
         </div>
-        <Link href='/news' className='cursor-pointer flex space-x-[11px] '>
-          <p className='text-[15px] leading-[24px] text-blue-1 font-bold max-[375px]:text-[12px]'>
+        <Link href='/news' className='cursor-pointer flex space-x-[11px] bg-white rounded-full px-[5px] '>
+          <p className='text-[15px] leading-[24px] text-blue-1 font-bold max-[375px]:text-[12px] '>
             View
           </p>
           <Image
@@ -39,21 +40,19 @@ function News({articles}  ) {
         slidesPerView={1}
         modules={[Autoplay]}
         spaceBetween={15}
-        className='absolute top-[60px]    w-full flex items-center justify-center   '
+        className='absolute h-full    w-full flex items-center justify-center   '
       >
         {articles?.map((
             {content, urlToImage   }
         ,i)=>(
 
-        <SwiperSlide key={i} className="flex justify-center">
-            <div className=" w-[300px] h-[250px] flex flex-col justify-center items-center">
-                {/* iamge */}
-                
-                <img src={urlToImage} className="w-[200px] h-[200px] object-cover"  />
-                
+        <SwiperSlide key={i} className=" relative w-full h-full " >
+           
+                <img src={urlToImage} className=" object-cover w-full h-full rounded-[30px]" alt="news image" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black to-black/10 z-40 rounded-[30px]" />
                 {/* title */}
-                <h3 className="text-[20px] font-bold  truncate w-[200px]" >{content}</h3>
-            </div>
+                <h3 className=" sm:text-[20px] text-white font-bold absolute left-[20px] bottom-[20px] truncate w-[200px] z-50" >{content}</h3>
+           
         </SwiperSlide>
         ))}
         

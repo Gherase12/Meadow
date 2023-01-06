@@ -1,10 +1,10 @@
-import React, { useCallback, useMemo, useRef, useState } from "react";
+import React from "react";
 import Card from "./Card";
 import "swiper/css";
 
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { projects } from "./../data/projects";
+
 import  Image  from 'next/image';
 import News from './News';
 
@@ -19,7 +19,12 @@ function Carusel({articles}) {
   };
 
   return (
-    <>
+    <div className=" relative">
+      {/* news */}
+      <div className="absolute left-[630px]  xl:left-[637px] top-[30px] hidden lg:flex 3xl:hidden" >
+            <News articles={articles} />
+        </div>
+        {/* news end */}
       <div className=' flex items-center w-[276px] -mb-[20px]  lg:mb-[13px]  h-[40px] justify-between  '>
         <h2 className=' text-[18px] lg:text-[20px] leading-[24px] font-bold '>
           Upcoming IDOs
@@ -40,10 +45,8 @@ function Carusel({articles}) {
         </div>
       </div>
       {/* lower part */}
-      <div className='  h-[316px]  mb-[34px] relative lg:w-[1510px]  '>
-        <div className="absolute right-0 hidden lg:flex 3xl:hidden" >
-            <News articles={articles} />
-        </div>
+      <div className='  h-[316px]  mb-[34px] relative lg:w-[600px]  xl:w-[1510px]  '>
+        
         <div className='absolute left-[40vw] lg:left-[525px]  -top-[100px]   lg:-top-[250px] w-[400px] h-[400px] lg:w-[612px] lg:h-[612px] bg-image-1   '>
           <Image fill src={"/object-1.svg"} alt='big-object' />
         </div>
@@ -55,14 +58,14 @@ function Carusel({articles}) {
           spaceBetween={15}
           className='flex   space-x-[15px] w-full  h-full  z-50 '
         >
-          {projects.map(({  }, i) => (
+          {[...Array(6)].map((a, i) => (
             <SwiperSlide key={i}>
               <Card i={i} />
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
-    </>
+    </div>
   );
 }
 

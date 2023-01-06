@@ -22,7 +22,7 @@ function VoteCard() {
     },
   ];
   return (
-    <div className='relative w-full  lg:w-[591.99px]  lg:h-[310.52px] bg-white rounded-[30px] lg:py-[32px] lg:px-[30px] card1   '>
+    <div className='relative w-full  lg:w-[591.99px]  lg:h-[310.52px] bg-white rounded-[30px] lg:py-[32px] lg:px-[30px] card1  '>
       {/* upper section mobile */}
       
       <div className='absolute  left-0 -top-[47px] w-full  lg:hidden   flex justify-between  mb-[35px]'>
@@ -64,7 +64,7 @@ function VoteCard() {
       </div>
 
       {/* projects */}
-      <div className='py-[20px] lg:py-0 overflow-hidden items-center space-y-[10px] lg:space-y-0  flex flex-col lg:flex-row  w-auto px-[20px] lg:px-0   lg:h-[210px] lg:justify-between'>
+      <div className='py-[20px] lg:py-0 md:justify-center overflow-x-scroll items-center scrollbar-hide  flex flex-row  w-auto px-[20px] lg:px-0   lg:h-[210px] lg:justify-between'>
         {projects.map(({img }, i) => (
           <Project key={i}  img={img} />
         ))}

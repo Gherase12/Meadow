@@ -1,7 +1,7 @@
 import React from "react";
 import LaunchpadCard from "./../components/LaunchpadCard";
 import Image from "next/image";
-import { projects } from "./../data/projects";
+
 
 import PageAnimation from "./../components/PageAnimation";
 
@@ -33,7 +33,7 @@ function Launchpad() {
           </ul>
 
           <div className='overflow-y-scroll gap-[15px] h-[600px] lg:h-[700px]  scrollbar-hide    grid grid-cols-1 lg:grid-cols-3 '>
-            {projects.map(({  }, i) => (
+            {[...Array(6)].map((a, i) => (
               <LaunchpadCard key={i} i={i} />
             ))}
           </div>

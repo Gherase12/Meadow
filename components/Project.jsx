@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
 function Project({ img }) {
   return (
-    <div className='relative w-[168.33px] h-[206px]    '>
+    <div className='relative flex-none  w-[200px] lg:w-[168.33px] h-[206px]     '>
       <Image
         src={`/${img}.png`}
         fill

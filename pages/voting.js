@@ -3,7 +3,7 @@ import React from "react";
 import VoteProjectCard from "./../components/VoteProjectCard";
 import Image from "next/image";
 import PageAnimation from "../components/PageAnimation";
-import {prisma} from './../lib/prisma';
+
 
 
 function Voting({partner}) {
@@ -108,9 +108,6 @@ function Voting({partner}) {
 }
 
 
-export const getServerSideProps = async () => {
-  const partner = await prisma.Partner.findMany()
-  return { props: { partner } }
-}
+
 
 export default Voting;

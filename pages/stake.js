@@ -1,7 +1,21 @@
-import React from "react";
+import {React, useState} from "react";
 import Image from "next/image";
+import { validateEmail } from './../utils/validateEmail';
+import { toast } from 'react-toastify';
 
 function Stake() {
+  const [email, setEmail] = useState('');
+
+  const success = ()=>{
+    toast("Email sent",{autoClose: 2000});
+    setEmail("")
+  }
+
+  const validate = (e)=>{
+    e.preventDefault();
+    validateEmail(email) ? success() : toast.error("Please enter a valid email address",{autoClose: 2000}) 
+  }
+
   return (
     <div className='lg:h-[947.31px]   z-30  w-full flex md:max-w-[1440px]  pr-0 overflow-hidden md:space-x-[62px] mx-auto my-auto relative  font-avenir lg:items-center justify-center '>
       {/* object-1 */}
@@ -43,18 +57,22 @@ function Stake() {
           <div className='relative'>
             <input
               type='text'
+              value={email}
+              onChange={e => setEmail(e.target.value)}
               className='bg-white w-[342px] lg:w-[465px] lg:h-[72px] outline-none h-[56px] rounded-full px-[34px] py-[17px] text-[16px]  '
               placeholder='Your email'
             />
             <input
               type='submit'
-              className='bg-black w-[164px] h-[72px] rounded-full lg:flex items-center justify-center text-[16px] text-white leading-[22px] font-medium hidden absolute right-0 top-0 '
+              onClick={(e)=>validate(e)}
+              className='bg-black cursor-pointer w-[164px] h-[72px] rounded-full lg:flex items-center justify-center text-[16px] text-white leading-[22px] font-medium hidden absolute right-0 top-0 '
               value='Notify me'
             />
           </div>
           <input
             type='submit'
-            className='bg-black w-[342px] outline-none h-[56px] rounded-full flex items-center justify-center text-[16px] text-white leading-[22px] font-medium lg:hidden z-30 relative '
+            onClick={(e)=>validate(e)}
+            className='bg-black  w-[342px] outline-none h-[56px] rounded-full flex items-center justify-center text-[16px] text-white leading-[22px] font-medium lg:hidden z-30 relative '
             value='Subscribe'
           />
         </form>
