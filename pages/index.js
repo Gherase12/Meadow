@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect , useState} from "react";
 import Carusel from "./../components/Carusel";
 import VoteCard from "./../components/VoteCard";
 import Calendar from "./../components/Calendar";
@@ -16,7 +16,8 @@ export default function Home({news}) {
     "Cookie Policy",
   ];
 
- console.log(news)
+
+ 
 
   return (
     <PageAnimation>
@@ -48,7 +49,9 @@ export default function Home({news}) {
             {/* news */}
             <div className="lg:hidden 3xl:flex  lg:h-[310px]">
 
-            <News articles={news.articles.slice(0, 5)} />
+            {news && (
+              <News articles={news.articles.slice(0, 5)} />
+            ) } 
             </div>
           </div>
           {/* privacy.. */}
@@ -70,7 +73,7 @@ export default function Home({news}) {
 
 export const getServerSideProps = async () => {
   const res = await fetch(
-    "https://newsapi.org/v2/everything?q=crypto&apiKey=64dcac9aeb734fd4a3b900eb3b1390d1"
+    `https://newsapi.org/v2/everything?q=crypto&apiKey=${process.env.NEWS_API_KEY}`
   );
 
   const news = await res.json();

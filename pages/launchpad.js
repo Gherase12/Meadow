@@ -44,11 +44,6 @@ function Launchpad({message}) {
   );
 }
 
-export const getServerSideProps = async () => {
-  const res = await fetch(`${process.env.API_URL}/hello`);
-  const data = await res.json();
-  console.log(data)
-  return { props: { message: data } };
-};
+
 
 export default Launchpad;

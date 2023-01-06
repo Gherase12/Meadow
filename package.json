@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "prisma generate"
+    "lint": "next lint"
+   
   },
   "dependencies": {
     "@headlessui/react": "^1.7.7",
@@ -23,6 +23,7 @@
     "eslint-config-next": "13.0.7",
     "ethers": "^5.7.2",
     "ethos-connect": "^0.0.63",
+    "form-data": "^4.0.0",
     "framer-motion": "^8.0.2",
     "jsdom": "^20.0.3",
     "moralis": "^2.10.4",
