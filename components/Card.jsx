@@ -7,7 +7,7 @@ import Link from "next/link";
 
 function Card({ i }) {
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
-  const links = ["https://meadow-landing.vercel.app/", "https://twitter.com/meadowlaunch", "https://t.co/FLNKZU3ujp"];
+  const links = ["https://meadowlaunch.com/", "https://twitter.com/meadowlaunch", "https://t.co/FLNKZU3ujp"];
   const router = useRouter();
   return (
     <div className='relative    -ml-[30px] lg:ml-0 z-20 scale-[0.8] lg:transform-none w-[306px] h-[308px] lg:h-[316px] bg-white rounded-[30px] py-[30px] px-[27px]'>

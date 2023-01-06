@@ -204,7 +204,7 @@ function Nav({ path }) {
             >
               Connect wallet
             </button>
-            <Link href='https://meadow-landing.vercel.app/'>
+            <Link href='https://meadowlaunch.com/'>
               <button className=' bg-black  flex items-center justify-center h-[50px] md:max-w-[200px] w-full rounded-[15px] btn-text '>
                 {" "}
                 Home
@@ -285,7 +285,7 @@ function Nav({ path }) {
           {/* buttons */}
           <div className='w-[246px] text-white h-[110px]  flex flex-col justify-around space-y-[10px]  text-[15px] '>
            
-          <Link href='https://meadow-landing.vercel.app/'>
+          <Link href='https://meadowlaunch.com/'>
               <button className='flex items-center justify-center h-[50px] border-white w-[246px] bg-black rounded-[15px] btn-text '>
                 {" "}
                 Home
