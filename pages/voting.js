@@ -74,7 +74,7 @@ export const getServerSideProps = async () => {
 
   
   let formData = new FormData();
-  formData.append('ak',"me1970323028719042ad" );
+  formData.append('ak', "me1970323028719042ad");
   
   let p = null
 
