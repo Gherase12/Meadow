@@ -116,3 +116,12 @@ h2 {
 
 }
 
+@media  (max-height: 625px){
+.nav-container{
+z-index:50;
+padding-top: 20px;
+}
+
+
+
+}

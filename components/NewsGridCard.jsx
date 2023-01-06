@@ -1,7 +1,19 @@
 import React from 'react'
+import Link  from 'next/link';
 
-function NewsGridCard({title, image}) {
+function NewsGridCard({title, image, index,containerRef }) {
+ 
+    const handleClick = () => {
+      if (containerRef.current) {
+        containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+
+
   return (
+    <Link href={`/news/${index}`} onClick={handleClick}  >
+
+
     <div className=' group relative h-[300px] rounded-[30px] overflow-hidden  ' >
         <img src={image} className=" object-cover w-full h-full rounded-[30px] group-hover:scale-[1.3] transition duration-300 ease-in-out" alt="news card" />
         <div className=" cursor-pointer absolute inset-0 bg-gradient-to-t from-black to-black/10 z-40 rounded-[30px]" />
@@ -9,6 +21,7 @@ function NewsGridCard({title, image}) {
           {title}
         </div>
     </div>
+    </Link>
   )
 }
 

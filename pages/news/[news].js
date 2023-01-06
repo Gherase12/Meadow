@@ -1,19 +1,24 @@
 import React from "react";
-import TextParagraph from './../components/TextParagraph';
-import NewsRight from './../components/NewsRight';
-import NewsGridCard from './../components/NewsGridCard';
+import { useRef } from 'react';
+import TextParagraph from '../../components/TextParagraph';
+import NewsRight from '../../components/NewsRight';
+import NewsGridCard from '../../components/NewsGridCard';
+import {useRouter}  from 'next/router';
 
-function news({ news, content }) {
+function News({ news, content }) {
+  const containerRef = useRef(null);
+  const router = useRouter();
+  const newsIndex = router.query.news
 
-    console.log(content)
-  console.log(news);
-  const news1 = news.articles[2];
+  
+  const news1 = news.articles[newsIndex];
   return (
     <div className=' lg:h-[947.31px] space-x-[30px]  pt-[70px] xl:pt-0   w-full flex md:max-w-[1440px]   pr-0 overflow-hidden  mx-auto my-auto relative '>
         {/* new */}
-      <div className=' flex-1 overflow-y-scroll scrollbar-hide'>
+      <div   className=' flex-1 overflow-y-scroll scrollbar-hide '>
         {/* image container */}
-        <div className='h-[200px] md:h-[400px] relative '>
+        <div ref={containerRef} className='h-[200px] md:h-[400px] relative  '>
+         
           <img
             src={news1.urlToImage}
             className='object-cover h-[200px] md:h-[400px] w-[800px]  md:rounded-[30px]'
@@ -35,7 +40,7 @@ function news({ news, content }) {
             {
               news.articles.slice(0, 10).map(({title,urlToImage }, i)=>(
 
-                <NewsGridCard key={i}  title={title} image={urlToImage} />
+                <NewsGridCard key={i}  title={title} image={urlToImage} index={i} containerRef={containerRef}/>
               ))
             }
                 
@@ -46,7 +51,7 @@ function news({ news, content }) {
       <div className=' py-[30px]   bg-blue-2 w-[400px] hidden 3xl:flex flex-col rounded-[30px] h-[800px]'>
         {news.articles.slice(0, 5).map(({title, urlToImage},i)=>(
 
-        <NewsRight key={i} title={title} image={urlToImage} />
+        <NewsRight key={i} title={title} image={urlToImage} index={i} containerRef={containerRef}  />
         ))}
       </div>
     </div>
@@ -66,4 +71,4 @@ export const getServerSideProps = async () => {
   return { props: { news,content } };
 };
 
-export default news;
+export default News;

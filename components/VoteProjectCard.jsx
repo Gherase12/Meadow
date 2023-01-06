@@ -88,8 +88,8 @@ function VoteProjectCard({
         </div>
       </div>
       {/*  */}
-      <div className='flex space-x-[12px]  lg:w-[340px] lg:justify-between items-center scale-[0.8] md:transform-none -mr-[18px] lg:mr-0 '>
-        <div className='w-[93px] h-[25px] hidden lg:flex flex-start space-x-[15px] opacity-60 '>
+      <div className='flex space-x-[12px]  lg:w-[340px] 3xl:w-[250px] lg:justify-between items-center scale-[0.8] md:transform-none -mr-[18px] lg:mr-0 '>
+        <div className='w-[93px] h-[25px] hidden lg:flex flex-start space-x-[15px] opacity-60 items-center '>
           {links.map((l, index) => (
             
            l && (

@@ -5,8 +5,9 @@ import Image from "next/image";
 
 import PageAnimation from "./../components/PageAnimation";
 
-function Launchpad() {
+function Launchpad({message}) {
   const filters = ["All", "Ongoing", "Upcoming", "Ended IDO"];
+  console.log(message)
   return (
     <PageAnimation>
       <div className=' lg:h-[947.31px]  overflow-hidden   w-full flex md:max-w-[1440px]   overflow-x-hidden  md:space-x-[62px] mx-auto my-auto  '>
@@ -42,5 +43,12 @@ function Launchpad() {
     </PageAnimation>
   );
 }
+
+export const getServerSideProps = async () => {
+  const res = await fetch(`${process.env.API_URL}/hello`);
+  const data = await res.json();
+  console.log(data)
+  return { props: { message: data } };
+};
 
 export default Launchpad;

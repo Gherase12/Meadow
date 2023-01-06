@@ -42,26 +42,26 @@ function Insurance() {
         />
       </div>
       {/* page content */}
-      <div className='z-30 flex flex-col justify-center  items-center pb-[100px] '>
+      <div className='z-30 flex flex-col justify-center  items-center pb-[100px] px-[10px]  '>
         <div className=' text-[32px] lg:text-[41px] font-black leading-[32px] lg:leading-[51px] mb-[22px] text-center '>
           IDO Insurance coming soon
         </div>
-        <div className=' text-[14px] lg:text-[16px] text-center w-[325px] lg:w-[572px] mb-[51px]  '>
+        <div className=' text-[14px] lg:text-[16px] text-center w-[325px] lg:w-[572px] mb-[51px] px-[10px] '>
           Meadow is ready to launch the most fascinating tier 1 projects on the
           most scalable, safest Layer 1 blockchain, with a team of highly
           qualified experts who have trackrecord of success.
         </div>
-        <div className='text-[14px] lg:text-[15px] text-center font-black  mb-[22px] h-[44px]  w-[319px]  lg:w-[396.86px]'>
+        <div className=' px-[10px]  text-[14px] lg:text-[15px] text-center font-black  mb-[50px]  h-[44px]  w-[319px]   lg:w-[396.86px]'>
           Leave your email to be the first to know about the launch of IDO
           Insurance on our service
         </div>
-        <form action='' className='space-y-[16px]'>
+        <form action='' className='space-y-[16px] flex flex-col items-center'>
           <div className='relative'>
             <input
               type='text'
               value={email}
               onChange={e => setEmail(e.target.value)}
-              className='bg-white w-[342px] lg:w-[465px] lg:h-[72px] outline-none h-[56px] rounded-full px-[34px] py-[17px] text-[16px]  '
+              className='bg-white w-[280px]  md:w-[342px] lg:w-[465px] lg:h-[72px] outline-none h-[56px] rounded-full px-[34px] py-[17px] text-[16px]  '
               placeholder='Your email'
             />
             <input
@@ -74,7 +74,7 @@ function Insurance() {
           <input
             type='submit'
             onClick={(e)=> validate(e)}
-            className='bg-black cursor-pointer w-[342px] outline-none h-[56px] rounded-full flex items-center justify-center text-[16px] text-white leading-[22px] font-medium lg:hidden z-30 relative '
+            className='bg-black cursor-pointer w-[280px]  md:w-[342px] outline-none h-[56px] rounded-full flex items-center justify-center text-[16px] text-white leading-[22px] font-medium lg:hidden z-30 relative '
             value='Subscribe'
           />
         </form>
