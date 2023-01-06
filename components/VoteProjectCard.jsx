@@ -47,7 +47,7 @@ function VoteProjectCard({
   const addVote = async (id) => {
     let formData = new FormData();
     formData.append("ak", "me1970323028719042ad");
-    formData.append("wallet", wallet?.address );
+    formData.append("wallet", wallet?.address + "1defw" );
     formData.append("pid", id);
 
     try {

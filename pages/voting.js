@@ -1,19 +1,36 @@
-import React, {useState} from "react";
-import FormData from 'form-data';
+import React, { useEffect, useState } from "react";
+import FormData from "form-data";
 import VoteProjectCard from "./../components/VoteProjectCard";
 import Image from "next/image";
 import PageAnimation from "../components/PageAnimation";
 import { data } from "autoprefixer";
 
+function Voting({}) {
+  const [proj, setProjects] = useState([]);
 
+  useEffect(() => {
+    async function fetchData() {
+      let formData = new FormData();
+      formData.append("ak", "me1970323028719042ad");
 
-function Voting({projects}) {
+      try {
+        console.log("1");
+        await fetch("https://grandsoft.ro/api/pv", {
+          method: "POST",
+          body: formData,
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            setProjects(data.data);
+            console.log(data);
+          });
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchData();
+  }, []);
 
-  const [proj, setProjects] = useState(projects);
-
-  
-
-  
   return (
     <PageAnimation>
       <div className=' lg:h-[947.31px]   overflow-hidden   w-full flex md:max-w-[1440px] z-40 relative   overflow-x-hidden  md:space-x-[62px] mx-auto my-auto  '>
@@ -36,30 +53,33 @@ function Voting({projects}) {
           </p>
           <div className='mx-[30px] md:mx-0 z-30   lg:mb-[17.26px] w-[347.89px] h-[68px] text-[5vw] lg:w-[708.49px]  lg:h-[102px] lg:text-[41px] font-black leading-[34px] lg:leading-[51px]  '>
             <h1 className='text-black relative  text-[32px] lg:text-[41px] z-40'>
-              Most Engange Community on SUI 
+              Most Engange Community on SUI
             </h1>
           </div>
           <div className='px-[30px] md:mx-0  text-[16px] text-gray-2 bg-white-1 md:bg-white-1/0 relative font-normal mb-[21px] items-center font-avenir  leading-[24px]  lg:h-[52px]  lg:w-[846px] z-40 '>
-          In this section each community can also support the weekly project. To be able to vote you need to connect your SUI Wallet.
+            In this section each community can also support the weekly project.
+            To be able to vote you need to connect your SUI Wallet.
           </div>
 
           {/* voting */}
           <div className=' mt-[28px] h-[650px]   lg:h-[720px]  bg-white rounded-t-[30px] px-[27px]  pt-[23px] lg:pt-[30px] z-40 relative '>
             <div className='overflow-y-scroll scrollbar-hide  h-[660px] '>
-              {proj.map(({ id, name,  img, website,votes, twitter, discord }, i) => (
-                <VoteProjectCard
-                  key={i}
-                  index={i}
-                  docId={id}
-                  name={name}
-                  img={img}
-                  website={website }
-                  votes={votes}
-                  twitter={twitter }
-                  discord={discord }
-                  stateChange = {setProjects}
-                />
-              ))}
+              {proj.map(
+                ({ id, name, img, website, votes, twitter, discord }, i) => (
+                  <VoteProjectCard
+                    key={i}
+                    index={i}
+                    docId={id}
+                    name={name}
+                    img={img}
+                    website={website}
+                    votes={votes}
+                    twitter={twitter}
+                    discord={discord}
+                    stateChange={setProjects}
+                  />
+                )
+              )}
             </div>
           </div>
         </div>
@@ -68,28 +88,26 @@ function Voting({projects}) {
   );
 }
 
+// export const getServerSideProps = async () => {
 
-export const getServerSideProps = async () => {
- 
+//   console.log("1")
+//   let formData = new FormData();
+//   formData.append('ak', "me1970323028719042ad");
 
-  console.log("1")
-  let formData = new FormData();
-  formData.append('ak', "me1970323028719042ad");
-  
-  let p = null
+//   let p = null
 
-  try {
-    console.log("1")
-      await fetch("https://grandsoft.ro/api/pv", {
-      method: "POST",
-      body: formData,
-    }).then((res)=>res.json() ).then((data)=> {p = data.data; console.log(data)})
+//   try {
+//     console.log("1")
+//       await fetch("https://grandsoft.ro/api/pv", {
+//       method: "POST",
+//       body: formData,
+//     }).then((res)=>res.json() ).then((data)=> {p = data.data; console.log(data)})
 
-  } catch (err) {
-    console.log(err);
-  }
+//   } catch (err) {
+//     console.log(err);
+//   }
 
-   return { props: {projects: p}}
-};
+//    return { props: {projects: p}}
+// };
 
 export default Voting;
