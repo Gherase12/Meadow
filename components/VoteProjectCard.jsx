@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import {  toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { AiFillLock } from "react-icons/ai";
+
 import Link from "next/link";
 import Image from "next/image";
-import { EthosConnectStatus } from "ethos-connect";
+
 import { ethos } from "ethos-connect";
 
 function VoteProjectCard({
@@ -17,42 +17,31 @@ function VoteProjectCard({
   website,
   twitter,
   discord,
-  stateChange,
+  
 }) {
   const [score, setScore] = useState(votes);
-  const [isVoted, setIsVoted] = useState(false);
+  
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
   const links = [website, twitter, discord];
   const { wallet } = ethos.useWallet();
 
-  
-
   const addVote = async (id) => {
-
-
-    let formData = new FormData();
-    formData.append("ak", "me1970323028719042ad");
-    formData.append("wallet", wallet?.address  );
-    formData.append("pid", id);
-
     try {
-      await fetch("https://grandsoft.ro/api/vote", {
+      await fetch("http://localhost:3000/api/projects", {
         method: "POST",
-
-        body: formData,
+        body: JSON.stringify({ wallet: wallet?.address, pid: id }),
       })
         .then((res) => res.json())
         .then((data) => {
-          if (data.success) {
-            toast.success(data.message);
+          if (data.data.success) {
+            toast.success(data.data.message);
             setScore(votes + 1);
-         
           } else {
-            toast.error(data.message);
+            toast.error(data.data.message);
           }
         });
     } catch (err) {
-      console.log(err);
+      
     }
   };
 
