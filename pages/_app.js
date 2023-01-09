@@ -69,7 +69,7 @@ export default function App({ Component, pageProps }) {
             <link rel='icon' href='/logo-card.svg' />
           </Head>
           
-              <Image src="/coming-soon.webp" fill className="object-contain" />
+              <Image src="/coming-soon.webp" fill className="object-contain" alt="coming soon" />
             {/* add components */}
             {/* <Component {...pageProps} /> */}
           

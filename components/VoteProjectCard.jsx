@@ -27,7 +27,7 @@ function VoteProjectCard({
 
   const addVote = async (id) => {
     try {
-      await fetch("http://localhost:3000/api/projects", {
+      await fetch(`${process.env.API_URL}/api/projects`, {
         method: "POST",
         body: JSON.stringify({ wallet: wallet?.address, pid: id }),
       })
