@@ -11,11 +11,11 @@ function NewsRight({title , image, index, containerRef}) {
   return (
     <Link href={`/news/${index}`} onClick={handleClick } >
     
-    <div className="h-[150px] p-[10px] space-x-[20px] cursor-pointer  w-full  border-white flex items-center">
+    <div className="h-[150px] p-[10px] px-[20px] space-x-[20px] cursor-pointer  w-full  border-white flex items-center">
         {/* image */}
         
-            <img src={image ?? "/news.webp" } className="object-cover w-[130px] h-[130px] rounded-lg "  alt="news card"/>
-            <h2 className='text-white text-ellipsis  text-[15px] w-[300px] overflow-hidden  h-full trun ' >{title}</h2>
+            <img src={image ?? "/news.webp" } className="object-cover w-[130px] h-[130px] rounded-[25px] "  alt="news card"/>
+            <h2 className='text-white  text-ellipsis  pr-[10px] text-[15px] w-[300px] overflow-hidden  h-full trun ' >{title}</h2>
         
     </div>
     </Link>

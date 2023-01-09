@@ -25,26 +25,11 @@ function VoteProjectCard({
   const links = [website, twitter, discord];
   const { wallet } = ethos.useWallet();
 
-  // const modifyData = async (action) => {
-  //   try {
-  //     await fetch("/api/post", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify({ action, docId }),
-  //     });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-
-  // const increment = async () => {
-  //   await modifyData("increment");
-  // };
-  // const decrement = async () => {
-  //   await modifyData("decrement");
-  // };
+  
 
   const addVote = async (id) => {
+
+
     let formData = new FormData();
     formData.append("ak", "me1970323028719042ad");
     formData.append("wallet", wallet?.address  );
@@ -61,12 +46,9 @@ function VoteProjectCard({
           if (data.success) {
             toast.success(data.message);
             setScore(votes + 1);
-            //refresh project list - apelare api din nou
-            //fetch projects cu vote
+         
           } else {
             toast.error(data.message);
-
-            // stateChange('- ai votat deja');
           }
         });
     } catch (err) {

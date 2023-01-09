@@ -5,31 +5,12 @@ import Image from "next/image";
 import PageAnimation from "../components/PageAnimation";
 import { data } from "autoprefixer";
 
-function Voting({}) {
+function Voting({ projects }) {
   const [proj, setProjects] = useState([]);
 
-  useEffect(() => {
-    async function fetchData() {
-      let formData = new FormData();
-      formData.append("ak", "me1970323028719042ad");
+  // useEffect(() => {
 
-      try {
-        console.log("1");
-        await fetch("https://grandsoft.ro/api/pv", {
-          method: "POST",
-          body: formData,
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            setProjects(data.data);
-            console.log(data);
-          });
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    fetchData();
-  }, []);
+  // }, []);
 
   return (
     <PageAnimation>
@@ -64,7 +45,7 @@ function Voting({}) {
           {/* voting */}
           <div className=' mt-[28px] h-[650px]   lg:h-[720px]  bg-white rounded-t-[30px] px-[27px]  pt-[23px] lg:pt-[30px] z-40 relative '>
             <div className='overflow-y-scroll scrollbar-hide  h-[660px] '>
-              {proj.map(
+              {projects.map(
                 ({ id, name, img, website, votes, twitter, discord }, i) => (
                   <VoteProjectCard
                     key={i}
@@ -88,26 +69,12 @@ function Voting({}) {
   );
 }
 
-// export const getServerSideProps = async () => {
+export const getServerSideProps = async () => {
+  //get projects
+  const res = await fetch(`${process.env.API_URL}/projects`, { method: "GET" });
+  const data = await res.json();
 
-//   console.log("1")
-//   let formData = new FormData();
-//   formData.append('ak', "me1970323028719042ad");
-
-//   let p = null
-
-//   try {
-//     console.log("1")
-//       await fetch("https://grandsoft.ro/api/pv", {
-//       method: "POST",
-//       body: formData,
-//     }).then((res)=>res.json() ).then((data)=> {p = data.data; console.log(data)})
-
-//   } catch (err) {
-//     console.log(err);
-//   }
-
-//    return { props: {projects: p}}
-// };
+  return { props: { projects: data.projects.data } };
+};
 
 export default Voting;
