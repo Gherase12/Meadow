@@ -27,7 +27,7 @@ function VoteProjectCard({
 
   const addVote = async (id) => {
     try {
-      await fetch(`${process.env.API_URL}/projects`, {
+      await fetch(`https://app.meadowlaunch.com/api/projects`, {
         method: "POST",
         body: JSON.stringify({ wallet: wallet?.address, pid: id }),
       })
