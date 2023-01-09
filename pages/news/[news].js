@@ -10,7 +10,7 @@ function News({ news, content, id }) {
   const router = useRouter();
   const newsIndex = router.query.news;
   console.log(content);
-  
+  console.log(news);
 
   const news1 = news.articles[newsIndex];
   return (
@@ -25,7 +25,7 @@ function News({ news, content, id }) {
           />
         </div>
         {/* info */}
-        <div className="flex flex-col items-center">
+        <div className='flex flex-col items-center'>
           {/* title */}
           <h2 className='text-[20px] max-w-[800px] md:text-[30px] my-[30px]  leading-normal px-[10px] md:px-0'>
             {news1.title}
@@ -67,21 +67,23 @@ function News({ news, content, id }) {
   );
 }
 
-export const getServerSideProps = async (params) => {
-  const id = 0
+export const getServerSideProps = async (context) => {
+  const pageIndex = context.query.news;
+  // get news
   const res1 = await fetch(
-    `https://newsapi.org/v2/everything?q=crypto&apiKey=64dcac9aeb734fd4a3b900eb3b1390d1`
+    `${process.env.API_URL}/news`,{method:"GET"}
   );
   const news = await res1.json();
-
-  const res2 = await fetch(`${process.env.API_URL}/content`,{method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ id })});
+  // get content
+  const res2 = await fetch(`${process.env.API_URL}/news?pageIndex=${pageIndex}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+   
+  });
   const content = await res2.json();
-  console.log(content);
   
 
-  return { props: { news,content } };
+  return { props: { news: news.news, content } };
 };
 
 export default News;

@@ -23,8 +23,8 @@ export default function Home({news}) {
     <PageAnimation>
       <div className='lg:h-[947.31px]     w-full flex md:max-w-[1440px]   pr-0 overflow-hidden  mx-auto my-auto relative '>
         {/* small object */}
-        <div className='fixed left-[100px] lg:left-[925px] lg:-top-[180px] top-0  w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px] '>
-          <Image fill src={"/object-2.svg"} alt='big-object' />
+        <div className='fixed left-[100px] lg:left-[925px] lg:-top-[230px] top-0  w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px] '>
+          <Image fill src={"/object-2.webp"} className="object-contain" alt='big-object' />
         </div>
 
         <div className='   w-full md:mb-[11px] relative pl-[30px]  md:pl-0  '>
@@ -72,11 +72,10 @@ export default function Home({news}) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await fetch(
-    `https://newsapi.org/v2/everything?q=crypto&apiKey=64dcac9aeb734fd4a3b900eb3b1390d1`
+  const res1 = await fetch(
+    `${process.env.API_URL}/news`,{method:"GET"}
   );
+  const news = await res1.json();
 
-  const news = await res.json();
-
-  return { props: { news } };
+  return { props: { news: news.news } };
 };

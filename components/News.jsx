@@ -18,7 +18,7 @@ function News({articles}  ) {
         <div className='w-[208px] h-[24px] font-bold text-[18px] leading-[24px] '>
           News
         </div>
-        <Link href='/news' className='cursor-pointer flex justify-around space-x-[5px] md:space-x-[10px] bg-white rounded-full px-[10px] lg:px-[5px] '>
+        <Link href={`/news/0`} className='cursor-pointer flex justify-around space-x-[5px] md:space-x-[10px] bg-white rounded-full px-[10px] lg:px-[5px] '>
           <p className='text-[15px] leading-[24px] text-blue-1 font-bold max-[375px]:text-[12px] '>
             View
           </p>
@@ -47,11 +47,12 @@ function News({articles}  ) {
         ,i)=>(
 
         <SwiperSlide key={i} className=" relative w-full h-full " >
-           
-                <img src={urlToImage} className=" object-cover w-full h-full rounded-[30px]" alt="news image" />
+              <Link href={`/news/${i}`}>
+                <img src={urlToImage ?? "/news.webp"} className=" object-cover w-full h-full rounded-[30px]" alt="news image" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-black/10 z-40 rounded-[30px]" />
                 {/* title */}
                 <h3 className=" sm:text-[20px] text-white font-bold absolute left-[20px] bottom-[20px] truncate w-[200px] z-50" >{content}</h3>
+              </Link>
            
         </SwiperSlide>
         ))}

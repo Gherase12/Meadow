@@ -37,15 +37,15 @@ function Voting({}) {
         <div className='    w-full md:mb-[11px] relative   '>
           {/* sm-image */}
           <div className='fixed rotate-[3.7deg] lg:hidden z-10   left-[60vw]  -top-[40px] w-[233px] h-[233px]    '>
-            <Image src={"/object-4-sm.svg"} fill alt='big-object' />
+            <Image src={"/object-4-sm.webp"} fill alt='big-object' />
           </div>
           {/* lg-image */}
-          <div className='fixed rotate-[3.7deg] hidden lg:flex   right-[50px] top-[140px]   w-[466.15px] h-[466.15px] z-10    '>
-            <Image src={"/object-4-md.svg"} fill alt='big-object' />
+          <div className='fixed rotate-[3.7deg] hidden lg:flex   right-[50px] top-[80px]   w-[466.15px] h-[466.15px] z-10    '>
+            <Image src={"/object-4-md.webp"} fill alt='big-object' />
           </div>
           {/* sphere */}
           <div className='fixed   right-[80px]  top-[25px] lg:scale-[3] lg:-top-[10px] lg:right-[450px] w-[100px] h-[100px] z-10    '>
-            <Image src={"/object-6.svg"} fill alt='sphere-object' />
+            <Image src={"/object-6.webp"} fill alt='sphere-object' />
           </div>
 
           <p className='mx-[30px] md:mx-0 mt-[23px] md:mt-0 relative  h-[23px] font-extrabold text-[17px] text-gray mb-[22.64px] '>

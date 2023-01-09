@@ -21,7 +21,7 @@ function Games() {
       {/* object-1 */}
       <div className='w-[500px] h-[500px] lg:scale-[1.5] fixed left-[150px]  lg:left-[1500px] lg:bottom-[50px] -bottom-[250px]   bg-image-1'>
         <Image
-          src='/object-1.svg'
+          src='/object-1.webp'
           fill
           className='object-cover'
           alt='object-1'
@@ -29,13 +29,13 @@ function Games() {
       </div>
       {/* object-5 */}
       <div className='w-[200px]   h-[200px] fixed -left-[40px] lg:left-[700px] top-[40px]  z-10 lg:-rotate-[15deg] lg:scale-[2] lg:top-[90px] '>
-        <Image fill src='/object-5.svg' className='border-2 z-10' alt='object-5' />
+        <Image fill src='/object-5.webp' className='border-2 z-10' alt='object-5' />
       </div>
       {/* object-6 */}
       <div className='w-[200px]   h-[200px] fixed -top-[20px] lg:-top-[50px] right-[20px] lg:right-[380px] lg:scale-[1.7]  z-10 '>
         <Image
           fill
-          src='/object-6.svg'
+          src='/object-6.webp'
           className='object-cover '
           alt='object-6'
         />

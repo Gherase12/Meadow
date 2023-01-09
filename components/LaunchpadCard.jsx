@@ -61,7 +61,7 @@ function Card({i}) {
         </>
       ) : (
         <Image
-          src={`/projects/project${i + 1}.png`}
+          src={`/projects/project${i + 1}.webp`}
           fill
           className='object-cover rounded-[30px]'
           alt="project"
