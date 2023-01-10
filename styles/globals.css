@@ -45,6 +45,7 @@ h2 {
 
 .card1 {
   box-shadow: 0px 17px 36px rgba(226, 234, 243, 0.39);
+  
 }
 .element {
   filter: blur(5px);
@@ -89,6 +90,7 @@ h2 {
 
 .bg-image-1 {
   transform: matrix(-0.64, -0.76, -0.76, 0.64, 0, 0);
+  
   object-fit: contain;
 }
 .bg-image-2 {
@@ -96,6 +98,9 @@ h2 {
   transform: rotate(-33.82deg);
 }
 
+.rotation{
+  transform: matrix(-0.48, -0.87, -0.87, 0.48, 0, 0);
+}
 
 .swiper-slide:nth-child(n) {
   width: auto;
@@ -124,4 +129,16 @@ padding-top: 20px;
 
 
 
+}
+
+
+
+#maxValueSlider::-webkit-slider-thumb {
+  background: black;
+}
+#maxValueSlider::-moz-range-thumb {
+  background: black;
+}
+#maxValueSlider::-ms-thumb {
+  background: black;
 }

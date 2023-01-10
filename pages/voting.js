@@ -37,7 +37,7 @@ function Voting({ projects }) {
               Most Engange Community on SUI
             </h1>
           </div>
-          <div className='px-[30px] md:mx-0  text-[16px] text-gray-2 bg-white-1 md:bg-white-1/0 relative font-normal mb-[21px] items-center font-avenir  leading-[24px]  lg:h-[52px]  lg:w-[846px] z-40 '>
+          <div className='px-[30px] md:px-0   text-[16px] text-gray-2 bg-white-1 md:bg-white-1/0 relative font-normal mb-[21px] items-center font-avenir  leading-[24px]  lg:h-[52px]  lg:w-[546px] z-40 '>
             In this section each community can also support the weekly project.
             To be able to vote you need to connect your SUI Wallet.
           </div>
