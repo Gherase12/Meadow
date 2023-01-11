@@ -8,12 +8,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
-   
   },
   "dependencies": {
     "@headlessui/react": "^1.7.7",
     "@moralisweb3/next": "^2.10.4",
     "@mozilla/readability": "^0.4.2",
+    "@mysten/wallet-adapter-all-wallets": "^0.3.8",
     "@next/font": "13.0.7",
     "@prisma/client": "^4.8.0",
     "axios": "^1.2.2",

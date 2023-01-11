@@ -61,7 +61,7 @@ function Stake() {
 
             <div className='w-[519px]  h-[108px] flex flex-col justify-between '>
               <p className='text-[15px] font-black leading-[24px] text-gray-2  '>
-                PLF to be staked:
+                MED to be staked:
               </p>
               <div className='flex  justify-between flex-col lg:flex-row '>
                 <div className='w-[231.51px] -ml-[34px] scale-[0.7] lg:scale-[1] lg:ml-0  items-center card1 h-[72px] rounded-full flex justify-between px-[32px] bg-black'>
@@ -85,7 +85,7 @@ function Stake() {
                 </div>
                 <div className='-ml-[40px] scale-[0.7] lg:scale-[1] lg:ml-0  w-[276.51px] card1 h-[72px] rounded-full flex justify-between items-center px-[32px] bg-white-1 '>
                   <p className='text-[16px] font-bold leding-[24px] '>
-                    10.0 PLF
+                    10.0 MED
                   </p>
                   <p className='text-[15px] font-medium leding-[24px]  text-gray-2 '>
                     = $800

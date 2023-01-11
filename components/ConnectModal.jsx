@@ -7,20 +7,14 @@ import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ethos } from "ethos-connect";
-import MetamaskButton from './MetamaskButton';
-import { useAccount } from 'wagmi';
-import SuiButton from './SuiButton';
+import MetamaskButton from "./buttons/MetamaskButton";
+import { useAccount } from "wagmi";
+import SuiButton from "./buttons/SuiButton";
+import SurfWalletButton from './buttons/SurfWalletButton';
 function ConnectModal({ isOpen, closeModal }) {
-  
   const { status, wallet } = ethos.useWallet();
 
   const { isConnected } = useAccount();
-  
-
-  
-
-  
-  
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
@@ -57,15 +51,16 @@ function ConnectModal({ isOpen, closeModal }) {
                 </Dialog.Title>
                 {/* metamusk */}
                 <div className='mt-4 relative '>
-                  
                   <MetamaskButton closeModal={closeModal} />
-                  
                 </div>
                 {/* sui */}
                 <div className='mt-4 relative'>
-                  
                   <SuiButton closeModal={closeModal} />
                 </div>
+
+                {/* <div className='mt-4 relative'>
+                  <SurfWalletButton  closeModal={closeModal}/>
+                </div> */}
               </Dialog.Panel>
             </Transition.Child>
           </div>

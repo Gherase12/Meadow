@@ -3,10 +3,10 @@ import { SignInButton } from "ethos-connect";
 
 import { ethos } from "ethos-connect";
 import Image from "next/image";
-import ConnectedWrapper from "./ConnectedWrapper";
+import ConnectedWrapper from "../ConnectedWrapper";
 function SuiButton({ closeModal }) {
   const { status, wallet } = ethos.useWallet();
-  console.log(status);
+  
   return (
     <div className='relative  rounded-md shadow-lg border-2 '>
       {status == "connected" ? (

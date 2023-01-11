@@ -4,7 +4,7 @@ import { useAccount, useConnect, useSignMessage, useDisconnect } from "wagmi";
 import { useAuthRequestChallengeEvm } from "@moralisweb3/next";
 import React from "react";
 import Image from "next/image";
-import ConnectedWrapper from "./ConnectedWrapper";
+import ConnectedWrapper from "../ConnectedWrapper";
 
 function MetamaskButton({ closeModal }) {
   const { connectAsync } = useConnect();
@@ -31,7 +31,7 @@ function MetamaskButton({ closeModal }) {
 
     const signature = await signMessageAsync({ message });
 
-    console.log(account);
+    
   };
 
   return (

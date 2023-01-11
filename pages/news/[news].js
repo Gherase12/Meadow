@@ -69,6 +69,7 @@ function News({ news, content, id }) {
 
 export const getServerSideProps = async (context) => {
   const pageIndex = context.query.news;
+  
   // get news
   const res1 = await fetch(
     `${process.env.API_URL}/news`,{method:"GET"}

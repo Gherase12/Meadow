@@ -7,26 +7,23 @@ function Project() {
   const router = useRouter();
   const prices = [
     {
-      price: 0.1,
-      text: "Token Price",
+      price: 0.12,
+      text: "Public Round",
     },
+    
     {
-      price: 1700000,
-      text: "Token Rise Amount",
-    },
-    {
-      price: 600000,
+      price: "155,500",
       text: "Initial marketcap",
     },
   ];
 
   const dates = [
     {
-      date: "Dec 8th 16:00 (UTC)",
+      date: "TBA",
       time: "Start Time",
     },
     {
-      date: "Dec 15th 24:00 (UTC)",
+      date: "TBA",
       time: "End Time",
     },
   ];
@@ -106,7 +103,7 @@ function Project() {
                 {/* details */}
                 <div className=' h-[76px] mt-[20px]  '>
                   <TokenSaleDetail
-                    upText={"15% unlock, 3 months cliff then monthly unlock"}
+                    upText={"5% on TGE, 2 months Cliff 18 Months Vesting"}
                     downText={"Lock-up"}
                   />
                 </div>
@@ -127,12 +124,12 @@ function Project() {
                   <p className='w-[80px] font-black leading-[16px] text-[12px]  h-[16px] '>
                     Total Raise
                   </p>
-                  <div className='font-[18px] leading-[23px]  '>$750,000</div>
+                  <div className='font-[18px] leading-[23px]  '>$800,000</div>
                 </div>
                 {/* 2 */}
                 <div className='flex flex-col justify-start'>
                   <p className='w-[80px] font-black leading-[16px] text-[12px]  h-[16px] '>
-                    Total Price
+                    Total Price 
                   </p>
                   <div className='font-[18px] leading-[23px]   '>$0.10</div>
                 </div>
@@ -146,10 +143,10 @@ function Project() {
               {/* end event */}
               <div>
                 <div className='text-[15px] font-normal  leading-[19px]'>
-                  Ends in 2d 5h 16m
+                  
                 </div>
                 <div className='text-[14px] leading-[18px] text-gray-2 '>
-                  Dec 8th 16:00 (UTC) - Dec 15th 24:00 (UTC)
+                  TBA -TBA
                 </div>
               </div>
               <button className='h-[40px] bg-black w-full mt-[20px] rounded-[14px] flex items-center justify-center space-x-[10px]  '>

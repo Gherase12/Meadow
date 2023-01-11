@@ -46,7 +46,7 @@ function Card({ i }) {
               <p className='w-[150px]  font-black leading-[16px] text-[12px]  h-[16px] '>
                 Total Raise (private)
               </p>
-              <div className='font-[18px] leading-[23px]  '>$900,000</div>
+              <div className='font-[18px] leading-[23px]  '>$800,000</div>
             </div>
             {/* 2 */}
             <div className='flex flex-col justify-start'>
