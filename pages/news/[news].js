@@ -1,24 +1,33 @@
 import React from "react";
-import { useRef } from "react";
+import { useRef, useState ,useEffect} from "react";
 import TextParagraph from "../../components/TextParagraph";
 import NewsRight from "../../components/NewsRight";
 import NewsGridCard from "../../components/NewsGridCard";
 import { useRouter } from "next/router";
+import LoadeingOverlay from "../../components/loadeingOverlay";
 
 function News({ news, content, id }) {
+  const[loading, setLoading] = useState(false)
   const containerRef = useRef(null);
   const router = useRouter();
   const newsIndex = router.query.news;
   console.log(content);
   console.log(news);
+  useEffect(()=>{setLoading(false)},[news])
 
   const news1 = news.articles[newsIndex];
   return (
     <div className=' lg:h-[947.31px] space-x-[30px]  pt-[70px] xl:pt-0   w-full flex md:max-w-[1440px]   pr-0 overflow-hidden  mx-auto my-auto relative '>
+      {loading && (
+
+      <LoadeingOverlay/>
+      )}
       {/* new */}
       <div className=' flex-1 overflow-y-scroll scrollbar-hide items-center flex flex-col  '>
         {/* image container */}
+        
         <div ref={containerRef} className='h-[200px] md:h-[400px] relative  '>
+          
           <img
             src={news1.urlToImage}
             className='object-cover h-[200px] md:h-[400px] w-[800px]  md:rounded-[30px]'
@@ -41,6 +50,7 @@ function News({ news, content, id }) {
           <div className='grid  grid-cols-1 mb-[20px] md:grid-cols-2  xl:grid-cols-3 gap-[10px] px-[10px] md:px-0 '>
             {news.articles.slice(0, 10).map(({ title, urlToImage }, i) => (
               <NewsGridCard
+              setLoading={setLoading}
                 key={i}
                 title={title}
                 image={urlToImage}
@@ -56,6 +66,7 @@ function News({ news, content, id }) {
         {news.articles.slice(0, 5).map(({ title, urlToImage }, i) => (
           <NewsRight
             key={i}
+            setLoading={setLoading}
             title={title}
             image={urlToImage}
             index={i}

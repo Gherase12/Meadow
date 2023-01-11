@@ -142,3 +142,53 @@ padding-top: 20px;
 #maxValueSlider::-ms-thumb {
   background: black;
 }
+
+
+
+
+.loading-animation {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+}
+
+
+.loading-circle {
+  position: absolute; 
+  width: 50px; 
+  height: 50px;
+  border-radius: 50%; 
+  border: 4px solid #f3f3f3; 
+}
+
+
+@keyframes move-in-circle {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+
+.loading-circle-1 {
+  animation: move-in-circle 1s linear infinite; 
+  
+}
+
+
+.loading-circle-2 {
+  animation: move-in-circle 1.2s linear infinite; 
+  animation-delay: 0.2s; 
+  border-top-color: blue; 
+}
+
+
+.loading-circle-3 {
+  animation: move-in-circle 1.4s linear infinite; 
+  animation-delay: 0.4s; 
+  border-top-color: #007FFF;
+}
