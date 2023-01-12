@@ -4,9 +4,9 @@ import TextParagraph from "../../components/TextParagraph";
 import NewsRight from "../../components/NewsRight";
 import NewsGridCard from "../../components/NewsGridCard";
 import { useRouter } from "next/router";
-import LoadeingOverlay from "../../components/loadeingOverlay";
+import LoadeingOverlay from "../../components/LoadeingOverlay";
 
-function News({ news, content, id }) {
+function News({ news, content }) {
   const[loading, setLoading] = useState(false)
   const containerRef = useRef(null);
   const router = useRouter();
