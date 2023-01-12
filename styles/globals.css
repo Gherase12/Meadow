@@ -5,6 +5,7 @@
 @font-face {
   font-family: "Avenir";
   src: url("/fonts/Avenir.otf") format("otf");
+  font-display: swap;
 }
 body {
   background: #f0f6fd;
@@ -45,7 +46,6 @@ h2 {
 
 .card1 {
   box-shadow: 0px 17px 36px rgba(226, 234, 243, 0.39);
-  
 }
 .element {
   filter: blur(5px);
@@ -58,7 +58,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
- 
+
   width: 40.43px;
   height: 25px;
 
@@ -66,7 +66,7 @@ h2 {
 
   font-family: Avenir, sans-serif;
   font-style: normal;
-  
+
   font-size: 14px;
   line-height: 19px;
   z-index: 1;
@@ -90,7 +90,7 @@ h2 {
 
 .bg-image-1 {
   transform: matrix(-0.64, -0.76, -0.76, 0.64, 0, 0);
-  
+
   object-fit: contain;
 }
 .bg-image-2 {
@@ -98,7 +98,7 @@ h2 {
   transform: rotate(-33.82deg);
 }
 
-.rotation{
+.rotation {
   transform: matrix(-0.48, -0.87, -0.87, 0.48, 0, 0);
 }
 
@@ -111,27 +111,24 @@ h2 {
   height: 100%;
 }
 
-
-.project-background{
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 25.6%, rgba(0, 0, 0, 0.54) 100%);
+.project-background {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 25.6%,
+    rgba(0, 0, 0, 0.54) 100%
+  );
 }
-.project-btn-background{
+.project-btn-background {
   background: rgba(255, 255, 255, 0.33);
   backdrop-filter: blur(11.5px);
-
 }
 
-@media  (max-height: 625px){
-.nav-container{
-z-index:50;
-padding-top: 20px;
+@media (max-height: 625px) {
+  .nav-container {
+    z-index: 50;
+    padding-top: 20px;
+  }
 }
-
-
-
-}
-
-
 
 #maxValueSlider::-webkit-slider-thumb {
   background: black;
@@ -141,54 +138,4 @@ padding-top: 20px;
 }
 #maxValueSlider::-ms-thumb {
   background: black;
-}
-
-
-
-
-.loading-animation {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; 
-}
-
-
-.loading-circle {
-  position: absolute; 
-  width: 50px; 
-  height: 50px;
-  border-radius: 50%; 
-  border: 4px solid #f3f3f3; 
-}
-
-
-@keyframes move-in-circle {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-  100% {
-    transform: rotate(360deg) scale(1);
-  }
-}
-
-
-.loading-circle-1 {
-  animation: move-in-circle 1s linear infinite; 
-  
-}
-
-
-.loading-circle-2 {
-  animation: move-in-circle 1.2s linear infinite; 
-  animation-delay: 0.2s; 
-  border-top-color: blue; 
-}
-
-
-.loading-circle-3 {
-  animation: move-in-circle 1.4s linear infinite; 
-  animation-delay: 0.4s; 
-  border-top-color: #007FFF;
 }

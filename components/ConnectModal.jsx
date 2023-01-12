@@ -1,20 +1,14 @@
 import { Fragment, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-import { ethers } from "ethers";
-import Image from "next/image";
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { ethos } from "ethos-connect";
 import MetamaskButton from "./buttons/MetamaskButton";
 import { useAccount } from "wagmi";
 import SuiButton from "./buttons/SuiButton";
-import SurfWalletButton from './buttons/SurfWalletButton';
-function ConnectModal({ isOpen, closeModal }) {
-  const { status, wallet } = ethos.useWallet();
 
-  const { isConnected } = useAccount();
+function ConnectModal({ isOpen, closeModal }) {
+ 
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
@@ -58,9 +52,7 @@ function ConnectModal({ isOpen, closeModal }) {
                   <SuiButton closeModal={closeModal} />
                 </div>
 
-                {/* <div className='mt-4 relative'>
-                  <SurfWalletButton  closeModal={closeModal}/>
-                </div> */}
+              
               </Dialog.Panel>
             </Transition.Child>
           </div>

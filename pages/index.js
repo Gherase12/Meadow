@@ -1,4 +1,4 @@
-import React, {useEffect , useState} from "react";
+import React, { useEffect, useState } from "react";
 import Carusel from "./../components/Carusel";
 import VoteCard from "./../components/VoteCard";
 import Calendar from "./../components/Calendar";
@@ -6,9 +6,9 @@ import Calendar from "./../components/Calendar";
 import Image from "next/image";
 
 import PageAnimation from "./../components/PageAnimation";
-import News from './../components/News';
+import News from "./../components/News";
 
-export default function Home({news}) {
+export default function Home({ news }) {
   const footerItems = [
     "Privacy Policy",
     "Teams of use",
@@ -16,15 +16,17 @@ export default function Home({news}) {
     "Cookie Policy",
   ];
 
-
- 
-
   return (
     <PageAnimation>
       <div className='lg:h-[947.31px]     w-full flex md:max-w-[1440px]   pr-0 overflow-hidden  mx-auto my-auto relative '>
         {/* small object */}
         <div className='fixed left-[100px] lg:left-[925px] lg:-top-[230px] top-0  w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px] '>
-          <Image fill src={"/object-2.webp"} className="object-contain" alt='big-object' />
+          <Image
+            fill
+            src={"/object-2.webp"}
+            className='object-contain'
+            alt='big-object'
+          />
         </div>
 
         <div className='   w-full md:mb-[11px] relative pl-[30px]  md:pl-0  '>
@@ -32,8 +34,12 @@ export default function Home({news}) {
             Dashboard
           </p>
           <div className=' max-[375px]:text-[1.5rem]  max-[375px]:w-auto max-[375px]:h-auto mb-[90px] z-20   lg:mb-[17.26px] w-[347.89px] h-[68px] text-[5vw] lg:w-[708.49px]  lg:h-[102px] lg:text-[41px] font-extrabold  leading-[34px] lg:leading-[51px]  '>
-            <h1 className='text-black lg:font-semibold'>The Next Generation Web 3.0</h1>
-            <h1 className='text-blue-1 lg:font-exterbold'>Multichain Launchpad</h1>
+            <h1 className='text-black lg:font-semibold'>
+              The Next Generation Web 3.0
+            </h1>
+            <h1 className='text-blue-1 lg:font-exterbold'>
+              Multichain Launchpad
+            </h1>
           </div>
           {/* carusel */}
 
@@ -47,11 +53,8 @@ export default function Home({news}) {
             {/* calendar */}
             <Calendar />
             {/* news */}
-            <div className="lg:hidden 3xl:flex  lg:h-[310px]">
-
-            {news && (
-              <News articles={news.articles.slice(0, 5)} />
-            ) } 
+            <div className='lg:hidden 3xl:flex  lg:h-[310px]'>
+              {news && <News articles={news.articles.slice(0, 5)} />}
             </div>
           </div>
           {/* privacy.. */}
@@ -72,11 +75,8 @@ export default function Home({news}) {
 }
 
 export const getServerSideProps = async () => {
-  const res1 = await fetch(
-    `${process.env.API_URL}/news`,{method:"GET"}
-  );
+  const res1 = await fetch(`${process.env.API_URL}/news`, { method: "GET" });
   const news = await res1.json();
 
   return { props: { news: news.news } };
 };
-

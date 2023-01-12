@@ -34,7 +34,7 @@ function Project() {
     <div className='  w-screen'>
       <div className='fixed left-0 right-0  top-0 h-[340.86px] z-10'>
         <Image
-          src={"/bg-img.png"}
+          src={"/bg-img.webp"}
           fill
           className='object-cover'
           alt={"bg-image"}
