@@ -1,12 +1,10 @@
 import React from "react";
+import Image  from 'next/image';
 
 function LoadeingOverlay() {
   return (
     <div className='fixed inset-0 bg-blue-2/20 border-2 z-50 flex items-center justify-center '>
-      <div className='loading-animation'>
-        <div className='loading-circle loading-circle-2'></div>
-        
-      </div>
+      <Image src={"/gif/spinner.gif"}  width={60} height={60} />
     </div>
   );
 }
