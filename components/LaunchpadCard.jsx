@@ -6,7 +6,7 @@ import { AiFillLock } from 'react-icons/ai';
 function Card({i}) {
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
   return (
-    <div className='relative  z-20  h-[308px] lg:h-[308px] bg-white rounded-[30px] py-[27px] px-[27px]'>
+    <div className='relative  z-20 max-w-[300px]  h-[308px] lg:h-[308px] bg-white rounded-[30px] py-[27px] px-[27px]'>
      
      {i == 0 ? (
         <>

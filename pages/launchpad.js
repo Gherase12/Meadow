@@ -29,11 +29,11 @@ function Launchpad({message}) {
           </div>
           <ul className='mb-[21px] items-center max-[375px]:text-[12px] font-black leading-[24px] h-[38px] md:w-[368px] flex justify-between '>
             {filters.map((l, i) => (
-              <li key={i} className=" cursor-pointer font-extrabold max-[375px]:pl-[5px]" >{l}</li>
+              <li key={i} className=" cursor-pointer font-extrabold max-[375px]:pl-[5px]   " >{l}</li>
             ))}
           </ul>
 
-          <div className='overflow-y-scroll gap-[15px] h-[600px] lg:h-[700px]  scrollbar-hide    grid grid-cols-1 lg:grid-cols-3 '>
+          <div className='overflow-y-scroll gap-[15px] h-[600px] lg:h-[700px]  scrollbar-hide    grid grid-cols-1 lg:grid-cols-3 3xl:grid-cols-4 '>
             {[...Array(6)].map((a, i) => (
               <LaunchpadCard key={i} i={i} />
             ))}
