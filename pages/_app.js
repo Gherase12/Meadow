@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { EthosConnectProvider } from "ethos-connect";
 import { publicProvider } from "wagmi/providers/public";
 import { SessionProvider } from "next-auth/react";
+import { Analytics } from '@vercel/analytics/react';
 import Image from "next/image";
 
 const { provider, webSocketProvider } = configureChains(
@@ -46,6 +47,7 @@ export default function App({ Component, pageProps }) {
               <Nav path={currentPagePath} />
 
               <Component {...pageProps} />
+              <Analytics />
             </div>
           </div>
         </EthosConnectProvider>

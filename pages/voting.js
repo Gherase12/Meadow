@@ -43,7 +43,7 @@ function Voting({ projects }) {
           </div>
 
           {/* voting */}
-          <div className=' mt-[28px] h-[650px]   lg:h-[720px]  bg-white rounded-t-[30px] px-[27px]  pt-[23px] lg:pt-[30px] z-40 relative '>
+          <div className=' mt-[28px] h-[650px]  max-w-[1200px]  lg:h-[720px]  bg-white rounded-t-[30px] px-[27px]  pt-[23px] lg:pt-[30px] z-40 relative '>
             <div className='overflow-y-scroll scrollbar-hide  h-[660px] '>
               {projects.map(
                 ({ id, name, img, website, votes, twitter, discord }, i) => (

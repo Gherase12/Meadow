@@ -48,7 +48,7 @@ function Carusel({articles}) {
       <div className='  h-[316px]  mb-[34px] relative lg:w-[600px]  xl:w-[1510px]  '>
         
         <div className='absolute left-[40vw] lg:left-[525px] 3xl:left-[800px]  -top-[100px]   lg:-top-[250px] w-[400px] h-[400px] lg:w-[612px] lg:h-[612px] bg-image-1   '>
-          <Image fill src={"/object-1.webp"} alt='big-object' />
+          <Image fill src={"/object-1.webp"} className="object-contain" alt='big-object' />
         </div>
         <Swiper
           onSwiper={(s) => {

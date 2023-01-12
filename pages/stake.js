@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import Image from "next/image";
 import { validateEmail } from "./../utils/validateEmail";
 import { toast } from "react-toastify";
+import PageAnimation from './../components/PageAnimation';
 
 function Stake() {
   const [minValue, setMinValue] = useState(0);
@@ -20,6 +21,10 @@ function Stake() {
   };
 
   return (
+    <PageAnimation>
+
+      
+    
     <div className='scrollbar-hide -mt-[70px] pt-[70px] lg:mt-0 lg:pt-0 lg:h-[947.31px] h-screen   w-full flex md:max-w-[1440px]   pr-0 overflow-x-hidden overflow-y-scroll  mx-auto my-auto relative'>
       {/* object-1 */}
       <div className='lg:w-[500px] lg:h-[500px]  w-[200px] h-[200px] lg:scale-[1.1] fixed -right-[50px]  lg:right-[100px] top-[60px] rotation -bottom-[250px]   bg-image-1'>
@@ -139,6 +144,7 @@ function Stake() {
       </div>
       {/* stake container */}
     </div>
+    </PageAnimation>
   );
 }
 
