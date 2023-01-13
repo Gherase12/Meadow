@@ -2,7 +2,7 @@ import React from "react";
 import Indicator from "./Indicator";
 import Image from "next/image";
 
-function GoldInsurance({ tierName, address ,setIsOpen}) {
+function GoldInsurance({ tierName, address, setIsOpen }) {
   return (
     <div className='bg-white flex-1 lg:grow-0   max-w-[1011px] 3xl:mx-auto   lg:h-[700px] relative z-50 rounded-t-[30px] shadow-md card1 pt-[40px] flex flex-col items-center lg:rounded-b-[30px] lg:w-[1011px]'>
       <p className='text-gray-2 text-[15px] leading-[20px] mb-[12px] lg:text-[17px] '>
@@ -21,7 +21,7 @@ function GoldInsurance({ tierName, address ,setIsOpen}) {
         </p>
       </div>
       {/* indicator */}
-      
+
       <Indicator tierName={tierName} />
       <h3 className='text-[16px] leading-[21px]   w-[207px] text-center mb-[46px] lg:text-[22px] font-medium lg:mt-[40px] lg:leading-[31px] lg:w-[276px]   '>
         You have{" "}
@@ -40,7 +40,10 @@ function GoldInsurance({ tierName, address ,setIsOpen}) {
         </h3>
       </div>
 
-      <button onClick={()=>setIsOpen(true)} className='text-blue-1 font-medium text-[13px] leading-[18px] lg:text-[15px] mb-[30px]  '>
+      <button
+        onClick={() => setIsOpen(true)}
+        className='text-blue-1 font-medium text-[13px] leading-[18px] lg:text-[15px] mb-[30px]  '
+      >
         Check another wallet
       </button>
     </div>
