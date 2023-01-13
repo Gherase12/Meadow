@@ -19,7 +19,7 @@ import { ethos } from "ethos-connect";
 
 import ConnectModal from "./ConnectModal";
 import { ToastContainer } from "react-toastify";
-import { useAccount } from 'wagmi';
+import { useAccount } from "wagmi";
 
 function Nav({ path }) {
   // nav open
@@ -33,7 +33,7 @@ function Nav({ path }) {
   function openModal() {
     setIsOpen(true);
   }
-  
+
   const router = useRouter();
 
   const elemente = [
@@ -88,25 +88,24 @@ function Nav({ path }) {
     },
   ];
 
-    //conection
-    const { isConnected } = useAccount();
-    const { status } = ethos.useWallet();
+  //conection
+  const { isConnected } = useAccount();
+  const { status } = ethos.useWallet();
 
-    const isMetaMuskConnected = isConnected;
-    
+  const isMetaMuskConnected = isConnected;
+
   return (
     <>
       <ToastContainer />
       <div className=' xl:hidden flex items-center justify-between px-[18px] fixed top-0 z-50 left-0 right-0 h-[70px] bg-blue-2 '>
         <Link href='/'>
-          <div className="relative w-[156px] h-[50px]">
-
-          <Image
-            src='/logo.png'
-            fill
-            className="object-contain"
-            alt={"Meadown sui launchpad logo"}
-          />
+          <div className='relative w-[156px] h-[50px]'>
+            <Image
+              src='/logo.png'
+              fill
+              className='object-contain'
+              alt={"Meadown sui launchpad logo"}
+            />
           </div>
         </Link>
         {!open ? (
@@ -130,10 +129,10 @@ function Nav({ path }) {
             : " text-gray-4 fixed top-0 pt-[100px]    left-0 h-screen  w-[100%] px-[29px] nav-container  overflow-y-scroll  flex  flex-col    bg-blue-2    duration-500 ease-in-out z-40 xl:hidden"
         }  `}
       >
-         <AiOutlineClose
-            onClick={() => setOpen(false)}
-            className=' absolute top-[20px] right-[20px] text-white text-[25px]'
-          />
+        <AiOutlineClose
+          onClick={() => setOpen(false)}
+          className=' absolute top-[20px] right-[20px] text-white text-[25px]'
+        />
         <div className='     '>
           <div className=' pb-[36px]  h-[276px] flex flex-col justify-between  border-b border-gray-4/50   '>
             {elemente.map(({ Icon, name, pagePath }, i) => (
@@ -194,7 +193,6 @@ function Nav({ path }) {
 
           {/* buttons */}
           <div className='   flex flex-col justify-around space-y-[10px] w-full   '>
-            
             <button
               onClick={() => {
                 openModal();
@@ -284,8 +282,7 @@ function Nav({ path }) {
 
           {/* buttons */}
           <div className='w-[246px] text-white h-[110px]  flex flex-col justify-around space-y-[10px]  text-[15px] '>
-           
-          <Link href='https://meadowlaunch.com/'>
+            <Link href='https://meadowlaunch.com/'>
               <button className='flex items-center justify-center h-[50px] border-white w-[246px] bg-black rounded-[15px] btn-text '>
                 {" "}
                 Home
@@ -295,11 +292,10 @@ function Nav({ path }) {
               onClick={openModal}
               className='  flex items-center justify-center h-[50px] bg-blue-1 w-[246px] rounded-[15px]  btn-text '
             >
-             { (isMetaMuskConnected && status == "connected") ?  "Disconnect" : "Connect wallet" } 
+              {isMetaMuskConnected && status == "connected"
+                ? "Disconnect"
+                : "Connect wallet"}
             </button>
-
-           
-
           </div>
         </div>
       </div>

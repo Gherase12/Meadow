@@ -48,7 +48,7 @@ function News({ news, content }) {
           </h2>
           {/* more news */}
           <div className='grid  grid-cols-1 mb-[20px] md:grid-cols-2  xl:grid-cols-3 gap-[10px] px-[10px] md:px-0 '>
-            {news.articles.slice(0, 10).map(({ title, urlToImage }, i) => (
+            {news.articles.map(({ title, urlToImage }, i) => (
               <NewsGridCard
               setLoading={setLoading}
                 key={i}

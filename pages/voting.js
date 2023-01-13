@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from "react";
-import FormData from "form-data";
+
 import VoteProjectCard from "./../components/VoteProjectCard";
 import Image from "next/image";
 import PageAnimation from "../components/PageAnimation";
-import { data } from "autoprefixer";
+
 
 function Voting({ projects }) {
-  const [proj, setProjects] = useState([]);
-
-  // useEffect(() => {
-
-  // }, []);
+  
 
   return (
     <PageAnimation>
@@ -57,7 +53,7 @@ function Voting({ projects }) {
                     votes={votes}
                     twitter={twitter}
                     discord={discord}
-                    stateChange={setProjects}
+                    
                   />
                 )
               )}
