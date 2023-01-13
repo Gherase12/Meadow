@@ -32,7 +32,7 @@ function GoldInsurance({ tierName, address ,setIsOpen}) {
         of your capital
       </h3>
       <div className=' lg:mb-[20px] items-center flex flex-col lg:flex-row lg:space-x-[11px] lg:items-center '>
-        <p className='text-gray-2 text-[13px] leading-[18px] mb-[4px] lg:text-[16px]'>
+        <p className='text-gray-2 text-[13px]  leading-[18px] lg:text-[16px]'>
           For wallet:
         </p>
         <h3 className='font-bold text-[14px]  text-black mb-[11px] lg:mb-0 flex items-center lg:text-[16px]'>
