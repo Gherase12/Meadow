@@ -18,7 +18,7 @@ import { useRouter } from "next/navigation";
 import { ethos } from "ethos-connect";
 
 import ConnectModal from "./ConnectModal";
-import { ToastContainer } from "react-toastify";
+
 import { useAccount } from "wagmi";
 
 function Nav({ path }) {
@@ -96,7 +96,7 @@ function Nav({ path }) {
 
   return (
     <>
-      <ToastContainer />
+      
       <div className=' xl:hidden flex items-center justify-between px-[18px] fixed top-0 z-50 left-0 right-0 h-[70px] bg-blue-2 '>
         <Link href='/'>
           <div className='relative w-[156px] h-[50px]'>

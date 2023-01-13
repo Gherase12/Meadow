@@ -6,9 +6,9 @@ import { useRouter } from "next/router";
 import { EthosConnectProvider } from "ethos-connect";
 import { publicProvider } from "wagmi/providers/public";
 import { SessionProvider } from "next-auth/react";
-import { Analytics } from '@vercel/analytics/react';
-import Image from "next/image";
-import PopUp from './../components/PopUp';
+import { Analytics } from "@vercel/analytics/react";
+
+import PopUp from "./../components/PopUp";
 
 const { provider, webSocketProvider } = configureChains(
   [goerli],
