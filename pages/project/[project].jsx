@@ -10,7 +10,7 @@ function Project() {
       price: "0.10",
       text: "Private Round",
     },
-    
+
     {
       price: "155,500",
       text: "Initial marketcap",
@@ -32,22 +32,29 @@ function Project() {
 
   return (
     <div className='  w-screen'>
-      <div className='fixed left-0 right-0  top-0 h-[340.86px] z-10'>
+      {/* small object */}
+      <div className='fixed left-[100px] lg:left-[925px] lg:-top-[230px] top-0  w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px] '>
         <Image
-          src={"/bg-img.webp"}
+          loading='lazy'
           fill
-          className='object-cover'
-          alt={"bg-image"}
+          src={"/object-2.webp"}
+          className='object-contain'
+          alt='big-object'
         />
       </div>
+
+      {/* big image */}
+      <div className='absolute right-0 lg:right-[200px]  top-[140px] lg:top-0 w-[200px] h-[200px] lg:w-[612px] lg:h-[612px] bg-image-1   '>
+          <Image   loading="lazy" fill src={"/object-1.webp"} className="object-contain" alt='big-object' />
+        </div>
       <div className='  relative z-40  lg:h-[947.31px]     w-full      '>
         {/* back button */}
         <button
           onClick={() => router.back()}
-          className='ml-[20px] lg:ml-0 my-[36px] text-white flex space-x-[9px] items-center  h-[20px]'
+          className='ml-[20px] lg:ml-0 my-[36px] text-black flex space-x-[9px] items-center  h-[20px]'
         >
           <AiOutlineArrowLeft />
-          <div className='text-[17px] font-avenir leading-[23px] font-normal'>
+          <div className='text-[17px] font-avenir leading-[23px] font-extrabold'>
             Back
           </div>
         </button>
@@ -60,7 +67,7 @@ function Project() {
             alt='meadow project'
             className=' rounded-full'
           />
-          <h3 className='font-bold font-avenir text-[41px] leading-[51px]  text-white '>
+          <h3 className='font-bold font-avenir text-[41px] leading-[51px]  text-black '>
             Meadow
           </h3>
         </div>
@@ -74,8 +81,15 @@ function Project() {
                 Project Summary
               </div>
               <p className=' overflow-y-scroll h-[265px] text-[16px] scrollbar-hide leading-[26px]  font-normal '>
-              Built for the next generation of users, Meadow will Incubate and launch the most anticipated projects on the Sui Network. With MystenLabs receiving a investment from the South Korean gaming giant NCSoft and Sui offering 0 latency. <br /> <br />
-              Sui Network is believed to be perfect for gaming, Meadow will utltise this network to host the most creative, game changing IGOS (Initial game offering). Meadow Team consist of Veterans and partners who bring years of qualified experience in the incubation space which puts us far ahead of our competition.
+                Built for the next generation of users, Meadow will Incubate and
+                launch the most anticipated projects on the Sui Network. With
+                MystenLabs receiving a investment from the South Korean gaming
+                giant NCSoft and Sui offering 0 latency. <br /> <br />
+                Sui Network is believed to be perfect for gaming, Meadow will
+                utltise this network to host the most creative, game changing
+                IGOS (Initial game offering). Meadow Team consist of Veterans
+                and partners who bring years of qualified experience in the
+                incubation space which puts us far ahead of our competition.
               </p>
             </div>
             {/* project details */}
@@ -129,7 +143,7 @@ function Project() {
                 {/* 2 */}
                 <div className='flex flex-col justify-start'>
                   <p className='w-[80px] font-black leading-[16px] text-[12px]  h-[16px] '>
-                    Token Price 
+                    Token Price
                   </p>
                   <div className='font-[18px] leading-[23px]   '>$0.10</div>
                 </div>
@@ -142,9 +156,7 @@ function Project() {
               </p> */}
               {/* end event */}
               <div>
-                <div className='text-[15px] font-normal  leading-[19px]'>
-                  
-                </div>
+                <div className='text-[15px] font-normal  leading-[19px]'></div>
                 <div className='text-[14px] leading-[18px] text-gray-2 '>
                   TBA -TBA
                 </div>
