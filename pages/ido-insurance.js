@@ -48,9 +48,13 @@ function Stake() {
           <p className='mt-[23px] ml-[30px] lg:ml-0 md:mt-0 w-[88px] h-[23px] font-bold text-[17px] text-gray mb-[22.64px] '>
           Insurance
           </p>
-          <h1 className='text-[41px] ml-[30px] lg:ml-0 font-black leading-[51px] mb-[49px] '>
+          <h1 className='text-[41px] ml-[30px] lg:ml-0 font-black leading-[51px]  '>
             Insurance
           </h1>
+          {status != "connected" && (
+
+          <p className="text-[17px] leading-[23px] ml-[30px] lg:ml-0 font-medium max-w-[289px] my-[20px] lg:my-[25px] lg:max-w-[629px] lg:text-[22px]  ">Connect wallet to see if you are eligible for insurance</p>
+          )}
           {/* board */}
         {status == "connected" ?(
          <InsuranceCard  tierName={"Gold"} address={address} setIsOpen={setIsOpen} /> 

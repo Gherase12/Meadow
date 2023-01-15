@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function GoldInsurance({ tierName, address, setIsOpen }) {
   return (
-    <div className='bg-white flex-1 lg:grow-0   max-w-[1011px] 3xl:mx-auto   lg:h-[700px] relative z-50 rounded-t-[30px] shadow-md card1 pt-[40px] flex flex-col items-center lg:rounded-b-[30px] lg:w-[1011px]'>
+    <div className='bg-white flex-1 lg:grow-0 mt-[86px]  max-w-[1011px] 3xl:mx-auto   lg:h-[700px] relative z-50 rounded-t-[30px] shadow-md card1 pt-[40px] flex flex-col items-center lg:rounded-b-[30px] lg:w-[1011px]'>
       <p className='text-gray-2 text-[15px] leading-[20px] mb-[12px] lg:text-[17px] '>
         Your tier:
       </p>
