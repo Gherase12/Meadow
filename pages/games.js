@@ -42,14 +42,10 @@ function Games() {
       </div>
       {/* page content */}
       <div className='z-30 flex flex-col justify-center  items-center pb-[100px] '>
-        <div className=' text-[32px] lg:text-[41px] font-black leading-[32px] lg:leading-[51px] mb-[22px] text-center '>
-          Upcoming IGOs
+        <div className=' text-[32px] lg:text-[75px] font-black leading-[32px] lg:leading-[51px] mb-[42px] text-center '>
+          Coming soon
         </div>
-        <div className=' text-[14px] lg:text-[16px] text-center w-[325px] lg:w-[572px] mb-[51px] px-[10px]  '>
-          Meadow is ready to launch the most fascinating tier 1 projects on the
-          most scalable, safest Layer 1 blockchain, with a team of highly
-          qualified experts who have trackrecord of success.
-        </div>
+       
         <div className='text-[14px] lg:text-[15px] text-center font-black  mb-[22px] h-[44px]  w-[319px]  lg:w-[396.86px] px-[10px]'>
           Leave your email to be the first to know about the launch of IGOs
           

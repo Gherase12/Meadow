@@ -36,6 +36,7 @@ function VoteCard() {
             
           </p>
           <Image
+            loading="lazy"
             src='/arrow-sm.svg'
             width={6}
             height={5}
@@ -55,6 +56,7 @@ function VoteCard() {
             View 
           </p>
           <Image
+            loading="lazy"
             src='/arrow-sm.svg'
             width={6}
             height={5}

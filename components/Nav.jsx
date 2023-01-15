@@ -44,7 +44,7 @@ function Nav({ path }) {
     },
     {
       Icon: ImStack,
-      name: "Lounchpad",
+      name: "Launchpad",
       pagePath: "launchpad",
     },
     {

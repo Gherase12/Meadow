@@ -25,6 +25,7 @@ export default function Home({ news }) {
         {/* small object */}
         <div className='fixed left-[100px] lg:left-[925px] lg:-top-[230px] top-0  w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px] '>
           <Image
+            loading="lazy"
             fill
             src={"/object-2.webp"}
             className='object-contain'
