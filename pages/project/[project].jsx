@@ -7,8 +7,8 @@ function Project() {
   const router = useRouter();
   const prices = [
     {
-      price: 0.12,
-      text: "Public Round",
+      price: "0.10",
+      text: "Private Round",
     },
     
     {
@@ -70,10 +70,10 @@ function Project() {
           <div className='flex flex-col space-y-[26px]  lg:w-[561.65px]'>
             {/* project description */}
             <div className='bg-white rounded-[30px] h-[349px] p-[30px]  '>
-              <div className='font-black text-[27px] leading-[110%] font-avenir mb-[20px]  '>
+              <div className='font-bold text-[28px] leading-[110%] font-avenir mb-[20px]  '>
                 Project Summary
               </div>
-              <p className=' overflow-y-scroll h-[265px] text-[15px] scrollbar-hide leading-[26px]  font-bold '>
+              <p className=' overflow-y-scroll h-[265px] text-[16px] scrollbar-hide leading-[26px]  font-normal '>
               Built for the next generation of users, Meadow will Incubate and launch the most anticipated projects on the Sui Network. With MystenLabs receiving a investment from the South Korean gaming giant NCSoft and Sui offering 0 latency. <br /> <br />
               Sui Network is believed to be perfect for gaming, Meadow will utltise this network to host the most creative, game changing IGOS (Initial game offering). Meadow Team consist of Veterans and partners who bring years of qualified experience in the incubation space which puts us far ahead of our competition.
               </p>
@@ -81,7 +81,7 @@ function Project() {
             {/* project details */}
             <div className=' h-[369px] bg-white row-span-2 rounded-[30px] p-[30px] '>
               {/* prices */}
-              <div className='font-black text-[27px] leading-[110%] font-avenir mb-[30px]  '>
+              <div className='font-bold text-[27px] leading-[110%] font-avenir mb-[30px]  '>
                 Token Sale details
               </div>
               <div className=' flex flex-col scale-[0.8] '>
@@ -115,8 +115,8 @@ function Project() {
           <div>
             <div className='font-avenir lg:w-[354px] h-[300px] rounded-[30px] bg-white p-[30px] '>
               {/* details */}
-              <div className='font-black text-[27px] leading-[110%] font-avenir mb-[30px]  '>
-                IDO Details
+              <div className='font-bold text-[27px] leading-[110%] font-avenir mb-[30px]  '>
+                Sale Details
               </div>
               <div className='text-black flex space-x-[35px] mb-[20px] '>
                 {/* 1 */}
@@ -129,17 +129,17 @@ function Project() {
                 {/* 2 */}
                 <div className='flex flex-col justify-start'>
                   <p className='w-[80px] font-black leading-[16px] text-[12px]  h-[16px] '>
-                    Total Price 
+                    Token Price 
                   </p>
                   <div className='font-[18px] leading-[23px]   '>$0.10</div>
                 </div>
               </div>
               {/* bar */}
-              <div className='h-[8px] rounded-full bg-blue-1 mb-[10px] ' />
+              <div className='h-[8px] rounded-full bg-gray-1 mb-[10px] ' />
               {/* price */}
-              <p className='laeding-[21px] text-[13px] w-[55px] h-[21px] text-gray-3 '>
+              {/* <p className='laeding-[21px] text-[13px] w-[55px] h-[21px] text-gray-3 '>
                 $124,202
-              </p>
+              </p> */}
               {/* end event */}
               <div>
                 <div className='text-[15px] font-normal  leading-[19px]'>

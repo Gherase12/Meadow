@@ -45,8 +45,8 @@ function Stake() {
         {/* title */}
 
         <div className=' w-full md:mb-[11px] relative  flex flex-col  '>
-          <p className='mt-[23px] ml-[30px] lg:ml-0 md:mt-0 w-[88px] h-[23px] font-extrabold text-[17px] text-gray mb-[22.64px] '>
-            Staking
+          <p className='mt-[23px] ml-[30px] lg:ml-0 md:mt-0 w-[88px] h-[23px] font-bold text-[17px] text-gray mb-[22.64px] '>
+          Insurance
           </p>
           <h1 className='text-[41px] ml-[30px] lg:ml-0 font-black leading-[51px] mb-[49px] '>
             Insurance

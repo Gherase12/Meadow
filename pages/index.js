@@ -34,7 +34,7 @@ export default function Home({ news }) {
         </div>
 
         <div className='   w-full md:mb-[11px] relative pl-[30px]  md:pl-0  '>
-          <p className='mt-[23px] md:mt-0 w-[88px] h-[23px] font-extrabold text-[17px] text-gray mb-[22.64px] '>
+          <p className='mt-[23px] md:mt-0 w-[88px] h-[23px] font-bold text-[17px] text-gray mb-[22.64px] '>
             Dashboard
           </p>
           <div className=' max-[375px]:text-[1.5rem]  max-[375px]:w-auto max-[375px]:h-auto mb-[90px] z-20   lg:mb-[17.26px] w-[347.89px] h-[68px] text-[5vw] lg:w-[708.49px]  lg:h-[102px] lg:text-[41px] font-extrabold  leading-[34px] lg:leading-[51px]  '>

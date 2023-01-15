@@ -2,12 +2,11 @@ import React from "react";
 import LaunchpadCard from "./../components/LaunchpadCard";
 import Image from "next/image";
 
-
 import PageAnimation from "./../components/PageAnimation";
 
-function Launchpad({message}) {
+function Launchpad({ message }) {
   const filters = ["All", "Ongoing", "Upcoming", "Ended IDO"];
-  console.log(message)
+  console.log(message);
   return (
     <PageAnimation>
       <div className=' lg:h-[947.31px]  overflow-hidden   w-full flex md:max-w-[1440px]   overflow-x-hidden  md:space-x-[62px] mx-auto my-auto  '>
@@ -18,18 +17,27 @@ function Launchpad({message}) {
           </div>
           {/* small object */}
           <div className=' fixed left-[100px] lg:left-[925px] lg:-top-[230px] top-0  w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px]    '>
-            <Image src={"/object-2.webp"} fill className="object-contain" alt='big-object' />
+            <Image
+              src={"/object-2.webp"}
+              fill
+              className='object-contain'
+              alt='big-object'
+            />
           </div>
 
-          <p className='mt-[23px] md:mt-0  h-[23px] font-extrabold text-[17px] text-gray mb-[22.64px] '>
+          <p className='mt-[23px] md:mt-0  h-[23px] font-bold text-[18px] text-gray mb-[22.64px] '>
             Explore IDOs
           </p>
-          <div className=' z-20   lg:mb-[17.26px] w-[347.89px] h-[68px] text-[5vw] lg:w-[708.49px]  lg:h-[102px] lg:text-[41px] font-black leading-[34px] lg:leading-[51px]  '>
-            <h1 className='text-black text-[32px] lg:text-[41px] '>Launchpad</h1>
+          <div className=' z-20   lg:mb-[17.26px] w-[347.89px] h-[68px] text-[5vw] lg:w-[708.49px]  lg:h-[102px] lg:text-[41px] font-extrabold leading-[34px] lg:leading-[51px]  '>
+            <h1 className='text-black text-[32px] lg:text-[41px] '>
+              Launchpad
+            </h1>
           </div>
-          <ul className='mb-[21px] items-center max-[375px]:text-[12px] font-black leading-[24px] h-[38px] md:w-[368px] flex justify-between '>
+          <ul className='mb-[25px]  items-center max-[375px]:text-[12px] lg:text-[16px]  leading-[24px] h-[38px] md:w-[408px] flex justify-between '>
             {filters.map((l, i) => (
-              <li key={i} className=" cursor-pointer font-extrabold max-[375px]:pl-[5px]   " >{l}</li>
+              <li key={i} className='first:bg-white shadow-lg cursor-pointer font-bold hover:bg-white px-[17px] py-[7px] rounded-full   '>
+                {l}
+              </li>
             ))}
           </ul>
 
@@ -43,7 +51,5 @@ function Launchpad({message}) {
     </PageAnimation>
   );
 }
-
-
 
 export default Launchpad;
