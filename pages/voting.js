@@ -28,7 +28,7 @@ function Voting({ projects }) {
           <p className='mx-[30px] md:mx-0 mt-[23px] md:mt-0 relative  h-[23px] font-bold text-[17px] text-gray mb-[22.64px] '>
             Voting
           </p>
-          <div className='mx-[30px] md:mx-0 z-30   lg:mb-[17.26px] w-[347.89px] h-[68px] text-[5vw] lg:w-[708.49px]  lg:h-[102px] lg:text-[41px] font-black leading-[34px] lg:leading-[51px]  '>
+          <div className='mx-[30px] md:mx-0 z-30  mb-[15px] lg:mb-[17.26px] w-[347.89px] h-[68px] text-[5vw] lg:w-[708.49px]  lg:h-[102px] lg:text-[41px] font-black leading-[34px] lg:leading-[51px]  '>
             <h1 className='text-black relative  text-[32px] lg:text-[41px] z-40'>
               Most Engange Community on SUI
             </h1>
