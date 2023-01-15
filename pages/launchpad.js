@@ -35,7 +35,7 @@ function Launchpad({ message }) {
           </div>
           <ul className='mb-[25px]  items-center max-[375px]:text-[12px] lg:text-[16px]  leading-[24px] h-[38px] md:w-[408px] flex justify-between '>
             {filters.map((l, i) => (
-              <li key={i} className='first:bg-white shadow-lg cursor-pointer font-bold hover:bg-white px-[17px] py-[7px] rounded-full   '>
+              <li key={i} className='first:bg-white hover:shadow-lg cursor-pointer font-bold hover:bg-white px-[17px] py-[7px] rounded-full   '>
                 {l}
               </li>
             ))}
