@@ -15,7 +15,7 @@ function Card({ i }) {
         <>
           <div className='flex justify-between items-center h-[50px]  mb-[26px]'>
             <div className='space-y-[10px]'>
-              <h2 className=''>Meadow</h2>
+              <h2 className='font-extrabold text-[21px] leading-[29px]'>Meadow</h2>
               <div className='w-[83px] h-[25px] flex flex-start space-x-[4px] opacity-60 '>
                 {icons.map((icon, index) => (
                   <Link href={links[index]} key={index}>
@@ -43,17 +43,17 @@ function Card({ i }) {
           <div className='text-black flex space-x-[25px] mb-[31px] '>
             {/* 1 */}
             <div className=' flex flex-col justify-start'>
-              <p className='w-[150px]  font-black leading-[16px] text-[12px]  h-[16px] '>
+              <p className='w-[150px]  font-extrabold leading-[19px] text-[14px] mb-[2px]  h-[16px] '>
                 Total Raise (private)
               </p>
-              <div className='font-[18px] leading-[23px]  '>$800,000</div>
+              <div className='text-[19px] font-medium leading-[130%]  '>$800,000</div>
             </div>
             {/* 2 */}
             <div className='flex flex-col justify-start'>
-              <p className='w-[80px] font-black leading-[16px] text-[12px]  h-[16px] '>
+              <p className='w-[80px] font-extrabold leading-[19px] text-[14px]  h-[16px] '>
                 Total Price
               </p>
-              <div className='font-[18px] leading-[23px]   '>$0.10</div>
+              <div className='text-[19px] font-medium leading-[130%]  '>$0.10</div>
             </div>
           </div>
           {/* bar */}

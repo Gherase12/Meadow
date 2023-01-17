@@ -26,7 +26,7 @@ function Carusel({articles}) {
         </div>
         {/* news end */}
       <div className=' flex items-center w-[276px] -mb-[20px]  lg:mb-[13px]  h-[40px] justify-between  '>
-        <h2 className=' text-[18px] lg:text-[20px] leading-[24px] font-extrabold '>
+        <h2 className=' text-[20px] lg:text-[22px] leading-[24px] font-black '>
           Upcoming IDOs
         </h2>
         <div className='hidden lg:flex space-x-1    '>

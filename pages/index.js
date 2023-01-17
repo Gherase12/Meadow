@@ -21,7 +21,7 @@ export default function Home({ news }) {
   return (
     <PageAnimation>
       <div className='lg:h-[947.31px]     w-full flex md:max-w-[1440px]   pr-0 overflow-hidden  mx-auto my-auto relative '>
-      <PopUp />
+      {/* <PopUp /> */}
         {/* small object */}
         <div className='fixed left-[100px] lg:left-[925px] lg:-top-[230px] top-0  w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px] '>
           <Image
@@ -37,11 +37,11 @@ export default function Home({ news }) {
           <p className='mt-[23px] md:mt-0 w-[88px] h-[23px] font-bold text-[17px] text-gray mb-[22.64px] '>
             Dashboard
           </p>
-          <div className=' max-[375px]:text-[1.5rem]  max-[375px]:w-auto max-[375px]:h-auto mb-[90px] z-20   lg:mb-[17.26px] w-[347.89px] h-[68px] text-[5vw] lg:w-[708.49px]  lg:h-[102px] lg:text-[41px] font-extrabold  leading-[34px] lg:leading-[51px]  '>
-            <h1 className='text-black lg:font-semibold'>
+          <div className=' max-[375px]:text-[1.5rem]  text-[27px]  max-[375px]:w-auto max-[375px]:h-auto mb-[50px] z-20   lg:mb-[17.26px] w-[347.89px] h-[68px]  md:w-[708.49px]  md:h-[102px] md:text-[41px]   leading-[34px] lg:leading-[51px]  '>
+            <h1 className='text-black font-black'>
               The Next Generation Web 3.0
             </h1>
-            <h1 className='text-blue-1 lg:font-exterbold'>
+            <h1 className='text-blue-1 font-black'>
               Multichain Launchpad
             </h1>
           </div>

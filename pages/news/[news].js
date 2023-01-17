@@ -36,7 +36,7 @@ function News({ news, content }) {
         {/* info */}
         <div className='flex flex-col items-center'>
           {/* title */}
-          <h2 className='text-[20px] max-w-[800px] md:text-[30px] my-[30px]  leading-normal px-[10px] md:px-0'>
+          <h2 className='text-[20px] font-black max-w-[800px] md:text-[30px] my-[30px]  leading-normal px-[10px] md:px-0'>
             {news1.title}
           </h2>
           {/* pharagraphs */}

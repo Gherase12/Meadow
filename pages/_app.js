@@ -35,7 +35,7 @@ export default function App({ Component, pageProps }) {
             hideEmailSignIn: true, // defaults to false
           }}
         >
-          <div className='h-screen w-full pt-[70px] md:pt-0 bg-white-1 flex items-center relative overflow-x-hidden  '>
+          <div className='h-screen w-full pt-[70px] xl:pt-0 bg-white-1 flex items-center relative overflow-x-hidden  '>
             <ToastContainer autoClose={1000} />
            
             <Head>

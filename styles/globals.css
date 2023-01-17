@@ -2,29 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Avenir";
-  src: url("/fonts/Avenir.otf") format("otf");
-  font-display: swap;
-}
+
 body {
   background: #f0f6fd;
 }
 
 * {
-  font-family: Avenir, sans-serif;
-  font-style: normal;
+  font-family: 'Nunito Sans', sans-serif;
+
 }
 
-h2 {
-  font-family: Avenir, sans-serif;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 20px;
-  line-height: 27px;
 
-  color: #000000;
-}
 
 .card-icon {
   width: 18.43px;
@@ -32,13 +20,10 @@ h2 {
   background: #8a9cb3;
 }
 
-.nav-font {
-  font-family: Avenir, sans-serif;
-}
+
 
 .btn-text {
-  font-family: Avenir, sans-serif;
-  font-style: normal;
+ 
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
@@ -64,8 +49,7 @@ h2 {
 
   border-radius: 11px;
 
-  font-family: Avenir, sans-serif;
-  font-style: normal;
+ 
 
   font-size: 14px;
   line-height: 19px;
@@ -74,13 +58,10 @@ h2 {
   color: #8a9cb3;
 }
 
-.font-avenir {
-  font-family: Avenir, sans-serif;
-  font-style: normal;
-}
+
 
 .day-text {
-  font-family: Avenir, sans-serif;
+ 
   font-style: normal;
   font-weight: 900;
   font-size: 14px;

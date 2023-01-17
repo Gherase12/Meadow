@@ -96,12 +96,12 @@ function Calendar() {
 
   return (
     <div className='relative pb-[70px] lg:pb-0  z-10'>
-      <div className='absolute text-[18px] -top-[46px] left-[-17px] font-bold w-[190px] text-center   lg:hidden items-center justify-center'>
+      <div className='absolute text-[20px] font-black -top-[46px] left-[-17px]  w-[190px] text-center   lg:hidden items-center justify-center'>
         Launch calendar
       </div>
       <div className='relative  w-full lg:m-0  lg:transform-none lg:w-[381.85px] h-[310.52px] bg-white rounded-[30px] card1 lg:px-[30px] py-[27px] flex flex-col items-center '>
         <div className='flex justify-between items-center mb-[31px] lg:px-[10px] lg:w-full  '>
-          <div className='font-avenir w-[190px] font-bold text-[20px]  lg:w-[205px]  text-start hidden lg:flex items-center justify-start leading-[24px]'>
+          <div className=' w-[190px] font-black text-[24px]  lg:w-[195px]   text-start hidden lg:flex items-center justify-start leading-[24px]'>
             Launch calendar
           </div>
           <div className='max-[375px]:w-full  w-[307px] lg:w-[101.05px] h-[24px] flex   items-center   justify-between lg:justify-between'>
@@ -109,7 +109,7 @@ function Calendar() {
               onClick={() => previousMonth()}
               className=' text-gray-2  font-black text-[20px] lg:text-[15px] cursor-pointer  '
             />
-            <div className='hidden lg:flex items-center  justify-center font-avenir  font-bold text-[14px]  leading-[24px] text-black   h-[24px] w-[65px] tracking-[0.01em] text-center '>
+            <div className='hidden lg:flex items-center  justify-center font-medium    text-[14px]  leading-[24px] text-black   h-[24px] w-[65px] tracking-[0.01em] text-center '>
               {currentMonth.replace("-", " ")}
             </div>
             <div className='  flex lg:hidden items-center  justify-center  font-bold text-[16px] lg:text-[12px]  leading-[24px] text-black   h-[24px]  tracking-[0.01em] text-center '>
