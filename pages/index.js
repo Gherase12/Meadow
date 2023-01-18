@@ -18,6 +18,7 @@ export default function Home({ news }) {
     "Cookie Policy",
   ];
 
+
   return (
     <PageAnimation>
       <div className='lg:h-[947.31px]     w-full flex md:max-w-[1440px]   pr-0 overflow-hidden  mx-auto my-auto relative '>
@@ -47,7 +48,7 @@ export default function Home({ news }) {
           </div>
           {/* carusel */}
 
-          <Carusel articles={news.articles.slice(0, 5)} />
+          <Carusel articles={news.data} />
           {/*  */}
 
           <div className='flex flex-col-reverse lg:flex-row lg:space-x-[34px]  pr-[30px] lg:pr-0  '>
@@ -58,7 +59,7 @@ export default function Home({ news }) {
             <Calendar />
             {/* news */}
             <div className='lg:hidden 3xl:flex  lg:h-[310px]'>
-              {news && <News articles={news.articles.slice(0, 5)} />}
+              {news && <News articles={news.data} />}
             </div>
           </div>
           {/* privacy.. */}

@@ -32,7 +32,7 @@ export default async function handler(req, res) {
       break;
     case "GET":
       try {
-        const response = await axios.get(url);
+        const response = await axios.get("https://cryptonews-api.com/api/v1?tickers=BTC&items=3&page=1&token=jaaxbdhnx3fjn00efj6j1fy8vkzjlcglgn5iiljf");
         res.status(200).json({ news: response.data });
       } catch (error) {
         console.error(error);

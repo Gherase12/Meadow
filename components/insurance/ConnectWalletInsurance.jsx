@@ -13,6 +13,7 @@ function ConnectWalletInsurance({setIsOpen}) {
           src='/shields/wallet-shield.svg'
           fill
           className='object-contain'
+          alt="wallet shield"
         />
       </div>
       <p className='text-[16px] lg:text-[22px] w-[233px] text-center leading-[30px] lg:w-[344px] font-medium mb-[100px] '>

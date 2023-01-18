@@ -6,7 +6,7 @@ import PageAnimation from "./../components/PageAnimation";
 
 function Launchpad({ message }) {
   const filters = ["All", "Ongoing", "Upcoming", "Ended IDO"];
-  console.log(message);
+ 
   return (
     <PageAnimation>
       <div className=' lg:h-[947.31px]  overflow-hidden   w-full flex md:max-w-[1440px]   overflow-x-hidden  md:space-x-[62px] mx-auto my-auto  '>

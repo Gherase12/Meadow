@@ -5,17 +5,18 @@ import NewsRight from "../../components/NewsRight";
 import NewsGridCard from "../../components/NewsGridCard";
 import { useRouter } from "next/router";
 import LoadeingOverlay from "../../components/LoadeingOverlay";
+import Image  from 'next/image';
 
-function News({ news, content }) {
+function News({ news }) {
   const[loading, setLoading] = useState(false)
   const containerRef = useRef(null);
   const router = useRouter();
   const newsIndex = router.query.news;
-  console.log(content);
-  console.log(news);
+  
+  
   useEffect(()=>{setLoading(false)},[news])
 
-  const news1 = news.articles[newsIndex];
+  const news1 = news[newsIndex];
   return (
     <div className=' lg:h-[947.31px] space-x-[30px]  pt-[70px] xl:pt-0   w-full flex md:max-w-[1440px]   pr-0 overflow-hidden  mx-auto my-auto relative '>
       {loading && (
@@ -26,11 +27,13 @@ function News({ news, content }) {
       <div className=' flex-1 overflow-y-scroll scrollbar-hide items-center flex flex-col  '>
         {/* image container */}
         
-        <div ref={containerRef} className='h-[200px] md:h-[400px] relative  '>
+        <div ref={containerRef} className='h-[200px] md:h-[700px] w-[800px]  relative  '>
           
-          <img
-            src={news1.urlToImage}
-            className='object-cover h-[200px] md:h-[400px] w-[800px]  md:rounded-[30px]'
+          <Image
+            src={news1.image_url}
+            className='object-cover  md:rounded-[30px]'
+            fill
+            alt="news image"
           />
         </div>
         {/* info */}
@@ -41,19 +44,19 @@ function News({ news, content }) {
           </h2>
           {/* pharagraphs */}
           <div className=' text-base  px-[10px] md:px-0 '>
-            <TextParagraph text={content.content} />
+            <TextParagraph text={news1.text} />
           </div>
           <h2 className='text-[30px] font-bold my-[30px] px-[10px] md:px-0 '>
             More news
           </h2>
           {/* more news */}
           <div className='grid  grid-cols-1 mb-[20px] md:grid-cols-2  xl:grid-cols-3 gap-[10px] px-[10px] md:px-0 '>
-            {news.articles.map(({ title, urlToImage }, i) => (
+            {news.map(({ title, image_url }, i) => (
               <NewsGridCard
               setLoading={setLoading}
                 key={i}
                 title={title}
-                image={urlToImage}
+                image={image_url}
                 index={i}
                 containerRef={containerRef}
               />
@@ -63,12 +66,12 @@ function News({ news, content }) {
       </div>
       {/* news container */}
       <div className=' py-[30px]   bg-blue-2 w-[400px] hidden 3xl:flex flex-col rounded-[30px] h-[800px]'>
-        {news.articles.slice(0, 5).map(({ title, urlToImage }, i) => (
+        {news.map(({ title, image_url }, i) => (
           <NewsRight
             key={i}
             setLoading={setLoading}
             title={title}
-            image={urlToImage}
+            image={image_url}
             index={i}
             containerRef={containerRef}
           />
@@ -87,15 +90,15 @@ export const getServerSideProps = async (context) => {
   );
   const news = await res1.json();
   // get content
-  const res2 = await fetch(`${process.env.API_URL}/news?pageIndex=${pageIndex}`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
+  // const res2 = await fetch(`${process.env.API_URL}/news?pageIndex=${pageIndex}`, {
+  //   method: "POST",
+  //   headers: { "Content-Type": "application/json" },
    
-  });
-  const content = await res2.json();
+  // });
+  // const content = await res2.json();
   
 
-  return { props: { news: news.news, content } };
+  return { props: { news: news.news.data } };
 };
 
 export default News;

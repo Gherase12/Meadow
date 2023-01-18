@@ -3,6 +3,7 @@ import Image from "next/image";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import TokenSaleDetail from "./../../components/TokenSaleDetail";
 import { useRouter } from "next/navigation";
+import Link  from 'next/link';
 function Project() {
   const router = useRouter();
   const prices = [
@@ -174,12 +175,13 @@ function Project() {
                 />
               </button>
             </div>
-            <div className='w-[165px] flex justify-between items-center mx-auto mt-[21px] text-blue-1'>
+            <div className=' flex justify-center space-x-[10px] items-center mx-auto mt-[21px] '>
               {icons.map((icon, index) => (
                 <div
                   key={index}
                   className='w-[49px] h-[49px] rounded-full flex items-center justify-center bg-white  '
                 >
+                  
                   <Image
                     key={index}
                     src={icon}
@@ -189,6 +191,9 @@ function Project() {
                   />
                 </div>
               ))}
+              <Link href="https://meadow.gitbook.io/docs/" className="bg-white h-[49px] rounded-full flex items-center justify-center px-[10px] font-bold text-gray-2">
+                Whitepaper
+              </Link>
             </div>
           </div>
         </div>
