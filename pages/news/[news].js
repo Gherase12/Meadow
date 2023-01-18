@@ -6,6 +6,7 @@ import NewsGridCard from "../../components/NewsGridCard";
 import { useRouter } from "next/router";
 import LoadeingOverlay from "../../components/LoadeingOverlay";
 import Image  from 'next/image';
+import Link  from 'next/link';
 
 function News({ news }) {
   const[loading, setLoading] = useState(false)
@@ -27,7 +28,7 @@ function News({ news }) {
       <div className=' flex-1 overflow-y-scroll scrollbar-hide items-center flex flex-col  '>
         {/* image container */}
         
-        <div ref={containerRef} className='h-[200px] md:h-[700px] w-[800px]  relative  '>
+        <div ref={containerRef} className='h-[200px] md:h-[400px] w-[800px]  relative  '>
           
           <Image
             src={news1.image_url}
@@ -45,6 +46,7 @@ function News({ news }) {
           {/* pharagraphs */}
           <div className=' text-base  px-[10px] md:px-0 '>
             <TextParagraph text={news1.text} />
+            <p> Full article: <Link className="text-blue-1" href={news1.news_url} >{news1.news_url}</Link></p>
           </div>
           <h2 className='text-[30px] font-bold my-[30px] px-[10px] md:px-0 '>
             More news
