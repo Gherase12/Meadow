@@ -283,14 +283,14 @@ function Nav({ path }) {
           {/* buttons */}
           <div className='w-[246px] text-white h-[110px]  flex flex-col justify-around space-y-[10px]  text-[15px] '>
             <Link href='https://meadowlaunch.com/'>
-              <button className='flex items-center justify-center h-[50px] border-white w-[246px] bg-black rounded-[15px] btn-text '>
+              <button className='transition duration-700 ease-in-out hover:shadow-lg hover:shadow-white hover:bg-white hover:text-black flex items-center justify-center h-[50px] border-white w-[246px] bg-black rounded-[15px] btn-text '>
                 {" "}
                 Home
               </button>
             </Link>
             <button
               onClick={openModal}
-              className='  flex items-center justify-center h-[50px] bg-blue-1 w-[246px] rounded-[15px]  btn-text '
+              className='transition duration-700 ease-in-out hover:shadow-lg hover:shadow-white hover:bg-white hover:text-black flex items-center justify-center h-[50px] bg-blue-1 w-[246px] rounded-[15px]  btn-text '
             >
               {isMetaMuskConnected && status == "connected"
                 ? "Disconnect"
