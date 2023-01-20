@@ -53,7 +53,7 @@ function VoteProjectCard({
       : toast.error("Please connect your sui wallet");
 
   return (
-    <div className='relative h-[75px] lg:h-[88px]   last:border-b-0 w-full  border-b-[1px] border-white-2 flex items-center justify-between w-full  '>
+    <div className='relative h-[75px] lg:h-[88px]   last:border-b-0   border-b-[1px] border-white-2 flex items-center justify-between w-full  '>
       <div className='  flex space-x-[12px] lg:space-x-[18px] items-center  md:transform-none '>
         <p className='w-[18px] font-black text-[12px] md:text-[15px] leading-[24px] text-gray-3  '>
           #{index + 1}

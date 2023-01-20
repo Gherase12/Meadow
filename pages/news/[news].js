@@ -28,11 +28,13 @@ function News({ news , content }) {
       <div className=' flex-1 overflow-y-scroll scrollbar-hide items-center flex flex-col  '>
         {/* image container */}
         
-        <div ref={containerRef} className='h-[200px] md:h-[400px] relative  '>
+        <div ref={containerRef} className='h-[200px] md:h-[400px] w-[800px]  relative  '>
           
+
         <img
             src={news1.urlToImage}
             className='object-cover h-[200px] md:h-[400px] w-[800px]  md:rounded-[30px]'
+
           />
         </div>
         {/* info */}

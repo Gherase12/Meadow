@@ -41,7 +41,7 @@ function News({ articles }) {
         spaceBetween={15}
         className='absolute h-full    w-full flex items-center justify-center   '
       >
-               {articles?.map((
+        {articles?.map((
             {content, urlToImage   }
         ,i)=>(
 
@@ -52,7 +52,7 @@ function News({ articles }) {
                 {/* title */}
                 <h3 className=" sm:text-[20px] text-white font-bold absolute left-[20px] bottom-[20px] truncate w-[200px] z-50" >{content}</h3>
               </Link>
-
+           
         </SwiperSlide>
         ))}
       </Swiper>

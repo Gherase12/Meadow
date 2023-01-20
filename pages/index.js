@@ -88,7 +88,7 @@ export default function Home({ news }) {
             <Calendar />
             {/* news */}
             <div className='lg:hidden 3xl:flex  lg:h-[310px]'>
-              {news && <News articles={news.articles.slice(0, 5)} />}
+            {news && <News articles={news.articles.slice(0, 5)} />}
             </div>
           </div>
           {/* privacy.. */}
