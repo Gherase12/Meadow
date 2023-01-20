@@ -32,7 +32,9 @@ export default async function handler(req, res) {
       break;
     case "GET":
       try {
-        const response = await axios.get(url);
+        const response = await axios.get(
+          url
+        );
         res.status(200).json({ news: response.data });
       } catch (error) {
         console.error(error);

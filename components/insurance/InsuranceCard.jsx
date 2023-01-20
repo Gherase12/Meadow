@@ -14,6 +14,7 @@ function GoldInsurance({ tierName, address, setIsOpen }) {
             src={`/shields/${tierName.toLowerCase()}-shield.svg`}
             fill
             className='object-contain'
+            alt="shield"
           />
         </div>
         <p className='text-white font-bold text-[15px] lg:text-[20px] '>

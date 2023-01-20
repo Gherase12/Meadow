@@ -1,7 +1,6 @@
 import React from "react";
 
-import { useRouter } from "next/navigation";
-import { ToastContainer, toast } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
 function Project({ img }) {

@@ -5,14 +5,16 @@ import NewsRight from "../../components/NewsRight";
 import NewsGridCard from "../../components/NewsGridCard";
 import { useRouter } from "next/router";
 import LoadeingOverlay from "../../components/LoadeingOverlay";
+import Image  from 'next/image';
+import Link  from 'next/link';
 
-function News({ news, content }) {
+function News({ news , content }) {
   const[loading, setLoading] = useState(false)
   const containerRef = useRef(null);
   const router = useRouter();
   const newsIndex = router.query.news;
-  console.log(content);
-  console.log(news);
+  
+  
   useEffect(()=>{setLoading(false)},[news])
 
   const news1 = news.articles[newsIndex];
@@ -28,7 +30,7 @@ function News({ news, content }) {
         
         <div ref={containerRef} className='h-[200px] md:h-[400px] relative  '>
           
-          <img
+        <img
             src={news1.urlToImage}
             className='object-cover h-[200px] md:h-[400px] w-[800px]  md:rounded-[30px]'
           />
@@ -41,14 +43,15 @@ function News({ news, content }) {
           </h2>
           {/* pharagraphs */}
           <div className=' text-base  px-[10px] md:px-0 '>
-            <TextParagraph text={content.content} />
+          <TextParagraph text={content.content} />
+          
           </div>
           <h2 className='text-[30px] font-bold my-[30px] px-[10px] md:px-0 '>
             More news
           </h2>
           {/* more news */}
           <div className='grid  grid-cols-1 mb-[20px] md:grid-cols-2  xl:grid-cols-3 gap-[10px] px-[10px] md:px-0 '>
-            {news.articles.map(({ title, urlToImage }, i) => (
+          {news.articles.map(({ title, urlToImage }, i) => (
               <NewsGridCard
               setLoading={setLoading}
                 key={i}
@@ -63,7 +66,7 @@ function News({ news, content }) {
       </div>
       {/* news container */}
       <div className=' py-[30px]   bg-blue-2 w-[400px] hidden 3xl:flex flex-col rounded-[30px] h-[800px]'>
-        {news.articles.slice(0, 5).map(({ title, urlToImage }, i) => (
+      {news.articles.slice(0, 5).map(({ title, urlToImage }, i) => (
           <NewsRight
             key={i}
             setLoading={setLoading}
@@ -95,7 +98,7 @@ export const getServerSideProps = async (context) => {
   const content = await res2.json();
   
 
-  return { props: { news: news.news, content } };
+  return { props: { news: news.news, content  } };
 };
 
 export default News;

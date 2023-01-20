@@ -8,15 +8,40 @@ import Image from "next/image";
 import PageAnimation from "./../components/PageAnimation";
 import News from "./../components/News";
 import PopUp from './../components/PopUp';
+import VotingMobile from './../components/VotingMobile';
 
 
 export default function Home({ news }) {
+
+  const [projects, setProjects] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+
+
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        setIsLoading(true);
+        const res = await fetch(`https://app.meadowlaunch.com/api/projects`, { method: "GET" });
+        const data = await res.json();
+        setProjects(data.projects.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.error(error);
+        setIsLoading(false);
+      }
+    }
+    fetchData();
+  }, []);
+
   const footerItems = [
     "Privacy Policy",
     "Teams of use",
     "Disclaimer",
     "Cookie Policy",
   ];
+
 
   return (
     <PageAnimation>
@@ -40,8 +65,11 @@ export default function Home({ news }) {
           <div className=' max-[375px]:text-[1.5rem]  text-[27px]  max-[375px]:w-auto max-[375px]:h-auto mb-[50px] z-20   lg:mb-[17.26px] w-[347.89px] h-[68px]  md:w-[708.49px]  md:h-[102px] md:text-[41px]   leading-[34px] lg:leading-[51px]  '>
             <h1 className='text-black font-black'>
               The Next Generation Web 3.0
+            <span className='text-blue-1 font-black  md:hidden ml-[10px]'>
+            Multichain Launchpad
+            </span>
             </h1>
-            <h1 className='text-blue-1 font-black'>
+            <h1 className='text-blue-1 font-black hidden md:flex '>
               Multichain Launchpad
             </h1>
           </div>
@@ -50,9 +78,11 @@ export default function Home({ news }) {
           <Carusel articles={news.articles.slice(0, 5)} />
           {/*  */}
 
-          <div className='flex flex-col-reverse lg:flex-row lg:space-x-[34px]  pr-[30px] lg:pr-0  '>
+          <div className='flex flex-col lg:flex-row lg:space-x-[34px]  pr-[30px] lg:pr-0  '>
             {/* 1 */}
-            <VoteCard />
+            <VoteCard  />
+
+            <VotingMobile projects={projects} isLoading={isLoading}/>
 
             {/* calendar */}
             <Calendar />

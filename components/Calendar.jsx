@@ -96,15 +96,15 @@ function Calendar() {
 
   return (
     <div className='relative pb-[70px] lg:pb-0  z-10'>
-      <div className='absolute text-[20px] font-black -top-[46px] left-[-17px]  w-[190px] text-center   lg:hidden items-center justify-center'>
+      <div className='absolute text-[22px] font-extrabold -top-[46px] left-[-10px]  w-[190px] text-center   lg:hidden items-center justify-center'>
         Launch calendar
       </div>
       <div className='relative  w-full lg:m-0  lg:transform-none lg:w-[381.85px] h-[310.52px] bg-white rounded-[30px] card1 lg:px-[30px] py-[27px] flex flex-col items-center '>
-        <div className='flex justify-between items-center mb-[31px] lg:px-[10px] lg:w-full  '>
+        <div className='flex justify-between w-full px-[10px]  items-center mb-[31px] lg:px-[10px] lg:w-full   '>
           <div className=' w-[190px] font-black text-[24px]  lg:w-[195px]   text-start hidden lg:flex items-center justify-start leading-[24px]'>
             Launch calendar
           </div>
-          <div className='max-[375px]:w-full  w-[307px] lg:w-[101.05px] h-[24px] flex   items-center   justify-between lg:justify-between'>
+          <div className='max-[375px]:w-full   w-full lg:w-[101.05px] h-[24px] flex   items-center   justify-between lg:justify-between'>
             <BsChevronLeft
               onClick={() => previousMonth()}
               className=' text-gray-2  font-black text-[20px] lg:text-[15px] cursor-pointer  '
