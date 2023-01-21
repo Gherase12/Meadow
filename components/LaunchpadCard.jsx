@@ -53,7 +53,7 @@ function Card({i}) {
         </div>
       </div>
       {/* bar */}
-      <div className='h-[8px] rounded-full bg-gray-4 mb-[10px] ' />
+      <div className='h-[8px] rounded-full bg-gray-5 mb-[10px] ' />
       {/* price */}
       <p className='laeding-[21px] text-[13px] w-[55px] h-[21px] text-gray-3 '>
         $0
@@ -61,7 +61,7 @@ function Card({i}) {
         </>
       ) : (
         <Image
-          src={`/projects/project${i + 1}.webp`}
+          src={`/projects/project${i + 1}.png`}
           fill
           className='object-cover rounded-[30px]'
           alt="project"
