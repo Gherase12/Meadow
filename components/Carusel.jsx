@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import  Image  from 'next/image';
 import News from './News';
 
-function Carusel({articles}) {
+function Carusel() {
   const [swiper, setSwiper] = React.useState(null);
 
   const swipeNext = () => {
@@ -22,7 +22,7 @@ function Carusel({articles}) {
     <div className=" relative">
       {/* news */}
       <div className="absolute left-[630px]  xl:left-[637px] top-[30px] hidden lg:flex 3xl:hidden" >
-            <News articles={articles} />
+            <News  />
         </div>
         {/* news end */}
       <div className=' flex items-center w-[276px] -mb-[20px]  lg:mb-[13px]  h-[40px] justify-between  '>

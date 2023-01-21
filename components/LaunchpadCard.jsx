@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import LogoRounded from "./LogoRounded";
-import { AiFillLock } from 'react-icons/ai';
+
 
 function Card({i}) {
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];

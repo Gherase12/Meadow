@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {  toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import Link from "next/link";
@@ -17,10 +17,9 @@ function VoteProjectCard({
   website,
   twitter,
   discord,
-  
 }) {
   const [score, setScore] = useState(votes);
-  
+
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
   const links = [website, twitter, discord];
   const { wallet } = ethos.useWallet();
@@ -40,9 +39,7 @@ function VoteProjectCard({
             toast.error(data.data.message);
           }
         });
-    } catch (err) {
-      
-    }
+    } catch (err) {}
   };
 
   const { status } = ethos.useWallet();

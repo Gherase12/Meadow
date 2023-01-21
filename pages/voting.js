@@ -1,12 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React  from "react";
 
 import VoteProjectCard from "./../components/VoteProjectCard";
 import Image from "next/image";
 import PageAnimation from "../components/PageAnimation";
+import { useQuery } from 'react-query';
+import Loading from './../components/Loading';
+import { fetchProjects } from './../fetchers/projects';
 
 
-function Voting({ projects }) {
-  
+function Voting() {
+  const { isLoading, data } = useQuery(
+    "projects",
+    fetchProjects
+  );
 
   return (
     <PageAnimation>
@@ -39,8 +45,14 @@ function Voting({ projects }) {
 
           {/* voting */}
           <div className=' mt-[28px] h-[650px]  max-w-[1200px]  lg:h-[720px]  bg-white rounded-t-[30px] px-[27px]  pt-[23px] lg:pt-[30px] z-40 relative '>
+            {isLoading ? (
+              <div className="w-full h-full flex items-center justify-center ">
+              <Loading />
+            </div>
+            ):(
+
             <div className='overflow-y-scroll scrollbar-hide  h-[660px] '>
-              {projects.map(
+              {data?.map(
                 ({ id, name, img, website, votes, twitter, discord }, i) => (
                   <VoteProjectCard
                     key={i}
@@ -57,6 +69,7 @@ function Voting({ projects }) {
                 )
               )}
             </div>
+            )}
           </div>
         </div>
       </div>
@@ -64,12 +77,6 @@ function Voting({ projects }) {
   );
 }
 
-export const getServerSideProps = async () => {
-  //get projects
-  const res = await fetch(`${process.env.API_URL}/projects`, { method: "GET" });
-  const data = await res.json();
 
-  return { props: { projects: data.projects.data } };
-};
 
 export default Voting;

@@ -1,11 +1,18 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useQuery } from 'react-query'
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { fetchNews } from './../fetchers/news';
+import Loading from './Loading';
 
-function News({ articles }) {
+function News() {
+
+  const { isLoading, isError, data, error } = useQuery('news', fetchNews)
+  console.log(data)
+
   return (
     <div className='relative z-[100]  w-full   lg:transform-none lg:w-[381.85px]  lg:h-[360px]   3xl:h-[310.52px]  rounded-[30px] mb-[80px] '>
       {/* top part */}
@@ -30,7 +37,14 @@ function News({ articles }) {
         </Link>
       </div>
 
-      {/* carusel */}
+      {isLoading ? (
+            <div className="w-full h-full flex items-center justify-center bg-white rounded-[30px]">
+              <Loading />
+            </div>
+          ):(
+
+           
+     
       <Swiper
         autoplay={{
           delay: 2500,
@@ -41,21 +55,25 @@ function News({ articles }) {
         spaceBetween={15}
         className='absolute h-full    w-full flex items-center justify-center   '
       >
-        {articles?.map((
+        {data?.map((
             {content, urlToImage   }
         ,i)=>(
 
         <SwiperSlide key={i} className=" relative w-full h-full " >
-              <Link href={`/news/${i}`}>
-                <img src={urlToImage ?? "/news.webp"} className=" object-cover w-full h-full rounded-[30px]" alt="news image" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-black/10 z-40 rounded-[30px]" />
-                {/* title */}
-                <h3 className=" sm:text-[20px] text-white font-bold absolute left-[20px] bottom-[20px] truncate w-[200px] z-50" >{content}</h3>
-              </Link>
+        
+            <Link href={`/news/${i}`}>
+              <img src={urlToImage ?? "/news.webp"} className=" object-cover w-full h-full rounded-[30px]" alt="news image" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-black/10 z-40 rounded-[30px]" />
+              {/* title */}
+              <h3 className=" sm:text-[20px] text-white font-bold absolute left-[20px] bottom-[20px] truncate w-[200px] z-50" >{content}</h3>
+            </Link>
+         
            
         </SwiperSlide>
         ))}
       </Swiper>
+          )}
+
     </div>
   );
 }

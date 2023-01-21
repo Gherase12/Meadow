@@ -9,7 +9,15 @@ import { SessionProvider } from "next-auth/react";
 import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from 'react-toastify';
 
-import PopUp from "./../components/PopUp";
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query'
+
+const queryClient = new QueryClient()
 
 const { provider, webSocketProvider } = configureChains(
   [goerli],
@@ -35,6 +43,7 @@ export default function App({ Component, pageProps }) {
             hideEmailSignIn: true, // defaults to false
           }}
         >
+          <QueryClientProvider client={queryClient}>
           <div className='h-screen w-full pt-[70px] xl:pt-0 bg-white-1 flex items-center relative overflow-x-hidden  '>
             <ToastContainer autoClose={1000} />
            
@@ -54,6 +63,7 @@ export default function App({ Component, pageProps }) {
               <Analytics />
             </div>
           </div>
+          </QueryClientProvider>
         </EthosConnectProvider>
       </SessionProvider>
     </WagmiConfig>

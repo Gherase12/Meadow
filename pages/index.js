@@ -11,29 +11,9 @@ import PopUp from './../components/PopUp';
 import VotingMobile from './../components/VotingMobile';
 
 
-export default function Home({ news }) {
+export default function Home() {
 
-  const [projects, setProjects] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-
-
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        setIsLoading(true);
-        const res = await fetch(`https://app.meadowlaunch.com/api/projects`, { method: "GET" });
-        const data = await res.json();
-        setProjects(data.projects.data);
-        setIsLoading(false);
-      } catch (error) {
-        console.error(error);
-        setIsLoading(false);
-      }
-    }
-    fetchData();
-  }, []);
+ 
 
   const footerItems = [
     "Privacy Policy",
@@ -73,25 +53,25 @@ export default function Home({ news }) {
               Multichain Launchpad
             </h1>
           </div>
-          {/* carusel */}
+         
 
-          <Carusel articles={news.articles.slice(0, 5)} />
-          {/*  */}
+          <Carusel  />
+        
 
           <div className='flex flex-col lg:flex-row lg:space-x-[34px]  pr-[30px] lg:pr-0  '>
-            {/* 1 */}
+            
             <VoteCard  />
 
-            <VotingMobile projects={projects} isLoading={isLoading}/>
+            <VotingMobile />
 
-            {/* calendar */}
+            
             <Calendar />
-            {/* news */}
+            
             <div className='lg:hidden 3xl:flex  lg:h-[310px]'>
-            {news && <News articles={news.articles.slice(0, 5)} />}
+             <News  />
             </div>
           </div>
-          {/* privacy.. */}
+          
           <div className='  flex  justify-start  space-x-[14px] my-[32px] lg:mt-[18px]'>
             {footerItems.map((item, i) => (
               <p
@@ -108,9 +88,9 @@ export default function Home({ news }) {
   );
 }
 
-export const getServerSideProps = async () => {
-  const res1 = await fetch(`${process.env.API_URL}/news`, { method: "GET" });
-  const news = await res1.json();
+// export const getServerSideProps = async () => {
+//   const res1 = await fetch(`${process.env.API_URL}/news`, { method: "GET" });
+//   const news = await res1.json();
 
-  return { props: { news: news.news } };
-};
+//   return { props: { news: news.news } };
+// };
