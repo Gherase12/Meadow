@@ -1,17 +1,12 @@
 import React from 'react'
 import Link  from 'next/link';
-import Image  from 'next/image';
 
-function NewsRight({title , image, index, containerRef, setLoading}) {
-  const handleClick = () => {
-    setLoading(true)
-    if (containerRef.current) {
-      containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
+
+function NewsRight({title , image, index, containerRef}) {
+
 
   return (
-    <Link href={`/news/${index}`} onClick={handleClick } >
+    <Link href={`/news/${index}`} >
     
     <div className="h-[150px] p-[10px] px-[20px] space-x-[20px] cursor-pointer  w-full  border-white flex items-center">
         {/* image */}

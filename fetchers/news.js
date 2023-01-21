@@ -1,13 +1,28 @@
+
+const production = "https://app.meadowlaunch.com/api/news"
+const local = "http://localhost:3000/api/news"
+
 export const fetchNews = async ()=>{
-    const res = await fetch(`https://app.meadowlaunch.com/api/news`, { method: "GET" });
+    const res = await fetch(production, { method: "GET" });
 
     const data = await res.json();
-    return data.news.articles;
+ 
+    return  data.news.articles
 }
-export const fetchNewsContent = async ()=>{
-    const res = await fetch(`https://app.meadowlaunch.com/api/news`, { method: "GET" });
 
-    const data = await res.json();
-    return data.news.articles;
+
+export const fetchNewsContent = async (pageIndex)=>{
+
+    
+    const res = await fetch(
+        `${production}?pageIndex=${pageIndex}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      const data = await res.json();
+      
+      return data.content
 }
 

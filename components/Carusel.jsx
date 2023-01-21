@@ -5,8 +5,8 @@ import "swiper/css";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
-import  Image  from 'next/image';
-import News from './News';
+import Image from "next/image";
+import News from "./News/News";
 
 function Carusel() {
   const [swiper, setSwiper] = React.useState(null);
@@ -19,12 +19,12 @@ function Carusel() {
   };
 
   return (
-    <div className=" relative">
+    <div className=' relative'>
       {/* news */}
-      <div className="absolute left-[630px]  xl:left-[637px] top-[30px] hidden lg:flex 3xl:hidden" >
-            <News  />
-        </div>
-        {/* news end */}
+      <div className='absolute left-[630px]  xl:left-[637px] top-[30px] hidden lg:flex 3xl:hidden'>
+        <News />
+      </div>
+      {/* news end */}
       <div className=' flex items-center w-[276px] -mb-[20px]  lg:mb-[13px]  h-[40px] justify-between  '>
         <h2 className=' text-[20px] lg:text-[22px] leading-[24px] font-black '>
           Upcoming IDOs
@@ -46,9 +46,14 @@ function Carusel() {
       </div>
       {/* lower part */}
       <div className='  h-[316px]  mb-[34px] relative lg:w-[600px]  xl:w-[1510px]  '>
-        
         <div className='absolute left-[40vw] lg:left-[525px] 3xl:left-[800px]  -top-[100px]   lg:-top-[250px] w-[400px] h-[400px] lg:w-[612px] lg:h-[612px] bg-image-1   '>
-          <Image   loading="lazy" fill src={"/object-1.webp"} className="object-contain" alt='big-object' />
+          <Image
+            loading='lazy'
+            fill
+            src={"/object-1.webp"}
+            className='object-contain'
+            alt='big-object'
+          />
         </div>
         <Swiper
           onSwiper={(s) => {
