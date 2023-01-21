@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { fetchNewsContent } from "../fetchers/news";
-import Loading from "./Loading";
+import { fetchNewsContent } from "../../fetchers/news";
+import Loading from "../Loading";
 
 function TextParagraph({ newsIndex }) {
   const { isLoading, data } = useQuery(`newsDetail${newsIndex}`, () =>

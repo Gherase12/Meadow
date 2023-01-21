@@ -1,6 +1,6 @@
 import React from "react";
 import { useRef, useState, useEffect } from "react";
-import TextParagraph from "../../components/TextParagraph";
+import TextParagraph from "../../components/News/TextParagraph";
 
 import { useRouter } from "next/router";
 
@@ -18,22 +18,19 @@ function News() {
 
   const { isLoading, data } = useQuery("news", fetchNews());
 
-  useEffect(()=>{
+  useEffect(() => {
     if (containerRef.current) {
       containerRef.current.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
-  }}
-  ,[newsIndex ])
- 
+    }
+  }, [newsIndex]);
 
   return (
     <div className=' lg:h-[947.31px] space-x-[30px]  pt-[70px] xl:pt-0   w-full flex md:max-w-[1440px]   pr-0 overflow-hidden  mx-auto my-auto relative '>
       {/* new */}
-      <div 
-       
-      className=' flex-1 overflow-y-scroll scrollbar-hide items-center flex flex-col  '>
+      <div className=' flex-1 overflow-y-scroll scrollbar-hide items-center flex flex-col border-2 w-screen lg:w-auto overflow-x-hidden  '>
         {/* image container */}
 
         <div
@@ -46,7 +43,6 @@ function News() {
             </div>
           ) : (
             <img
-           
               src={data && data[newsIndex] ? data[newsIndex].urlToImage : ""}
               className='object-cover h-[200px] md:h-[400px] w-[800px]  md:rounded-[30px]'
             />
@@ -66,15 +62,13 @@ function News() {
             More news
           </h2>
           {/* more news */}
-          <NewsGridBottom  />
+          <NewsGridBottom />
         </div>
       </div>
       {/* news container */}
-      <NewsRightContainer  />
+      <NewsRightContainer />
     </div>
   );
 }
-
-
 
 export default News;

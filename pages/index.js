@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Carusel from "./../components/Carusel";
-import VoteCard from "./../components/VoteCard";
-import Calendar from "./../components/Calendar";
+import Carusel from "../components/Index/Carusel";
+import VoteCard from "../components/Voting/VoteCard";
+import Calendar from "../components/Index/Calendar";
 
 import Image from "next/image";
 
 import PageAnimation from "./../components/PageAnimation";
 import News from "../components/News/News";
 import PopUp from "./../components/PopUp";
-import VotingMobile from "./../components/VotingMobile";
+import VotingMobile from "../components/Voting/VotingMobile";
 
 export default function Home() {
   const footerItems = [

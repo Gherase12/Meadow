@@ -6,7 +6,7 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
 import Image from "next/image";
-import News from "./News/News";
+import News from "../News/News";
 
 function Carusel() {
   const [swiper, setSwiper] = React.useState(null);

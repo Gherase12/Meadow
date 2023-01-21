@@ -1,6 +1,6 @@
 import React  from "react";
 
-import VoteProjectCard from "./../components/VoteProjectCard";
+import VoteProjectCard from "./../components/Voting/VoteProjectCard";
 import Image from "next/image";
 import PageAnimation from "../components/PageAnimation";
 import { useQuery } from 'react-query';

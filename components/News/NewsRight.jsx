@@ -2,7 +2,7 @@ import React from 'react'
 import Link  from 'next/link';
 
 
-function NewsRight({title , image, index, containerRef}) {
+function NewsRight({title , image, index}) {
 
 
   return (

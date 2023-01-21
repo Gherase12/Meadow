@@ -2,8 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import VoteProjectCard from "./VoteProjectCard";
-import Loading from "./Loading";
-import { fetchProjects } from "../fetchers/projects";
+import Loading from "../Loading";
+import { fetchProjects } from "../../fetchers/projects";
 import { useQuery } from "react-query";
 
 function VotingMobile() {

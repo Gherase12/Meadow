@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import LogoRounded from "./LogoRounded";
+import LogoRounded from "../LogoRounded";
 
 
 function Card({i}) {

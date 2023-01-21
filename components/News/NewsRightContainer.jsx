@@ -5,7 +5,7 @@ import { fetchNews } from './../../fetchers/news';
 import Loading from './../Loading';
 
 function NewsRightContainer() {
-  const { isLoading, isError, data, error } = useQuery("news", fetchNews);
+  const { isLoading, data } = useQuery("news", fetchNews);
   return (
     <div className=' py-[30px]   bg-blue-2 w-[400px] hidden 3xl:flex flex-col rounded-[30px] h-[800px]'>
       {isLoading ? (

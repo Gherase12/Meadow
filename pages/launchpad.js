@@ -1,10 +1,10 @@
 import React from "react";
-import LaunchpadCard from "./../components/LaunchpadCard";
+import LaunchpadCard from "./../components/launchpad/LaunchpadCard";
 import Image from "next/image";
 
 import PageAnimation from "./../components/PageAnimation";
 
-function Launchpad({ message }) {
+function Launchpad() {
   const filters = ["All", "Ongoing", "Upcoming", "Ended IDO"];
  
   return (
