@@ -33,7 +33,7 @@ const client = createClient({
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   const currentPagePath = router.pathname;
-  console.log(currentPagePath);
+
 
   return (
     <WagmiConfig client={client}>

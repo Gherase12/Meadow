@@ -9,8 +9,8 @@ import { fetchNews } from "../../fetchers/news";
 import Loading from "../Loading";
 
 function News() {
-  const { isLoading, isError, data, error } = useQuery("news", fetchNews);
-  console.log(data);
+  const { isLoading,  data } = useQuery("news", fetchNews);
+ 
 
   return (
     <div className='relative z-[100]  w-full   lg:transform-none lg:w-[381.85px]  lg:h-[360px]   3xl:h-[310.52px]  rounded-[30px] mb-[80px] '>

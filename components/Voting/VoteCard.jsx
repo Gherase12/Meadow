@@ -22,7 +22,7 @@ function VoteCard() {
     },
   ];
   return (
-    <div className='relative w-full mb-[70px]  lg:w-[591.99px]  lg:h-[310.52px] bg-white rounded-[30px] lg:py-[32px] lg:px-[30px] card1  '>
+    <div className='  relative w-full mb-[70px]  lg:w-[591.99px]  lg:h-[310.52px] bg-white rounded-[30px] lg:py-[32px] lg:px-[30px] card1  '>
       {/* upper section mobile */}
 
       <div className='absolute  left-0 -top-[47px] w-full  lg:hidden   flex justify-between  mb-[35px]'>
