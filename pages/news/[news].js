@@ -30,7 +30,7 @@ function News() {
   return (
     <div className=' lg:h-[947.31px] space-x-[30px]  pt-[70px] xl:pt-0   w-full flex md:max-w-[1440px]   pr-0 overflow-hidden  mx-auto my-auto relative '>
       {/* new */}
-      <div className=' flex-1 overflow-y-scroll scrollbar-hide items-center flex flex-col border-2 w-screen lg:w-auto overflow-x-hidden  '>
+      <div className=' flex-1 overflow-y-scroll scrollbar-hide items-center flex flex-col  w-screen lg:w-auto overflow-x-hidden  '>
         {/* image container */}
 
         <div
