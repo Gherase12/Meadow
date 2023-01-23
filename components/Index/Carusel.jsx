@@ -63,7 +63,7 @@ function Carusel() {
           spaceBetween={15}
           className='flex   space-x-[15px] w-full  h-full  z-50 '
         >
-          {[...Array(6)].map((a, i) => (
+          {[...Array(4)].map((a, i) => (
             <SwiperSlide key={i}>
               <Card i={i} />
             </SwiperSlide>

@@ -42,7 +42,7 @@ function Launchpad() {
           </ul>
 
           <div className='overflow-y-scroll gap-[15px] h-[600px] lg:h-[700px]  scrollbar-hide    grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 '>
-            {[...Array(6)].map((a, i) => (
+            {[...Array(4)].map((a, i) => (
               <LaunchpadCard key={i} i={i} />
             ))}
           </div>
