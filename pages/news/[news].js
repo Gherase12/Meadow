@@ -43,7 +43,7 @@ function News() {
             </div>
           ) : (
             <img
-              src={data && data[newsIndex] ? data[newsIndex].urlToImage : ""}
+              src={data && data[newsIndex] ? data[newsIndex].urlToImage : "/news.webp"}
               className='object-cover h-[200px] md:h-[400px] w-[800px]  md:rounded-[30px]'
             />
           )}

@@ -45,8 +45,7 @@ function Card({ i,a }) {
             onClick={() => router.push("project/meadow")}
             className=' cursor-pointer text-[13px] w-[220px] h-[57px] font-normal  leading-[19px] text-gray-3 mb-[29px] '
           >
-            Meadow will Incubate and launch the most anticipated projects on the
-            Sui Network.
+           Meadow will incubate and launch the most anticipated projects on the Sui Network
           </p>
           {/* prices */}
           <div className='text-black flex space-x-[25px] mb-[31px] '>

@@ -32,8 +32,7 @@ function Card({i,a}) {
       </div>
       {/* paragraf */}
       <p className='  text-[13px] font-normal w-[261px] h-[57px]  leading-[19px] text-gray-3 mb-[29px] '>
-        Meadow is ready to launch the most fascinating tier 1 projects on the
-        most scalable Layer 1 blockchain
+      Meadow will incubate and launch the most anticipated projects on the Sui Network
       </p>
       {/* prices */}
       <div className='text-black flex space-x-[25px] mb-[31px] '>
