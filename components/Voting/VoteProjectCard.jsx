@@ -66,7 +66,7 @@ function VoteProjectCard({
 
         {/*  */}
         <div className='flex flex-col justify-around '>
-          <p className='font-black text-[14px] md:text-[16px] lg:text-[18px] leading-[24px] text-black'>
+          <p className='font-black  text-[10px] md:text-[16px] lg:text-[18px] leading-[24px] text-black'>
             {name}
           </p>
           <div className='avenir-font font-normal text-[14px] leading-[19px] text-gray-3'>
@@ -106,7 +106,7 @@ function VoteProjectCard({
           </div>
           <button
             onClick={notify}
-            className='border-white-2 cursor-pointer py-[11.5px] border-[1px] rounded-full flex justify-center space-x-[10px] items-center w-[82px]  '
+            className='border-white-2 cursor-pointer scale-[0.8]  md:scale-[1]  py-[11.5px] border-[1px] rounded-full flex justify-center space-x-[10px] items-center w-[82px]  '
           >
             <Image
               src='/upArrow.svg'

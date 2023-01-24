@@ -9,21 +9,11 @@ function GameCard({index, type}) {
             </div>
             
             <Image src={`/games/Rectangle-1687-${index}.webp`} className='pb-[20px]' width={307}  height={165} />
-            <div className="w-full px-[10px] flex justify-between">
-            <div className="w-[215px] height-[21px] font-bold text-[16px] leading-[130%] ">
+            <div className="w-full px-[10px] flex justify-center">
+            <div className=" height-[21px] font-black text-[16px] leading-[130%] ">
                 TBA
                 </div>
-                <div className='flex items-center space-x-[4px]  justify-center '>
-            <Image
-              src='/star.svg'
-              width={11.91}
-              height={11.91}
-              alt='star icon'
-            />
-            <p className='font-black text-[16px] leading-[22px]  text-blue-1'>
-              1024
-            </p>
-          </div>
+                
             </div>
     </div>
   )

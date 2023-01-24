@@ -42,7 +42,8 @@ function Stake() {
             Stake
           </h1>
           {/* board */}
-          <div className='bg-white  max-w-[1011px] 3xl:mx-auto h-full  lg:h-[596px] relative z-50 rounded-[30px] shadow-md card1 flex pt-[30px] lg:pt-0 lg:items-center justify-center '>
+          <div className='bg-white  max-w-[1011px] 3xl:mx-auto h-full  lg:h-[596px] relative z-50 rounded-[30px] shadow-md card1 flex pt-[30px] lg:pt-0 lg:items-center justify-center  '>
+            {/* <Image src="/stake-hidden.png" fill className="z-20 object-cover "  /> */}
             <div className='lg:w-[519px]    w-[80%]'>
               <h2 className=' text-[20px] lg:text-[22px] font-black leading-[33px] text-black mb-[30px] '>
                 Enter amount and days

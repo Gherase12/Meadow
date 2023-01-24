@@ -16,7 +16,7 @@ function Voting() {
 
   return (
     <PageAnimation>
-      <div className=' lg:h-[947.31px]   overflow-hidden   w-full flex md:max-w-[1440px] z-40 relative   overflow-x-hidden  md:space-x-[62px] mx-auto my-auto  '>
+      <div className=' lg:h-[947.31px]   md:overflow-hidden   w-full flex md:max-w-[1440px] z-40 relative   overflow-x-hidden  md:space-x-[62px] mx-auto my-auto  '>
         <div className='    w-full md:mb-[11px] relative   '>
           {/* sm-image */}
           <div className='fixed rotate-[3.7deg] lg:hidden z-10   left-[60vw]  -top-[40px] w-[233px] h-[233px]    '>
