@@ -11,7 +11,7 @@ function GameCard({index, type}) {
             <Image src={`/games/Rectangle-1687-${index}.webp`} className='pb-[20px]' width={307}  height={165} />
             <div className="w-full px-[10px] flex justify-center">
             <div className=" height-[21px] font-black text-[16px] leading-[130%] ">
-                TBA
+            TO BE ANNOUNCED
                 </div>
                 
             </div>
