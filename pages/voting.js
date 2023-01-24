@@ -52,7 +52,7 @@ function Voting() {
             ):(
 
             <div className='overflow-y-scroll scrollbar-hide  h-[660px] '>
-              {data?.sort((a, b) => badd .votes - a.votes).map(
+              {data?.sort((a, b) => b.votes - a.votes).map(
                 ({ id, name, img, website, votes, twitter, discord }, i) => (
                   <VoteProjectCard
                     key={i}
