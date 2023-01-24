@@ -13,6 +13,10 @@ function Games() {
     "Cookie Policy",
   ];
 
+  const types = [
+    "Shooter","Sport","Shooter","Shooter","Strategy","Shooter","Simulator", "Shooter","RPG"
+  ]
+
   return (
     <PageAnimation>
     <div className=' lg:h-[947.31px]  overflow-hidden   w-full flex md:max-w-[1440px]   overflow-x-hidden  md:space-x-[62px] mx-auto my-auto  '>
@@ -42,9 +46,9 @@ function Games() {
        
 
         <div className='overflow-y-scroll gap-[15px] md:h-[700px]  scrollbar-hide    grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4  '>
-          {[...Array(10)].map((a, i) => (
+          {types.map((t, i) => (
             
-            <GameCard key={i} />
+            <GameCard key={i} index={i} type={t} />
           ))}
         </div>
         {/*  */}

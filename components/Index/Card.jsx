@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { AiFillLock } from "react-icons/ai";
 import Link from "next/link";
 
-function Card({ i }) {
+function Card({ i,a }) {
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
   const links = [
     "https://meadowlaunch.com/",
@@ -78,7 +78,7 @@ function Card({ i }) {
         </>
       ) : (
         <Image
-          src={`/projects/project${i + 1}.png`}
+          src={`/projects/project${a}.png`}
           fill
           className='object-cover'
           alt='project'

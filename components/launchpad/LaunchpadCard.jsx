@@ -3,7 +3,7 @@ import Image from "next/image";
 import LogoRounded from "../LogoRounded";
 
 
-function Card({i}) {
+function Card({i,a}) {
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
   return (
     <div className='relative  z-20 max-w-[300px]  h-[308px] lg:h-[308px] bg-white rounded-[30px] py-[27px] px-[27px]'>
@@ -61,7 +61,7 @@ function Card({i}) {
         </>
       ) : (
         <Image
-          src={`/projects/project${i + 1}.png`}
+          src={`/projects/project${a}.png`}
           fill
           className='object-cover rounded-[30px]'
           alt="project"
