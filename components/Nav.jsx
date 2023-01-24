@@ -156,18 +156,21 @@ function Nav({ path }) {
 
           <div className='py-[10px] text-[16px] nav-font flex flex-row items-between  justify-around'>
             <Link
+            target="_blank" rel="noreferrer noopener"
               href='https://meadow.gitbook.io/docs/'
               className='h-[42px] py-[12px]  '
             >
               Docs
             </Link>
             <Link
+            target="_blank" rel="noreferrer noopener"
               href='https://drive.google.com/drive/folders/1r0gJEzF07XEQ4fGNcLycJUu-BK6uRl-a?usp=share_link'
               className='h-[42px] py-[12px]  '
             >
               Brand Kit
             </Link>
             <Link
+            target="_blank" rel="noreferrer noopener"
               href='https://meadow.gitbook.io/docs/socials-and-links/team'
               className='h-[42px] py-[12px]  '
             >
@@ -182,6 +185,7 @@ function Nav({ path }) {
           <div className='w-[165px] flex justify-around h-[40px] mb-[35px] '>
             {socialMedia.map(({ name, Icon, link }, i) => (
               <Link
+              target="_blank" rel="noreferrer noopener"
                 href={link}
                 key={i}
                 className='rounded-full w-[40px] h-[40px] flex items-center justify-center bg-black '
@@ -245,18 +249,21 @@ function Nav({ path }) {
           </div>
           <div className='p-[24.5px] text-[16px]  nav-font flex flex-col items-between '>
             <Link
+            target="_blank" rel="noreferrer noopener"
               href='https://meadow.gitbook.io/docs/'
               className='h-[42px] py-[12px] pr-[16px] hover:text-blue-1 cursor-pointer'
             >
               Docs
             </Link>
             <Link
+            target="_blank" rel="noreferrer noopener"
               href='https://drive.google.com/drive/folders/1r0gJEzF07XEQ4fGNcLycJUu-BK6uRl-a?usp=share_link'
               className='h-[42px] py-[12px]  hover:text-blue-1 cursor-pointer '
             >
               Brand Kit
             </Link>
             <Link
+            target="_blank" rel="noreferrer noopener"
               href='https://meadow.gitbook.io/docs/socials-and-links/team'
               className='h-[42px] py-[12px] pr-[16px] hover:text-blue-1 cursor-pointer'
             >
@@ -271,6 +278,7 @@ function Nav({ path }) {
           <div className='w-[140px] flex justify-around h-[40px] mb-[35px] '>
             {socialMedia.map(({ name, link, Icon }, i) => (
               <Link
+              target="_blank" rel="noreferrer noopener"
                 href={link}
                 key={i}
                 className='rounded-full w-[40px] h-[40px] flex items-center justify-center bg-black '

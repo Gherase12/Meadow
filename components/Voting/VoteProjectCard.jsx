@@ -80,7 +80,7 @@ function VoteProjectCard({
           {links.map(
             (l, index) =>
               l && (
-                <Link key={index} href={l}>
+                <Link target="_blank" rel="noreferrer noopener" key={index} href={l} >
                   <Image
                     src={icons[index]}
                     width={18.43}
