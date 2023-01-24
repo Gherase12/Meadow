@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <PageAnimation>
       <div className='lg:h-[947.31px]     w-full flex md:max-w-[1440px]   pr-0 3xl:overflow-hidden  mx-auto my-auto relative '>
-        <PopUp />
+        {/* <PopUp /> */}
         {/* small object */}
         <div className='fixed left-[100px] lg:left-[925px] lg:-top-[230px] top-0  w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px] '>
           <Image
