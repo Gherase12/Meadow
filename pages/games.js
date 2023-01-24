@@ -2,79 +2,82 @@ import {React, useState} from "react";
 import Image from "next/image";
 import { validateEmail } from './../utils/validateEmail';
 import { toast } from 'react-toastify';
-
+import PageAnimation from './../components/PageAnimation';
+import GameCard from './../components/Games/GameCard';
+import { BsArrowLeftShort } from 'react-icons/bs';
 function Games() {
+  const footerItems = [
+    "Privacy Policy",
+    "Teams of use",
+    "Disclaimer",
+    "Cookie Policy",
+  ];
 
-  const [email, setEmail] = useState('');
-
-  const success = ()=>{
-    toast("Email sent",{autoClose: 2000});
-    setEmail("")
-  }
-
-  const validate = (e)=>{
-    e.preventDefault();
-    validateEmail(email) ? success() : toast.error("Please enter a valid email address",{autoClose: 2000}) 
-  }
   return (
-    <div className='lg:h-[947.31px]   z-30  w-full flex md:max-w-[1440px]  pr-0 overflow-hidden md:space-x-[62px] mx-auto my-auto relative  font-avenir lg:items-center justify-center '>
-      {/* object-1 */}
-      <div className='w-[500px] h-[500px] lg:scale-[1.5] fixed left-[150px]  lg:left-[1500px] lg:bottom-[50px] -bottom-[250px]   bg-image-1'>
-        <Image
-          src='/object-1.webp'
-          fill
-          className='object-cover'
-          alt='object-1'
-        />
-      </div>
-      {/* object-5 */}
-      <div className='w-[200px]   h-[200px] fixed -left-[40px] lg:left-[700px] top-[40px]  z-10 lg:-rotate-[15deg] lg:scale-[2] lg:top-[90px] '>
-        <Image fill src='/object-5.webp' className='border-2 z-10' alt='object-5' />
-      </div>
-      {/* object-6 */}
-      <div className='w-[200px]   h-[200px] fixed -top-[20px] lg:-top-[50px] right-[20px] lg:right-[380px] lg:scale-[1.7]  z-10 '>
-        <Image
-          fill
-          src='/object-6.webp'
-          className='object-cover '
-          alt='object-6'
-        />
-      </div>
-      {/* page content */}
-      <div className='z-30 flex flex-col justify-center  items-center pb-[100px] '>
-        <div className=' text-[32px] lg:text-[75px] font-black leading-[32px] lg:leading-[51px] mb-[42px] text-center '>
-          Coming soon
+    <PageAnimation>
+    <div className=' lg:h-[947.31px]  overflow-hidden   w-full flex md:max-w-[1440px]   overflow-x-hidden  md:space-x-[62px] mx-auto my-auto  '>
+      <div className='    w-full md:mb-[11px] relative px-[30px]  md:px-0  '>
+        {/* big object */}
+        <div className='absolute left-[70vw] lg:left-[625px] lg:-top-[30px] -top-[70px] z-20 w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px]  bg-image-1 scale-[1.5]   '>
+          <Image src={"/object-3.webp"} fill alt='big-object' />
+        </div>
+        {/* small object */}
+        <div className=' fixed left-[100px] lg:left-[925px] lg:-top-[230px] top-0  w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px]    '>
+          <Image
+            src={"/object-2.webp"}
+            fill
+            className='object-contain'
+            alt='big-object'
+          />
+        </div>
+
+        <p className='mt-[23px] md:mt-0  h-[23px] font-bold text-[18px] text-gray mb-[22.64px] '>
+          Games
+        </p>
+        <div className=' z-20   lg:mb-[10.26px] w-[347.89px] h-[68px] text-[5vw] lg:w-[708.49px]   lg:text-[41px] font-extrabold leading-[34px] lg:leading-[51px]  '>
+          <h1 className='text-black text-[32px] lg:text-[41px] '>
+            Upcoming games
+          </h1>
         </div>
        
-        <div className='text-[14px] lg:text-[15px] text-center font-black  mb-[22px] h-[44px]  w-[319px]  lg:w-[396.86px] px-[10px]'>
-          Leave your email to be the first to know about the launch of IGOs
-          
+
+        <div className='overflow-y-scroll gap-[15px] md:h-[700px]  scrollbar-hide    grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4  '>
+          {[...Array(10)].map((a, i) => (
+            
+            <GameCard key={i} />
+          ))}
         </div>
-        <form action='' className='space-y-[16px]  flex flex-col items-center'>
-          <div className='relative'>
-            <input
-              type='text'
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              className='bg-white  w-[280px]  md:w-[342px] lg:w-[465px] lg:h-[72px] outline-none h-[56px] rounded-full px-[34px] py-[17px] text-[16px]  '
-              placeholder='Your email'
-            />
-            <input
-              type='submit'
-              onClick={(e)=>validate(e)}
-              className='bg-black cursor-pointer w-[164px] h-[72px] rounded-full lg:flex items-center justify-center text-[16px] text-white leading-[22px] font-medium hidden absolute right-0 top-0 '
-              value='Notify me'
-            />
+        {/*  */}
+        <div className=" w-full flex justify-center mt-[20px] " >
+          <div className="flex items-center space-x-[21px]">
+            {/*  */}
+            <button className="py-[6px] px-[9px] flex space-x-[5px] items-center border-[1px] rounded-full border-black/20" >
+              <BsArrowLeftShort className="text-[24px]" />
+              <div className="text-[14px] font-bold pr-[10px]" >New</div>
+            </button>
+              {/*  */}
+            <div className="text-black/20" ><span className="text-blue-1 cursor-pointer " >1 </span>2 ... 8 9</div>
+
+            <button className="py-[6px] px-[9px] flex space-x-[5px] items-center border-[1px] rounded-full border-black/20" >
+              <div className="text-[14px] font-bold pl-[10px]" >Older</div>
+              <BsArrowLeftShort className="text-[24px] rotate-180 " />
+            </button>
           </div>
-          <input
-            type='submit'
-            onClick={(e)=>validate(e)}
-            className='bg-black  w-[280px]  md:w-[342px] outline-none h-[56px] rounded-full flex items-center justify-center text-[16px] text-white leading-[22px] font-medium lg:hidden z-30 relative '
-            value='Subscribe'
-          />
-        </form>
+        </div>
+        {/*  */}
+        <div className='  flex  justify-start  space-x-[14px] my-[32px] '>
+            {footerItems.map((item, i) => (
+              <p
+                key={i}
+                className='text-black opacity-40 text-[12px] leading-[16px] '
+              >
+                {item}
+              </p>
+            ))}
+          </div>
       </div>
     </div>
+  </PageAnimation>
   );
 }
 

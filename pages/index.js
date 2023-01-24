@@ -11,7 +11,7 @@ import PopUp from "./../components/PopUp";
 import VotingMobile from "../components/Voting/VotingMobile";
 
 export default function Home() {
-  const footerItems = [
+   const footerItems = [
     "Privacy Policy",
     "Teams of use",
     "Disclaimer",
