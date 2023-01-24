@@ -126,7 +126,7 @@ function Nav({ path }) {
         className={`${
           !open
             ? "fixed right-[100%]"
-            : " text-gray-4 fixed top-0 pt-[100px]    left-0 h-screen  w-[100%] px-[29px] nav-container  overflow-y-scroll  flex  flex-col    bg-blue-2    duration-500 ease-in-out z-40 xl:hidden"
+            : " text-gray-4 fixed top-0 pt-[100px]    left-0 h-screen  w-[100%] px-[29px] nav-container  overflow-y-scroll  flex  flex-col    bg-blue-2    duration-500 ease-in-out z-[100] xl:hidden"
         }  `}
       >
         <AiOutlineClose
