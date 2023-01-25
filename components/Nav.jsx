@@ -27,6 +27,8 @@ function Nav({ path }) {
   const [open, setOpen] = useState(false);
   // connect wallet modal open
   let [isOpen, setIsOpen] = useState(false);
+
+  const { isConnected, address } = useAccount();
   function closeModal() {
     setIsOpen(false);
   }
@@ -205,7 +207,7 @@ function Nav({ path }) {
               }}
               className=' w-full md:max-w-[200px] flex items-center justify-center h-[50px] text-white bg-blue-1  rounded-[15px]  btn-text '
             >
-              { status == "connected"
+              { status == "connected" || isConnected
                 ? "Disconnect"
                 : "Connect wallet"}
             </button>
@@ -303,7 +305,7 @@ function Nav({ path }) {
               onClick={openModal}
               className='transition duration-700 ease-in-out hover:shadow-lg hover:shadow-white hover:bg-white hover:text-black flex items-center justify-center h-[50px] bg-blue-1 w-[246px] rounded-[15px]  btn-text '
             >
-              { status == "connected"
+              { status == "connected" || isConnected
                 ? "Disconnect"
                 : "Connect wallet"}
             </button>
