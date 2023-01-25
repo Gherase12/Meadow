@@ -30,8 +30,6 @@ function MetamaskButton({ closeModal }) {
     });
 
     const signature = await signMessageAsync({ message });
-
-    
   };
 
   return (

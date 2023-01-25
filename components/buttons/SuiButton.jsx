@@ -6,6 +6,18 @@ import Image from "next/image";
 import ConnectedWrapper from "../ConnectedWrapper";
 function SuiButton({ closeModal }) {
   const { status, wallet } = ethos.useWallet();
+
+
+  const Connect = ()=>{
+    closeModal();
+    localStorage.setItem("connectedAt", Date.now());
+  }
+
+  const disconnect = ()=>{
+    closeModal();
+    wallet.disconnect();
+    localStorage.removeItem("connectedAt");
+  }
   
   return (
     <div className='relative  rounded-md shadow-lg border-2 '>
@@ -13,8 +25,7 @@ function SuiButton({ closeModal }) {
         <button
           className='inline-flex justify-center   border-2   px-[45px] py-2 text-[15px] font-bold  '
           onClick={() => {
-            closeModal();
-            wallet.disconnect();
+            disconnect()
           }}
         >
           <ConnectedWrapper />
@@ -30,7 +41,7 @@ function SuiButton({ closeModal }) {
         <SignInButton
           className='inline-flex justify-center   border-2   px-[45px] py-2 text-[15px] font-bold  '
           onClick={() => {
-            closeModal();
+            Connect()
           }}
         >
           <Image

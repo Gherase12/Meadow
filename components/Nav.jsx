@@ -21,6 +21,7 @@ import ConnectModal from "./ConnectModal";
 
 import { useAccount } from "wagmi";
 
+
 function Nav({ path }) {
   // nav open
   const [open, setOpen] = useState(false);
@@ -70,7 +71,7 @@ function Nav({ path }) {
     {
       Icon: GiNewspaper,
       name: "News",
-      pagePath: "news/1",
+      pagePath: "news",
     },
   ];
 
@@ -89,10 +90,10 @@ function Nav({ path }) {
   ];
 
   //conection
-  const { isConnected } = useAccount();
+  
   const { status } = ethos.useWallet();
-
-  const isMetaMuskConnected = isConnected;
+ 
+  
 
   return (
     <>
@@ -204,7 +205,9 @@ function Nav({ path }) {
               }}
               className=' w-full md:max-w-[200px] flex items-center justify-center h-[50px] text-white bg-blue-1  rounded-[15px]  btn-text '
             >
-              Connect wallet
+              { status == "connected"
+                ? "Disconnect"
+                : "Connect wallet"}
             </button>
             <Link href='https://meadowlaunch.com/'>
               <button className=' bg-black  flex items-center justify-center h-[50px] md:max-w-[200px] w-full rounded-[15px] btn-text '>

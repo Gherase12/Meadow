@@ -8,18 +8,18 @@ import { publicProvider } from "wagmi/providers/public";
 import { SessionProvider } from "next-auth/react";
 import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
+import Timeout from './../components/Utils/Timeout';
 
 import AddressBoard from './../components/AddressBoard';
 import {
-  useQuery,
-  useMutation,
-  useQueryClient,
   QueryClient,
   QueryClientProvider,
 } from 'react-query'
 
-const queryClient = new QueryClient()
 
+const queryClient = new QueryClient()
 const { provider, webSocketProvider } = configureChains(
   [goerli],
   [publicProvider()]
@@ -31,10 +31,13 @@ const client = createClient({
   autoConnect: true,
 });
 
+
+
+
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   const currentPagePath = router.pathname;
-
+  
 
   return (
     <WagmiConfig client={client}>
@@ -61,6 +64,7 @@ export default function App({ Component, pageProps }) {
               <Nav path={currentPagePath} />
               <AddressBoard />
               <Component {...pageProps} />
+              <Timeout />
               <Analytics />
             </div>
           </div>

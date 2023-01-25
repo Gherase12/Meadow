@@ -4,6 +4,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import TokenSaleDetail from "./../../components/TokenSaleDetail";
 import { useRouter } from "next/navigation";
 import Link  from 'next/link';
+import { toast } from 'react-toastify';
 function Project() {
   const router = useRouter();
   const prices = [
@@ -30,7 +31,9 @@ function Project() {
   ];
 
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
+  const notify = () => toast.warn("Coming soon");
 
+ 
   return (
     <div className='  w-screen'>
       {/* small object */}
@@ -162,7 +165,8 @@ function Project() {
                   TBA -TBA
                 </div>
               </div>
-              <button className='h-[40px] bg-black w-full mt-[20px] rounded-[14px] flex items-center justify-center space-x-[10px]  '>
+
+              <button onClick={notify}  className='h-[40px] bg-black w-full mt-[20px] rounded-[14px] flex items-center justify-center space-x-[10px]  '>
                 <div className='text-[18px] font-medium leading-[24px] text-white '>
                   Participate
                 </div>

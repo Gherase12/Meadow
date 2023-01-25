@@ -45,7 +45,7 @@ function TextParagraph({ newsIndex }) {
       ) : (
         paragraphs?.map((paragraph, index) => (
           <div key={index}>
-            <p className='font-bold max-w-[800px]'>{paragraph} </p>
+            <p className='font-medium text-[18px] text-gray-6 max-w-[800px]'>{paragraph} </p>
             <br />
           </div>
         ))

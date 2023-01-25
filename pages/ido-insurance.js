@@ -1,9 +1,9 @@
-import { React, useState } from "react";
+import React, {useState , useEffect} from "react";
 import Image from "next/image";
 
 import PageAnimation from "../components/PageAnimation";
-
-
+import { useAccount} from "wagmi";
+import { getSession } from "next-auth/react";
 import InsuranceCard from '../components/insurance/InsuranceCard';
 import ConnectWalletInsurance from '../components/insurance/ConnectWalletInsurance';
 import { ethos } from "ethos-connect";
@@ -12,11 +12,28 @@ import Warning from './../components/insurance/Warning';
 
 function Stake() {
     const { status, wallet } = ethos.useWallet();
-    const address = wallet?.address
+   
+    
+
     let [isOpen, setIsOpen] = useState(false);
+    const [user, setUser] = useState(null);
     function closeModal() {
       setIsOpen(false);
     }
+
+
+    // useEffect(() => {
+    //   getSession().then((session) => {
+    //    console.log(session.user)
+    //       setUser(session);
+       
+    //   });
+    // }, []);
+
+
+    const { isConnected, address } = useAccount();
+
+   
   return (
     <PageAnimation>
       <div className='scrollbar-hide -mt-[70px] pt-[70px] lg:mt-0 lg:pt-0 lg:h-[947.31px] h-screen   w-full flex md:max-w-[1440px]   pr-0 overflow-x-hidden overflow-y-scroll  mx-auto my-auto relative'>
@@ -53,13 +70,13 @@ function Stake() {
           <h1 className='text-[41px] ml-[30px] lg:ml-0 font-extrabold leading-[51px]  '>
             Insurance
           </h1>
-          {status != "connected" && (
+          {(status != "connected" && !isConnected )  && (
 
           <p className="text-[17px] leading-[23px] ml-[30px] lg:ml-0 font-medium max-w-[289px] my-[20px] lg:my-[25px] lg:max-w-[629px] lg:text-[22px]  ">Connect wallet to see if you are eligible for insurance</p>
           )}
           {/* board */}
-        {status == "connected" ?(
-         <InsuranceCard  tierName={"Gold"} address={address} setIsOpen={setIsOpen} /> 
+        {(status == "connected" || isConnected) ?(
+         <InsuranceCard  tierName={"Gold"} address={wallet?.address || address } setIsOpen={setIsOpen} /> 
 
         ):(
         <ConnectWalletInsurance setIsOpen={setIsOpen} />
@@ -71,5 +88,8 @@ function Stake() {
     </PageAnimation>
   );
 }
+
+
+
 
 export default Stake;
