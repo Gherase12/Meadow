@@ -1,31 +1,43 @@
 import React from "react";
 import Image from "next/image";
 import LogoRounded from "../LogoRounded";
-
+import Link from "next/link";
 
 function Card({i,a}) {
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
+  const links = [
+    "https://meadowlaunch.com/",
+    "https://twitter.com/meadowlaunch",
+    "https://t.co/FLNKZU3ujp",
+  ];
   return (
     <div className='relative  z-20 max-w-[300px]  h-[308px] lg:h-[308px] bg-white rounded-[30px] py-[27px] px-[27px]'>
      
      {i == 0 ? (
-        <>
-          <div className='flex justify-between items-center h-[50px]  mb-[26px]'>
-        <div className='space-y-[10px]'>
-          <h2 className='font-extrabold text-[21px] leading-[29px]' >Meadow</h2>
-          
-          <div className='w-[83px] h-[25px] flex flex-start space-x-[4px] opacity-60 '>
+      <div className="relative" >
+        <div className='w-[83px] h-[25px] flex flex-start space-x-[4px] opacity-60 absolute top-[33px]  z-30'>
             {icons.map((i , index) => (
-              <Image
-              key={index}
-                src={i}
-                width={18.43}
-                height={14.79}
-                className='text-gray-3'
-                alt={"Meadown logo button"}
-              />
+              <Link
+              target="_blank" rel="noreferrer noopener"
+              href={links[index]} key={index}>
+                <Image
+                  key={index}
+                  src={i}
+                  width={18.43}
+                  height={14.79}
+                  className='text-gray-3 '
+                  alt={"Meadown logo button"}
+                />
+              </Link>
             ))}
           </div>
+
+        <Link href="/project/meadow">
+          <div className='flex justify-between items-center h-[50px]  mb-[26px]'>
+        <div className='space-y-[10px]'>
+          <h2 className='font-extrabold text-[21px] leading-[29px] mb-[25px]' >Meadow</h2>
+          
+          
         </div>
         {/* logo */}
         <LogoRounded  />
@@ -57,7 +69,8 @@ function Card({i,a}) {
       <p className='laeding-[21px] text-[13px] w-[55px] h-[21px] text-gray-3 '>
         $0
       </p>
-        </>
+        </Link>
+      </div>
       ) : (
         <Image
           src={`/projects/project${a}.png`}

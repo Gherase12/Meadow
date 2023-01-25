@@ -16,15 +16,12 @@ function Card({ i,a }) {
   return (
     <div className='relative    -ml-[30px] lg:ml-0 z-20 scale-[0.8] lg:transform-none w-[306px] h-[308px] lg:h-[316px] bg-white rounded-[30px] py-[30px] px-[27px]'>
       {i == 0 ? (
-        <>
-          <div className='flex justify-between items-center h-[50px]  mb-[26px]'>
-            <div className='space-y-[10px]'>
-              <h2 className='font-extrabold text-[21px] leading-[29px]'>
-                Meadow
-              </h2>
-              <div className='w-[83px] h-[25px] flex flex-start space-x-[4px] opacity-60 '>
+        <div className=" relative " >
+          <div className='w-[83px] h-[25px] flex flex-start space-x-[4px] opacity-60 absolute top-[33px]  z-30'>
                 {icons.map((icon, index) => (
-                  <Link href={links[index]} key={index}>
+                  <Link
+                  target="_blank" rel="noreferrer noopener"
+                  href={links[index]} key={index}>
                     <Image
                       key={index}
                       src={icon}
@@ -36,6 +33,14 @@ function Card({ i,a }) {
                   </Link>
                 ))}
               </div>
+
+        <Link href="/project/meadow">
+          <div className='flex justify-between items-center h-[50px]  mb-[26px] '>
+            <div className='space-y-[10px] relative'>
+              <h2 className='font-extrabold text-[21px] leading-[29px] mb-[25px]'>
+                Meadow
+              </h2>
+              
             </div>
             {/* logo */}
             <LogoRounded img={"/meadow.svg"} />
@@ -74,7 +79,9 @@ function Card({ i,a }) {
           <p className='laeding-[21px] text-[13px] w-[55px] h-[21px] text-gray-3 '>
             $0
           </p>
-        </>
+        </Link>
+        </div>
+
       ) : (
         <Image
           src={`/projects/project${a}.png`}

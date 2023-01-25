@@ -38,7 +38,7 @@ function Stake() {
           <p className='mt-[23px] ml-[30px] lg:ml-0 md:mt-0 w-[88px] h-[23px] font-bold text-[17px] text-gray mb-[22.64px] '>
             Staking
           </p>
-          <h1 className='text-[41px] ml-[30px] lg:ml-0 font-black leading-[51px] mb-[49px] '>
+          <h1 className='text-[41px] ml-[30px] lg:ml-0 font-extrabold leading-[51px] mb-[49px] '>
             Stake
           </h1>
           {/* board */}

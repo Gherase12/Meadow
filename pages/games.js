@@ -60,7 +60,7 @@ function Games() {
               <div className="text-[14px] font-bold pr-[10px]" >New</div>
             </button>
               {/*  */}
-            <div className="text-black/20" ><span className="text-blue-1 cursor-pointer " >1 </span>2 ... 8 9</div>
+            <div className="text-black/20  " ><span className="text-blue-1 cursor-pointer " >1 </span>2 ... 8 9</div>
 
             <button className="py-[6px] px-[9px] flex space-x-[5px] items-center border-[1px] rounded-full border-black/20" >
               <div className="text-[14px] font-bold pl-[10px]" >Older</div>

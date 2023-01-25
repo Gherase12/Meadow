@@ -300,7 +300,7 @@ function Nav({ path }) {
               onClick={openModal}
               className='transition duration-700 ease-in-out hover:shadow-lg hover:shadow-white hover:bg-white hover:text-black flex items-center justify-center h-[50px] bg-blue-1 w-[246px] rounded-[15px]  btn-text '
             >
-              {isMetaMuskConnected && status == "connected"
+              { status == "connected"
                 ? "Disconnect"
                 : "Connect wallet"}
             </button>

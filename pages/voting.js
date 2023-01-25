@@ -35,7 +35,7 @@ function Voting() {
             Voting
           </p>
           <div className='mx-[30px] md:mx-0 z-30  mb-[15px] lg:mb-[17.26px] w-[347.89px] h-[68px] text-[5vw] lg:w-[708.49px]  lg:h-[52px]  lg:text-[41px] font-black leading-[34px] lg:leading-[51px]  '>
-            <h1 className='text-black relative  text-[32px] lg:text-[41px] z-40'>
+            <h1 className='font-extrabold relative  text-[32px] lg:text-[41px] z-40'>
             Vote for Projects
             </h1>
           </div>

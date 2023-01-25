@@ -66,7 +66,7 @@ function VoteProjectCard({
 
         {/*  */}
         <div className='flex flex-col justify-around '>
-          <p className='font-black  text-[10px] md:text-[16px] lg:text-[18px] leading-[24px] text-black'>
+          <p className='font-black  max-[375px]:w-[50px] max-[375px]:truncate text-[10px] md:text-[16px] lg:text-[18px] leading-[24px] text-black'>
             {name}
           </p>
           <div className='avenir-font font-normal text-[14px] leading-[19px] text-gray-3'>
