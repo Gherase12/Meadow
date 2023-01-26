@@ -20,6 +20,7 @@ import { ethos } from "ethos-connect";
 import ConnectModal from "./ConnectModal";
 
 import { useAccount } from "wagmi";
+import AddressBoard from './AddressBoard';
 
 
 function Nav({ path }) {
@@ -95,22 +96,40 @@ function Nav({ path }) {
   
   const { status } = ethos.useWallet();
  
-  
+  const connected = status == "connected" || isConnected;
 
   return (
     <>
       
-      <div className=' xl:hidden flex items-center justify-between px-[18px] fixed top-0 z-50 left-0 right-0 h-[70px] bg-blue-2 '>
+      <div className=' xl:hidden flex items-center justify-between px-[18px] fixed top-0 z-50 left-0 right-0 h-[70px] bg-blue-2   '>
         <Link href='/'>
-          <div className='relative w-[156px] h-[50px]'>
-            <Image
-              src='/logo.png'
+         
+
+            {
+              connected ? (
+                <div className='relative w-[50px] h-[50px]'>
+                <Image
+              src='/logo-icon.png'
               fill
               className='object-contain'
               alt={"Meadown sui launchpad logo"}
             />
-          </div>
+            </div>
+              ):(
+                <div className='relative w-[156px] h-[50px]'>
+                <Image
+                src='/logo.png'
+                fill
+                className='object-contain'
+                alt={"Meadown sui launchpad logo"}
+              />
+              </div>
+              )
+            }
+            
+          
         </Link>
+        <AddressBoard />
         {!open ? (
           <RxHamburgerMenu
             onClick={() => setOpen(true)}
@@ -207,7 +226,7 @@ function Nav({ path }) {
               }}
               className=' w-full md:max-w-[200px] flex items-center justify-center h-[50px] text-white bg-blue-1  rounded-[15px]  btn-text '
             >
-              { status == "connected" || isConnected
+              { connected
                 ? "Disconnect"
                 : "Connect wallet"}
             </button>
@@ -292,6 +311,10 @@ function Nav({ path }) {
               </Link>
             ))}
           </div>
+          
+
+          <AddressBoard />
+          
 
           {/* buttons */}
           <div className='w-[246px] text-white h-[110px]  flex flex-col justify-around space-y-[10px]  text-[15px] '>
@@ -305,7 +328,7 @@ function Nav({ path }) {
               onClick={openModal}
               className='transition duration-700 ease-in-out hover:shadow-lg hover:shadow-white hover:bg-white hover:text-black flex items-center justify-center h-[50px] bg-blue-1 w-[246px] rounded-[15px]  btn-text '
             >
-              { status == "connected" || isConnected
+              { connected
                 ? "Disconnect"
                 : "Connect wallet"}
             </button>

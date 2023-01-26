@@ -50,8 +50,8 @@ function VoteProjectCard({
       : toast.error("Please connect your sui wallet");
 
   return (
-    <div className='relative h-[75px] lg:h-[88px]   last:border-b-0   border-b-[1px] border-white-2 flex items-center justify-between w-full  '>
-      <div className='  flex space-x-[12px] lg:space-x-[18px] items-center  md:transform-none '>
+    <div className='relative h-[75px] lg:h-[88px] w-full  last:border-b-0   border-b-[1px] border-white-2 flex items-center justify-between  '>
+      <div className='  flex space-x-[12px] lg:space-x-[18px] items-center  md:transform-none  '>
         <p className='w-[18px] font-black text-[12px] md:text-[15px] leading-[24px] text-gray-3  '>
           #{index + 1}
         </p>
@@ -75,7 +75,7 @@ function VoteProjectCard({
         </div>
       </div>
       {/*  */}
-      <div className='flex space-x-[12px]  lg:w-[340px] 3xl:w-[250px] lg:justify-between items-center scale-[0.8] md:transform-none -mr-[18px] lg:mr-0 '>
+      <div className='flex space-x-[12px]  lg:w-[340px] 3xl:w-[250px] lg:justify-between items-center scale-[0.8] md:transform-none -mr-[10px] md:mr-0  '>
         <div className='w-[93px] h-[25px] hidden lg:flex flex-start space-x-[15px] opacity-60 items-center '>
           {links.map(
             (l, index) =>
@@ -92,7 +92,7 @@ function VoteProjectCard({
               )
           )}
         </div>
-        <div className='flex space-x-[12px] lg:space-x-[17px]'>
+        <div className='flex space-x-[12px] lg:space-x-[17px]   '>
           <div className='flex items-center space-x-[4px]  justify-end'>
             <Image
               src='/star.svg'

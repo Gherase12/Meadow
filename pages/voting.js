@@ -6,7 +6,7 @@ import PageAnimation from "../components/PageAnimation";
 import { useQuery } from 'react-query';
 import Loading from './../components/Loading';
 import { fetchProjects } from './../fetchers/projects';
-
+import { BiDownArrow } from 'react-icons/bi';
 
 function Voting() {
   const { isLoading, data } = useQuery(
@@ -44,14 +44,16 @@ function Voting() {
           </div>
 
           {/* voting */}
-          <div className=' mt-[28px] h-[650px]  max-w-[1200px]  lg:h-[720px]  bg-white rounded-t-[30px] px-[27px]  pt-[23px] lg:pt-[30px] z-40 relative '>
+          <div className=' mt-[28px]   max-w-[1200px]  lg:h-[720px]  bg-white rounded-t-[30px] px-[27px]  pt-[23px] lg:pt-[30px] z-40 relative '>
+          <BiDownArrow className="orizontal-center bottom-0 text-[20px] hidden lg:flex  animate-bounce  " />
             {isLoading ? (
               <div className="w-full h-full flex items-center justify-center ">
               <Loading />
             </div>
             ):(
 
-            <div className='overflow-y-scroll scrollbar-hide  h-[660px] '>
+            <div className='overflow-y-scroll scrollbar-hide   h-[660px]  relative '>
+              
               {data?.sort((a, b) => b.votes - a.votes).map(
                 ({ id, name, img, website, votes, twitter, discord }, i) => (
                   <VoteProjectCard

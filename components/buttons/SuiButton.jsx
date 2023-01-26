@@ -1,16 +1,21 @@
 import React from "react";
 import { SignInButton } from "ethos-connect";
-
+import { useAccount,  useDisconnect } from "wagmi";
 import { ethos } from "ethos-connect";
 import Image from "next/image";
 import ConnectedWrapper from "../ConnectedWrapper";
 function SuiButton({ closeModal }) {
   const { status, wallet } = ethos.useWallet();
+  const { isConnected } = useAccount();
+  const { disconnectAsync } = useDisconnect();
 
-
-  const Connect = ()=>{
+  const Connect = async () =>{
     closeModal();
     localStorage.setItem("connectedAt", Date.now());
+    if (isConnected) {
+      await disconnectAsync();
+      
+    }
   }
 
   const disconnect = ()=>{

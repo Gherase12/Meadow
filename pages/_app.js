@@ -62,7 +62,8 @@ export default function App({ Component, pageProps }) {
             </Head>
             <div className='lg:h-[947.31px]   3xl:px-[40px] md:p-[11px] w-full flex md:max-w-[1450px]  3xl:max-w-[2050px] justify-start pr-0 overflow-hidden xl:space-x-[62px] 3xl:space-x-[30px] mx-auto   my-auto '>
               <Nav path={currentPagePath} />
-              <AddressBoard />
+              
+              
               <Component {...pageProps} />
               <Timeout />
               <Analytics />

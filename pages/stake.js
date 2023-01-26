@@ -46,7 +46,7 @@ function Stake() {
             {/* <Image src="/stake-hidden.png" fill className="z-20 object-contain "  /> */}
             <div className="absolute inset-0 backdrop-blur-md bg-white/30 rounded-[30px] z-20" ></div>
             <div className="absolute inset-0  z-30 flex items-center justify-center " >
-              <Image src="/lock.png" width={150}  height={200}/>
+              <Image src="/lock.png" width={150}  height={200} alt="lock" />
             </div>
             <div className='lg:w-[519px]    w-[80%]'>
               <h2 className=' text-[20px] lg:text-[22px] font-black leading-[33px] text-black mb-[30px] '>
