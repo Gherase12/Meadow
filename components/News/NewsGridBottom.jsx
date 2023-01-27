@@ -8,9 +8,9 @@ function NewsGridBottom() {
     const { isLoading,  data } = useQuery("news", fetchNews);
    
   return (
-    <div className='grid  grid-cols-1 mb-[20px] md:grid-cols-2  xl:grid-cols-3 gap-[10px] px-[10px] md:px-0  '>
+    <div className='grid  grid-cols-1 mb-[20px] md:grid-cols-2 md:w-[800px]  xl:grid-cols-3 gap-[10px] px-[10px] md:px-0  '>
         {isLoading ? (
-        <div className='w-full h-full flex items-center justify-center '>
+        <div className='w-full  border-2 h-full flex items-center justify-center '>
         <Loading />
       </div>
       ):

@@ -36,7 +36,7 @@ function NewsPage() {
       <div  className=' lg:pt-[10px] flex-1 overflow-y-scroll scrollbar-hide items-center flex flex-col  w-screen lg:w-auto overflow-x-hidden   '>
         {/* image container */}
 
-        <p ref={containerRef} className='mt-[23px] ml-[30px] lg:ml-0 md:mt-0  h-[23px]  font-bold text-[17px] mb-[22px] text-gray   w-full md:w-[800px]  '>
+        <p ref={containerRef} className='mt-[23px] pl-[30px] md:pl-0 md:mt-0  h-[23px]  font-bold text-[17px] mb-[22px] text-gray   w-full md:w-[800px]  '>
           News
           </p>
         <div
@@ -55,7 +55,7 @@ function NewsPage() {
           )}
         </div>
         {/* info */}
-        <div className='flex flex-col items-center'>
+        <div className='flex flex-col items-center  '>
           <div className=" pl-[20px] md:pl-0  w-full md:w-[800px] flex flex-start" >
 
         <Link href='/news' className='cursor-pointer flex space-x-[11px] mt-[40px]   '>
@@ -73,11 +73,11 @@ function NewsPage() {
         </Link>
           </div>
           {/* title */}
-          <h2 className='text-[20px] font-bold  leading-[119%] max-w-[800px] md:text-[42px] my-[30px]   px-[10px] md:px-0'>
+          <h2 className='text-[25px] font-bold  leading-[119%] max-w-[800px] md:text-[42px] my-[30px]   px-[10px] md:px-0'>
             {data && data[newsIndex] ? data[newsIndex].title : ""}
           </h2>
           {/* pharagraphs */}
-          <div className=' text-base  px-[10px] md:px-0 '>
+          <div className=' text-base   px-[20px] md:px-0 '>
             <TextParagraph newsIndex={newsIndex} />
           </div>
 
