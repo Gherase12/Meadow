@@ -1,13 +1,14 @@
 import React from "react";
 
 import Image from "next/image";
+import Warning from './Warning';
 
 
 function ConnectWalletInsurance({setIsOpen}) {
  
   return (
     <div className='bg-white flex-1 lg:grow-0 mt-[20px]  max-w-[1011px] 3xl:mx-auto   lg:h-[700px] relative z-50 rounded-t-[30px] shadow-md card1 pt-[70px] flex flex-col items-center lg:rounded-b-[30px] lg:w-[1011px]'>
-      
+      <Warning />
       <div className=' relative w-[143px] h-[143px] mb-[30px]'>
         <Image
           src='/shields/wallet-shield.svg'

@@ -12,11 +12,11 @@ function Launchpad() {
       <div className=' lg:h-[947.31px]  overflow-hidden   w-full flex md:max-w-[1440px]   overflow-x-hidden  md:space-x-[62px] mx-auto my-auto  '>
         <div className='    w-full md:mb-[11px] relative px-[30px]  md:px-0  '>
           {/* big object */}
-          <div className='absolute left-[70vw] lg:left-[625px] lg:-top-[30px] -top-[70px] z-20 w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px]  bg-image-1 scale-[1.5]   '>
+          <div className='absolute left-[70vw] lg:left-[625px] lg:-top-[30px] -top-[70px]  z-20 w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px]  bg-image-1 scale-[1.5]   '>
             <Image src={"/object-3.webp"} fill alt='big-object' />
           </div>
           {/* small object */}
-          <div className=' fixed left-[100px] lg:left-[925px] lg:-top-[230px] top-0  w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px]    '>
+          <div className=' fixed left-[100px] lg:left-[925px] lg:-top-[230px] top-0   w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px]  -z-[10]  '>
             <Image
               src={"/object-2.webp"}
               fill

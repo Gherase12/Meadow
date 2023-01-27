@@ -1,10 +1,13 @@
 import React from "react";
 import Indicator from "./Indicator";
 import Image from "next/image";
+import { AiOutlineWarning } from 'react-icons/ai';
+import Warning from './Warning';
 
 function GoldInsurance({ tierName, address, setIsOpen }) {
   return (
     <div className='bg-white flex-1 lg:grow-0 mt-[86px]  max-w-[1011px] 3xl:mx-auto   lg:h-[700px] relative z-50 rounded-t-[30px] shadow-md card1 pt-[40px] flex flex-col items-center lg:rounded-b-[30px] lg:w-[1011px]'>
+      <Warning />
       <p className='text-gray-2 text-[15px] leading-[20px] mb-[12px] lg:text-[17px] '>
         Your tier:
       </p>
@@ -36,7 +39,7 @@ function GoldInsurance({ tierName, address, setIsOpen }) {
         <p className='text-gray-2 text-[13px]  leading-[18px] lg:text-[16px]'>
           For wallet:
         </p>
-        <h3 className='font-bold text-[14px]  text-black mb-[11px] lg:mb-0 flex items-center lg:text-[16px]'>
+        <h3 className='font-bold text-[14px]  w-[200px]   truncate  md:w-auto   justify-center  text-black mb-[11px] lg:mb-0  lg:text-[16px]'>
           {address}
         </h3>
       </div>

@@ -16,7 +16,7 @@ function Voting() {
 
   return (
     <PageAnimation>
-      <div className=' lg:h-[947.31px]   md:overflow-hidden   w-full flex md:max-w-[1440px] z-40 relative   overflow-x-hidden  md:space-x-[62px] mx-auto my-auto  '>
+      <div className=' lg:h-[947.31px]     md:overflow-hidden   w-full flex md:max-w-[1440px] z-40 relative   overflow-x-hidden  md:space-x-[62px] mx-auto my-auto  '>
         <div className='    w-full md:mb-[11px] relative   '>
           {/* sm-image */}
           <div className='fixed rotate-[3.7deg] lg:hidden z-10   left-[60vw]  -top-[40px] w-[233px] h-[233px]    '>
@@ -39,7 +39,7 @@ function Voting() {
             Vote for Projects
             </h1>
           </div>
-          <div className='px-[30px] md:px-0   text-[16px] text-gray-2 bg-white-1 md:bg-white-1/0 relative font-normal mb-[21px] items-center font-avenir  leading-[24px]  lg:h-[52px]  lg:w-[546px] z-40 '>
+          <div className='px-[30px] md:px-0   text-[16px] text-gray-2  relative font-normal mb-[21px] items-center font-avenir  leading-[24px]  lg:h-[52px]  lg:w-[546px] z-40 '>
           Users will have the opportunity to vote for their favourite project. The project with the most votes will be incubated by Meadow.
           </div>
 
@@ -52,7 +52,7 @@ function Voting() {
             </div>
             ):(
 
-            <div className='overflow-y-scroll scrollbar-hide   h-[660px]  relative '>
+            <div className='overflow-y-scroll scrollbar-hide h-[660px]  relative '>
               
               {data?.sort((a, b) => b.votes - a.votes).map(
                 ({ id, name, img, website, votes, twitter, discord }, i) => (

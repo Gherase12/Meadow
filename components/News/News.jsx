@@ -13,7 +13,7 @@ function News() {
  
 
   return (
-    <div className='relative z-[100]  w-full   lg:transform-none lg:w-[381.85px]  lg:h-[360px]   3xl:h-[310.52px]  rounded-[30px] mb-[80px] '>
+    <div className='relative  z-[100]  w-full   lg:transform-none lg:w-[381.85px]  lg:h-[360px]   3xl:h-[310.52px]  rounded-[30px] mb-[80px] '>
       {/* top part */}
 
       <div className='absolute    w-full   text-white  flex justify-between  mb-[35px] z-40 px-[20px] py-[20px]'>
