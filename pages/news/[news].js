@@ -20,6 +20,8 @@ function NewsPage() {
 
   const { isLoading, data } = useQuery("news", fetchNews());
 
+  
+
   useEffect(() => {
     if (containerRef.current) {
       containerRef.current.scrollIntoView({
@@ -41,11 +43,13 @@ function NewsPage() {
           </p>
         <div
           
-          className='h-[200px] md:h-[400px] w-[800px]  relative  '
+          className='h-[400px] md:h-[400px] w-[800px]  relative  '
         >
           {isLoading ? (
-            <div className='w-full h-full flex items-center justify-center '>
-              <Loading />
+            <div className='w-full h-full flex items-center justify-center   '>
+              <Image src="/news.webp"  className="rounded-[30px] object-cover " fill />
+              
+              {/* <Loading /> */}
             </div>
           ) : (
             <img
@@ -81,7 +85,7 @@ function NewsPage() {
             <TextParagraph newsIndex={newsIndex} />
           </div>
 
-          <div className="flex items-center justify-between w-full md:w-[800px]">
+          <div className={`${data ? "flex": "hidden"}   items-center justify-between w-full md:w-[800px]`} >
           <h2 className='text-[36px]  leading-[130%]  font-black  my-[30px] px-[10px] md:px-0 '>
             More news
           </h2>

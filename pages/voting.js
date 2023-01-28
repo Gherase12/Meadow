@@ -1,4 +1,4 @@
-import React  from "react";
+import React ,{useEffect, useRef} from "react";
 
 import VoteProjectCard from "./../components/Voting/VoteProjectCard";
 import Image from "next/image";
@@ -13,6 +13,31 @@ function Voting() {
     "projects",
     fetchProjects
   );
+
+
+  const descRef = useRef(null);
+  const arrowRef = useRef(null);
+
+
+  useEffect(() => {
+    const desc = descRef.current;
+    const arrow = arrowRef.current;
+
+    function handleScroll() {
+      if (desc.scrollHeight - desc.scrollTop === desc.clientHeight) {
+        arrow.classList.add("rotate-180");
+      } else {
+        arrow.classList.remove("rotate-180");
+      }
+    }
+
+    desc.addEventListener('scroll', handleScroll);
+
+    return () => {
+      desc.removeEventListener('scroll', handleScroll);
+    };
+  }, [descRef, arrowRef]);
+
 
   return (
     <PageAnimation>
@@ -45,14 +70,17 @@ function Voting() {
 
           {/* voting */}
           <div className=' mt-[28px]   max-w-[1200px]  lg:h-[720px]  bg-white rounded-t-[30px] px-[27px]  pt-[23px] lg:pt-[30px] z-40 relative '>
-          <BiDownArrow className="orizontal-center bottom-0 text-[20px] hidden lg:flex  animate-bounce  " />
+            <div ref={arrowRef} >
+
+          <BiDownArrow  className="orizontal-center bottom-0 text-[20px] hidden lg:flex  animate-bounce  " />
+            </div>
             {isLoading ? (
               <div className="w-full h-full flex items-center justify-center ">
               <Loading />
             </div>
             ):(
 
-            <div className='overflow-y-scroll scrollbar-hide h-[660px]  relative '>
+            <div ref={descRef} className='overflow-y-scroll scrollbar-hide h-[660px]  relative '>
               
               {data?.sort((a, b) => b.votes - a.votes).map(
                 ({ id, name, img, website, votes, twitter, discord }, i) => (

@@ -40,7 +40,8 @@ function TextParagraph({ newsIndex }) {
     <div>
       {isLoading ? (
         <div className='w-full h-full flex items-center justify-center '>
-          <Loading />
+          {/* <Loading /> */}
+          <div className="text-[24px]  md:text-[35px]  font-black" >Coming soon</div>
         </div>
       ) : (
         paragraphs?.map((paragraph, index) => (

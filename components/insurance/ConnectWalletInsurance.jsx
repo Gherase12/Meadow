@@ -22,7 +22,7 @@ function ConnectWalletInsurance({setIsOpen}) {
       </p>
       <button
         onClick={() => setIsOpen(true)}
-        className='max-w-[348px] h-[50px] w-[233px] rounded-[15px] bg-blue-1 text-white lg:mb-[150px] '
+        className='max-w-[348px] h-[50px] w-[233px] rounded-[15px] bg-blue-1 text-white mb-[50px] lg:mb-[150px] '
       >
         Connect wallet
       </button>

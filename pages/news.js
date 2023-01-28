@@ -15,19 +15,7 @@ function News() {
     <PageAnimation>
       <div className=' lg:h-[947.31px]  overflow-hidden   w-full flex md:max-w-[1440px]   overflow-x-hidden  md:space-x-[62px] mx-auto my-auto  '>
         <div className='    w-full md:mb-[11px] relative px-[30px]  md:px-0  '>
-          {/* big object */}
-          {/* <div className='absolute left-[70vw] lg:left-[625px] lg:-top-[30px] -top-[70px]  w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px]  bg-image-1 scale-[1.5]   '>
-            <Image src={"/object-3.webp"} fill alt='big-object' />
-          </div> */}
-          {/* small object */}
-          {/* <div className=' fixed left-[100px] lg:left-[925px] lg:-top-[230px] top-0  w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px]    '>
-            <Image
-              src={"/object-2.webp"}
-              fill
-              className='object-contain'
-              alt='big-object'
-            />
-          </div> */}
+       
 
           <p className='mt-[23px] md:mt-0  h-[23px] font-bold text-[18px] text-gray mb-[22.64px] '>
             News
@@ -49,8 +37,17 @@ function News() {
             ))}
           </ul>
 
+        
+
           <div className='overflow-y-scroll gap-[15px] h-[600px] lg:h-[700px]  scrollbar-hide    grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 '>
+              {isLoading && (
+                <div  className="font-black text-[30px] lg:text-[40px]">
+                  Coming soon!
+                </div>
+              ) }
+            
             {data?.map(({ title, urlToImage, description , author, publishedAt}, i) => (
+              
               <NewsGridCard
               //   setLoading={setLoading}
                   key={i}
