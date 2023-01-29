@@ -7,13 +7,16 @@ import { useQuery } from 'react-query';
 import Loading from './../components/Loading';
 import { fetchProjects } from './../fetchers/projects';
 import { BiDownArrow } from 'react-icons/bi';
+import { ethos } from "ethos-connect";
 
 function Voting() {
-  const { isLoading, data } = useQuery(
-    "projects",
-    fetchProjects
-  );
+  const { wallet } = ethos.useWallet();
 
+  const { isLoading, data } = useQuery(
+    "getProjects",
+    ()=> fetchProjects(wallet?.address)
+  );
+    
 
   const descRef = useRef(null);
   const arrowRef = useRef(null);
@@ -71,6 +74,7 @@ function Voting() {
           {/* voting */}
           <div className=' mt-[28px]   max-w-[1200px]  lg:h-[720px]  bg-white rounded-t-[30px] px-[27px]  pt-[23px] lg:pt-[30px] z-40 relative '>
             <div ref={arrowRef} >
+            {/* <div  > */}
 
           <BiDownArrow  className="orizontal-center bottom-0 text-[20px] hidden lg:flex  animate-bounce  " />
             </div>
@@ -80,11 +84,14 @@ function Voting() {
             </div>
             ):(
 
-            <div ref={descRef} className='overflow-y-scroll scrollbar-hide h-[660px]  relative '>
+            <div ref={descRef} 
+            // <div
+            className='overflow-y-scroll scrollbar-hide h-[660px]  relative '>
               
-              {data?.sort((a, b) => b.votes - a.votes).map(
+              {data?.projects?.sort((a, b) => b.votes - a.votes).map(
                 ({ id, name, img, website, votes, twitter, discord }, i) => (
                   <VoteProjectCard
+                    isVoted={id == data.projectVoted}
                     key={i}
                     index={i}
                     docId={id}

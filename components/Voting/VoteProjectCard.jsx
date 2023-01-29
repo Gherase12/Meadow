@@ -17,8 +17,13 @@ function VoteProjectCard({
   website,
   twitter,
   discord,
+  isVoted
 }) {
   const [score, setScore] = useState(votes);
+
+  const production = "https://app.meadowlaunch.com/api/voteProjects";
+const local = "http://localhost:3000/api/voteProjects";
+
 
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
   const links = [website, twitter, discord];
@@ -26,7 +31,7 @@ function VoteProjectCard({
 
   const addVote = async (id) => {
     try {
-      await fetch(`https://app.meadowlaunch.com/api/projects`, {
+      await fetch(production, {
         method: "POST",
         body: JSON.stringify({ wallet: wallet?.address, pid: id }),
       })
@@ -105,9 +110,13 @@ function VoteProjectCard({
             </p>
           </div>
           <button
-            onClick={notify}
-            className='border-white-2 cursor-pointer scale-[0.8]  md:scale-[1]  py-[11.5px] border-[1px] rounded-full flex justify-center space-x-[10px] items-center w-[82px]  '
+            onClick={  notify}
+            disable={isVoted}
+            className='border-white-2 cursor-pointer relative scale-[0.8]  md:scale-[1]  py-[11.5px] border-[1px] rounded-full flex justify-center space-x-[10px] items-center w-[82px]  '
           >
+            {isVoted && (<div className="absolute inset-0 z-20 flex items-center justify-center bg-blue-1 text-white font-bold rounded-full ">
+                  Voted
+            </div>)}
             <Image
               src='/upArrow.svg'
               width={8}

@@ -1,9 +1,12 @@
+const production = "https://app.meadowlaunch.com/api/getProjects";
+const local = "http://localhost:3000/api/getProjects";
 
-const production = "https://app.meadowlaunch.com/api/projects"
-const local = "http://localhost:3000/api/projects"
-
-export const fetchProjects = async ()=>{
-    const res = await fetch(production, { method: "GET" });
-        const data = await res.json();
-    return data.projects.data;
-}
+export const fetchProjects = async (wallet) => {
+  const res = await fetch(production, {
+    method: "POST",
+    body: JSON.stringify({ wallet }),
+  });
+  const data = await res.json();
+  
+  return data
+};
