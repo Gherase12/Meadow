@@ -66,7 +66,7 @@ function Card({ i,a }) {
             {/* 2 */}
             <div className='flex flex-col justify-start'>
               <p className='w-[80px] font-extrabold leading-[19px] text-[14px]  h-[16px] '>
-                Total Price
+                Token Price
               </p>
               <div className='text-[19px] font-medium leading-[130%]  '>
                 $0.10
