@@ -65,7 +65,7 @@ export default function App({ Component, pageProps }) {
               
               
               <Component {...pageProps} />
-              <Timeout />
+              {/* <Timeout /> */}
               <Analytics />
             </div>
           </div>

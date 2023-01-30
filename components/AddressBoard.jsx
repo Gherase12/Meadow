@@ -3,9 +3,12 @@ import { IoMdWallet } from "react-icons/io";
 import { ethos } from "ethos-connect";
 import { useAccount } from "wagmi";
 import Image from "next/image";
+import Loading from './Loading';
 function AddressBoard() {
   const { wallet } = ethos.useWallet();
   const { address } = useAccount();
+
+  console.log(wallet)
   return (
     <div
       className={` w-full  mt-[10px] xl:mt-0  px-[20px]  xl:px-0  flex   truncate space-x-[10px]  py-[5px]  items-center  xl:w-[200px]  z-[60]  text-blue-1 mb-[10px] ${
@@ -14,9 +17,14 @@ function AddressBoard() {
     >
       {wallet?.address ? (
         <Image src='/sui.svg' width={20} height={20} alt="sui logo"  />
-      ) : (
+      ) : 
+      
+      address?
+      (
         <Image src='/metamask.svg' width={20} height={20} alt="metamask logo" />
-      )}
+      ):
+      <Loading />
+    }
 
       <p className=' truncate font-extrabold  md:w-[200px] mr-[10px] xl:mr-0 '>
         {wallet?.address || address}
