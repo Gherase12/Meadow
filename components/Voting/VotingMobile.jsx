@@ -7,10 +7,13 @@ import { fetchProjects } from "../../fetchers/projects";
 import { useQuery } from "react-query";
 
 function VotingMobile() {
-  const { isLoading, isError, data, error } = useQuery(
-    "projects",
-    fetchProjects
+  const { wallet } = ethos.useWallet();
+
+  const { isLoading, data } = useQuery(
+    "getProjects",
+    ()=> fetchProjects(wallet?.address)
   );
+
   return (
     <div className='h-[240px] mb-[150px] md:hidden '>
       {/* upper section */}
@@ -34,8 +37,8 @@ function VotingMobile() {
       {/* card */}
       <div className=' w-full bg-white  rounded-[30px] p-[18px]'>
         {!isLoading ? (
-          data
-            ?.slice(0, 3)
+          data?.projects?.
+            slice(0, 3)
             .map(({ id, name, img, website, votes, twitter, discord }, i) => (
               <VoteProjectCard
                 key={i}
