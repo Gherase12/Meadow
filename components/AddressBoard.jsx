@@ -4,18 +4,21 @@ import { ethos } from "ethos-connect";
 import { useAccount } from "wagmi";
 import Image from "next/image";
 import Loading from './Loading';
+import { useWallet } from '@suiet/wallet-kit';
 function AddressBoard() {
-  const { wallet } = ethos.useWallet();
+  // const { wallet } = ethos.useWallet();
   const { address } = useAccount();
+  const wallet = useWallet()
+
 
   
   return (
     <div
       className={` w-full  mt-[10px] xl:mt-0  px-[20px]  xl:px-0  flex   truncate space-x-[10px]  py-[5px]  items-center  xl:w-[200px]  z-[60]  text-blue-1 mb-[10px] ${
-        !wallet && !address && "hidden"
+        !wallet.account?.address && !address && "hidden"
       } `}
     >
-      {wallet?.address ? (
+      {wallet.account?.address ? (
         <Image src='/sui.svg' width={20} height={20} alt="sui logo"  />
       ) : 
       
@@ -27,7 +30,7 @@ function AddressBoard() {
     }
 
       <p className=' truncate font-extrabold  md:w-[200px] mr-[10px] xl:mr-0 '>
-        {wallet?.address || address}
+        {wallet.account?.address || address}
       </p>
     </div>
   );

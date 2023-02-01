@@ -21,6 +21,7 @@ import ConnectModal from "./ConnectModal";
 
 import { useAccount } from "wagmi";
 import AddressBoard from './AddressBoard';
+import { useWallet } from '@suiet/wallet-kit';
 
 
 function Nav({ path }) {
@@ -94,9 +95,10 @@ function Nav({ path }) {
 
   //conection
   
-  const { status } = ethos.useWallet();
- 
-  const connected = status == "connected" || isConnected;
+  // const { status } = ethos.useWallet();
+  const wallet = useWallet()
+  const connected = wallet?.connected || isConnected;
+  console.log(wallet?.connected)
 
   return (
     <>

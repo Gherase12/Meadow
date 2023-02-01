@@ -1,10 +1,12 @@
-import React from "react";
+import React , {useState}from "react";
 import Indicator from "./Indicator";
 import Image from "next/image";
 import { AiOutlineWarning } from 'react-icons/ai';
 import Warning from './Warning';
+import { useWallet, ConnectModal } from '@suiet/wallet-kit';
 
 function GoldInsurance({ tierName, address, setIsOpen }) {
+  const [showModal, setShowModal] = useState(false)
   return (
     <div className='bg-white flex-1 lg:grow-0 mt-[86px]  max-w-[1011px] 3xl:mx-auto   lg:h-[700px] relative z-50 rounded-t-[30px] shadow-md card1 pt-[40px] flex flex-col items-center lg:rounded-b-[30px] lg:w-[1011px]'>
       <Warning />
@@ -43,13 +45,18 @@ function GoldInsurance({ tierName, address, setIsOpen }) {
           {address}
         </h3>
       </div>
-
-      <button
-        onClick={() => setIsOpen(true)}
+      <ConnectModal
+      open={showModal}
+      onOpenChange={(open) => setShowModal(open)}
+    >
+       <button
+        
         className='text-blue-1 font-medium text-[13px] leading-[18px] lg:text-[15px] mb-[30px]  '
       >
         Check another wallet
       </button>
+    </ConnectModal>;
+     
     </div>
   );
 }

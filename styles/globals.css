@@ -3,6 +3,26 @@
 @tailwind utilities;
 
 
+:root {
+  --wkit-button-width: 134px;
+}
+
+.wkit-connected-button__balance {
+
+  display:none
+}
+
+.wkit-button{
+  border-radius: 0.375rem;
+  padding-left: 1rem/* 16px */;
+    padding-right: 1rem;
+    font-size: 15px;
+    justify-content: center;
+    display: inline-flex;
+    font-weight: 700;
+
+}
+
 body {
   background: #f0f6fd;
 }

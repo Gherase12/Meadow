@@ -9,12 +9,13 @@ import ConnectWalletInsurance from '../components/insurance/ConnectWalletInsuran
 import { ethos } from "ethos-connect";
 import ConnectModal from '../components/ConnectModal';
 import Warning from './../components/insurance/Warning';
+import { useWallet } from '@suiet/wallet-kit';
 
 function Stake() {
-    const { status, wallet } = ethos.useWallet();
+    // const { status, wallet } = ethos.useWallet();
    
     
-
+    const wallet = useWallet()
     let [isOpen, setIsOpen] = useState(false);
     const [user, setUser] = useState(null);
     function closeModal() {
@@ -63,13 +64,13 @@ function Stake() {
           <h1 className='text-[41px] ml-[30px] lg:ml-0 font-extrabold leading-[51px]  '>
             Insurance
           </h1>
-          {(status != "connected" && !isConnected )  && (
+          {(!wallet?.connected && !isConnected )  && (
 
           <p className="text-[17px] leading-[23px] ml-[30px] lg:ml-0 font-medium max-w-[289px] my-[20px] lg:my-[25px] lg:max-w-[629px] lg:text-[22px]  ">Connect wallet to see if you are eligible for insurance</p>
           )}
           {/* board */}
-        {(status == "connected" || isConnected) ?(
-         <InsuranceCard  tierName={"Gold"} address={wallet?.address || address } setIsOpen={setIsOpen} /> 
+        {(wallet?.connected || isConnected) ?(
+         <InsuranceCard  tierName={"Gold"} address={wallet?.account?.address || address } setIsOpen={setIsOpen} /> 
 
         ):(
         <ConnectWalletInsurance setIsOpen={setIsOpen} />
