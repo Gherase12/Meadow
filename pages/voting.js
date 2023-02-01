@@ -20,28 +20,29 @@ function Voting() {
   
     
 
-  // const descRef = useRef(null);
-  // const arrowRef = useRef(null);
+  const descRef = useRef(null);
+  const arrowRef = useRef(null);
+    console.log(descRef)
+    console.log(arrowRef)
 
+  useEffect(() => {
+    const desc = descRef.current;
+    const arrow = arrowRef.current;
 
-  // useEffect(() => {
-  //   const desc = descRef.current;
-  //   const arrow = arrowRef.current;
+    function handleScroll() {
+      if (desc.scrollHeight - desc.scrollTop === desc.clientHeight) {
+        arrow.classList.add("rotate-180");
+      } else {
+        arrow.classList.remove("rotate-180");
+      }
+    }
 
-  //   function handleScroll() {
-  //     if (desc.scrollHeight - desc.scrollTop === desc.clientHeight) {
-  //       arrow.classList.add("rotate-180");
-  //     } else {
-  //       arrow.classList.remove("rotate-180");
-  //     }
-  //   }
+    desc.addEventListener('scroll', handleScroll);
 
-  //   desc.addEventListener('scroll', handleScroll);
-
-  //   return () => {
-  //     desc.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, [descRef, arrowRef]);
+    return () => {
+      desc.removeEventListener('scroll', handleScroll);
+    };
+  }, [descRef, arrowRef]);
 
 
   return (
@@ -75,8 +76,8 @@ function Voting() {
 
           {/* voting */}
           <div className=' mt-[28px]   max-w-[1200px]  lg:h-[720px]  bg-white rounded-t-[30px] px-[27px]  pt-[23px] lg:pt-[30px] z-40 relative '>
-            {/* <div ref={arrowRef} > */}
-            <div  >
+            <div ref={arrowRef} >
+            {/* <div  > */}
 
           <BiDownArrow  className="orizontal-center bottom-0 text-[20px] hidden lg:flex  animate-bounce  " />
             </div>
@@ -86,8 +87,8 @@ function Voting() {
             </div>
             ):(
 
-            // <div ref={descRef} 
-            <div
+            <div ref={descRef} 
+            // <div
             className='overflow-y-scroll scrollbar-hide h-[660px]  relative '>
               
               {data?.projects?.sort((a, b) => b.votes - a.votes).map(

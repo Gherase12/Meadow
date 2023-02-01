@@ -45,7 +45,7 @@ function GoldInsurance({ tierName, address, setIsOpen }) {
           {address}
         </h3>
       </div>
-      <ConnectModal
+      {/* <ConnectModal
       open={showModal}
       onOpenChange={(open) => setShowModal(open)}
     >
@@ -55,7 +55,7 @@ function GoldInsurance({ tierName, address, setIsOpen }) {
       >
         Check another wallet
       </button>
-    </ConnectModal>;
+    </ConnectModal>; */}
      
     </div>
   );

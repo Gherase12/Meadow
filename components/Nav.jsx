@@ -15,14 +15,13 @@ import { GiNewspaper } from "react-icons/gi";
 import { FaDiscord } from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ethos } from "ethos-connect";
 
-import ConnectModal from "./ConnectModal";
+
+import ConnectModalForWallets from "./ConnectModalForWallets";
 
 import { useAccount } from "wagmi";
-import AddressBoard from './AddressBoard';
-import { useWallet } from '@suiet/wallet-kit';
-
+import AddressBoard from "./AddressBoard";
+import { useWallet } from "@suiet/wallet-kit";
 
 function Nav({ path }) {
   // nav open
@@ -94,42 +93,35 @@ function Nav({ path }) {
   ];
 
   //conection
-  
+
   // const { status } = ethos.useWallet();
-  const wallet = useWallet()
+  const wallet = useWallet();
   const connected = wallet?.connected || isConnected;
-  console.log(wallet?.connected)
+  console.log(wallet?.connected);
 
   return (
     <>
-      
       <div className=' xl:hidden flex items-center justify-between px-[18px] fixed top-0 z-50 left-0 right-0 h-[70px] bg-blue-2   '>
         <Link href='/'>
-         
-
-            {
-              connected ? (
-                <div className='relative w-[50px] h-[50px]'>
-                <Image
-              src='/logo-icon.png'
-              fill
-              className='object-contain'
-              alt={"Meadown sui launchpad logo"}
-            />
+          {connected ? (
+            <div className='relative w-[50px] h-[50px]'>
+              <Image
+                src='/logo-icon.png'
+                fill
+                className='object-contain'
+                alt={"Meadown sui launchpad logo"}
+              />
             </div>
-              ):(
-                <div className='relative w-[156px] h-[50px]'>
-                <Image
+          ) : (
+            <div className='relative w-[156px] h-[50px]'>
+              <Image
                 src='/logo.png'
                 fill
                 className='object-contain'
                 alt={"Meadown sui launchpad logo"}
               />
-              </div>
-              )
-            }
-            
-          
+            </div>
+          )}
         </Link>
         <AddressBoard />
         {!open ? (
@@ -180,21 +172,24 @@ function Nav({ path }) {
 
           <div className='py-[10px] text-[16px] nav-font flex flex-row items-between  justify-around'>
             <Link
-            target="_blank" rel="noreferrer noopener"
+              target='_blank'
+              rel='noreferrer noopener'
               href='https://meadow.gitbook.io/docs/'
               className='h-[42px] py-[12px]  '
             >
               Docs
             </Link>
             <Link
-            target="_blank" rel="noreferrer noopener"
+              target='_blank'
+              rel='noreferrer noopener'
               href='https://drive.google.com/drive/folders/1r0gJEzF07XEQ4fGNcLycJUu-BK6uRl-a?usp=share_link'
               className='h-[42px] py-[12px]  '
             >
               Brand Kit
             </Link>
             <Link
-            target="_blank" rel="noreferrer noopener"
+              target='_blank'
+              rel='noreferrer noopener'
               href='https://meadow.gitbook.io/docs/socials-and-links/team'
               className='h-[42px] py-[12px]  '
             >
@@ -209,7 +204,8 @@ function Nav({ path }) {
           <div className='w-[165px] flex justify-around h-[40px] mb-[35px] '>
             {socialMedia.map(({ name, Icon, link }, i) => (
               <Link
-              target="_blank" rel="noreferrer noopener"
+                target='_blank'
+                rel='noreferrer noopener'
                 href={link}
                 key={i}
                 className='rounded-full w-[40px] h-[40px] flex items-center justify-center bg-black '
@@ -228,9 +224,7 @@ function Nav({ path }) {
               }}
               className=' w-full md:max-w-[200px] flex items-center justify-center h-[50px] text-white bg-blue-1  rounded-[15px]  btn-text '
             >
-              { connected
-                ? "Disconnect"
-                : "Connect wallet"}
+              {connected ? "Disconnect" : "Connect wallet"}
             </button>
             <Link href='https://meadowlaunch.com/'>
               <button className=' bg-black  flex items-center justify-center h-[50px] md:max-w-[200px] w-full rounded-[15px] btn-text '>
@@ -275,21 +269,24 @@ function Nav({ path }) {
           </div>
           <div className='p-[24.5px] text-[16px]  nav-font flex flex-col items-between '>
             <Link
-            target="_blank" rel="noreferrer noopener"
+              target='_blank'
+              rel='noreferrer noopener'
               href='https://meadow.gitbook.io/docs/'
               className='h-[42px] py-[12px] pr-[16px] hover:text-blue-1 cursor-pointer'
             >
               Docs
             </Link>
             <Link
-            target="_blank" rel="noreferrer noopener"
+              target='_blank'
+              rel='noreferrer noopener'
               href='https://drive.google.com/drive/folders/1r0gJEzF07XEQ4fGNcLycJUu-BK6uRl-a?usp=share_link'
               className='h-[42px] py-[12px]  hover:text-blue-1 cursor-pointer '
             >
               Brand Kit
             </Link>
             <Link
-            target="_blank" rel="noreferrer noopener"
+              target='_blank'
+              rel='noreferrer noopener'
               href='https://meadow.gitbook.io/docs/socials-and-links/team'
               className='h-[42px] py-[12px] pr-[16px] hover:text-blue-1 cursor-pointer'
             >
@@ -304,7 +301,8 @@ function Nav({ path }) {
           <div className='w-[140px] flex justify-around h-[40px] mb-[35px] '>
             {socialMedia.map(({ name, link, Icon }, i) => (
               <Link
-              target="_blank" rel="noreferrer noopener"
+                target='_blank'
+                rel='noreferrer noopener'
                 href={link}
                 key={i}
                 className='rounded-full w-[40px] h-[40px] flex items-center justify-center bg-black '
@@ -313,10 +311,8 @@ function Nav({ path }) {
               </Link>
             ))}
           </div>
-          
 
           <AddressBoard />
-          
 
           {/* buttons */}
           <div className='w-[246px] text-white h-[110px]  flex flex-col justify-around space-y-[10px]  text-[15px] '>
@@ -330,14 +326,12 @@ function Nav({ path }) {
               onClick={openModal}
               className='transition duration-700 ease-in-out hover:shadow-lg hover:shadow-white hover:bg-white hover:text-black flex items-center justify-center h-[50px] bg-blue-1 w-[246px] rounded-[15px]  btn-text '
             >
-              { connected
-                ? "Disconnect"
-                : "Connect wallet"}
+              {connected ? "Disconnect" : "Connect wallet"}
             </button>
           </div>
         </div>
       </div>
-      <ConnectModal isOpen={isOpen} closeModal={closeModal} />
+      <ConnectModalForWallets isOpen={isOpen} closeModal={closeModal} />
     </>
   );
 }

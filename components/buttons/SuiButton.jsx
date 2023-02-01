@@ -17,13 +17,15 @@ function SuiButton({ closeModal }) {
   const wallet = useWallet()
 
   const Connect = async () =>{
-    // closeModal();
-    localStorage.setItem("connectedAt", Date.now());
+    // !wallet?.account?.address &&  closeModal();
+    // localStorage.setItem("connectedAt", Date.now());
     if (isConnected) {
       await disconnectAsync()
       
     }
   }
+
+ 
 
 
 

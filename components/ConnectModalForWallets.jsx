@@ -2,12 +2,12 @@ import { Fragment, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
 
-import { ethos } from "ethos-connect";
+
 import MetamaskButton from "./buttons/MetamaskButton";
-import { useAccount } from "wagmi";
+
 import SuiButton from "./buttons/SuiButton";
 
-function ConnectModal({ isOpen, closeModal }) {
+function ConnectModalForWallets({ isOpen, closeModal }) {
  
 
   return (
@@ -62,4 +62,4 @@ function ConnectModal({ isOpen, closeModal }) {
   );
 }
 
-export default ConnectModal;
+export default ConnectModalForWallets;
