@@ -22,14 +22,7 @@ function Stake() {
     }
 
 
-    // useEffect(() => {
-    //   getSession().then((session) => {
-    //    console.log(session.user)
-    //       setUser(session);
-       
-    //   });
-    // }, []);
-
+   
 
     const { isConnected, address } = useAccount();
 

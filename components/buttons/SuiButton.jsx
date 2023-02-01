@@ -23,10 +23,10 @@ function SuiButton({ closeModal }) {
 
 
   const disconnect = ()=>{
-    // closeModal();
+    
     wallet.disconnect();
     localStorage.removeItem("connectedAt");
-    router.refresh()
+    router.refresh() 
   }
   
   return (
@@ -41,6 +41,7 @@ function SuiButton({ closeModal }) {
           <ConnectedWrapper />
           <Image
             src='/sui-logo.svg'
+            
             alt='sui'
             className='mx-auto '
             width='40'

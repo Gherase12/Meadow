@@ -28,7 +28,7 @@ export default async function handler(req, res) {
             projectVoted: response.data.data.project_id,
           });
       } catch (err) {
-        console.log(err);
+        
       }
       break;
 

@@ -17,7 +17,7 @@ function Voting() {
     ()=> fetchProjects(wallet?.address)
   );
 
-  console.log(data)
+  
     
 
   // const descRef = useRef(null);

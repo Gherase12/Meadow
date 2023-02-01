@@ -37,7 +37,7 @@ export default async function handler(req, res) {
         );
         res.status(200).json({ news: response.data });
       } catch (error) {
-        console.error(error);
+        
       }
 
       break;

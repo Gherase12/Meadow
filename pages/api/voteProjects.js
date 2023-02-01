@@ -7,21 +7,7 @@ export default async function handler(req, res) {
     case "GET":
       
 
-      // try {
-      //   const response = await axios.post(
-      //     "https://grandsoft.ro/api/pv?w=" + input.wallet,
-      //     {
-      //       ak: process.env.MEADOW_API_KEY,
-            
-      //     },
-      //     {
-      //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      //     }
-      //   );
-      //   res.status(200).json({ projects: response.data.projects });
-      // } catch (err) {
-      //   console.log(err);
-      // }
+     
       break;
     case "POST":
       const input = JSON.parse(req.body);
@@ -37,7 +23,7 @@ export default async function handler(req, res) {
             res.status(200).json({ data: response.data });
           });
       } catch (err) {
-        console.log(err);
+        
       }
 
       break;

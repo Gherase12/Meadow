@@ -7,6 +7,6 @@ export const fetchProjects = async (wallet) => {
     body: JSON.stringify({ wallet }),
   });
   const data = await res.json();
-  console.log(data)
+  
   return data
 };

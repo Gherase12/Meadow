@@ -9,7 +9,7 @@ import NewsGridCard from './../components/News/NewsGridCard';
 function News() {
     const { isLoading,  data } = useQuery("news", fetchNews);
   const filters = ["All", "New", "Trending", " Popular"];
- console.log(data)
+ 
     
   return (
     <PageAnimation>

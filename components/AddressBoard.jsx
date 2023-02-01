@@ -8,7 +8,7 @@ function AddressBoard() {
   const { wallet } = ethos.useWallet();
   const { address } = useAccount();
 
-  console.log(wallet)
+  
   return (
     <div
       className={` w-full  mt-[10px] xl:mt-0  px-[20px]  xl:px-0  flex   truncate space-x-[10px]  py-[5px]  items-center  xl:w-[200px]  z-[60]  text-blue-1 mb-[10px] ${
