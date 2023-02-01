@@ -18,9 +18,9 @@ function NewsGridCard({ title, image, index, description, author, publishedAt  }
 
         <div className="w-full h-[191px] flex flex-col mx-auto" >
           <h3 className="font-bold text-[16px] leading-[130%] mb-[10px] " >
-            {title}
+            {title} 
           </h3>
-          <p className="text-gray-2 font-normal leading-[18px] flex-1 text-[13px]  ">
+          <p className="text-gray-2 font-normal leading-[18px] flex-1 text-[13px]  h-[100px]  truncate-5 ">
             {description}
           </p>
           <div className="flex justify-between mb-[10px] ">

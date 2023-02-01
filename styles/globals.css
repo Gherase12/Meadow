@@ -33,6 +33,15 @@ body {
 }
 
 
+.truncate-5{
+  overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+
+}
+
+
 
 .card-icon {
   width: 18.43px;
