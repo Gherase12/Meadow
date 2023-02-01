@@ -25,24 +25,24 @@ function Voting() {
     console.log(descRef)
     console.log(arrowRef)
 
-  useEffect(() => {
-    const desc = descRef.current;
-    const arrow = arrowRef.current;
+  // useEffect(() => {
+  //   const desc = descRef.current;
+  //   const arrow = arrowRef.current;
 
-    function handleScroll() {
-      if (desc.scrollHeight - desc.scrollTop === desc.clientHeight) {
-        arrow.classList.add("rotate-180");
-      } else {
-        arrow.classList.remove("rotate-180");
-      }
-    }
+  //   function handleScroll() {
+  //     if (desc.scrollHeight - desc.scrollTop === desc.clientHeight) {
+  //       arrow.classList.add("rotate-180");
+  //     } else {
+  //       arrow.classList.remove("rotate-180");
+  //     }
+  //   }
 
-    desc.addEventListener('scroll', handleScroll);
+  //   desc.addEventListener('scroll', handleScroll);
 
-    return () => {
-      desc.removeEventListener('scroll', handleScroll);
-    };
-  }, [descRef, arrowRef]);
+  //   return () => {
+  //     desc.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, [descRef, arrowRef]);
 
 
   return (
