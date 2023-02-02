@@ -6,13 +6,13 @@ import { useAccount } from "wagmi";
 import { getSession } from "next-auth/react";
 import InsuranceCard from "../components/insurance/InsuranceCard";
 import ConnectWalletInsurance from "../components/insurance/ConnectWalletInsurance";
-import { ethos } from "ethos-connect";
+
 import ConnectModal from "../components/ConnectModalForWallets";
-import Warning from "./../components/insurance/Warning";
+
 import { useWallet } from "@suiet/wallet-kit";
 
 function Stake() {
-  // const { status, wallet } = ethos.useWallet();
+  
 
   const wallet = useWallet();
   let [isOpen, setIsOpen] = useState(false);

@@ -1,12 +1,12 @@
 import React from "react";
 import { IoMdWallet } from "react-icons/io";
-import { ethos } from "ethos-connect";
+
 import { useAccount } from "wagmi";
 import Image from "next/image";
 import Loading from './Loading';
 import { useWallet } from '@suiet/wallet-kit';
 function AddressBoard() {
-  // const { wallet } = ethos.useWallet();
+  
   const { address } = useAccount();
   const wallet = useWallet()
 

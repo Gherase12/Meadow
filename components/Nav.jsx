@@ -94,10 +94,10 @@ function Nav({ path }) {
 
   //conection
 
-  // const { status } = ethos.useWallet();
+  
   const wallet = useWallet();
   const connected = wallet?.connected || isConnected;
-  console.log(wallet?.connected);
+  
 
   return (
     <>

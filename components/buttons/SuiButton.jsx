@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
-import { SignInButton } from "ethos-connect";
+
 import { useAccount,  useDisconnect } from "wagmi";
-import { ethos } from "ethos-connect";
+
 import Image from "next/image";
 import ConnectedWrapper from "../ConnectedWrapper";
 import { useRouter } from 'next/navigation';

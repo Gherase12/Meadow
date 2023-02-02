@@ -5,7 +5,7 @@ import { useAuthRequestChallengeEvm } from "@moralisweb3/next";
 import React from "react";
 import Image from "next/image";
 import ConnectedWrapper from "../ConnectedWrapper";
-import { ethos } from "ethos-connect";
+
 
 function MetamaskButton({ closeModal }) {
   const { connectAsync } = useConnect();
@@ -13,7 +13,7 @@ function MetamaskButton({ closeModal }) {
   const { isConnected } = useAccount();
   const { signMessageAsync } = useSignMessage();
   const { requestChallengeAsync } = useAuthRequestChallengeEvm();
-  const { status, wallet } = ethos.useWallet();
+  
   const handleAuth = async () => {
     closeModal();
     if (isConnected) {
@@ -21,7 +21,7 @@ function MetamaskButton({ closeModal }) {
       return;
     }
 
-    if(status == "connected") {wallet.disconnect()};
+   
 
     const { account, chain } = await connectAsync({
       connector: new MetaMaskConnector(),

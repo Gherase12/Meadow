@@ -7,14 +7,14 @@ import { useQuery } from 'react-query';
 import Loading from './../components/Loading';
 import { fetchProjects } from './../fetchers/projects';
 import { BiDownArrow } from 'react-icons/bi';
-import { ethos } from "ethos-connect";
+import { useWallet } from '@suiet/wallet-kit';
 
 function Voting() {
-  const { wallet } = ethos.useWallet();
+  const wallet = useWallet()
 
   const { isLoading, data } = useQuery(
     "getProjects",
-    ()=> fetchProjects(wallet?.address)
+    ()=> fetchProjects(wallet?.account.address)
   );
 
   
@@ -22,8 +22,7 @@ function Voting() {
 
   const descRef = useRef(null);
   const arrowRef = useRef(null);
-    console.log(descRef)
-    console.log(arrowRef)
+    
 
   // useEffect(() => {
   //   const desc = descRef.current;

@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import Nav from "./../components/Nav";
 import { useRouter } from "next/router";
-import { EthosConnectProvider } from "ethos-connect";
+
 import { publicProvider } from "wagmi/providers/public";
 import { SessionProvider } from "next-auth/react";
 import { Analytics } from "@vercel/analytics/react";

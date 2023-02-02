@@ -5,13 +5,14 @@ import VoteProjectCard from "./VoteProjectCard";
 import Loading from "../Loading";
 import { fetchProjects } from "../../fetchers/projects";
 import { useQuery } from "react-query";
+import { useWallet } from '@suiet/wallet-kit';
 
 function VotingMobile() {
-  const { wallet } = ethos.useWallet();
+  const wallet = useWallet()
 
   const { isLoading, data } = useQuery(
     "getProjects",
-    ()=> fetchProjects(wallet?.address)
+    ()=> fetchProjects(wallet?.account?.address)
   );
 
   return (

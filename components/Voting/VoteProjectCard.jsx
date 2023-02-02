@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 
-
 import Link from "next/link";
 import Image from "next/image";
-
-import { ethos } from "ethos-connect";
 
 function VoteProjectCard({
   index,
@@ -17,23 +14,22 @@ function VoteProjectCard({
   website,
   twitter,
   discord,
-  isVoted
+  isVoted,
 }) {
   const [score, setScore] = useState(votes);
 
   const production = "https://app.meadowlaunch.com/api/voteProjects";
-const local = "http://localhost:3000/api/voteProjects";
-
+  const local = "http://localhost:3000/api/voteProjects";
 
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
   const links = [website, twitter, discord];
-  const { wallet } = ethos.useWallet();
+  const wallet = useWallet();
 
   const addVote = async (id) => {
     try {
       await fetch(production, {
         method: "POST",
-        body: JSON.stringify({ wallet: wallet?.address, pid: id }),
+        body: JSON.stringify({ wallet: wallet?.account?.address, pid: id }),
       })
         .then((res) => res.json())
         .then((data) => {
@@ -47,10 +43,8 @@ const local = "http://localhost:3000/api/voteProjects";
     } catch (err) {}
   };
 
-  const { status } = ethos.useWallet();
-
   const notify = async () =>
-    status == "connected"
+    wallet?.connected
       ? await addVote(docId)
       : toast.error("Please connect your sui wallet");
 
@@ -85,7 +79,12 @@ const local = "http://localhost:3000/api/voteProjects";
           {links.map(
             (l, index) =>
               l && (
-                <Link target="_blank" rel="noreferrer noopener" key={index} href={l} >
+                <Link
+                  target='_blank'
+                  rel='noreferrer noopener'
+                  key={index}
+                  href={l}
+                >
                   <Image
                     src={icons[index]}
                     width={18.43}
@@ -110,13 +109,15 @@ const local = "http://localhost:3000/api/voteProjects";
             </p>
           </div>
           <button
-            onClick={  notify}
+            onClick={notify}
             disable={isVoted}
             className='border-white-2 cursor-pointer relative scale-[0.8]  md:scale-[1]  py-[11.5px] border-[1px] rounded-full flex justify-center space-x-[10px] items-center w-[82px]  '
           >
-            {isVoted && (<div className="absolute inset-0 z-20 flex items-center justify-center bg-blue-1 text-white font-bold rounded-full ">
-                  Voted
-            </div>)}
+            {isVoted && (
+              <div className='absolute inset-0 z-20 flex items-center justify-center bg-blue-1 text-white font-bold rounded-full '>
+                Voted
+              </div>
+            )}
             <Image
               src='/upArrow.svg'
               width={8}
