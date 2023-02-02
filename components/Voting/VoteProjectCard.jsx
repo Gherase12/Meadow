@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 
 import Link from "next/link";
 import Image from "next/image";
+import { useWallet } from '@suiet/wallet-kit';
 
 function VoteProjectCard({
   index,
