@@ -42,6 +42,14 @@ body {
 }
 
 
+.truncate-2{
+  overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+}
+
 
 .card-icon {
   width: 18.43px;

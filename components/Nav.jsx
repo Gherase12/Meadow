@@ -40,6 +40,8 @@ function Nav({ path }) {
 
   const router = useRouter();
 
+  const isOnNews = path == "/news/[news]"
+
   const elemente = [
     {
       Icon: MdInsertChartOutlined,
@@ -239,7 +241,7 @@ function Nav({ path }) {
 
       {/* big nav */}
 
-      <div className='text-gray-4 hidden xl:flex flex-col z-50 relative w-[295px]  rounded-[28px] bg-blue-2  px-[24.5px] py-[30px]  '>
+      <div className={`text-gray-4 hidden ${!isOnNews && "xl:flex"}  flex-col z-50 relative w-[295px]  rounded-[28px] bg-blue-2  px-[24.5px] py-[30px]  `}>
         {/* logo */}
         <Image
           src='/logo.png'
