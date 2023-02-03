@@ -5,7 +5,7 @@ const local = "http://localhost:3000/api/news"
 const typeDev = production; 
 
 export const fetchNews = async ()=>{
-    const res = await fetch(local, { method: "GET" });
+    const res = await fetch(production, { method: "GET" });
 
     const data = await res.json();
  
@@ -17,7 +17,7 @@ export const fetchNewsContent = async (pageIndex)=>{
 
     
     const res = await fetch(
-        `${local}?pageIndex=${pageIndex}`,
+        `${production}?pageIndex=${pageIndex}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
