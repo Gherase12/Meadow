@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 function FilterBar() {
     const filters = ["All", "New", "Trending", "Blogs"] ;
     const router = useRouter()
-    console.log(router.asPath)
+    
     const handleClick = (i)=>{
             if(i == 3){
                 router.push("/blogs")

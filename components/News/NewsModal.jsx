@@ -3,7 +3,8 @@ import { Dialog, Transition } from "@headlessui/react";
 import MoreNewsPannel from './MoreNewsPannel';
 import MoreNews from './MoreNews';
 import Image  from 'next/image';
-import { AiOutlineCloseCircle } from 'react-icons/ai';
+import { SlClose } from 'react-icons/si';
+
 function NewsModal({ isOpen, closeModal, data, isLoading, newsIndex, type }) {
   return (
     <Transition appear show={isOpen} as={Fragment}>
@@ -41,7 +42,7 @@ function NewsModal({ isOpen, closeModal, data, isLoading, newsIndex, type }) {
                   newsIndex={newsIndex}
                   closeModal={closeModal}
                 />
-                <AiOutlineCloseCircle  onClick={closeModal} className="text-white text-[60px] hidden lg:flex my-auto cursor-pointer " />
+                <Image src="/closeIcon.svg"  onClick={closeModal} width={40} height={40} className=" hidden lg:flex my-auto cursor-pointer " />
               </Dialog.Panel>
             </Transition.Child>
           </div>

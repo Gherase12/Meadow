@@ -10,7 +10,7 @@ import FilterBar from './../components/Elements/FilterBar';
 function News() {
     const { isLoading,  data } = useQuery("news", fetchNews);
   
-//  console.log(data[0])
+
     
   return (
     <PageAnimation>

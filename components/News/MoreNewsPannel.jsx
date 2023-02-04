@@ -7,20 +7,19 @@ import { motion } from "framer-motion";
 function MoreNewsPannel({ data, isLoading, newsIndex, closeModal }) {
   
 
-  console.log(newsIndex)
-  console.log(data)
+ 
 
   return (
-    <div className="lg:h-[947.31px] w-full md:max-w-[883px] mx-auto my-auto relative  overflow-y-scroll lg:pb-[50px]  scrollbar-hide " >
+    <div className=" w-full md:max-w-[883px] mx-auto  relative  overflow-y-scroll border-2  scrollbar-hide " >
 
     <motion.div
       initial={{ opacity: 0, y: 200 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className='  space-x-[30px]     xl:pt-0    flex  bg-white lg:rounded-[45px]   pr-0 overflow-hidden   '
+      className='  space-x-[30px]     xl:pt-0    flex  bg-white lg:rounded-[45px]   pr-0 overflow-hidden lg:mb-[60px]  '
     >
       {/* new */}
-      <div className=' lg:pt-[50px]  flex-1 overflow-y-scroll scrollbar-hide items-center flex flex-col  w-screen lg:w-auto overflow-x-hidden   '>
+      <div className=' lg:pt-[50px]  flex-1 overflow-y-scroll scrollbar-hide items-center flex flex-col  w-screen lg:w-auto overflow-x-hidden    '>
         {/* image container */}
 
         <div className='h-[400px] md:h-[400px] w-[800px]  relative  '>
@@ -49,7 +48,7 @@ function MoreNewsPannel({ data, isLoading, newsIndex, closeModal }) {
           )}
         </div>
         {/* info */}
-        <div className='flex flex-col items-center  '>
+        <div className='flex flex-col items-start  '>
           <div className=' pl-[20px] md:pl-0  w-full md:w-[800px] flex flex-start'>
             <div
             onClick={closeModal}
@@ -74,7 +73,7 @@ function MoreNewsPannel({ data, isLoading, newsIndex, closeModal }) {
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className='text-[30px] font-bold  leading-[119%] max-w-[800px] md:text-[42px] my-[30px]   px-[10px] md:px-0'>
+          className='text-[30px] font-bold  leading-[119%] max-w-[800px] md:text-[42px] my-[30px] text-start   px-[10px] md:px-0'>
             {data && data[newsIndex] ? data[newsIndex].title : ""}
           </motion.h2>
           {/* pharagraphs */}

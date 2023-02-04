@@ -1,12 +1,13 @@
 import React from 'react'
 import Image  from 'next/image';
 import VoteNewsButton from './../Elements/VoteNewsButton';
+import VoteNewsComponent from './VoteNewsComponent';
 
-function MoreNewsCard({ title,   description, author } ) {
+function MoreNewsCard({ title,   description, author, publishedAt } ) {
   return (
     <div className='w-full  rounded-[30px] p-[25px] bg-white mb-[20px]  ' >
-            <h3 className='truncate-2 text-[14px] leading-[120%] font-extrabold mb-[10px]' >{title} </h3>
-            <p className='text-gray-2 text-[12px] leading-[120%] truncate-5 mb-[22px]' >{description}</p>
+            <h3 className='truncate-2 text-[20px] leading-[120%] font-extrabold mb-[10px] text-start ' >{title} </h3>
+            <p className='text-gray-2 text-[12px] leading-[120%] truncate-5 mb-[22px] text-start' >{description}</p>
             <div className="flex w-full justify-between items-center mb-[25px] " >
             <div className="font-black text-blue-6  text-[14px] leading-[19px] ">
             {author}
@@ -17,11 +18,7 @@ function MoreNewsCard({ title,   description, author } ) {
             </div>
             </div>
 
-            <div className="flex justify-between " >
-              
-                <VoteNewsButton text="Bullish" score="1,092" />
-                <VoteNewsButton text="Bearish" score="371" />
-            </div>
+            <VoteNewsComponent publishedAt={publishedAt} />
     </div>
   )
 }
