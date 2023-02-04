@@ -121,15 +121,15 @@ function NewsPage() {
              
             </div>
 
-            {/* <div className="bg-blue-6  flex flex-col space-y-10  md:space-y-0  md:flex-row w-full items-center rounded-[31px] mt-[45px] px-[56px] py-[38px] " >
+            <div className="bg-blue-6  flex flex-col space-y-10  md:space-y-0  md:flex-row w-full md:justify-between items-center md:rounded-[31px] mt-[45px] px-[56px] py-[38px] " >
           <h2 className="text-white text-[22px] font-black leading-[120%] " >Vote!</h2>
 
-          <div classNmae="md:flex border-2">
+          <div className="md:flex  space-y-[20px] md:space-y-0">
           <VoteNewsButton text="Bullish" score="1,092" />
           <VoteNewsButton text="Bearish" score="371" />
           </div>
 
-        </div> */}
+        </div>
 
           </div>
         </div>
