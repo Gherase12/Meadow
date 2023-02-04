@@ -1,15 +1,24 @@
-import React from "react";
+import React, {useState} from "react";
 import Link  from 'next/link';
+import NewsModal from "./NewsModal";
 
 
-function NewsGridCard({ title, image, index, description, author, publishedAt  }) {
+function NewsGridCard({ title, image, index, description, author, publishedAt, data  }) {
 
   const date = new Date(publishedAt);
   const options = { day: 'numeric', month: 'short', year: 'numeric' };
   const formattedDate = date.toLocaleDateString("en-US", options);
+  let [isOpen, setIsOpen] = useState(false);
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
   
   return (
-    <Link href={`/news/${index}`} className="hover:ring-[1px]  rounded-[30px] shadow-md bg-white p-[10px] max-h-[402px] max-w-[327px] " >
+    <div onClick={openModal}  className="hover:ring-[1px]  rounded-[30px] shadow-md bg-white p-[10px] max-h-[402px] max-w-[327px] relative" >
       <img
           src={image ?? "/news.webp"}
           className='h-[165px] object-cover w-[320px]   rounded-[20px] mb-[15px] mx-auto  '
@@ -33,8 +42,8 @@ function NewsGridCard({ title, image, index, description, author, publishedAt  }
           </div>
         </div>
 
-      
-    </Link>
+        <NewsModal data={data} isOpen={isOpen} closeModal={closeModal} newsIndex={index} type={"news"} />
+    </div>
   );
 }
 

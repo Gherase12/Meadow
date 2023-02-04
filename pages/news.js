@@ -45,6 +45,7 @@ function News() {
               
               <NewsGridCard
               //   setLoading={setLoading}
+              data={data}
                   key={i}
                   title={title}
                   image={urlToImage}
