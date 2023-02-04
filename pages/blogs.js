@@ -7,10 +7,10 @@ import { fetchNews } from './../fetchers/news';
 import NewsGridCard from './../components/News/NewsGridCard';
 import FilterBar from './../components/Elements/FilterBar';
 
-function News() {
-    const { isLoading,  data } = useQuery("news", fetchNews);
+function Blogs() {
+    // const { isLoading,  data } = useQuery("news", fetchNews);
   
-//  console.log(data[0])
+ 
     
   return (
     <PageAnimation>
@@ -19,11 +19,11 @@ function News() {
        
 
           <p className='mt-[23px] md:mt-0  h-[23px] font-bold text-[18px] text-gray mb-[22.64px] '>
-            News
+            Blogs
           </p>
           <div className=' z-20   lg:mb-[17.26px] w-[347.89px] h-[68px] text-[5vw] lg:w-[708.49px]  lg:h-[102px] lg:text-[41px] font-extrabold leading-[34px] lg:leading-[51px]  '>
             <h1 className='text-black text-[20px]   md:text-[32px] lg:text-[42px] '>
-              News from the
+              Blogs from the
               <span  className="text-blue-1  ml-[10px]" >
 
                crypto world
@@ -34,8 +34,8 @@ function News() {
 
         
 
-          <div className='overflow-y-scroll p-[10px] gap-[15px] h-[600px] lg:h-[700px]  scrollbar-hide    grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 '>
-              {isLoading && (
+          <div className='overflow-y-scroll gap-[15px] h-[600px] lg:h-[700px]  scrollbar-hide    grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 '>
+              {/* {isLoading && (
                 <div  className="font-black text-[30px] lg:text-[40px]">
                   Coming soon!
                 </div>
@@ -53,7 +53,7 @@ function News() {
                   author={author}
                   publishedAt={publishedAt}
                 />
-            ))}
+            ))} */}
           </div>
         </div>
       </div>
@@ -61,4 +61,4 @@ function News() {
   );
 }
 
-export default News;
+export default Blogs;

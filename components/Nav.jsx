@@ -40,7 +40,7 @@ function Nav({ path }) {
 
   const router = useRouter();
 
-  const isOnNews = path == "/news/[news]"
+  const isOnNews = path == "/news/[news]" || path == "/blogs/[blog]"
 
   const elemente = [
     {
@@ -75,7 +75,7 @@ function Nav({ path }) {
     },
     {
       Icon: GiNewspaper,
-      name: "News",
+      name: "News / Blogs",
       pagePath: "news",
     },
   ];

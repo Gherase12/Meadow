@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import { fetchNewsContent } from "../../fetchers/news";
 import Loading from "../Loading";
-
+import { motion } from "framer-motion";
 function TextParagraph({ newsIndex }) {
   const { isLoading, data } = useQuery(`newsDetail${newsIndex}`, () =>
     fetchNewsContent(newsIndex)
@@ -45,10 +45,14 @@ function TextParagraph({ newsIndex }) {
         </div>
       ) : (
         paragraphs?.map((paragraph, index) => (
-          <div key={index}>
+          <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{  duration: 0.5, delay: 0.8 }}
+          key={index}>
             <p className='font-medium text-[18px] text-gray-6 max-w-[800px]'>{paragraph} </p>
             <br />
-          </div>
+          </motion.div>
         ))
       )}
     </div>

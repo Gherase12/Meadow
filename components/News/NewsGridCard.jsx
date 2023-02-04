@@ -9,19 +9,19 @@ function NewsGridCard({ title, image, index, description, author, publishedAt  }
   const formattedDate = date.toLocaleDateString("en-US", options);
   
   return (
-    <Link href={`/news/${index}`} className="rounded-[30px] shadow-md bg-white p-[10px] max-h-[402px] max-w-[327px] " >
+    <Link href={`/news/${index}`} className="hover:ring-[1px]  rounded-[30px] shadow-md bg-white p-[10px] max-h-[402px] max-w-[327px] " >
       <img
           src={image ?? "/news.webp"}
-          className='h-[165px] object-cover w-[300px]   rounded-[20px] mb-[15px] mx-auto  '
+          className='h-[165px] object-cover w-[320px]   rounded-[20px] mb-[15px] mx-auto  '
           alt='news card'
         />
 
-        <div className="w-full h-[191px] flex flex-col mx-auto" >
+        <div className="w-full h-[191px] flex flex-col mx-auto px-[14px] " >
           <h3 className="font-bold text-[16px] leading-[130%] mb-[10px] " >
             {title} 
           </h3>
-          <p className="text-gray-2 font-normal leading-[18px] flex-1 text-[13px]  h-[100px]  truncate-5 ">
-            {description}
+          <p className="text-gray-2 font-normal leading-[18px] flex-1 text-[13px]  h-[100px]  truncate-5  ">
+            {description }
           </p>
           <div className="flex justify-between mb-[10px] ">
           <div className="font-black text-blue-6  text-[14px] leading-[19px] ">
