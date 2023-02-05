@@ -4,6 +4,7 @@ import MoreNewsPannel from './MoreNewsPannel';
 import MoreNews from './MoreNews';
 import Image  from 'next/image';
 import { SlClose } from 'react-icons/si';
+import BlogPannel from './../Blogs/BlogPannel';
 
 function NewsModal({ isOpen, closeModal, data, isLoading, newsIndex, type }) {
   return (
@@ -36,12 +37,22 @@ function NewsModal({ isOpen, closeModal, data, isLoading, newsIndex, type }) {
                
 
                 <MoreNews data={data} isLoading={isLoading} closeModal={closeModal} type={type} />
-                <MoreNewsPannel
-                  data={data}
-                  isLoading={isLoading}
-                  newsIndex={newsIndex}
-                  closeModal={closeModal}
-                />
+
+                {
+                  type == "news" ? (
+                    <MoreNewsPannel
+                    data={data}
+                    isLoading={isLoading}
+                    newsIndex={newsIndex}
+                    closeModal={closeModal}
+                  />
+                  ):(
+                    <BlogPannel
+                    closeModal={closeModal}
+                    />
+                  ) 
+                }
+                
                 <Image src="/closeIcon.svg"  onClick={closeModal} width={40} height={40} className=" hidden lg:flex my-auto cursor-pointer " />
               </Dialog.Panel>
             </Transition.Child>

@@ -53,6 +53,7 @@ function News() {
                   description={description}
                   author={author}
                   publishedAt={publishedAt}
+                  type={"news"}
                 />
             ))}
           </div>
