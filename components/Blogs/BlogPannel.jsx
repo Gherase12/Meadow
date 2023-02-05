@@ -86,8 +86,8 @@ function BlogPannel({closeModal}) {
                       initial={{ opacity: 0, y: 100 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.5 }}
-                    className='text-[20px] font-bold  leading-[119%] max-w-[800px] md:text-[30px] my-[30px] text-start   px-[20px]'> {titles[i] }</motion.h3>
-                      <motion.p className="font-medium text-[18px] text-gray-6 max-w-[800px] text-start lg:mb-[20px] px-[20px] ">{texts[i]}</motion.p>
+                    className='text-[20px] font-bold  leading-[119%] max-w-[800px] md:text-[30px] my-[30px] text-start   px-[20px]'> {titles[i + 1] }</motion.h3>
+                      <motion.p className="font-medium text-[18px] text-gray-6 max-w-[800px] text-start lg:mb-[20px] px-[20px] ">{texts[i + 1]}</motion.p>
                 </div>
               ))}
 
