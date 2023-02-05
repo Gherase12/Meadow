@@ -10,7 +10,7 @@ function MoreNewsPannel({ data, isLoading, newsIndex, closeModal }) {
  
 
   return (
-    <div className=" w-full md:max-w-[883px] mx-auto  relative  overflow-y-scroll border-2  scrollbar-hide " >
+    <div className=" w-full md:max-w-[883px] mx-auto  relative  overflow-y-scroll   scrollbar-hide " >
 
     <motion.div
       initial={{ opacity: 0, y: 200 }}
