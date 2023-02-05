@@ -14,7 +14,7 @@ function MoreNews({ data, isLoading, closeModal, type }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 1 }}
-      className={'w-[334px] h-full  hidden xl:flex flex-col overflow-y-scroll scrollbar-hide z-20'  + type != "news" && "hidden"   }
+      className={`w-[334px] h-full  hidden  ${ type == "news" && "xl:flex" }  flex-col overflow-y-scroll scrollbar-hide z-20`}   
     >
       <div className='flex justify-between w-full items-center h-[30px] mb-[35px] '>
         <h2 className='text-white text-[24px] font-black  '>
