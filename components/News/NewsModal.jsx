@@ -49,6 +49,7 @@ function NewsModal({ isOpen, closeModal, data, isLoading, newsIndex, type }) {
                   ):(
                     <BlogPannel
                     closeModal={closeModal}
+                    newsIndex={newsIndex}
                     />
                   ) 
                 }

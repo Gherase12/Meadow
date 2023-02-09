@@ -6,7 +6,7 @@ import PageAnimation from "./../components/PageAnimation";
 import { fetchNews } from './../fetchers/news';
 import NewsGridCard from './../components/News/NewsGridCard';
 import FilterBar from './../components/Elements/FilterBar';
-import { blog } from './../utils/blog';
+import { blogs } from './../utils/blog';
 
 function Blogs() {
     // const { isLoading,  data } = useQuery("news", fetchNews);
@@ -35,19 +35,25 @@ function Blogs() {
 
         
 
-          <div className='overflow-y-scroll p-[10px] gap-[15px] h-[600px] lg:h-[700px]  scrollbar-hide    grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 '>
-               
-          <NewsGridCard
-              //   setLoading={setLoading}
-                  key={0}
-                  title={blog.titles[0]}
-                  image={"/blogs/img-1.webp"}
-                  index={0}
-                  description={blog.texts[0]}
-                  author={"Meadow"}
-                  publishedAt={"Dec 27, 2022"}
-                  type="blog"
-                />
+          <div className='overflow-y-scroll p-[10px] gap-[15px] h-[600px] lg:h-[700px]  scrollbar-hide  justify-items-center   grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 '>
+            {
+                blogs.map((blog, i)=>(
+                  <NewsGridCard
+                  //   setLoading={setLoading}
+                      key={i}
+                      title={blog.titles[0]}
+                      image={`/blogs/img-${i + 1}.webp`}
+                      index={i}
+                      description={blog.texts[0]}
+                      author={"Meadow"}
+                      publishedAt={"Dec 27, 2022"}
+                      type="blog"
+                    />
+
+                ))
+
+            }
+          
           </div>
         </div>
       </div>

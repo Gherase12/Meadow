@@ -6,10 +6,10 @@ import Link from "next/link";
 
 import { motion } from "framer-motion";
 
-import { blog } from './../../utils/blog';
+import { blogs } from './../../utils/blog';
 
-function BlogPannel({closeModal}) {
-    const {titles, texts} = blog
+function BlogPannel({closeModal, newsIndex}) {
+    const {titles, texts} = blogs[newsIndex]
 
 
   return (
@@ -32,7 +32,7 @@ function BlogPannel({closeModal}) {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.1 }}
               src={
-               "/blogs/img-1.webp"
+               `/blogs/img-${newsIndex +1}.webp`
               }
               className='object-cover h-[200px] md:h-[400px] w-[800px]  md:rounded-[30px]'
             />
@@ -87,7 +87,7 @@ function BlogPannel({closeModal}) {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.5 }}
                     className='text-[20px] font-bold  leading-[119%] max-w-[800px] md:text-[30px] my-[30px] text-start   px-[20px]'> {titles[i + 1] }</motion.h3>
-                      <motion.p className="font-medium text-[18px] text-gray-6 max-w-[800px] text-start lg:mb-[20px] px-[20px] ">{texts[i + 1]}</motion.p>
+                      <motion.p className="font-medium text-[18px] text-gray-6 max-w-[800px] text-start lg:mb-[20px] px-[20px] text-wrap ">  {texts[i + 1]?.replace(/\n/g, " ")}</motion.p>
                 </div>
               ))}
 
