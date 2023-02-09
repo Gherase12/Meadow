@@ -45,7 +45,7 @@ function MoreNewsPannel({ data, isLoading, newsIndex, closeModal }) {
                   ? data[newsIndex].urlToImage
                   : "/news.webp"
               }
-              className='object-cover h-[200px] md:h-[400px] w-[800px]  md:rounded-[30px]'
+              className='object-cover h-[400px]  md:h-[400px] w-[800px]  md:rounded-[30px]'
             />
           )}
         </div>

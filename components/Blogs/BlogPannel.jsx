@@ -25,7 +25,7 @@ function BlogPannel({closeModal, newsIndex}) {
       <div className=' lg:pt-[50px]  flex-1 overflow-y-scroll scrollbar-hide items-center flex flex-col  w-screen lg:w-auto overflow-x-hidden    '>
         {/* image container */}
 
-        <div className='h-[400px] md:h-[400px] w-[800px]  relative  '>
+        <div className='h-[400px] md:h-[400px] w-[800px]  relative   '>
           
             <motion.img
             initial={{ opacity: 0 }}
@@ -34,7 +34,7 @@ function BlogPannel({closeModal, newsIndex}) {
               src={
                `/blogs/img-${newsIndex +1}.webp`
               }
-              className='object-cover h-[200px] md:h-[400px] w-[800px]  md:rounded-[30px]'
+              className='object-cover h-[400px]  md:h-[400px] w-[800px]  md:rounded-[30px]'
             />
         
 
