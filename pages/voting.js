@@ -88,7 +88,7 @@ function Voting() {
 
             <div ref={descRef} 
             // <div
-            className='overflow-y-scroll scrollbar-hide h-[660px]  relative '>
+            className='overflow-y-scroll scrollbar-hide h-auto lg:h-[660px]  relative '>
               
               {data?.projects?.sort((a, b) => b.votes - a.votes).map(
                 ({ id, name, img, website, votes, twitter, discord }, i) => (

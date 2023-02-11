@@ -35,7 +35,7 @@ function Blogs() {
 
         
 
-          <div className='overflow-y-scroll p-[10px] gap-[15px] h-[600px] lg:h-[700px]  scrollbar-hide  justify-items-center   grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 '>
+          <div className='overflow-y-scroll p-[10px] gap-[15px] h-auto lg:h-[700px]  scrollbar-hide  justify-items-center   grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 '>
             {
                 blogs.map((blog, i)=>(
                   <NewsGridCard
