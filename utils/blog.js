@@ -128,4 +128,17 @@ export const blogs = [
       
     ],
   },
+  {
+    titles: [
+      "Meadow Incubator Tier Systems",
+      
+      
+      
+      
+    ],
+    texts: [
+      "Crypto Incubator tier systems are levels of investing participatory access, which comes with certain privileges that investors in a particular incubator community have in that community domain.  \nWe’ve assessed many tier systems at other launchpads and we came to a conclusion that these launchpads have stratospheric barrier entry with minimal compensations for lower tiers. This makes it technically decentralized as people with the biggest bags are the most favored.  \n \nWe reorganized the tier system, with a low entry barrier, such that investors get their tier’s worth in accurate compensation. This implies that the higher the tier, the better the benefits.  \n \nMeadow built four tiers with different entry levels and benefits:  \n \nDiamond (Best) - 50,000 tokens \nGold - 25,000 tokens \nSilver - 15,000 tokens \nBronze (Lowest tier) - 5,000 tokens \n \nTo receive allocations, the Diamond tier is free of any upgrading tasks while other tiers require some tasks to be completed (Owning a twitter account is required as some of the tasks are conducted on Twitter).  \n \nAs more investors stake the ecosystem’s native tokens, the TVL (Total Value Locked) of the launchpad begins to increase; consequently, the intrinsic value of the particular token increases. A win-win situation for the investors, ecosystem, native blockchain, and—generally—the crypto-verse.  \n"
+      
+    ],
+  }
 ];
