@@ -1,14 +1,14 @@
 import React from "react";
-import { useQuery } from "react-query";
+
 import ViewAll from "../Elements/ViewAll";
-import { fetchNews } from "./../../fetchers/news";
+
 import MoreNewsCard from "./MoreNewsCard";
-import { useRouter } from "next/router";
+
 import { motion } from "framer-motion";
 
 function MoreNews({ data, isLoading, closeModal, type }) {
-  const router = useRouter();
-  console.log(router);
+ 
+  
   return (
     <motion.div
       initial={{ opacity: 0 }}

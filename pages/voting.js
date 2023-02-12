@@ -12,9 +12,11 @@ import { useWallet } from '@suiet/wallet-kit';
 function Voting() {
   const wallet = useWallet()
 
+  console.log(wallet.address)
+
   const { isLoading, data } = useQuery(
     "getProjects",
-    ()=> fetchProjects(wallet?.account.address)
+    ()=> fetchProjects(wallet?.address)
   );
 
   

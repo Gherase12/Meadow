@@ -111,7 +111,7 @@ function VoteProjectCard({
           </div>
           <button
             onClick={notify}
-            disable={isVoted}
+            disabled={isVoted}
             className='border-white-2 cursor-pointer relative scale-[0.8]  md:scale-[1]  py-[11.5px] border-[1px] rounded-full flex justify-center space-x-[10px] items-center w-[82px]  '
           >
             {isVoted && (

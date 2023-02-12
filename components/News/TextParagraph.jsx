@@ -1,11 +1,14 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { fetchNewsContent } from "../../fetchers/news";
+
 import Loading from "../Loading";
 import { motion } from "framer-motion";
-function TextParagraph({ newsIndex }) {
+import { fetchNewsContent } from './../../fetchers/newsContent';
+function TextParagraph({ newsIndex, url }) {
+
+  
   const { isLoading, data } = useQuery(`newsDetail${newsIndex}`, () =>
-    fetchNewsContent(newsIndex)
+    fetchNewsContent( url)
   );
 
   const SpllitInParagraphs = (text) => {
@@ -38,12 +41,7 @@ function TextParagraph({ newsIndex }) {
 
   return (
     <div>
-      {isLoading ? (
-        <div className='w-full h-full flex items-center justify-center '>
-          {/* <Loading /> */}
-          <div className="text-[24px]  md:text-[35px]  font-black" >Coming soon</div>
-        </div>
-      ) : (
+      {
         paragraphs?.map((paragraph, index) => (
           <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -52,8 +50,8 @@ function TextParagraph({ newsIndex }) {
           key={index}>
             <p className='font-medium text-[18px] text-gray-6 max-w-[800px] text-start'>{paragraph} </p>
             <br />
-          </motion.div>
-        ))
+          </motion.div>)
+       
       )}
     </div>
   );

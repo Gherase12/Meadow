@@ -82,7 +82,7 @@ function MoreNewsPannel({ data, isLoading, newsIndex, closeModal }) {
           <div
          
           className=' text-base   px-[20px] md:px-0 '>
-            <TextParagraph newsIndex={newsIndex} />
+            <TextParagraph newsIndex={newsIndex} url={data[newsIndex].url} />
           </div>
 
          

@@ -12,7 +12,7 @@ function VotingMobile() {
 
   const { isLoading, data } = useQuery(
     "getProjects",
-    ()=> fetchProjects(wallet?.account?.address)
+    ()=> fetchProjects(wallet?.address)
   );
 
   return (

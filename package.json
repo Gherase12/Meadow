@@ -37,6 +37,7 @@
     "styled-components": "^5.2.0",
     "swiper": "^8.4.5",
     "tailwind-scrollbar-hide": "^1.1.7",
+    "uuid-by-string": "^4.0.0",
     "wagmi": "^0.10.10"
   },
   "devDependencies": {
