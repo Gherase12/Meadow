@@ -4,7 +4,7 @@ const local = "http://localhost:3000/api/getNewsContent"
 
 export const fetchNewsContent = async ( url) => {
   console.log(url)
-  const res = await fetch(`${local}?url=${url}`, {
+  const res = await fetch(`${production}?url=${url}`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
