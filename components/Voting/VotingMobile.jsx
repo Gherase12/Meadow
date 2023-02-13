@@ -5,14 +5,13 @@ import VoteProjectCard from "./VoteProjectCard";
 import Loading from "../Loading";
 import { fetchProjects } from "../../fetchers/projects";
 import { useQuery } from "react-query";
-import { useWallet } from '@suiet/wallet-kit';
+import { useWallet } from "@suiet/wallet-kit";
 
 function VotingMobile() {
-  const wallet = useWallet()
+  const wallet = useWallet();
 
-  const { isLoading, data } = useQuery(
-    "getProjects",
-    ()=> fetchProjects(wallet?.address)
+  const { isLoading, data } = useQuery("getProjects", () =>
+    fetchProjects(wallet?.address)
   );
 
   return (
@@ -38,8 +37,9 @@ function VotingMobile() {
       {/* card */}
       <div className=' w-full bg-white  rounded-[30px] p-[18px]'>
         {!isLoading ? (
-          data?.projects?.
-            slice(0, 3)
+          data?.projects
+            ?.sort((a, b) => b.votes - a.votes)
+            .slice(0, 3)
             .map(({ id, name, img, website, votes, twitter, discord }, i) => (
               <VoteProjectCard
                 key={i}
