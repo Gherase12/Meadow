@@ -46,7 +46,7 @@ function Blogs() {
                       index={i}
                       description={blog.texts[0]}
                       author={"Meadow"}
-                      publishedAt={"Dec 27, 2022"}
+                      publishedAt={`Dec ${27 - i}, 2022`}
                       type="blog"
                     />
 
