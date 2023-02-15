@@ -32,11 +32,7 @@ export const blogs = [
     ],
   },
   {
-    titles: [
-      "Meadow: Ultimate Sui Launchpad ",
-      "The New Promising Launchpad",
-      
-    ],
+    titles: ["Meadow: Ultimate Sui Launchpad ", "The New Promising Launchpad"],
     texts: [
       "For starters, in the traditional finance world, raising money for your idea or project can be quite discouraging. The first hurdle is convincing willing investors that the project is revolutionary or disruptive; and the second is getting the capital paid in a seamless manner. Another problem is investors playing an oversight and imposing unfounded, unrealistic policies on the founders in a bid to recoup their money back.  \n \nHowever, the DeFi (Decentralized Finance) sector of the crypto-verse is doing things differently. For a nascent space, the dynamics are quite confusing. Crypto launchpads or IDOs (Initial DEX offerings) are platforms that allow projects to raise money; and, analogously, allows investors to invest in early stage projects at a cheaper price. A win-win for both parties.  \n \nLaunchpads offer more. Not only are they a money raiser, they help vet projects, train founders (if need be) and offer their expertise and experience as though they were part of the team. This blocks all loopholes a project may have, and also groom the founders to understand the space they’re trying to dominate.  \n",
       "Meadow is a launchpad on the Sui blockchain. Not only is meadow a crowdfunding space for new projects, the founding team is a group of crypto veterans who understand the art of improving projects and helping founders skyrocket their project’s value and reach.  \n \nMeadow beats other Sui launchpads, and even other IDOs on other blockchains, with its IGO (Initial Game Offering). It’s as a result of the kind of project Meadow attracts, a consequence of its domicile blockchain (Sui blockchain). The Sui blockchain, because of its object-oriented language, best suits Gamers.  \n \nHowever, the nature of the blockchain doesn’t limit it to Gaming projects: it extends to all blockchain use cases. Therefore, Meadow isn’t only a Gaming launchpad but all crypto projects launchpad.  \n \nJoin Meadow to crowdfund for your project and also vet and improve it. \n",
@@ -46,7 +42,6 @@ export const blogs = [
     titles: [
       "The Benefits of The Sui Blockchain and its integration with Meadow: A New Era In DeFi  ",
       "Meadow: A Big Sui Player",
-      
     ],
     texts: [
       "\nFormer Meta employees decided to build another groundbreaking blockchain that will tackle the persistent Blockchain Trilemma that has beset legacy blockchains since the advent of distributed data systems. Their ambition and dedication birthed Sui, a layer 1 blockchain that employs the Sui Move programming language in structuring its foundation and its smart contracts.  \n \nBefore Sui, many blockchain experts had opined that the achievability of Scalability, Security, and Speed is close to impossible. They said one feature would, inevitably, be sacrificed for the other. But Sui’s architecture provides an infrastructure that allows no latency, has high throughput, and immense security. An unprecedented feat.  \n",
@@ -58,8 +53,6 @@ export const blogs = [
       "Integrating Meadow and Sui Blockchain: The Inherent Benefits For Entrepreneurs Building In the Bear Market",
       "The Need For The Confluence",
       "How To Benefit As An Entrepreneur Or An Investor",
-      
-      
     ],
     texts: [
       "Sui blockchain, as discussed in previous articles, is a state-of-the-art blockchain that tackles various problems that legacy blockchains failed at. Problems like speed, throughput, and scalability are now solved using Sui blockchain’s parallel execution infrastructure.  \n \nSui employs Move, another programming language which outdoes the likes of Solidity, Haskell, in terms object oriented smart contract building.  \n \nAnd in the Sui ecosystem is Meadow: a crypto incubator that gets crypto entrepreneurs accustomed to the Sui blockchain and ecosystem (at large).  \n",
@@ -75,8 +68,6 @@ export const blogs = [
       "Read2N",
       "EthosWallet",
       "Read2N",
-      
-      
     ],
     texts: [
       "We’re not lone rangers at Meadow. We believe that our vision of expanding crypto, its offerings, and further its use cases require some healthy partnerships. Collaborations with same minded establishments and projects to help promote the effectiveness of the Sui blockchain; then, bolster the ecosystem, generally.  \n",
@@ -90,55 +81,30 @@ export const blogs = [
     titles: [
       "Meadow Incubator: What Prospective Builders Need To Know",
       "You Need To Build Now",
-      "Meadow’s Part"
-      
-      
-      
+      "Meadow’s Part",
     ],
     texts: [
       "Meadow is currently expanding its social media presence through various campaign programs. As we’re seeking to reach more people who want to help build the Sui ecosystem, we thought we’d clarify our offerings by showing what we are doing exactly.  \n \nThe 2017 crypto bull run made us believe the crypto space is a replica of the traditional tech startup universe. However, many projects withered when trying times came. Why? They were not truly vetted and built from scratch. They lacked substance. And since then, the crypto ecosystem has become wiser.  \n \nOur incubator program, as discussed online in various articles, social media posts, and community discussions, is the most visible.  \n \nWe help build and launch various projects that want to build on the Sui blockchain by providing funding (sourcing through our large—and rapidly increasing—community), advisory support and experience, technical expertise (if needed), and fool-proof insurance program to prepare contingencies. We are striking various agreements and partnerships to further strengthen our authority as one of Sui Blockchain’s pacesetters.  \n",
       "Although, there has been some upward movement in the crypto charts lately yet it’s common knowledge that the crypto winter isn’t over. Any project that builds, and sails through this windy times, has credibility for solid infrastructure and backing.  \n \nMoreover, building during crypto bear runs has another upside: the bull run profits. After having gone the rickety road of a harsh market, a booming market is a compensation. \n",
       "In the traditional startup space, investors are tepid about writing checks during economic downturns. However, crypto founders looking to garner funds to birth their idea, build a team, and scale, don’t have to go through the hassle of pitching to thousands of investors.  \n \nThe Meadow community, for the Sui ecosystem, caters for all financial helps that accepted founders need.  \n",
-      
     ],
   },
   {
-    titles: [
-      "Meadow’s Incubatory Benefits Explained",
-      
-      
-      
-      
-    ],
+    titles: ["Meadow’s Incubatory Benefits Explained"],
     texts: [
-      "Meadow’s incubator is built to help founders navigate the terrains of the Sui blockchain ecosystem without hassle. Sailing uncharted waters can be hectic but Meadow has mapped out the journey for every founder looking to build on the Sui ecosystem.  \n \nWe’ve built a roadmap for our incubation processes and it’s on the meadow website. However, we’re highlighting the benefits for choosing Meadow incubator to propel into the Sui ecosystem.  \n \n \n \n \nWe have direct affiliations to various renowned CEXs that we can get you listed on for free \nor paltry prices. This will save a ton of resources, hassle and funds.   \n \n- We have a bank of 200+ Influencers ready to shill your project across socials.  Our stack of influencers have high credibility, ensuring you get the best marketing for your project. \n \nOur connections are your connections; we help garner additional funds to help keep your project afloat.  \n \n \n- Our partnership includes long term advisory benefits for your project. Getting in touch with people—big names, especially—can be frustrating but our widespread network can do that in no time.  \n \n- Exposure to media channels is important. We can get your content uploaded on numerous news channels that get millions of visits ensuring you get the absolute best prices, at a fast pace.  \n \n- Connection to notable content creators is also a perk; we excel at that.  \n"
-      
+      "Meadow’s incubator is built to help founders navigate the terrains of the Sui blockchain ecosystem without hassle. Sailing uncharted waters can be hectic but Meadow has mapped out the journey for every founder looking to build on the Sui ecosystem.  \n \nWe’ve built a roadmap for our incubation processes and it’s on the meadow website. However, we’re highlighting the benefits for choosing Meadow incubator to propel into the Sui ecosystem.  \n \n \n \n \nWe have direct affiliations to various renowned CEXs that we can get you listed on for free \nor paltry prices. This will save a ton of resources, hassle and funds.   \n \n- We have a bank of 200+ Influencers ready to shill your project across socials.  Our stack of influencers have high credibility, ensuring you get the best marketing for your project. \n \nOur connections are your connections; we help garner additional funds to help keep your project afloat.  \n \n \n- Our partnership includes long term advisory benefits for your project. Getting in touch with people—big names, especially—can be frustrating but our widespread network can do that in no time.  \n \n- Exposure to media channels is important. We can get your content uploaded on numerous news channels that get millions of visits ensuring you get the absolute best prices, at a fast pace.  \n \n- Connection to notable content creators is also a perk; we excel at that.  \n",
     ],
   },
   {
-    titles: [
-      "How Meadow Transcends Traditional Incubators",
-      
-      
-      
-      
-    ],
+    titles: ["How Meadow Transcends Traditional Incubators"],
     texts: [
-      "Incubators basically support early stage businesses to help increase their chances of surviving, scaling, and profitability.  \n \nHowever, one of the shortcomings of incubators—before remote work became commonplace—was they equated real estate to incubation. They ignored project content and offering, and went big on cheap workspaces and commodity services. These are all cheap because it’s easy to give out free workspaces and subsidized accounting or legal services, but hectic to groom and grow a business.  \n \nOf course, the world is now in a remote working era yet Meadow will groom various projects program content with candor, coupled with fundraising that’s required to keep team members motivated and project running. We’ll tackle the basics of growing a crypto project; then go up from there. We look past fundraising as a metric to determine the prospect of any project.  \n \n \nWe know various spots where projects get inundated and stuck, and we’ve provided every resource needed to hurdle those obstacles. From connections to all other supplies that’s required to scale web3 ideas, any project looking to launch on the Sui ecosystem can rest assured that meadow has their back.  \n"
-      
+      "Incubators basically support early stage businesses to help increase their chances of surviving, scaling, and profitability.  \n \nHowever, one of the shortcomings of incubators—before remote work became commonplace—was they equated real estate to incubation. They ignored project content and offering, and went big on cheap workspaces and commodity services. These are all cheap because it’s easy to give out free workspaces and subsidized accounting or legal services, but hectic to groom and grow a business.  \n \nOf course, the world is now in a remote working era yet Meadow will groom various projects program content with candor, coupled with fundraising that’s required to keep team members motivated and project running. We’ll tackle the basics of growing a crypto project; then go up from there. We look past fundraising as a metric to determine the prospect of any project.  \n \n \nWe know various spots where projects get inundated and stuck, and we’ve provided every resource needed to hurdle those obstacles. From connections to all other supplies that’s required to scale web3 ideas, any project looking to launch on the Sui ecosystem can rest assured that meadow has their back.  \n",
     ],
   },
   {
-    titles: [
-      "Meadow Incubator Tier Systems",
-      
-      
-      
-      
-    ],
+    titles: ["Meadow Incubator Tier Systems"],
     texts: [
-      "Crypto Incubator tier systems are levels of investing participatory access, which comes with certain privileges that investors in a particular incubator community have in that community domain.  \nWe’ve assessed many tier systems at other launchpads and we came to a conclusion that these launchpads have stratospheric barrier entry with minimal compensations for lower tiers. This makes it technically decentralized as people with the biggest bags are the most favored.  \n \nWe reorganized the tier system, with a low entry barrier, such that investors get their tier’s worth in accurate compensation. This implies that the higher the tier, the better the benefits.  \n \nMeadow built four tiers with different entry levels and benefits:  \n \nDiamond (Best) - 50,000 tokens \nGold - 25,000 tokens \nSilver - 15,000 tokens \nBronze (Lowest tier) - 5,000 tokens \n \nTo receive allocations, the Diamond tier is free of any upgrading tasks while other tiers require some tasks to be completed (Owning a twitter account is required as some of the tasks are conducted on Twitter).  \n \nAs more investors stake the ecosystem’s native tokens, the TVL (Total Value Locked) of the launchpad begins to increase; consequently, the intrinsic value of the particular token increases. A win-win situation for the investors, ecosystem, native blockchain, and—generally—the crypto-verse.  \n"
-      
+      "Crypto Incubator tier systems are levels of investing participatory access, which comes with certain privileges that investors in a particular incubator community have in that community domain.  \nWe’ve assessed many tier systems at other launchpads and we came to a conclusion that these launchpads have stratospheric barrier entry with minimal compensations for lower tiers. This makes it technically decentralized as people with the biggest bags are the most favored.  \n \nWe reorganized the tier system, with a low entry barrier, such that investors get their tier’s worth in accurate compensation. This implies that the higher the tier, the better the benefits.  \n \nMeadow built four tiers with different entry levels and benefits:  \n \nDiamond (Best) - 50,000 tokens \nGold - 25,000 tokens \nSilver - 15,000 tokens \nBronze (Lowest tier) - 5,000 tokens \n \nTo receive allocations, the Diamond tier is free of any upgrading tasks while other tiers require some tasks to be completed (Owning a twitter account is required as some of the tasks are conducted on Twitter).  \n \nAs more investors stake the ecosystem’s native tokens, the TVL (Total Value Locked) of the launchpad begins to increase; consequently, the intrinsic value of the particular token increases. A win-win situation for the investors, ecosystem, native blockchain, and—generally—the crypto-verse.  \n",
     ],
   },
   {
@@ -146,17 +112,22 @@ export const blogs = [
       "Meadow Incubator Tier Systems",
       "Blockchain And AI",
       "Meadow And Artificial Intelligence ",
-      
-      
-      
-      
     ],
     texts: [
       "Crypto Incubator tier systems are levels of investing participatory access, which comes with certain privileges that investors in a particular incubator community have in that community domain.  \nWe’ve assessed many tier systems at other launchpads and we came to a conclusion that these launchpads have stratospheric barrier entry with minimal compensations for lower tiers. This makes it technically decentralized as people with the biggest bags are the most favored.  \n \nWe reorganized the tier system, with a low entry barrier, such that investors get their tier’s worth in accurate compensation. This implies that the higher the tier, the better the benefits.  \n \nMeadow built four tiers with different entry levels and benefits:  \n \nDiamond (Best) - 50,000 tokens \nGold - 25,000 tokens \nSilver - 15,000 tokens \nBronze (Lowest tier) - 5,000 tokens \n \nTo receive allocations, the Diamond tier is free of any upgrading tasks while other tiers require some tasks to be completed (Owning a twitter account is required as some of the tasks are conducted on Twitter).  \n \nAs more investors stake the ecosystem’s native tokens, the TVL (Total Value Locked) of the launchpad begins to increase; consequently, the intrinsic value of the particular token increases. A win-win situation for the investors, ecosystem, native blockchain, and—generally—the crypto-verse.  \n",
       "Artificial Intelligence has come a long way since its proposition in the 1950s. The idea of Machine Learning (a concept of how computer algorithms can learn from data other than a set of mapped out rules) brought a drastic change into the AI landscape. It grew faster and improvements happened quicker as AI now has a larger well of data to draw from.  \n \nNow, we’re currently in the Big Tech AI war era. Google and Microsoft are dueling to see who wins the AI race. Microsoft, being a big investor in OpenAI, had an upper hand in collaborating with OpenAI to bring ChatGPT (a groundbreaking intelligence never seen before since the inception of the idea in the 50s) to Bing (Microsoft’s search engine).  \n \nChatGPT is the current center of attention in the tech world because of its conversational nature and the tasks it can perform: write articles, code, answer questions—that’d normally take hours of Google-searching—in one page with lots of relevant data and detailed explanation. Its large search range, power, and exposition spurred the tech behemoths into the AI war as they looked to augment their search engines with AI.  \n \nThe AI business is booming and it’s quite complicated to make a forecast of its worth in the next 5 years. But, in 2019, MarketsAndMarkets predicted that the AI industry (worth around USD 9 billion at the time) can be worth USD 190 billion by the year 2025. Last year, the AI industry was worth USD 86.9 billion at a CAGR (compound annual growth rate) of 36.2%, which goes to show the MarketsAndMarkets predicted trajectory is valid and that it’s on a course to happen. In fact, the current AI battle in the big tech space is a gigantic booster.  \n",
       "Although they are both separate technological epiphanies from different times, the potentials of merging these two powerful technologies can be massive.  \n \nOne of the problems that has plagued the blockchain world is scalability. However, AI possesses the ability to sift through, sort, and analyze large data. Crypto transactions produce enormous data, and dealing with these data causes high latency. Some blockchains today are hurdling this particular problem e.g. Sui Blockchian but AI can help overcome this malady for life.  \n \nAnother way AI can influence blockchain is security. Humans have written endless lines of codes to improve the blockchain financial domain and ward off attackers but they still keep coming in their numbers. We’ve seen various scams and hacks on different crypto services and companies in the past years. AI can help discover malicious intent on a network and act swiftly before the attackers can do damage.  \n \nAI can help improve Smart Contracts to further solidify the “trustless” mantra of the blockchain-verse. AI can be used to implement agreements put into smart contracts, which improves the transaction’s speed and efficiency \n",
-      "At Meadow, we see the value that AI brings to crypto and blockchain at large. This is why we’ll have a section for AI projects looking to launch on the Sui ecosystem. Moreover, we are also looking to augment and improve our own ecosystem by integrating meadow launchpad with AI."
-      
+      "At Meadow, we see the value that AI brings to crypto and blockchain at large. This is why we’ll have a section for AI projects looking to launch on the Sui ecosystem. Moreover, we are also looking to augment and improve our own ecosystem by integrating meadow launchpad with AI.",
     ],
-  }
+  },
+  {
+    titles: [
+      "Sui And Aptos Blockchains: A Brief Overview",
+      "Can Sui Overtake Aptos? ",
+    ],
+    texts: [
+      "Sui and Aptos blockchains are daughter blockchains born from the exodus of blockchain experts from Diem (the defunct Meta project). Like we’ve mentioned in preceding articles, one of the groundbreaking inventions by the Diem team is the Move language. Move essentially is a programming language, in the class of solidity and haskell, that can be used to build a smart contract for blockchain projects. Mysten Labs built the Sui blockchain while Aptos blockchain comes from Aptos Labs: a bifurcation of former Meta engineers. Sui and Aptos are both layer 1 blockchains in the stratum of Ethereum, Cardano, etc. with similar infrastructure as they both execute transactions in parallel. However, Since their founding dates are a year apart (Sui 2022, Aptos 2021), Aptos has achieved higher scalability and improvement over time. Sui executes 120, 000 transactions per seconds (TPS) while Aptos has upped its TPS to around 160, 000. ",
+      "Although  Sui’s \nit’s Move \na variant \ndifficult gives \nprediction, the \nSui definite \nshows state \nmore of \nprospects object: \nwhen Is \nit it \ncomes owned/shared \nto or \ndevelopment mutable/immutable? \nand while \nmore Aptos \nroom doesn’t. \nfor Subtle \nimprovement. advantages \nAptos like \nhas these \noptimized place \nits Sui \ndesign at \nto a \nbe vantage \ndurable point \nbut to \nSui overtake \nshows Aptos \nrange as \nwhen time \nit goes \ncomes on. \nto \nproject \nbuilding \nand \nsupport. \n",
+    ],
+  },
 ];
