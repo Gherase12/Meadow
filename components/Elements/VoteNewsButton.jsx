@@ -1,41 +1,48 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { toast } from "react-toastify";
-import { useWallet } from '@suiet/wallet-kit';
+import { useWallet } from "@suiet/wallet-kit";
+import { useAccount } from "wagmi";
 
 function VoteNewsButton({ text, score, id }) {
   const production = "https://app.meadowlaunch.com/api/voteNews";
   const local = "http://localhost:3000/api/voteNews";
   const wallet = useWallet();
+  const { address } = useAccount();
 
-  const [points , setPoints] = useState(score)
-  
+  const [points, setPoints] = useState(score);
 
-    const handleClick = async ()=>{
-
-        const type = text == "Bullish" ? "1" : "0"
-        try {
-          await fetch(local, {
-            method: "POST",
-            body: JSON.stringify({ wallet: wallet?.address, news_id: id, type:type   }),
-          })
-            .then((res) => res.json())
-            .then((data) => {
-              if (data.data.success) {
-                toast.success(data.data.message);
-                setPoints(points + 1);
-              } else {
-                toast.error(data.data.message);
-              }
-            });
-        } catch (err) {}
-      
-        
+  const handleClick = async () => {
+    const type = text == "Bullish" ? "1" : "0";
+    try {
+      await fetch(production, {
+        method: "POST",
+        body: JSON.stringify({
+          wallet: wallet?.address || address,
+          news_id: id,
+          type: type,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.data.success) {
+            toast.success(data.data.message);
+            setPoints(points + 1);
+          } else {
+            toast.error(data.data.message);
+          }
+        });
+    } catch (err) {
+      console.error(err);
     }
-
+  };
 
   return (
-    <button  onClick={handleClick}  className={`bg-white w-[138px] h-[34px] border-2 border-blue-6 rounded-full flex items-center justify-around text-gray-4  `}>
+    <button
+      onClick={handleClick}
+      className={`bg-white w-[138px] h-[34px] border-2 border-blue-6 rounded-full flex items-center justify-around text-gray-4  `}
+    >
       <div className='flex space-x-[8px]  '>
         <Image
           src='/upArrow.svg'

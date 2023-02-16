@@ -2,6 +2,7 @@ import React from "react";
 import { IoMdWallet } from "react-icons/io";
 
 import { useAccount } from "wagmi";
+
 import Image from "next/image";
 import Loading from './Loading';
 import { useWallet } from '@suiet/wallet-kit';

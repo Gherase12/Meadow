@@ -93,8 +93,8 @@ function MoreNewsPannel({ data, isLoading, newsIndex, closeModal }) {
             </h2>
 
             <div className='md:flex  space-y-[20px] md:space-y-0'>
-              <VoteNewsButton text='Bullish' score={data[newsIndex].bullish} />
-              <VoteNewsButton text='Bearish' score={data[newsIndex].bearish} />
+              <VoteNewsButton text='Bullish' score={data[newsIndex].bullish} id={data[newsIndex].id}  />
+              <VoteNewsButton text='Bearish' score={data[newsIndex].bearish} id={data[newsIndex].id}  />
             </div>
           </div>
         </div>

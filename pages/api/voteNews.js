@@ -1,5 +1,5 @@
 const axios = require("axios");
-
+const FormData = require("form-data");
 export default async function handler(req, res) {
   const { method } = req;
 
@@ -8,23 +8,25 @@ export default async function handler(req, res) {
       break;
     case "POST":
       const input = JSON.parse(req.body);
-      console.log(input)
+      console.log(input);
 
       try {
+        const formData = new FormData();
+        formData.append("ak", process.env.MEADOW_API_KEY);
+        formData.append("wallet", input.wallet);
+        formData.append("news_id", input.news_id);
+        formData.append("type", input.type);
+
         const response = await axios
-          .post("https://grandsoft.ro/api/anv", {
-            ak: process.env.MEADOW_API_KEY,
-            wallet: input.wallet,
-            news_id: input.news_id,
-            type:input.type
+          .post("https://grandsoft.ro/api/anv", formData, {
+            headers: formData.getHeaders(),
           })
           .then((response) => {
-            console.log(response.data)
+            
             res.status(200).json({ data: response.data });
-
           });
       } catch (err) {
-        // console.log(err)
+        console.error(err);
       }
 
       break;
