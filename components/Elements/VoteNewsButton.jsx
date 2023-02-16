@@ -13,6 +13,12 @@ function VoteNewsButton({ text, score, id }) {
   const [points, setPoints] = useState(score);
 
   const handleClick = async () => {
+
+    if(!wallet?.address && !address){
+      toast.error("Please connect your wallet to vote news");
+      return
+    }
+
     const type = text == "Bullish" ? "1" : "0";
     try {
       await fetch(production, {
