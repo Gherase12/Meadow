@@ -8,18 +8,24 @@ export default async function handler(req, res) {
       break;
     case "POST":
       const input = JSON.parse(req.body);
-      
+      console.log(input)
+
       try {
         const response = await axios
-          .post("https://grandsoft.ro/api/vote", {
+          .post("https://grandsoft.ro/api/anv", {
             ak: process.env.MEADOW_API_KEY,
             wallet: input.wallet,
-            pid: input.pid,
+            news_id: input.news_id,
+            type:input.type
           })
           .then((response) => {
+            console.log(response.data)
             res.status(200).json({ data: response.data });
+
           });
-      } catch (err) {}
+      } catch (err) {
+        // console.log(err)
+      }
 
       break;
 

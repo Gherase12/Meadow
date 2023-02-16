@@ -30,7 +30,7 @@ function VoteProjectCard({
     try {
       await fetch(production, {
         method: "POST",
-        body: JSON.stringify({ wallet: wallet?.account?.address, pid: id }),
+        body: JSON.stringify({ wallet: wallet?.address, pid: id }),
       })
         .then((res) => res.json())
         .then((data) => {

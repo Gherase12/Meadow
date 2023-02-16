@@ -3,7 +3,7 @@ import Image  from 'next/image';
 import VoteNewsButton from './../Elements/VoteNewsButton';
 import VoteNewsComponent from './VoteNewsComponent';
 
-function MoreNewsCard({ title,   description, author, publishedAt } ) {
+function MoreNewsCard({ id, title,   description, author, publishedAt, bullish, bearish } ) {
   return (
     <div className='w-full  rounded-[30px] p-[25px] bg-white mb-[20px]  ' >
             <h3 className='truncate-2 text-[20px] leading-[120%] font-extrabold mb-[10px] text-start ' >{title} </h3>
@@ -18,7 +18,7 @@ function MoreNewsCard({ title,   description, author, publishedAt } ) {
             </div>
             </div>
 
-            <VoteNewsComponent publishedAt={publishedAt} />
+            <VoteNewsComponent publishedAt={publishedAt} bullish={bullish} bearish={bearish} id={id} />
     </div>
   )
 }

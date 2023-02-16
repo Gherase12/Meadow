@@ -1,11 +1,11 @@
 import React from "react";
 import VoteNewsButton from "./../Elements/VoteNewsButton";
 
-function VoteNewsComponent() {
+function VoteNewsComponent({bullish, bearish, id}) {
   return (
     <div className='flex justify-between '>
-      <VoteNewsButton text='Bullish' score='1,092' />
-      <VoteNewsButton text='Bearish' score='371' />
+      <VoteNewsButton text='Bullish' score={bullish} id={id} />
+      <VoteNewsButton text='Bearish' score={bearish} id={id} />
     </div>
   );
 }

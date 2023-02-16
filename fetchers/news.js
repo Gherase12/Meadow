@@ -2,7 +2,7 @@
 const production = "https://app.meadowlaunch.com/api/getNews"
 const local = "http://localhost:3000/api/getNews"
 
-const typeDev = production; 
+
 
 export const fetchNews = async ()=>{
     const res = await fetch(production, { method: "POST" });

@@ -27,15 +27,18 @@ function MoreNews({ data, isLoading, closeModal, type }) {
         <h1 className='text-white'>Coming soon </h1>
       ) : (
         data?.map(
-          ({ title, urlToImage, description, author, publishedAt }, i) => (
+          ({ id, title, urlToImage, description, author, publishedAt, bullish, bearish }, i) => (
             <MoreNewsCard
+            id={id}
               key={i}
               title={title}
               image={urlToImage}
-              index={i}
+              
               description={description}
               author={author}
               publishedAt={publishedAt}
+              bullish={bullish}
+              bearish={bearish}
             />
           )
         )
