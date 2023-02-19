@@ -121,7 +121,7 @@ function Project() {
                 {/* details */}
                 <div className=' h-[76px] mt-[20px]  '>
                   <TokenSaleDetail
-                    upText={"5% on TGE, 2 months Cliff 18 Months Vesting"}
+                    upText={"5% TGE 2 months Cliff 5.27% per month"}
                     downText={"Lock-up"}
                   />
                 </div>
