@@ -4,11 +4,14 @@ import { AiOutlineArrowLeft ,AiOutlineWarning  } from "react-icons/ai";
 import TokenSaleDetail from "./../../components/TokenSaleDetail";
 import { useRouter } from "next/navigation";
 import Link  from 'next/link';
-import { toast } from 'react-toastify';
+
 import React, { useState ,useEffect} from 'react';
 import AlocationBoard from './../../components/Project/AlocationBoard';
 import { useWallet } from '@suiet/wallet-kit';
 import { JsonRpcProvider, Network  } from '@mysten/sui.js';
+import WalletDetails from './../../components/Project/WalletDetails';
+
+import { convertToSui } from './../../utils/convertToSui';
 function Project() {
   const wallet = useWallet()
   const provider = new JsonRpcProvider(Network.DEVNET);
@@ -19,6 +22,7 @@ function Project() {
   const [progres, setProgers] = useState(0)
   const [coins , setCoins] = useState([])
   const [isFinished, setIsFinished] = useState(false);
+  const [alocationObject, setAlocationObject] = useState({})
   const alocation = "0xc4f4e02c23d473d8c037fd97eae9a2904dac1574"
   const package_ = "0x0354f68cb909adfcf4393088c746f643a6a7f00c"
 
@@ -50,7 +54,7 @@ function Project() {
 
 
   useEffect(()=>{
-    const getObjects = async ()=>{
+    const getObjectsForUser = async ()=>{
       if(!wallet.connected) return
       const objects = await provider.getObjectsOwnedByAddress(
         wallet?.address
@@ -65,16 +69,21 @@ function Project() {
         setParticipateingId(partObj?.objectId)
         setParticipateing(part)
         // 
+        
+         
+    }
+
+    const getObjectsForApp = async ()=>{
         const aloc = await provider.getObject(alocation)
+        console.log(aloc?.details?.data?.fields?.balance)
+        setAlocationObject(aloc)
         const percentComplete = (Number(aloc.details.data.fields.balance) / Number(aloc.details.data.fields.finishAmount)) * 100;
         setIsFinished(Number(aloc.details.data.fields.balance) > Number(aloc.details.data.fields.finishAmount))
-        console.log(percentComplete)
-        setProgers(percentComplete)
-
-        console.log(partObj?.objectId)
-        
+        setProgers(percentComplete) 
     }
-    getObjects()
+
+    getObjectsForUser()
+    getObjectsForApp()
 
   },[wallet?.connected, buttonClick])
 
@@ -101,7 +110,7 @@ try {
     }
   });
   
-      
+  toast.success("Participated successfully");
       setButtonClick(!buttonClick);
     } catch (e) {
       console.error('nft mint failed', e);
@@ -119,7 +128,7 @@ try {
     transaction: {
       kind: 'moveCall',
       data: {
-        packageObjectId: package_,
+        packageObjectId: "",
         module:'meadow',
         function: 'claim',
         typeArguments: [],
@@ -133,10 +142,10 @@ try {
     }
   });
   
-      
+  toast.success("Claimed tokens");
       setButtonClick(!buttonClick);
     } catch (e) {
-      console.error('nft mint failed', e);
+      console.error( e);
     }
   }
 
@@ -260,10 +269,23 @@ try {
                 </div>
               </div>
               {/* bar */}
+              <div>
+
+              <div className="flex w-full justify-between font-bold " >
+                <p>Progerss:</p>
+                <p>{progres.toFixed(0)}%</p>
+              </div>
               <div className="progress-bar-container">
-      <div className="progress-bar" style={{ width: `${progres}%` }} />
-        
-    </div>
+              <div className="progress-bar" style={{ width: `${progres}%` }} />
+              </div>
+              <div className="flex w-full justify-between font-bold text-sm pt-1 " >
+                <p>{convertToSui(Number(alocationObject?.details?.data?.fields?.balance))} SUI</p>
+                <p>{convertToSui(Number(alocationObject?.details?.data?.fields?.finishAmount))} SUI</p>
+              </div>
+              </div>
+              {/* /bar */}
+
+              { wallet.connected && (<WalletDetails buttonClick={buttonClick}  />)}
     
 
               {/* price */}
@@ -274,7 +296,7 @@ try {
               <div>
                 <div className='text-[15px] font-normal  leading-[19px]'></div>
                 <div className='text-[14px] leading-[18px] mt-4 text-gray-2 '>
-                  TBA -TBA
+                
                 </div>
               </div>
               {
