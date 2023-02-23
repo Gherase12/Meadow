@@ -12,6 +12,7 @@ function AlocationBoard({
 }) {
   const wallet = useWallet();
   console.log(participateingId, alocation);
+  console.log(coins)
   let [amount, setAmount] = useState(0);
     
   const alocate = async () => {

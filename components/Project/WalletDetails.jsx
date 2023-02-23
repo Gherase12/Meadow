@@ -17,9 +17,8 @@ function WalletDetails({buttonClick }) {
                 wallet?.address
                 );
                 const Obj =  objects.find(obj => obj.type === "0x354f68cb909adfcf4393088c746f643a6a7f00c::meadow::Participation")
-                console.log(Obj.objectId)
-                const partObj = await provider.getObject(Obj.objectId)
-                console.log(partObj?.details?.data?.fields?.alocated)
+                const partObj = Obj && await provider.getObject(Obj.objectId)
+                // console.log(partObj?.details?.data?.fields?.alocated)
                 
                 setParticipation(partObj)
         }
@@ -30,7 +29,7 @@ function WalletDetails({buttonClick }) {
   return (
     <div className='w-full text-black my-5' >
         <p> Sui balance: { cutDecimals(convertToSui(Number(balance)))  }</p>
-        <p> My contribution: { convertToSui(Number(participation?.details.data.fields.alocated)).toFixed(6).replace(/\.?0+$/, '') || 0  }</p>
+       {participation && (<p> My contribution: { convertToSui(Number(participation?.details.data.fields.alocated)).toFixed(6).replace(/\.?0+$/, '')   } Sui</p>) } 
     </div>
   )
 }

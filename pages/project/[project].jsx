@@ -279,7 +279,7 @@ try {
               <div className="progress-bar" style={{ width: `${progres}%` }} />
               </div>
               <div className="flex w-full justify-between font-bold text-sm pt-1 " >
-                <p>{convertToSui(Number(alocationObject?.details?.data?.fields?.balance))} SUI</p>
+                <p>{convertToSui(Number(alocationObject?.details?.data?.fields?.balance)).toFixed(6).replace(/\.?0+$/, '')} SUI</p>
                 <p>{convertToSui(Number(alocationObject?.details?.data?.fields?.finishAmount))} SUI</p>
               </div>
               </div>
