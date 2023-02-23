@@ -12,6 +12,38 @@
   display:none
 }
 
+
+.progress-bar-container {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  height: 10px;
+  overflow: hidden;
+}
+
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.progress-bar {
+  background: radial-gradient(108% 183.43% at 81.75% 60.49%, #B4E5FF 0%, #038AC8 66.35%, #0052A4 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+box-shadow: 0px 134px 54px rgba(0, 132, 255, 0.02), 0px 76px 45px rgba(0, 132, 255, 0.06), 0px 34px 34px rgba(0, 132, 255, 0.1), 0px 8px 18px rgba(0, 132, 255, 0.12), 0px 0px 0px rgba(0, 132, 255, 0.12);
+  height: 100%;
+  transition: width 0.5s;
+}
+
+.progress-bar-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
 .text-wrap {
   display: block;
   overflow-wrap: break-word;

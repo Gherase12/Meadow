@@ -1,12 +1,27 @@
-import React from "react";
+
 import Image from "next/image";
-import { AiOutlineArrowLeft } from "react-icons/ai";
+import { AiOutlineArrowLeft ,AiOutlineWarning  } from "react-icons/ai";
 import TokenSaleDetail from "./../../components/TokenSaleDetail";
 import { useRouter } from "next/navigation";
 import Link  from 'next/link';
 import { toast } from 'react-toastify';
+import React, { useState ,useEffect} from 'react';
+import AlocationBoard from './../../components/Project/AlocationBoard';
+import { useWallet } from '@suiet/wallet-kit';
+import { JsonRpcProvider, Network  } from '@mysten/sui.js';
 function Project() {
+  const wallet = useWallet()
+  const provider = new JsonRpcProvider(Network.DEVNET);
   const router = useRouter();
+  const [buttonClick, setButtonClick] = useState(false);
+  const [participateing, setParticipateing] = useState()
+  const [participateingId, setParticipateingId] = useState()
+  const [progres, setProgers] = useState(0)
+  const [coins , setCoins] = useState([])
+  const [isFinished, setIsFinished] = useState(false);
+  const alocation = "0xc4f4e02c23d473d8c037fd97eae9a2904dac1574"
+  const package_ = "0x0354f68cb909adfcf4393088c746f643a6a7f00c"
+
   const prices = [
     {
       price: "0.10",
@@ -31,7 +46,99 @@ function Project() {
   ];
 
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
-  const notify = () => toast.warn("Coming soon");
+  
+
+
+  useEffect(()=>{
+    const getObjects = async ()=>{
+      if(!wallet.connected) return
+      const objects = await provider.getObjectsOwnedByAddress(
+        wallet?.address
+        );
+        // const part =  objects.some(obj => obj.type === `${package_}::meadow::Participation`)
+        const part =  objects.some(obj => obj.type === "0x354f68cb909adfcf4393088c746f643a6a7f00c::meadow::Participation")
+        // const partObj =  objects.find(obj => obj.type === `${package_}::meadow::Participation`)
+        const partObj =  objects.find(obj => obj.type === "0x354f68cb909adfcf4393088c746f643a6a7f00c::meadow::Participation")
+        setCoins(objects.find(obj => obj.type === "0x2::coin::Coin<0x2::sui::SUI>"))
+        console.log(objects)
+        console.log(partObj)
+        setParticipateingId(partObj?.objectId)
+        setParticipateing(part)
+        // 
+        const aloc = await provider.getObject(alocation)
+        const percentComplete = (Number(aloc.details.data.fields.balance) / Number(aloc.details.data.fields.finishAmount)) * 100;
+        setIsFinished(Number(aloc.details.data.fields.balance) > Number(aloc.details.data.fields.finishAmount))
+        console.log(percentComplete)
+        setProgers(percentComplete)
+
+        console.log(partObj?.objectId)
+        
+    }
+    getObjects()
+
+  },[wallet?.connected, buttonClick])
+
+
+  const mintParticipation = async ()=>{
+    if (!wallet.connected) {
+      toast.error("Please connect your Sui wallet");
+      return
+    }
+try {
+  const resData = await wallet.signAndExecuteTransaction({
+    transaction: {
+      kind: 'moveCall',
+      data: {
+        packageObjectId: package_,
+        module:'meadow',
+        function: 'participate',
+        typeArguments: [],
+        arguments: [
+          alocation
+        ],
+        gasBudget: 10000,
+      }
+    }
+  });
+  
+      
+      setButtonClick(!buttonClick);
+    } catch (e) {
+      console.error('nft mint failed', e);
+    }
+  }
+
+
+  const claim = async ()=>{
+    if (!wallet.connected) {
+      toast.error("Please connect your Sui wallet");
+      return
+    }
+try {
+  const resData = await wallet.signAndExecuteTransaction({
+    transaction: {
+      kind: 'moveCall',
+      data: {
+        packageObjectId: package_,
+        module:'meadow',
+        function: 'claim',
+        typeArguments: [],
+        arguments: [
+          alocation,
+          participateingId,
+
+        ],
+        gasBudget: 10000,
+      }
+    }
+  });
+  
+      
+      setButtonClick(!buttonClick);
+    } catch (e) {
+      console.error('nft mint failed', e);
+    }
+  }
 
  
   return (
@@ -130,8 +237,8 @@ function Project() {
           </div>
           {/* right */}
 
-          <div>
-            <div className='font-avenir lg:w-[354px] h-[300px] rounded-[30px] bg-white p-[30px] '>
+          <div className="max-w-[354px]" >
+            <div className='font-avenir lg:w-[354px] h-auto   rounded-[30px] bg-white p-[30px] '>
               {/* details */}
               <div className='font-bold text-[27px] leading-[110%] font-avenir mb-[30px]  '>
                 Sale Details
@@ -153,7 +260,12 @@ function Project() {
                 </div>
               </div>
               {/* bar */}
-              <div className='h-[8px] rounded-full bg-gray-1 mb-[10px] ' />
+              <div className="progress-bar-container">
+      <div className="progress-bar" style={{ width: `${progres}%` }} />
+        
+    </div>
+    
+
               {/* price */}
               {/* <p className='laeding-[21px] text-[13px] w-[55px] h-[21px] text-gray-3 '>
                 $124,202
@@ -161,12 +273,30 @@ function Project() {
               {/* end event */}
               <div>
                 <div className='text-[15px] font-normal  leading-[19px]'></div>
-                <div className='text-[14px] leading-[18px] text-gray-2 '>
+                <div className='text-[14px] leading-[18px] mt-4 text-gray-2 '>
                   TBA -TBA
                 </div>
               </div>
+              {
+                isFinished && !wallet.connected ? (
+                  <div calssName="text-gray-1 w-fill h-[40px] flex items-center justify-center">
+                  Finished!
+                </div>
+                ):
 
-              <button onClick={notify}  className='h-[40px] bg-black w-full mt-[20px] rounded-[14px] flex items-center justify-center space-x-[10px]  '>
+                isFinished && !participateing && wallet.connected ? (
+                  <div calssName="text-gray-1 w-fill h-[40px] flex items-center justify-center">
+                    Claimed!
+                  </div>
+                ):
+                isFinished && participateing  ? (
+                  <button onClick={()=>claim()} className="h-[40px] bg-blue-1 w-full mt-[20px] rounded-[14px] text-white font-bold flex items-center justify-center shadow-lg shadow-blue-1" >
+                    Claim
+                  </button>
+                ):
+
+                !participateing ? (
+                  <button onClick={()=>mintParticipation()}  className='h-[40px] bg-black w-full mt-[20px] rounded-[14px] flex items-center justify-center space-x-[10px]  '>
                 <div className='text-[18px] font-medium leading-[24px] text-white '>
                   Participate
                 </div>
@@ -178,6 +308,19 @@ function Project() {
                   alt='upArrow'
                 />
               </button>
+                ): (
+                  <AlocationBoard alocation={alocation} participateingId={participateingId} coins={coins} buttonClick={buttonClick} setButtonClick={setButtonClick} />
+                )
+              }
+              
+            </div>
+
+            <div className="bg-white rounded-xl w-full p-5 mt-4 flex justify-center space-x-[10px] text-blue-1 items-center">
+            <p>Before you start any action you need to have sui for gas fee, for that find the airdrop or faucet option in your sui wallet. </p>
+            </div>
+            <div className="bg-white rounded-xl w-full h-14 mt-4 flex justify-center space-x-[10px] text-red items-center">
+            <AiOutlineWarning  />
+            <p>This is just an exparimental demo</p>
             </div>
             <div className=' flex justify-center space-x-[10px] items-center mx-auto mt-[21px] '>
               {icons.map((icon, index) => (
