@@ -4,7 +4,7 @@ import { AiOutlineArrowLeft ,AiOutlineWarning  } from "react-icons/ai";
 import TokenSaleDetail from "./../../components/TokenSaleDetail";
 import { useRouter } from "next/navigation";
 import Link  from 'next/link';
-
+import { toast } from 'react-toastify';
 import React, { useState ,useEffect} from 'react';
 import AlocationBoard from './../../components/Project/AlocationBoard';
 import { useWallet, useAccountBalance } from '@suiet/wallet-kit';
