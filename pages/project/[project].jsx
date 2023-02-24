@@ -7,7 +7,7 @@ import Link  from 'next/link';
 
 import React, { useState ,useEffect} from 'react';
 import AlocationBoard from './../../components/Project/AlocationBoard';
-import { useWallet } from '@suiet/wallet-kit';
+import { useWallet, useAccountBalance } from '@suiet/wallet-kit';
 import { JsonRpcProvider, Network  } from '@mysten/sui.js';
 import WalletDetails from './../../components/Project/WalletDetails';
 
@@ -23,8 +23,9 @@ function Project() {
   const [coins , setCoins] = useState([])
   const [isFinished, setIsFinished] = useState(false);
   const [alocationObject, setAlocationObject] = useState({})
-  const alocation = "0xc4f4e02c23d473d8c037fd97eae9a2904dac1574"
-  const package_ = "0x0354f68cb909adfcf4393088c746f643a6a7f00c"
+  const {balance} = useAccountBalance()
+  const alocation = "0x5f741ba6a378b1e53c3fd7a74d02ab7fb3ecad37"
+  const package_ = "0x121171d34a925759e82afc7ddea8f0e27be78b51"
 
   const prices = [
     {
@@ -60,22 +61,23 @@ function Project() {
         wallet?.address
         );
         // const part =  objects.some(obj => obj.type === `${package_}::meadow::Participation`)
-        const part =  objects.some(obj => obj.type === "0x354f68cb909adfcf4393088c746f643a6a7f00c::meadow::Participation")
+        const part =  objects.some(obj => obj.type === "0x121171d34a925759e82afc7ddea8f0e27be78b51::meadow::Participation")
         // const partObj =  objects.find(obj => obj.type === `${package_}::meadow::Participation`)
-        const partObj =  objects.find(obj => obj.type === "0x354f68cb909adfcf4393088c746f643a6a7f00c::meadow::Participation")
-        setCoins(objects.find(obj => obj.type === "0x2::coin::Coin<0x2::sui::SUI>"))
-        console.log(objects)
-        console.log(partObj)
+        const partObj =  objects.find(obj => obj.type === "0x121171d34a925759e82afc7ddea8f0e27be78b51::meadow::Participation")
+        //  setCoins(objects.find(obj => obj.type === "0x2::coin::Coin<0x2::sui::SUI>"))
+        const cids =  objects.filter(obj => obj.type === "0x2::coin::Coin<0x2::sui::SUI>").map((o)=> o.objectId)
+        setCoins(cids)
         setParticipateingId(partObj?.objectId)
         setParticipateing(part)
         // 
+
+        
         
          
     }
 
     const getObjectsForApp = async ()=>{
         const aloc = await provider.getObject(alocation)
-        console.log(aloc?.details?.data?.fields?.balance)
         setAlocationObject(aloc)
         const percentComplete = (Number(aloc.details.data.fields.balance) / Number(aloc.details.data.fields.finishAmount)) * 100;
         setIsFinished(Number(aloc.details.data.fields.balance) > Number(aloc.details.data.fields.finishAmount))
@@ -85,7 +87,7 @@ function Project() {
     getObjectsForUser()
     getObjectsForApp()
 
-  },[wallet?.connected, buttonClick])
+  },[wallet?.connected, buttonClick, balance])
 
 
   const mintParticipation = async ()=>{
@@ -115,6 +117,7 @@ try {
     } catch (e) {
       console.error('nft mint failed', e);
     }
+    setButtonClick(!buttonClick);
   }
 
 
@@ -285,7 +288,7 @@ try {
               </div>
               {/* /bar */}
 
-              { wallet.connected && (<WalletDetails buttonClick={buttonClick}  />)}
+              { wallet.connected && (<WalletDetails setButtonClick={setButtonClick} buttonClick={buttonClick} coins={coins} />)}
     
 
               {/* price */}
