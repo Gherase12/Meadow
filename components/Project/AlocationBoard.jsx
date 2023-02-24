@@ -21,7 +21,7 @@ function AlocationBoard({
   const [error, setError] = useState(false)
   const provider = new JsonRpcProvider(Network.DEVNET);
   const {balance} = useAccountBalance()
-  const [resp, setResp] = useState();
+  
 
 
   useEffect(() => {
@@ -89,10 +89,10 @@ function AlocationBoard({
         },
       });
       
-      setResp(resData)
+      
       toast.success("Alocated " + amount + " tokens")
-      setButtonClick(!buttonClick);
-      // router.refresh()
+      // setButtonClick(!buttonClick);
+      
     } catch (e) {
       console.error(e);
       
