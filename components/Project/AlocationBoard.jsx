@@ -37,8 +37,8 @@ function AlocationBoard({
         .then((results) => {
           // Handle the results of all promises
           setMinValue(results.reduce((minBalance, currentItem) =>
-          Number(currentItem?.details.data.fields.balance) < minBalance ? Number(currentItem?.details.data.fields.balance) : minBalance,
-          Infinity
+          Number(currentItem?.details.data.fields.balance) < minBalance ? Number(currentItem?.details.data.fields.balance) : minBalance
+          
         ))
         })
         .catch((error) => {
@@ -58,7 +58,7 @@ function AlocationBoard({
     const mist = convertToMist(amount)
     
 
-    if(mist > minValue || mist == 0) {
+    if(mist > balance || !mist ) {
       setError(true)
       return
     }
@@ -120,7 +120,7 @@ function AlocationBoard({
         </button>
       </div>
       {error && (<p className="text-red text-sm pt-2">
-          !Please use an amount {"<"} { convertToSui(minValue) }
+          !Please use an amount {"<"} { convertToSui(Number(balance)) }
         </p>)}
 
       

@@ -345,7 +345,7 @@ try {
             </div>
             <div className="bg-white rounded-xl w-full h-14 mt-4 flex justify-center space-x-[10px] text-red items-center">
             <AiOutlineWarning  />
-            <p>This is just an exparimental demo</p>
+            <p>This is just an experimental demo</p>
             </div>
             <div className=' flex justify-center space-x-[10px] items-center mx-auto mt-[21px] '>
               {icons.map((icon, index) => (

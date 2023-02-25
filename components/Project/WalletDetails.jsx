@@ -70,9 +70,10 @@ function WalletDetails({buttonClick,setButtonClick, coins }) {
           <button onClick={()=>mergeCoins()} className="bg-blue-1 text-white p-2 text-[12px] rounded-[10px] hover:bg-blue-2 hover:shadow-lg hover:shadow-blue-1 transition duration-1 " >Merge</button>
 
         </div>
-          <p>
+          <div>
               {participation && (<p> My contribution: { convertToSui(Number(participation?.details.data.fields.alocated)).toFixed(6).replace(/\.?0+$/, '')   } Sui</p>) } 
-          </p>
+          </div>
+          <p>1 MED= 1 Sui</p>
     </div>
   )
 }
