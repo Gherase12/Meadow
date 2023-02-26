@@ -116,7 +116,7 @@ function AlocationBoard({
           onClick={() => alocate()}
           className='h-[40px] bg-blue-1 w-full text-white  rounded-[14px] flex items-center justify-center space-x-[10px]'
         >
-          Alocate
+          Contribute
         </button>
       </div>
       {error && (<p className="text-red text-sm pt-2">

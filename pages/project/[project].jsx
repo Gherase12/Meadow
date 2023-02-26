@@ -275,7 +275,7 @@ try {
               <div>
 
               <div className="flex w-full justify-between font-bold " >
-                <p>Progerss:</p>
+                <p>Progress:</p>
                 <p>{progres.toFixed(0)}%</p>
               </div>
               <div className="progress-bar-container">
