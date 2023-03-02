@@ -90,7 +90,7 @@ function AlocationBoard({
       });
       
       
-      toast.success("Alocated " + amount + " tokens")
+      toast.success("Contributed" + amount + " tokens")
       // setButtonClick(!buttonClick);
       
     } catch (e) {
