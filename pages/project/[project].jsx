@@ -24,8 +24,8 @@ function Project() {
   const [isFinished, setIsFinished] = useState(false);
   const [alocationObject, setAlocationObject] = useState({})
   const {balance} = useAccountBalance()
-  const alocation = "0x5f741ba6a378b1e53c3fd7a74d02ab7fb3ecad37"
-  const package_ = "0x121171d34a925759e82afc7ddea8f0e27be78b51"
+  const alocation = "0x629dbc0a64df64b0042f8557762e1d070758d338"
+  const package_ = "0x04cdd6df4f6e53a23865ce441442f8e9d91e504b"
 
   const prices = [
     {
@@ -61,18 +61,16 @@ function Project() {
         wallet?.address
         );
         // const part =  objects.some(obj => obj.type === `${package_}::meadow::Participation`)
-        const part =  objects.some(obj => obj.type === "0x121171d34a925759e82afc7ddea8f0e27be78b51::meadow::Participation")
+        console.log(objects)
+        const part =  objects.some(obj => obj.type === "0x4cdd6df4f6e53a23865ce441442f8e9d91e504b::meadow::Participation")
         // const partObj =  objects.find(obj => obj.type === `${package_}::meadow::Participation`)
-        const partObj =  objects.find(obj => obj.type === "0x121171d34a925759e82afc7ddea8f0e27be78b51::meadow::Participation")
+        const partObj =  objects.find(obj => obj.type === "0x4cdd6df4f6e53a23865ce441442f8e9d91e504b::meadow::Participation")
         //  setCoins(objects.find(obj => obj.type === "0x2::coin::Coin<0x2::sui::SUI>"))
         const cids =  objects.filter(obj => obj.type === "0x2::coin::Coin<0x2::sui::SUI>").map((o)=> o.objectId)
         setCoins(cids)
         setParticipateingId(partObj?.objectId)
         setParticipateing(part)
         // 
-
-        
-        
          
     }
 
@@ -131,7 +129,7 @@ try {
     transaction: {
       kind: 'moveCall',
       data: {
-        packageObjectId: "0x121171d34a925759e82afc7ddea8f0e27be78b51",
+        packageObjectId: "0x04cdd6df4f6e53a23865ce441442f8e9d91e504b",
         module:'meadow',
         function: 'claim',
         typeArguments: [],
@@ -303,15 +301,15 @@ try {
                 </div>
               </div>
               {
-                isFinished && !wallet.connected ? (
-                  <div calssName="text-gray-1 w-fill h-[40px] flex items-center justify-center">
+                (isFinished && !wallet.connected) || (isFinished && wallet.connecte && !participateing ) ? (
+                  <div className="text-gray-1 w-fill h-[40px] flex items-center justify-center">
                   Finished!
                 </div>
                 ):
 
                 isFinished && !participateing && wallet.connected ? (
-                  <div calssName="text-gray-1 w-fill h-[40px] flex items-center justify-center">
-                    Claimed!
+                  <div className="text-gray-1 w-fill h-[40px] flex items-center justify-center">
+                  Finished!
                   </div>
                 ):
                 isFinished && participateing  ? (

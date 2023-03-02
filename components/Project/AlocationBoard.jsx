@@ -73,7 +73,7 @@ function AlocationBoard({
         transaction: {
           kind: "moveCall",
           data: {
-            packageObjectId: "0x121171d34a925759e82afc7ddea8f0e27be78b51",
+            packageObjectId: "0x04cdd6df4f6e53a23865ce441442f8e9d91e504b",
             module: "meadow",
             function: "contribute",
             typeArguments: [],

@@ -18,7 +18,7 @@ function WalletDetails({buttonClick,setButtonClick, coins }) {
             const objects = await provider.getObjectsOwnedByAddress(
                 wallet?.address
                 );
-                const Obj =  objects.find(obj => obj.type === "0x121171d34a925759e82afc7ddea8f0e27be78b51::meadow::Participation")
+                const Obj =  objects.find(obj => obj.type === "0x04cdd6df4f6e53a23865ce441442f8e9d91e504b::meadow::Participation")
                 const partObj = Obj && await provider.getObject(Obj.objectId)
                 
                 setParticipation(partObj)
@@ -41,7 +41,7 @@ function WalletDetails({buttonClick,setButtonClick, coins }) {
           transaction: {
             kind: "moveCall",
             data: {
-              packageObjectId: "0x121171d34a925759e82afc7ddea8f0e27be78b51",
+              packageObjectId: "0x04cdd6df4f6e53a23865ce441442f8e9d91e504b",
               module: "meadow",
               function: "mergeCoins",
               typeArguments: [],
