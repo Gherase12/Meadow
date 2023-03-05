@@ -4,7 +4,7 @@ import { convertToSui } from './../../utils/convertToSui';
 import { cutDecimals } from './../../utils/cutDecimals';
 import { JsonRpcProvider, Network  } from '@mysten/sui.js';
 import { toast } from 'react-toastify';
-function WalletDetails({buttonClick,setButtonClick, coins }) {
+function WalletDetails({buttonClick,setButtonClick, coins,_module, _package,  symbol }) {
   const provider = new JsonRpcProvider(Network.DEVNET);
     const [participation, setParticipation] = useState();
     const wallet = useWallet()
@@ -18,7 +18,7 @@ function WalletDetails({buttonClick,setButtonClick, coins }) {
             const objects = await provider.getObjectsOwnedByAddress(
                 wallet?.address
                 );
-                const Obj =  objects.find(obj => obj.type === "0x04cdd6df4f6e53a23865ce441442f8e9d91e504b::meadow::Participation")
+                const Obj =  objects.find(obj => obj.type === `${_package}::${_module}::Participation`)
                 const partObj = Obj && await provider.getObject(Obj.objectId)
                 
                 setParticipation(partObj)
@@ -41,8 +41,8 @@ function WalletDetails({buttonClick,setButtonClick, coins }) {
           transaction: {
             kind: "moveCall",
             data: {
-              packageObjectId: "0x04cdd6df4f6e53a23865ce441442f8e9d91e504b",
-              module: "meadow",
+              packageObjectId: _package,
+              module: _module,
               function: "mergeCoins",
               typeArguments: [],
               arguments: [
@@ -73,7 +73,7 @@ function WalletDetails({buttonClick,setButtonClick, coins }) {
           <div>
               {participation && (<p> My contribution: { convertToSui(Number(participation?.details.data.fields.alocated)).toFixed(6).replace(/\.?0+$/, '')   } Sui</p>) } 
           </div>
-          <p>1 MED= 1 Sui</p>
+          <p>1 MED= 1 {symbol}</p>
     </div>
   )
 }

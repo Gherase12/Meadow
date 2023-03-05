@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
 import Image from "next/image";
 import News from "../News/News";
+import { ICOprojects } from './../../data/ICOprojects';
 
 function Carusel() {
   const [swiper, setSwiper] = React.useState(null);
@@ -63,9 +64,9 @@ function Carusel() {
           spaceBetween={15}
           className='flex   space-x-[15px] w-full  h-full  z-50 '
         >
-          {[2,3,4,2,3,4].map((a, i) => (
+          {ICOprojects.map(({name,alocation, twitter, website , discord, shortDesc}, i) => (
             <SwiperSlide key={i}>
-              <Card i={i} a={a} />
+              <Card name={name} alocation={alocation} website={website} shortDesc={shortDesc} discord={discord}  twitter={twitter} i={i}  />
             </SwiperSlide>
           ))}
         </Swiper>

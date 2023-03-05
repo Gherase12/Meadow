@@ -12,6 +12,8 @@ function AlocationBoard({
   setButtonClick,
   buttonClick,
   alocation,
+  _package,
+  _module
 }) {
 
   
@@ -73,8 +75,8 @@ function AlocationBoard({
         transaction: {
           kind: "moveCall",
           data: {
-            packageObjectId: "0x04cdd6df4f6e53a23865ce441442f8e9d91e504b",
-            module: "meadow",
+            packageObjectId: _package,
+            module: _module,
             function: "contribute",
             typeArguments: [],
             arguments: [

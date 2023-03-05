@@ -2,7 +2,8 @@
 import Image from "next/image";
 import { AiOutlineArrowLeft ,AiOutlineWarning  } from "react-icons/ai";
 import TokenSaleDetail from "./../../components/TokenSaleDetail";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
+import { useRouter } from 'next/router'
 import Link  from 'next/link';
 import { toast } from 'react-toastify';
 import React, { useState ,useEffect} from 'react';
@@ -12,6 +13,7 @@ import { JsonRpcProvider, Network  } from '@mysten/sui.js';
 import WalletDetails from './../../components/Project/WalletDetails';
 
 import { convertToSui } from './../../utils/convertToSui';
+import { ICOprojects } from './../../data/ICOprojects';
 function Project() {
   const wallet = useWallet()
   const provider = new JsonRpcProvider(Network.DEVNET);
@@ -24,8 +26,13 @@ function Project() {
   const [isFinished, setIsFinished] = useState(false);
   const [alocationObject, setAlocationObject] = useState({})
   const {balance} = useAccountBalance()
-  const alocation = "0x629dbc0a64df64b0042f8557762e1d070758d338"
-  const package_ = "0x04cdd6df4f6e53a23865ce441442f8e9d91e504b"
+ 
+  // const { project } .= router
+
+  // console.log(project)
+  console.log(router.query)
+  const project = ICOprojects[Number(router.query.project) ]
+  console.log(project)
 
   const prices = [
     {
@@ -53,8 +60,13 @@ function Project() {
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
   
 
+  // useEffect(()=>{
+  //   console.log(router)
+  // },[])
+
 
   useEffect(()=>{
+    
     const getObjectsForUser = async ()=>{
       if(!wallet.connected) return
       const objects = await provider.getObjectsOwnedByAddress(
@@ -62,11 +74,11 @@ function Project() {
         );
         // const part =  objects.some(obj => obj.type === `${package_}::meadow::Participation`)
         console.log(objects)
-        const part =  objects.some(obj => obj.type === "0x4cdd6df4f6e53a23865ce441442f8e9d91e504b::meadow::Participation")
+        const part =  objects.some(obj => obj.type === `${project?.package}::${project?.module}::Participation`)
         // const partObj =  objects.find(obj => obj.type === `${package_}::meadow::Participation`)
-        const partObj =  objects.find(obj => obj.type === "0x4cdd6df4f6e53a23865ce441442f8e9d91e504b::meadow::Participation")
+        const partObj =  objects.find(obj => obj.type === `${project?.package}::${project?.module}::Participation`)
         //  setCoins(objects.find(obj => obj.type === "0x2::coin::Coin<0x2::sui::SUI>"))
-        const cids =  objects.filter(obj => obj.type === "0x2::coin::Coin<0x2::sui::SUI>").map((o)=> o.objectId)
+        const cids =  objects.filter(obj => obj.type === `0x2::coin::Coin<0x2::sui::SUI>`).map((o)=> o.objectId)
         setCoins(cids)
         setParticipateingId(partObj?.objectId)
         setParticipateing(part)
@@ -75,7 +87,7 @@ function Project() {
     }
 
     const getObjectsForApp = async ()=>{
-        const aloc = await provider.getObject(alocation)
+        const aloc = await provider.getObject(project?.alocation)
         setAlocationObject(aloc)
         const percentComplete = (Number(aloc.details.data.fields.balance) / Number(aloc.details.data.fields.finishAmount)) * 100;
         setIsFinished(Number(aloc.details.data.fields.balance) > Number(aloc.details.data.fields.finishAmount))
@@ -98,12 +110,12 @@ try {
     transaction: {
       kind: 'moveCall',
       data: {
-        packageObjectId: package_,
-        module:'meadow',
+        packageObjectId: project.package,
+        module: project.module,
         function: 'participate',
         typeArguments: [],
         arguments: [
-          alocation
+          project?.alocation
         ],
         gasBudget: 10000,
       }
@@ -129,12 +141,12 @@ try {
     transaction: {
       kind: 'moveCall',
       data: {
-        packageObjectId: "0x04cdd6df4f6e53a23865ce441442f8e9d91e504b",
-        module:'meadow',
+        packageObjectId: project.package,
+        module: project.module,
         function: 'claim',
         typeArguments: [],
         arguments: [
-          alocation,
+          project?.alocation,
           participateingId,
 
         ],
@@ -171,7 +183,7 @@ try {
       <div className='  relative z-40  lg:h-[947.31px]     w-full      '>
         {/* back button */}
         <button
-          onClick={() => router.back()}
+          onClick={() => router.push("/")}
           className='ml-[20px] lg:ml-0 my-[36px] text-black flex space-x-[9px] items-center  h-[20px]'
         >
           <AiOutlineArrowLeft />
@@ -184,12 +196,12 @@ try {
           <Image
             width={61}
             height={61}
-            src='/meadow.svg'
+            src={`/projects/${Number(router.query.project) + 1}.png`}
             alt='meadow project'
             className=' rounded-full'
           />
           <h3 className='font-bold font-avenir text-[41px] leading-[51px]  text-black '>
-            Meadow
+            {project?.name}
           </h3>
         </div>
         {/* project description */}
@@ -202,15 +214,7 @@ try {
                 Project Summary
               </div>
               <p className=' overflow-y-scroll h-[265px] text-[16px] scrollbar-hide leading-[26px]  font-normal '>
-                Built for the next generation of users, Meadow will Incubate and
-                launch the most anticipated projects on the Sui Network. With
-                MystenLabs receiving a investment from the South Korean gaming
-                giant NCSoft and Sui offering 0 latency. <br /> <br />
-                Sui Network is believed to be perfect for gaming, Meadow will
-                utltise this network to host the most creative, game changing
-                IGOS (Initial game offering). Meadow Team consist of Veterans
-                and partners who bring years of qualified experience in the
-                incubation space which puts us far ahead of our competition.
+                {project?.desc}
               </p>
             </div>
             {/* project details */}
@@ -286,7 +290,7 @@ try {
               </div>
               {/* /bar */}
 
-              { wallet.connected && (<WalletDetails setButtonClick={setButtonClick} buttonClick={buttonClick} coins={coins} />)}
+              { wallet.connected && (<WalletDetails symbol={project.symbol} package={project?.package} module={project?.module} setButtonClick={setButtonClick} buttonClick={buttonClick} coins={coins} />)}
     
 
               {/* price */}
@@ -332,7 +336,7 @@ try {
                 />
               </button>
                 ): (
-                  <AlocationBoard alocation={alocation} participateingId={participateingId} coins={coins} buttonClick={buttonClick} setButtonClick={setButtonClick} />
+                  <AlocationBoard _package={project?.package} _module={project?.module}  alocation={project?.alocation} participateingId={participateingId} coins={coins} buttonClick={buttonClick} setButtonClick={setButtonClick} />
                 )
               }
               
