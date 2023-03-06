@@ -43,7 +43,7 @@ function Launchpad() {
 
           <div className='overflow-y-scroll gap-[15px] h-[600px] lg:h-[700px]  scrollbar-hide      grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 '>
             {ICOprojects.map(({name,alocation, twitter, website , discord, shortDesc}, i) => (
-              <LaunchpadCard name={name} alocation={alocation} website={website} shortDesc={shortDesc} discord={discord}  twitter={twitter} i={i}  />
+              <LaunchpadCard key={i} name={name} alocation={alocation} website={website} shortDesc={shortDesc} discord={discord}  twitter={twitter} i={i}  />
             ))}
           </div>
         </div>
