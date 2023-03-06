@@ -35,12 +35,13 @@ function Project() {
   console.log(router.query)
   const project = ICOprojects[Number(router.query.project) ]
   console.log(project)
-
-  const prices = [
+//   const {twitter, website, discord} = project
+// const socialLinks = [ website,twitter, discord ]
+   const prices = [
     {
       // price: "0.10",
       price: "TBA",
-      text: "Private Round",
+      text: "Price",
     },
 
     {
@@ -54,7 +55,7 @@ function Project() {
     {
       price: "0.10",
       // price: "TBA",
-      text: "Private Round",
+      text: "Price",
     },
 
     {
@@ -245,13 +246,22 @@ try {
 
               <div className=' flex flex-col scale-[0.8] '>
                 <div className=' h-[76px] flex space-x-[40px] '>
-                  {  prices.map(({ price, text }, i) => (
+                  { router.query.project == "0" ?  medPrices.map(({ price, text }, i) => (
                     <TokenSaleDetail
                       key={i}
                       upText={`$${price}`}
                       downText={text}
                     />
-                  ))}
+                  )):
+                  prices.map(({ price, text }, i) => (
+                    <TokenSaleDetail
+                      key={i}
+                      upText={`$${price}`}
+                      downText={text}
+                    />
+                  ))
+                
+                }
                 </div>
                 {/* dates */}
                 <div className=' border-blue-7/50  h-[76px] mt-[20px] space-x-[40px] flex lg:border-y-[1px] '>
@@ -261,10 +271,24 @@ try {
                 </div>
                 {/* details */}
                 <div className=' h-[76px] mt-[20px]  '>
-                  <TokenSaleDetail
+                  {
+                    router.query.project == "0" ? 
+                    (
+                      <TokenSaleDetail
                     upText={"5% TGE 2 months Cliff 5.27% per month"}
+                    
                     downText={"Lock-up"}
                   />
+                    ):
+                    (
+                      <TokenSaleDetail
+                    upText={"100% TGE"}
+                    
+                    downText={"Lock-up"}
+                  />
+                    )
+                  }
+                  
                 </div>
               </div>
             </div>
@@ -379,9 +403,11 @@ try {
             <AiOutlineWarning  />
             <p>This is just an experimental demo</p>
             </div>
-            <div className=' flex justify-center space-x-[10px] items-center mx-auto mt-[21px] '>
+            {/* <div className=' flex justify-center space-x-[10px] items-center mx-auto mt-[21px] '>
               {icons.map((icon, index) => (
-                <div
+                <Link
+                href={socialLinks[index]}
+                target="_blank" rel="noreferrer noopener"
                   key={index}
                   className='w-[49px] h-[49px] rounded-full flex items-center justify-center bg-white  '
                 >
@@ -393,12 +419,12 @@ try {
                     height={14.79}
                     alt={"Meadown logo button"}
                   />
-                </div>
+                </Link>
               ))}
               <Link href="https://meadow.gitbook.io/docs/" className="bg-white h-[49px] rounded-full flex items-center justify-center px-[10px] font-bold text-gray-2">
                 Whitepaper
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
