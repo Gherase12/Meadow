@@ -44,7 +44,7 @@ export const ICOprojects = [
         module:"Wisp"
     },
     {
-        name: "MeaRage",
+        name: "RagebyCradle",
         website:"https://rage.playcradle.com/",
         discord:"https://discord.gg/welcometorage",
         twitter:"https://twitter.com/ragebycradle",

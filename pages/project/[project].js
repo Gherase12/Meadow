@@ -14,7 +14,9 @@ import WalletDetails from './../../components/Project/WalletDetails';
 
 import { convertToSui } from './../../utils/convertToSui';
 import { ICOprojects } from './../../data/ICOprojects';
+import CountdownTimer from "../../components/CountDown/CountDown";
 function Project() {
+  const timestamp = Math.floor(Date.now() / 1000) + 151200;
   const wallet = useWallet()
   const provider = new JsonRpcProvider(Network.DEVNET);
   const router = useRouter();
@@ -26,7 +28,7 @@ function Project() {
   const [isFinished, setIsFinished] = useState(false);
   const [alocationObject, setAlocationObject] = useState({})
   const {balance} = useAccountBalance()
- 
+  console.log(timestamp)
   // const { project } .= router
 
   // console.log(project)
@@ -36,12 +38,28 @@ function Project() {
 
   const prices = [
     {
+      // price: "0.10",
+      price: "TBA",
+      text: "Private Round",
+    },
+
+    {
+      // price: "155,500",
+      price: "TBA",
+      text: "Initial marketcap",
+    },
+  ];
+
+  const medPrices = [
+    {
       price: "0.10",
+      // price: "TBA",
       text: "Private Round",
     },
 
     {
       price: "155,500",
+      // price: "TBA",
       text: "Initial marketcap",
     },
   ];
@@ -223,9 +241,11 @@ try {
               <div className='font-bold text-[27px] leading-[110%] font-avenir mb-[30px]  '>
                 Token Sale details
               </div>
+
+
               <div className=' flex flex-col scale-[0.8] '>
                 <div className=' h-[76px] flex space-x-[40px] '>
-                  {prices.map(({ price, text }, i) => (
+                  {  prices.map(({ price, text }, i) => (
                     <TokenSaleDetail
                       key={i}
                       upText={`$${price}`}
@@ -257,7 +277,12 @@ try {
               <div className='font-bold text-[27px] leading-[110%] font-avenir mb-[30px]  '>
                 Sale Details
               </div>
-              <div className='text-black flex space-x-[35px] mb-[20px] '>
+
+            {router.query.project != "0" && (<CountdownTimer timestamp={timestamp} />) }  
+                    
+
+
+              <div className='text-black hidden  space-x-[35px] mb-[20px] '>
                 {/* 1 */}
                 <div className=' flex flex-col justify-start'>
                   <p className='w-[80px] font-black leading-[16px] text-[12px]  h-[16px] '>
@@ -304,7 +329,9 @@ try {
                 
                 </div>
               </div>
+              <div  >
               {
+                router.query.project == "0" &&(
                 (isFinished && !wallet.connected) || (isFinished && wallet.connecte && !participateing ) ? (
                   <div className="text-gray-1 w-fill h-[40px] flex items-center justify-center">
                   Finished!
@@ -337,8 +364,11 @@ try {
               </button>
                 ): (
                   <AlocationBoard _package={project?.package} _module={project?.module}  alocation={project?.alocation} participateingId={participateingId} coins={coins} buttonClick={buttonClick} setButtonClick={setButtonClick} />
-                )
+                ))
               }
+
+              </div>
+              
               
             </div>
 

@@ -5,16 +5,19 @@ import { useRouter } from "next/navigation";
 import { AiFillLock } from "react-icons/ai";
 import { JsonRpcProvider, Network  } from '@mysten/sui.js';
 import Link from "next/link";
+import { convertToSui } from '../../utils/convertToSui';
 
 function Card({ i,name, twitter, website , discord, shortDesc, alocation }) {
   const provider = new JsonRpcProvider(Network.DEVNET);
   const [progres, setProgres] = useState()
+  const [balance, setBalance] = useState()
     useEffect(()=>{
 
       const getObjectsForApp = async ()=>{
         const aloc = await provider.getObject(alocation)
         const percentComplete = (Number(aloc.details.data.fields.balance) / Number(aloc.details.data.fields.finishAmount)) * 100;
         setProgres(percentComplete) 
+        setBalance(aloc.details.data.fields.balance)
     }
 
     getObjectsForApp()
@@ -97,9 +100,9 @@ function Card({ i,name, twitter, website , discord, shortDesc, alocation }) {
             
              </div>
           {/* price */}
-          <p className='laeding-[21px] text-[13px] w-[55px] h-[21px] text-gray-3 '>
-            0 SUI
-          </p>
+          <p className='laeding-[21px] text-[13px]  h-[21px] text-gray-3 '>
+         {convertToSui(balance).toFixed(2)} SUI
+      </p>
         </Link>
         </div>
 
