@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { FaExclamation } from 'react-icons/fa';
-import Image from "next/image";
-import LogoRounded from './LogoRounded';
+
+import Link  from 'next/link';
 function MeadowCountDown({i}) {
 
     const [days, setDays] = useState(0);
@@ -62,9 +61,9 @@ function MeadowCountDown({i}) {
       <span className={counterBoxTitleStyle}>Seconds</span>
       </p>
     </div>
-    <button className={`bg-blue-1  rounded-full shadow-lg shadow-blue-1 text-white font-bold p-2 ${i == 1 && "hidden"}`} >
+    <Link href="/project/0" className={`bg-blue-1  rounded-full shadow-lg shadow-blue-1 text-white font-bold p-2 ${i == 1 && "hidden"}`} >
       Participate
-    </button>
+    </Link>
   </div> 
   )
 }
