@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaExclamation } from 'react-icons/fa';
 import Image from "next/image";
+import LogoRounded from './LogoRounded';
 function MeadowCountDown({i}) {
 
     const [days, setDays] = useState(0);
@@ -42,25 +43,28 @@ function MeadowCountDown({i}) {
   const counterBoxTitleStyle = " orizontal-center font-bold -bottom-[70%] " 
 
   return (
-    <div className={`font-bold relative  flex flex-col ${i != 1 ? "md:p-[30px] mb-[30px] ": "mt-[20px]" }  md:rounded-[30px]  space-y-[10px] text-blue-1 z-30 md:bg-white  md:pb-10  `}>
+    <div className={`font-bold relative   flex flex-col  ${i != 1 ? "relative  z-[100]  w-full h-[200px] items-center space-y-[40px] justify-center   lg:transform-none lg:w-[381.85px]  lg:h-[320px]   3xl:h-[310.52px]  rounded-[30px]  mb-[30px] ": "mt-[20px]" }  md:rounded-[30px]  space-y-[10px] text-blue-1 z-30 md:bg-white  md:pb-10  `}>
       {/* <Image src={"/countdown-bg.png"} className="rounded-[30px]" fill /> */}
-    <p className="font-black text-black " > <span className="text-blue-1 font-black" >Meadow</span>  private round starts in:</p>
+    <p className={`font-black text-black  ${i != 1 && "text-[20px]"} `} > <span className="text-blue-1 font-black" >Meadow</span>  private round starts in:</p>
     <div className='font-bold flex space-x-7'>
 
      
       <p className={counterBoxStyle} >{days}
-      <p className={counterBoxTitleStyle} >Days</p>
+      <span className={counterBoxTitleStyle} >Days</span>
       </p>
       <p className={counterBoxStyle} >{hours}
-      <p className={counterBoxTitleStyle}>Hours</p>
+      <span className={counterBoxTitleStyle}>Hours</span>
       </p>
       <p className={counterBoxStyle} >{minutes}
-      <p className={counterBoxTitleStyle}>Minutes</p>
+      <span className={counterBoxTitleStyle}>Minutes</span>
       </p>
       <p className={counterBoxStyle} >{seconds}
-      <p className={counterBoxTitleStyle}>Seconds</p>
+      <span className={counterBoxTitleStyle}>Seconds</span>
       </p>
     </div>
+    <button className={`bg-blue-1  rounded-full shadow-lg shadow-blue-1 text-white font-bold p-2 ${i == 1 && "hidden"}`} >
+      Participate
+    </button>
   </div> 
   )
 }

@@ -50,18 +50,18 @@ function CountdownTimer({timestamp}) {
       <div className='font-bold flex space-x-7'>
 
        
-        <p className={counterBoxStyle} >{days}
-        <p className={counterBoxTitleStyle} >Days</p>
-        </p>
-        <p className={counterBoxStyle} >{hours}
-        <p className={counterBoxTitleStyle}>Hours</p>
-        </p>
-        <p className={counterBoxStyle} >{minutes}
-        <p className={counterBoxTitleStyle}>Minutes</p>
-        </p>
-        <p className={counterBoxStyle} >{seconds}
-        <p className={counterBoxTitleStyle}>Seconds</p>
-        </p>
+      <p className={counterBoxStyle} >{days}
+      <span className={counterBoxTitleStyle} >Days</span>
+      </p>
+      <p className={counterBoxStyle} >{hours}
+      <span className={counterBoxTitleStyle}>Hours</span>
+      </p>
+      <p className={counterBoxStyle} >{minutes}
+      <span className={counterBoxTitleStyle}>Minutes</span>
+      </p>
+      <p className={counterBoxStyle} >{seconds}
+      <span className={counterBoxTitleStyle}>Seconds</span>
+      </p>
       </div>
     </div> 
   );

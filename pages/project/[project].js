@@ -216,7 +216,7 @@ try {
           <Image
             width={61}
             height={61}
-            src={`/projects/${Number(router.query.project) + 1}.png`}
+            src={`/projects/${Number(router.query.project)}.png`}
             alt='meadow project'
             className=' rounded-full'
           />
@@ -369,8 +369,8 @@ try {
               <div className='font-bold text-[27px] leading-[110%] font-avenir   '>
                 Sale Details
               </div>
-
-            {router.query.project != "0" ? (<CountdownTimer timestamp={timestamp} />):(<MeadowCountDown i={1} />) }  
+              
+            {  router.query.project != "0" ? (<CountdownTimer timestamp={timestamp} />):(<MeadowCountDown i={1} />) }  
                     
 
 

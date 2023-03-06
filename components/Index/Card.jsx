@@ -51,7 +51,7 @@ function Card({ i,name, twitter, website , discord, shortDesc, alocation }) {
                 ))}
               </div>
 
-        <Link href={`/project/${i }`}>
+        <Link href={`/project/${i}`}>
           <div className='flex justify-between items-center h-[50px]  mb-[26px] '>
             <div className='space-y-[10px]  relative'>
               <div className="flex space-x-2 items-center  mb-[25px]" >

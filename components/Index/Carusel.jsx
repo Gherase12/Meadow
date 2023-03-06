@@ -23,7 +23,7 @@ function Carusel() {
   return (
     <div className=' relative'>
       {/* news */}
-      <div className='absolute left-[630px]  xl:left-[637px] top-[30px] hidden lg:flex 3xl:hidden'>
+      <div className='absolute left-[670px]  xl:left-[627px] top-[50px] hidden lg:flex 3xl:hidden'>
         {/* <News /> */}
         <MeadowCountDown />
       </div>

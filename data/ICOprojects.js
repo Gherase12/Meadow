@@ -19,7 +19,7 @@ export const ICOprojects = [
         discord:"https://t.co/FLNKZU3ujp",
         twitter:"https://twitter.com/meadowlaunch",
         shortDesc:"Meadow will incubate and launch the most anticipated projects on the Sui Network",
-        desc:"Built for the next generation of users, Meadow will Incubate and launch the most anticipated projects on the Sui Network. With MystenLabs receiving a investment from the South Korean gaming giant NCSoft and Sui offering 0 latency. <br /> <br /> Sui Network is believed to be perfect for gaming, Meadow will utltise this network to host the most creative, game changing IGOS (Initial game offering). Meadow Team consist of Veterans and partners who bring years of qualified experience in the incubation space which puts us far ahead of our competition.",
+        desc:"Built for the next generation of users, Meadow will Incubate and launch the most anticipated projects on the Sui Network. With MystenLabs receiving a investment from the South Korean gaming giant NCSoft and Sui offering 0 latency. Sui Network is believed to be perfect for gaming, Meadow will utltise this network to host the most creative, game changing IGOS (Initial game offering). Meadow Team consist of Veterans and partners who bring years of qualified experience in the incubation space which puts us far ahead of our competition.",
 
         alocation:"0x629dbc0a64df64b0042f8557762e1d070758d338",
         package: "0x04cdd6df4f6e53a23865ce441442f8e9d91e504b",

@@ -56,38 +56,56 @@ function Card({ i,name, twitter, website , discord, shortDesc, alocation }) {
           
         </div>
         {/* logo */}
-        <LogoRounded i={i} img={`/projects/${i + 1}.png`} />
+        <LogoRounded i={i} img={`/projects/${i}.png`} />
       </div>
       {/* paragraf */}
       <p className='  text-[13px] font-normal w-[261px] h-[57px]  leading-[19px] text-gray-3 mb-[29px] '>
       {shortDesc}
       </p>
       {/* prices */}
-      <div className='text-black hidden space-x-[25px] mb-[31px] '>
-        {/* 1 */}
-        <div className=' flex flex-col justify-start'>
-          <p className='w-[100px] font-extrabold leading-[19px] text-[14px] mb-[2px]  h-[16px] '>
-          Total Raise 
-          </p>
-          <div className='text-[19px] font-medium leading-[130%]  '>$800,000</div>
-        </div>
-        {/* 2 */}
-        <div className='flex flex-col justify-start'>
-          <p className='w-[80px] font-extrabold leading-[19px] text-[14px] mb-[2px]  h-[16px] '>
-            Token Price
-          </p>
-          <div className='text-[19px] font-medium leading-[130%]  '>$0.10</div>
-        </div>
-      </div>
+      <div className={`text-black   space-x-[25px] flex `}>
+            {/* 1 */}
+            <div className=' flex flex-col justify-start'>
+              <p className='w-[150px]  font-extrabold leading-[19px] text-[14px] mb-[2px]  h-[16px] '>
+                Start date:
+              </p>
+              <div className='text-[14px] font-medium   '>
+                {i == 0 ? "March 15th 1:00pm UTC":"March 7, 12PM UTC"}
+              
+              </div>
+            </div>
+            {/* 2 */}
+            <div className='flex flex-col justify-start'>
+              <p className='w-[80px] font-extrabold leading-[19px] text-[14px]  h-[16px] '>
+              End date:
+              </p>
+              <div className='text-[14px] font-medium   '>
+              {i == 0 ? "March 17th 1:00pm UTC ":"March 9, 12PM UTC"}
+              
+              </div>
+            </div>
+          </div>
       {/* bar */}
-      <div className="progress-bar-container-card mt-[40px] ">
+      {
+            i == 0 ? (
+              <div className={`progress-bar-container-card   mt-[10px]   `}>
             
-          <div className="progress-bar" style={{ width: `${progres}%` }} />
+              <div className="progress-bar" style={{ width: `${0}%` }} />
+                
+                 </div>
+            ):(
+              <div className={`progress-bar-container-card   mt-[10px]   `}>
             
-             </div>
+              <div className="progress-bar" style={{ width: `${progres}%` }} />
+                
+                 </div>
+            )
+          }
       {/* price */}
       <p className='laeding-[21px] text-[13px]  h-[21px] text-gray-3 '>
-         {convertToSui(balance).toFixed(2)} SUI
+            {i == 0 ? "0 USDT" : `${convertToSui(balance).toFixed(2)} SUI`}
+         
+            
       </p>
         </Link>
       </div>
