@@ -36,7 +36,7 @@ function Project() {
   const project = ICOprojects[Number(router.query.project) ]
   console.log(project)
 //   const {twitter, website, discord} = project
-// const socialLinks = [ website,twitter, discord ]
+const socialLinks = [ project?.website,project?.twitter, project?.discord ]
    const prices = [
     {
       // price: "0.10",
@@ -403,7 +403,7 @@ try {
             <AiOutlineWarning  />
             <p>This is just an experimental demo</p>
             </div>
-            {/* <div className=' flex justify-center space-x-[10px] items-center mx-auto mt-[21px] '>
+            <div className=' flex justify-center space-x-[10px] items-center mx-auto mt-[21px] '>
               {icons.map((icon, index) => (
                 <Link
                 href={socialLinks[index]}
@@ -424,7 +424,7 @@ try {
               <Link href="https://meadow.gitbook.io/docs/" className="bg-white h-[49px] rounded-full flex items-center justify-center px-[10px] font-bold text-gray-2">
                 Whitepaper
               </Link>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
