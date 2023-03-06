@@ -18,6 +18,7 @@ import {
 } from "date-fns";
 import { useState } from "react";
 import  Image  from "next/image";
+import CalendrModal from './CalendrModal';
 
 function Calendar() {
 
@@ -25,39 +26,25 @@ function Calendar() {
   const events = [
     {
       id: 1,
-      name: "Meadow",
+      name: "IDO test",
       img: "meadow",
-      startDatetime: "2022-12-30T13:00",
-      endDatetime: "2022-05-11T14:30",
+      startDatetime: "2023-03-07T13:00",
+      endDatetime: "2023-03-09T14:30",
+      color:"bg-blue-1",
+      bgColor:"bg-blue-1/40",
+      desc: "IDO Test: March 7-March 9"
     },
     {
       id: 2,
-      name: "NanoPay",
+      name: "Meadow private round",
       img: "nanopay",
-      startDatetime: "2022-12-04T09:00",
-      endDatetime: "2022-05-20T11:30",
+      startDatetime: "2023-03-15T13:00",
+      endDatetime: "2023-03-17T13:00",
+      color:"bg-red",
+      bgColor:"bg-red/40",
+      desc:"Meadow Private Round: March 15th - March 17th  "
     },
-    {
-      id: 3,
-      name: "Docker",
-      img: "docker",
-      startDatetime: "2022-12-11T17:00",
-      endDatetime: "2022-05-20T18:30",
-    },
-    {
-      id: 4,
-      name: "Boom",
-      img: "boom",
-      startDatetime: "2022-12-19T13:00",
-      endDatetime: "2022-06-09T14:30",
-    },
-    {
-      id: 5,
-      name: "Pax",
-      img: "pax",
-      startDatetime: "2022-12-15T14:00",
-      endDatetime: "2022-05-13T14:30",
-    },
+   
   ];
 
   let colStartClasses = [
@@ -94,8 +81,11 @@ function Calendar() {
     return classes.filter(Boolean).join(" ");
   }
 
+
+
   return (
     <div className='relative pb-[70px] lg:pb-0  z-10'>
+      <CalendrModal />
       <div className='absolute text-[22px] font-extrabold -top-[46px] left-[-10px]  w-[190px] text-center   lg:hidden items-center justify-center'>
         Launch calendar
       </div>
@@ -135,7 +125,7 @@ function Calendar() {
             <div className='week-text'>Sa</div>
           </div>
           {/* grid */}
-          <div className='relative z-10  grid grid-cols-7 gap-[3px] overflow-y-scroll overflow-x-hidden scrollbar-hide day-text max-[375px]:w-full  w-[307px] justify-items-center '>
+          <div className='relative z-10  grid grid-cols-7 gap-[3px] overflow-y-scroll  scrollbar-hide day-text max-[375px]:w-full  w-[307px] justify-items-center '>
             {days.map((day, dayIdx) => (
               <div
                 key={day.toString()}
@@ -180,11 +170,34 @@ function Calendar() {
                     {events.some(({startDatetime, img}) =>
                       isSameDay(parseISO(startDatetime), day)
                     ) && (
-                      < >
-                        <div className='w-[6px] h-[6px] rounded-full absolute bottom-[4px] left-[50%] translate-x-[-50%] bg-red '></div>
+                      <>
+                      
+                      
+                        <div className={`w-[40px] h-[43px] group  cursor-pointer rounded-md absolute bottom-[0px]  left-[50%]  translate-x-[-50%]   ${
+                          
+                            events.find(({ startDatetime }) =>
+                            isSameDay(parseISO(startDatetime), day)
+                          ).bgColor
                         
+                        } `}>
+                        
+        <div className={`absolute bg-blue-1 text-white text-[10px] -left-[30px]  hidden z-50 group-hover:flex rounded-xl -top-[30px] p-2   w-[200px] leading-[10px]  border-2 transition ease-out duration-300 translate-y-0.5 group-hover:translate-y-0  ${
+            events.find(({ startDatetime }) =>
+            isSameDay(parseISO(startDatetime), day)
+          ).color
+        }`}  >
+          {events.find(({ startDatetime }) =>
+  isSameDay(parseISO(startDatetime), day)
+).desc}
+        </div>
+      
+                        </div>
                       </>
-                    )}
+                        
+                      
+                    )
+                    
+                    }
                   </div>
                 </div>
               </div>
