@@ -85,7 +85,7 @@ function Calendar() {
 
   return (
     <div className='relative pb-[70px] lg:pb-0  z-10'>
-      <CalendrModal />
+      
       <div className='absolute text-[22px] font-extrabold -top-[46px] left-[-10px]  w-[190px] text-center   lg:hidden items-center justify-center'>
         Launch calendar
       </div>

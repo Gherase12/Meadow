@@ -36,7 +36,7 @@ function Project() {
   const project = ICOprojects[Number(router.query.project) ]
   console.log(project)
 //   const {twitter, website, discord} = project
-const socialLinks = [ project?.website,project?.twitter, project?.discord ]
+// const socialLinks = [ project?.website,project?.twitter, project?.discord ]
    const prices = [
     {
       // price: "0.10",
@@ -404,23 +404,56 @@ try {
             <p>This is just an experimental demo</p>
             </div>
             <div className=' flex justify-center space-x-[10px] items-center mx-auto mt-[21px] '>
-              {icons.map((icon, index) => (
+              {/* website */}
                 <Link
-                href={socialLinks[index]}
+                href={project?.website || "/"}
                 target="_blank" rel="noreferrer noopener"
-                  key={index}
+                  
                   className='w-[49px] h-[49px] rounded-full flex items-center justify-center bg-white  '
                 >
                   
                   <Image
-                    key={index}
-                    src={icon}
+                    
+                    src={icons[0]}
                     width={18.43}
                     height={14.79}
                     alt={"Meadown logo button"}
                   />
                 </Link>
-              ))}
+
+                {/* twitter */}
+                <Link
+                href={project?.twitter || "/"}
+                target="_blank" rel="noreferrer noopener"
+                  
+                  className='w-[49px] h-[49px] rounded-full flex items-center justify-center bg-white  '
+                >
+                  
+                  <Image
+                    
+                    src={icons[1]}
+                    width={18.43}
+                    height={14.79}
+                    alt={"Meadown logo button"}
+                  />
+                </Link>
+                {/* discord */}
+                <Link
+                href={project?.discord  || "/"}
+                target="_blank" rel="noreferrer noopener"
+                  
+                  className='w-[49px] h-[49px] rounded-full flex items-center justify-center bg-white  '
+                >
+                  
+                  <Image
+                    
+                    src={icons[2]}
+                    width={18.43}
+                    height={14.79}
+                    alt={"Meadown logo button"}
+                  />
+                </Link>
+              
               <Link href="https://meadow.gitbook.io/docs/" className="bg-white h-[49px] rounded-full flex items-center justify-center px-[10px] font-bold text-gray-2">
                 Whitepaper
               </Link>
