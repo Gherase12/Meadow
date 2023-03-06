@@ -53,7 +53,10 @@ export default function Home() {
               Multichain Launchpad
             </h1>
           </div>
-          <MeadowCountDown />
+          <div className=" md:hidden">
+
+<MeadowCountDown />
+</div>
 
           </div>
          
@@ -68,7 +71,11 @@ export default function Home() {
             <Calendar />
 
             <div className='lg:hidden 3xl:flex  lg:h-[310px]  '>
-              <News />
+              {/* <News /> */}
+              <div className="hidden md:flex">
+
+              <MeadowCountDown />
+              </div>
             </div>
           </div>
 

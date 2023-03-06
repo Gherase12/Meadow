@@ -15,6 +15,7 @@ import WalletDetails from './../../components/Project/WalletDetails';
 import { convertToSui } from './../../utils/convertToSui';
 import { ICOprojects } from './../../data/ICOprojects';
 import CountdownTimer from "../../components/CountDown/CountDown";
+import MeadowCountDown from "../../components/MeadowCountDown";
 function Project() {
   const timestamp = Math.floor(Date.now() / 1000) + 151200;
   const wallet = useWallet()
@@ -37,44 +38,44 @@ function Project() {
   console.log(project)
 //   const {twitter, website, discord} = project
 // const socialLinks = [ project?.website,project?.twitter, project?.discord ]
-   const prices = [
+
+
+  const prices = [
     {
-      // price: "0.10",
-      price: "TBA",
-      text: "Price",
+      price:"$0.10",
+      totalAlocation:"$200.000",
+      marketCap:" $155,000",
+      startDate:"March 15, 1:00 PM UTC",
+      endDate:"March 17, 1PM UTC",
+      minPrice:"$5",
+      maxPrice:"$5,000",
+      currency:"USDT",
+      network:"BEP20",
+      
+      tga:"5% TGE 2 months Cliff 5.27% per month"
+    },
+      {
+      price:"TBA",
+      totalAlocation:"TBA",
+      marketCap:" TBA",
+      startDate:"TBA",
+      endDate:" TBA",
+      minPrice:"TBA",
+      maxPrice:"TBA",
+      currency:"TBA",
+      network:"SUI",
+      endDate:"TBA",
+      tga:"100% TGE"
     },
 
-    {
-      // price: "155,500",
-      price: "TBA",
-      text: "Initial marketcap",
-    },
-  ];
+  ]
 
-  const medPrices = [
-    {
-      price: "0.10",
-      // price: "TBA",
-      text: "Price",
-    },
 
-    {
-      price: "155,500",
-      // price: "TBA",
-      text: "Initial marketcap",
-    },
-  ];
+   
 
-  const dates = [
-    {
-      date: "TBA",
-      time: "Start Time",
-    },
-    {
-      date: "TBA",
-      time: "End Time",
-    },
-  ];
+  
+
+  
 
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
   
@@ -232,7 +233,7 @@ try {
               <div className='font-bold text-[28px] leading-[110%] font-avenir mb-[20px]  '>
                 Project Summary
               </div>
-              <p className=' overflow-y-scroll h-[265px] text-[16px] scrollbar-hide leading-[26px]  font-normal '>
+              <p  className=' whitespace-pre-line overflow-y-scroll h-[265px] text-[16px] scrollbar-hide leading-[26px]  font-normal '>
                 {project?.desc}
               </p>
             </div>
@@ -240,49 +241,116 @@ try {
             <div className=' h-[369px] bg-white row-span-2 rounded-[30px] p-[30px] '>
               {/* prices */}
               <div className='font-bold text-[27px] leading-[110%] font-avenir mb-[30px]  '>
-                Token Sale details
+                {router.query.project == "0" ? 
+                    "Private round 1 details"
+                :
+
+                "Token Sale details"
+                }
               </div>
 
 
               <div className=' flex flex-col scale-[0.8] '>
                 <div className=' h-[76px] flex space-x-[40px] '>
-                  { router.query.project == "0" ?  medPrices.map(({ price, text }, i) => (
-                    <TokenSaleDetail
-                      key={i}
-                      upText={`$${price}`}
-                      downText={text}
+                  { router.query.project == "0" || router.query.project == "1" ?  (
+                    <>
+                    <TokenSaleDetail                      
+                      upText={`${prices[0].price}`}
+                      downText={"Price"}
                     />
-                  )):
-                  prices.map(({ price, text }, i) => (
                     <TokenSaleDetail
-                      key={i}
-                      upText={`$${price}`}
-                      downText={text}
+                      
+                      upText={`${prices[0].marketCap}`}
+                      downText={"Initial marketcap"}
                     />
-                  ))
+                    <TokenSaleDetail
+                      
+                      upText={`${prices[0].totalAlocation}`}
+                      downText={"Total alocation"}
+                    />
+                    <TokenSaleDetail
+                      
+                      upText={`${prices[0].network}`}
+                      downText={"Network"}
+                    />
+                    </>
+                  ):
+                  (
+                    <>
+                    
+                    <TokenSaleDetail
+                      
+                      upText={`${prices[1].price}`}
+                      downText={"Initial marketcap"}
+                    />
+                    <TokenSaleDetail
+                      
+                      upText={`${prices[1].marketCap}`}
+                      downText={"Initial marketcap"}
+                    />
+                    <TokenSaleDetail
+                      
+                      upText={`${prices[1].totalAlocation}`}
+                      downText={"Total alocation"}
+                    />
+                     <TokenSaleDetail
+                      
+                      upText={`${prices[1].network}`}
+                      downText={"Network"}
+                    />
+                    </>
+                  )
                 
                 }
                 </div>
                 {/* dates */}
                 <div className=' border-blue-7/50  h-[76px] mt-[20px] space-x-[40px] flex lg:border-y-[1px] '>
-                  {dates.map(({ date, time }, i) => (
-                    <TokenSaleDetail key={i} upText={date} downText={time} />
-                  ))}
+                { router.query.project == "0" || router.query.project == "1" ?  (
+                    <>
+                    <TokenSaleDetail                      
+                      upText={`${prices[0].startDate}`}
+                      downText={"Start date"}
+                    />
+                    <TokenSaleDetail
+                      
+                      upText={`${prices[0].endDate}`}
+                      downText={"End date"}
+                    />
+                    </>
+                  ):
+                  (
+                    <>
+                    
+                    <TokenSaleDetail
+                      
+                      upText={`${prices[1].startDate}`}
+                      downText={"Start date"}
+                    />
+                    <TokenSaleDetail
+                      
+                      upText={`${prices[1].endDate}`}
+                      downText={"End date"}
+                    />
+                    </>
+                  )
+                
+                }
+                 
                 </div>
                 {/* details */}
                 <div className=' h-[76px] mt-[20px]  '>
                   {
-                    router.query.project == "0" ? 
+                    router.query.project == "0" || router.query.project == "1" ? 
                     (
                       <TokenSaleDetail
-                    upText={"5% TGE 2 months Cliff 5.27% per month"}
+                    upText={prices[0].tga}
                     
                     downText={"Lock-up"}
                   />
                     ):
                     (
                       <TokenSaleDetail
-                    upText={"100% TGE"}
+                    upText={prices[1].tga}
                     
                     downText={"Lock-up"}
                   />
@@ -298,11 +366,11 @@ try {
           <div className="max-w-[354px]" >
             <div className='font-avenir lg:w-[354px] h-auto   rounded-[30px] bg-white p-[30px] '>
               {/* details */}
-              <div className='font-bold text-[27px] leading-[110%] font-avenir mb-[30px]  '>
+              <div className='font-bold text-[27px] leading-[110%] font-avenir   '>
                 Sale Details
               </div>
 
-            {router.query.project != "0" && (<CountdownTimer timestamp={timestamp} />) }  
+            {router.query.project != "0" ? (<CountdownTimer timestamp={timestamp} />):(<MeadowCountDown i={1} />) }  
                     
 
 
@@ -323,23 +391,43 @@ try {
                 </div>
               </div>
               {/* bar */}
-              <div>
 
-              <div className="flex w-full justify-between font-bold " >
-                <p>Progress:</p>
-                <p>{progres.toFixed(0)}%</p>
-              </div>
-              <div className="progress-bar-container">
-              <div className="progress-bar" style={{ width: `${progres}%` }} />
-              </div>
-              <div className="flex w-full justify-between font-bold text-sm pt-1 " >
-                <p>{convertToSui(Number(alocationObject?.details?.data?.fields?.balance)).toFixed(6).replace(/\.?0+$/, '')} SUI</p>
-                <p>{convertToSui(Number(alocationObject?.details?.data?.fields?.finishAmount))} SUI</p>
-              </div>
-              </div>
+              {router.query.project == "0" ? (
+
+<div>
+
+<div className="flex w-full justify-between font-bold " >
+  <p>Progress:</p>
+  <p>{0}%</p>
+</div>
+<div className="progress-bar-container">
+<div className="progress-bar" style={{ width: `${0}%` }} />
+</div>
+<div className="flex w-full justify-between font-bold text-sm pt-1 " >
+  <p>0 USDT</p>
+  <p>200.000 USDT</p>
+</div>
+</div>
+              ):(
+                <div>
+
+                <div className="flex w-full justify-between font-bold " >
+                  <p>Progress:</p>
+                  <p>{progres.toFixed(0)}%</p>
+                </div>
+                <div className="progress-bar-container">
+                <div className="progress-bar" style={{ width: `${progres}%` }} />
+                </div>
+                <div className="flex w-full justify-between font-bold text-sm pt-1 " >
+                  <p>{convertToSui(Number(alocationObject?.details?.data?.fields?.balance)).toFixed(6).replace(/\.?0+$/, '')} SUI</p>
+                  <p>{convertToSui(Number(alocationObject?.details?.data?.fields?.finishAmount))} SUI</p>
+                </div>
+                </div>
+              )}
+          
               {/* /bar */}
 
-              { wallet.connected && (<WalletDetails symbol={project.symbol} package={project?.package} module={project?.module} setButtonClick={setButtonClick} buttonClick={buttonClick} coins={coins} />)}
+              { (wallet.connected && (router.query.project != "0")  ) && (<WalletDetails symbol={project.symbol} package={project?.package} module={project?.module} setButtonClick={setButtonClick} buttonClick={buttonClick} coins={coins} />)}
     
 
               {/* price */}
@@ -355,7 +443,7 @@ try {
               </div>
               <div  >
               {
-                router.query.project == "0" &&(
+                false &&(
                 (isFinished && !wallet.connected) || (isFinished && wallet.connecte && !participateing ) ? (
                   <div className="text-gray-1 w-fill h-[40px] flex items-center justify-center">
                   Finished!
@@ -397,11 +485,27 @@ try {
             </div>
 
             <div className="bg-white rounded-xl w-full p-5 mt-4 flex justify-center space-x-[10px] text-blue-1 items-center">
-            <p>Before you start any action you need to have sui for gas fee, for that find the airdrop or faucet option in your sui wallet. </p>
+              
+            <p className="whitespace-pre-line text-[13px] ">
+            {router.query.project == "0" ? "Starts: March 15, 1:00 PM UTC (OG roles can contribute in the first 15 mins (see below for OG details)\n Starts: March 15, 1:15 PM UTC (Public can contribute)":"Before you start any action you need to have sui for gas fee, for that find the airdrop or faucet option in your sui wallet." }
+               </p>
             </div>
-            <div className="bg-white rounded-xl w-full h-14 mt-4 flex justify-center space-x-[10px] text-red items-center">
-            <AiOutlineWarning  />
+            <div className="bg-white rounded-xl w-full  mt-4 flex  space-x-[10px] text-red items-center">
+              {router.query.project == "0" ? (
+                  <div className="m-5" >
+                    
+                    <p>Contribution (per wallet)</p>
+                    <p>Min: $5</p>
+                    <p>Max: $5,000</p>
+                  </div>
+              ):(
+
+                <div className="m-5 flex items-center space-x-2" >
+                <AiOutlineWarning  />
             <p>This is just an experimental demo</p>
+                </div>
+              ) }
+            
             </div>
             <div className=' flex justify-center space-x-[10px] items-center mx-auto mt-[21px] '>
               {/* website */}

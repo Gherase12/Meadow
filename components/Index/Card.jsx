@@ -53,14 +53,20 @@ function Card({ i,name, twitter, website , discord, shortDesc, alocation }) {
 
         <Link href={`/project/${i }`}>
           <div className='flex justify-between items-center h-[50px]  mb-[26px] '>
-            <div className='space-y-[10px] relative'>
-              <h2 className='font-extrabold text-[21px] leading-[20px] mb-[25px]'>
+            <div className='space-y-[10px]  relative'>
+              <div className="flex space-x-2 items-center  mb-[25px]" >
+              <h2 className='font-extrabold text-[21px] leading-[20px] '>
                 {name}
               </h2>
+              <span className="text-[13px]">
+                 {i == 0 ? "(Private Round)":"(IDO test)"} 
+              </span>
+              </div>
+              
               
             </div>
             {/* logo */}
-            <LogoRounded i={i} img={`/projects/${i + 1}.png`} /> 
+            <LogoRounded i={i} img={`/projects/${i }.png`} /> 
           </div>
           {/* paragraf */}
           <p
@@ -96,14 +102,27 @@ function Card({ i,name, twitter, website , discord, shortDesc, alocation }) {
 
 
           {/* bar */}
-          <div className={`progress-bar-container-card   mt-[10px]   `}>
+          {
+            i == 0 ? (
+              <div className={`progress-bar-container-card   mt-[10px]   `}>
             
-          <div className="progress-bar" style={{ width: `${progres}%` }} />
+              <div className="progress-bar" style={{ width: `${0}%` }} />
+                
+                 </div>
+            ):(
+              <div className={`progress-bar-container-card   mt-[10px]   `}>
             
-             </div>
+              <div className="progress-bar" style={{ width: `${progres}%` }} />
+                
+                 </div>
+            )
+          }
+          
           {/* price */}
           <p className='laeding-[21px] text-[13px]  h-[21px] text-gray-3 '>
-         {convertToSui(balance).toFixed(2)} SUI
+            {i == 0 ? "0 USDT" : `${convertToSui(balance).toFixed(2)} SUI`}
+         
+            
       </p>
         </Link>
         </div>

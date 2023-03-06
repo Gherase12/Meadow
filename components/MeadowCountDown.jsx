@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaExclamation } from 'react-icons/fa';
-
-function MeadowCountDown() {
+import Image from "next/image";
+function MeadowCountDown({i}) {
 
     const [days, setDays] = useState(0);
     const [hours, setHours] = useState(0);
@@ -42,7 +42,8 @@ function MeadowCountDown() {
   const counterBoxTitleStyle = " orizontal-center font-bold -bottom-[70%] " 
 
   return (
-    <div className="font-bold flex flex-col mb-[30px] space-y-[10px] text-blue-1 z-30 md:bg-white md:rounded-lg md:pb-10  md:p-4 ">
+    <div className={`font-bold relative  flex flex-col ${i != 1 ? "md:p-[30px] mb-[30px] ": "mt-[20px]" }  md:rounded-[30px]  space-y-[10px] text-blue-1 z-30 md:bg-white  md:pb-10  `}>
+      {/* <Image src={"/countdown-bg.png"} className="rounded-[30px]" fill /> */}
     <p className="font-black text-black " > <span className="text-blue-1 font-black" >Meadow</span>  private round starts in:</p>
     <div className='font-bold flex space-x-7'>
 
