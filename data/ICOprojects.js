@@ -44,7 +44,7 @@ export const ICOprojects = [
         module:"Wisp"
     },
     {
-        name: "RagebyCradle",
+        name: "MeaRage",
         website:"https://rage.playcradle.com/",
         discord:"https://discord.gg/welcometorage",
         twitter:"https://twitter.com/ragebycradle",
@@ -79,7 +79,7 @@ export const ICOprojects = [
         discord:"https://discord.gg/finalstardust",
         twitter:"https://twitter.com/finalstardustFR",
         shortDesc:"Final Stardust is a decentralized NFT marketplace that operates on the Ethereum blockchain",
-        desc:"Final Stardust is a decentralized NFT marketplace that operates on the Ethereum blockchain. It offers a wide range of digital assets such as artwork, music, virtual real estate, and more. The platform aims to provide creators with an avenue to showcase their work to a global audience and earn revenue from their sales. Final Stardust also employs a community-driven approach where users can vote on key decisions about the platform's development and future direction.",
+        desc:"Final Stardust is a media franchise in the making, with its first installment being. Final Stardust: Cosmic Nexus, a digital collectible card game inspired by big Japanese/Anime TCG games like Pokemon and Yu-Gi-Oh. Final Stardust is more than just a game. With 3 games, a manga, and merchandise in the roadmap, Final Stardust aims to become a global brand that creates a new lifestyle experience for its users. On PC? Play the card game Cosmic Nexus. On mobile? Play the 2v2 real time combat mobile game, Astral Link. Chilling in bed? Read the manga, Ardent Tales. By utilizing the power of the blockchain technology Final Stardust is on its way to become a pioneer in the next generation media franchises.",
         package:"0x20f9423d40f02fd6e1ede490123e14685d6ef9b9",
         alocation:"0x332675d4d5dcf61e05cf9325de3eafe29e23d6c4",
         metadata:"0x8474ad8f85ca81af94fb4e85470960a7804663a3",
