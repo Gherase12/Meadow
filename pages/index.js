@@ -9,6 +9,7 @@ import PageAnimation from "./../components/PageAnimation";
 import News from "../components/News/News";
 import PopUp from "./../components/PopUp";
 import VotingMobile from "../components/Voting/VotingMobile";
+import MeadowCountDown from './../components/MeadowCountDown';
 
 export default function Home() {
    const footerItems = [
@@ -34,9 +35,13 @@ export default function Home() {
         </div>
 
         <div className='   w-full md:mb-[11px] relative pl-[30px]  md:pl-0  '>
+          <div>
           <p className='mt-[23px] md:mt-0 w-[88px] h-[23px] font-bold text-[17px] text-gray mb-[22.64px] '>
             Dashboard
           </p>
+            {/* <MeadowCountDown /> */}
+          </div>
+          <div className="flex flex-col md:flex-row" >
           <div className=' max-[375px]:text-[1.5rem]  text-[27px]  max-[375px]:w-auto max-[375px]:h-auto mb-[50px] z-20   lg:mb-[17.26px] w-[347.89px] h-[68px]  md:w-[708.49px]  md:h-[102px] md:text-[41px]   leading-[34px] lg:leading-[51px]  '>
             <h1 className='text-black font-black'>
               The Next Generation Web 3.0
@@ -48,6 +53,10 @@ export default function Home() {
               Multichain Launchpad
             </h1>
           </div>
+          <MeadowCountDown />
+
+          </div>
+         
 
           <Carusel />
 

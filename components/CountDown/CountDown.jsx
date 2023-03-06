@@ -9,7 +9,7 @@ function CountdownTimer({timestamp}) {
 
 
   useEffect(() => {
-    const target = new Date("3/7/2023 7:00:00");
+    const target = new Date("3/7/2023 19:00:00");
 
     const interval = setInterval(() => {
       const now = new Date();
@@ -38,17 +38,30 @@ function CountdownTimer({timestamp}) {
   }, []);
   
 
+  const counterBoxStyle = "border-2 p-2 rounded-lg w-10 h-10 flex items-center justify-center  relative  " 
+  const counterBoxTitleStyle = " orizontal-center font-bold -bottom-[70%] " 
+
   // Format remaining time as dd:hh:mm:ss
 
 
   return (
-    <div className="font-bold flex space-x-2">
-      <p>Starts in:</p>
-      <div className='font-bold flex'>
-        <p>{days}:</p>
-        <p>{hours}:</p>
-        <p>{minutes}:</p>
-        <p>{seconds}</p>
+    <div className="font-bold flex flex-col mb-[30px] space-y-[10px] text-blue-1 ">
+      <p className="font-black text-black " >Starts in:</p>
+      <div className='font-bold flex space-x-7'>
+
+       
+        <p className={counterBoxStyle} >{days}
+        <p className={counterBoxTitleStyle} >Days</p>
+        </p>
+        <p className={counterBoxStyle} >{hours}
+        <p className={counterBoxTitleStyle}>Hours</p>
+        </p>
+        <p className={counterBoxStyle} >{minutes}
+        <p className={counterBoxTitleStyle}>Minutes</p>
+        </p>
+        <p className={counterBoxStyle} >{seconds}
+        <p className={counterBoxTitleStyle}>Seconds</p>
+        </p>
       </div>
     </div> 
   );

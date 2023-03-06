@@ -71,30 +71,32 @@ function Card({ i,name, twitter, website , discord, shortDesc, alocation }) {
           </p>
           {/* prices */}
           
-          <div className='text-black  hidden space-x-[25px] mb-[31px] '>
+          <div className={`text-black   space-x-[25px] flex `}>
             {/* 1 */}
             <div className=' flex flex-col justify-start'>
               <p className='w-[150px]  font-extrabold leading-[19px] text-[14px] mb-[2px]  h-[16px] '>
-                Total Raise (private)
+                Start date:
               </p>
-              <div className='text-[19px] font-medium leading-[130%]  '>
-                $800,000
+              <div className='text-[14px] font-medium   '>
+                {i == 0 ? "March 15th 1:00pm UTC":"March 7, 12PM UTC"}
+              
               </div>
             </div>
             {/* 2 */}
             <div className='flex flex-col justify-start'>
               <p className='w-[80px] font-extrabold leading-[19px] text-[14px]  h-[16px] '>
-                Token Price
+              End date:
               </p>
-              <div className='text-[19px] font-medium leading-[130%]  '>
-                $0.10
+              <div className='text-[14px] font-medium   '>
+              {i == 0 ? "March 17th 1:00pm UTC ":"March 9, 12PM UTC"}
+              
               </div>
             </div>
           </div>
 
 
           {/* bar */}
-          <div className="progress-bar-container-card mt-[40px] ">
+          <div className={`progress-bar-container-card   mt-[10px]   `}>
             
           <div className="progress-bar" style={{ width: `${progres}%` }} />
             
