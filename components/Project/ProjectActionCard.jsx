@@ -130,14 +130,12 @@ function ProjectActionCard({ path, project }) {
     <div className='max-w-[354px] mx-auto'>
       <div className='font-avenir lg:w-[354px] h-auto   rounded-[30px] bg-white p-[30px] '>
         {/* details */}
-        <div className='font-bold text-[27px] leading-[110%] font-avenir   '>
+        <div className='font-bold text-[27px] leading-[110%] font-avenir mb-[30px]  '>
           Sale Details
         </div>
 
-        {path != "0" ? (
-          <CountdownTimer timestamp={timestamp} />
-        ) : (
-          <MeadowCountDown i={1} />
+        {path == "0" && (
+          <MeadowCountDown i={1} />  
         )}
 
         <div className='text-black hidden  space-x-[35px] mb-[20px] '>
@@ -236,7 +234,7 @@ function ProjectActionCard({ path, project }) {
           <div className='text-[14px] leading-[18px] mt-4 text-gray-2 '></div>
         </div>
         <div>
-          {false &&
+          {path != "0" &&
             ((isFinished && !wallet.connected) ||
             (isFinished && wallet.connecte && !participateing) ? (
               <div className='text-gray-1 w-fill h-[40px] flex items-center justify-center'>
