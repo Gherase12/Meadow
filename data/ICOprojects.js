@@ -1,11 +1,12 @@
 export const ICOprojects = [
     {
         name: "Meadow",
+        role:"Private",
         website:"https://meadowlaunch.com/",
         discord:"https://t.co/FLNKZU3ujp",
         twitter:"https://twitter.com/meadowlaunch",
         shortDesc:"Built for the next generation of users, Meadow will Incubate and launch the most anticipated projects on the Sui Network",
-        desc:"Built for the next generation of users, Meadow will Incubate and launch the most anticipated projects on the Sui Network. With MystenLabs receiving a investment from the South Korean gaming giant NCSoft and Sui offering 0 latency. Sui Network is believed to be perfect for gaming, Meadow will utilize this network to host the most creative, game changing IGOS (Initial game offering). Meadow Team consist of Veterans and partners who bring years of qualified experience in the incubation space which puts us far ahead of our competition.\n \n More Details about Private Round 1: \n There will be 3 rounds of the Private Allocation. Private investors will be able to invest at a discount relative to public investors. To participate, you must increase your Crew3 level. We will create a white list based on experience points (XP). We will complete a specified number of Crew3 activities in order to whitelist you for our exclusive round. What role do I need to be whitelisted? There are four roles to be whitelisted for the private round: Veteran, Hero, Legend, and OG. The veteran is the lowest level of rank. The veteran role will permit participation in giveaways. This might be used for art contests, moonsheet competitions, and more. We will also consider adding users with the lowest tier to the whitelist. This means that even the lowest role has a chance of being whitelisted for the private round based on how much they contribute to the community, for example by using Crew3 to finish missions.",
+        desc:"Built for the next generation of users, Meadow will Incubate and launch the most anticipated projects on the Sui Network. With MystenLabs receiving a investment from the South Korean gaming giant NCSoft and Sui offering 0 latency. Sui Network is believed to be perfect for gaming, Meadow will utilize this network to host the most creative, game changing IGOS (Initial game offering). Meadow Team consist of Veterans and partners who bring years of qualified experience in the incubation space which puts us far ahead of our competition.\n \n More Details about Private Round 1: \n There will be 3 rounds of the Private Allocation. Private investors will be able to invest at a discount relative to public investors. To participate, you must increase your Crew3 level. We will create a white list based on experience points (XP). We will complete a specified number of Crew3 activities in order to whitelist you for our exclusive round. What role do I need to be whitelisted? There are four roles to be whitelisted for the private round: Veteran, Hero, Legend, and OG. The veteran is the lowest level of rank. The veteran role will permit participation in giveaways. This might be used for art IDO contests, moonsheet competitions, and more. We will also consider adding users with the lowest tier to the whitelist. This means that even the lowest role has a chance of being whitelisted for the private round based on how much they contribute to the community, for example by using Crew3 to finish missions.",
 
         alocation:"0x629dbc0a64df64b0042f8557762e1d070758d338",
         package: "0x04cdd6df4f6e53a23865ce441442f8e9d91e504b",
@@ -15,6 +16,7 @@ export const ICOprojects = [
     },
     {
         name: "Meadow",
+        role:"IDO Test",
         website:"https://meadowlaunch.com/",
         discord:"https://t.co/FLNKZU3ujp",
         twitter:"https://twitter.com/meadowlaunch",
@@ -29,6 +31,7 @@ export const ICOprojects = [
     },
     {
         name: "Suiheroes",
+        role:"IDO Test",
         website:"https://suiheroes.com/",
         discord:"https://discord.gg/suiheroes",
         twitter:"https://twitter.com/Suiheroes_io",
@@ -44,6 +47,7 @@ export const ICOprojects = [
     },
     {
         name: "Wisp Swap",
+        role:"IDO Test",
         website:"https://www.wispswap.io/",
         discord:"https://discord.com/invite/jf7jhgyrNh",
         twitter:"https://twitter.com/WispSwap",
@@ -59,6 +63,7 @@ export const ICOprojects = [
     },
     {
         name: "RagebyCradle",
+        role:"IDO Test",
         website:"https://rage.playcradle.com/",
         discord:"https://discord.gg/welcometorage",
         twitter:"https://twitter.com/ragebycradle",
@@ -74,6 +79,7 @@ export const ICOprojects = [
     },
     {
         name: "Suivivors",
+        role:"IDO Test",
         website:"https://www.suivivors.com/",
         discord:"https://discord.com/invite/pZZv2e7dJw",
         twitter:"https://twitter.com/suivivors",
@@ -89,6 +95,7 @@ export const ICOprojects = [
     },
     {
         name: "Final Stardust",
+        role:"IDO Test",
         website:"https://finalstardust.com/",
         discord:"https://discord.gg/finalstardust",
         twitter:"https://twitter.com/finalstardustFR",
@@ -104,6 +111,7 @@ export const ICOprojects = [
     },
     {
         name: "PLASMAVERSE",
+        role:"IDO Test",
         website:"https://www.plasmaverse.xyz/",
         discord:"https://discord.com/invite/plasmaverse",
         twitter:"https://twitter.com/plasmaversexyz",

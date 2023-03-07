@@ -36,6 +36,13 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 0; 
 }
 
+.bg-gradient-blue{
+  background: radial-gradient(108% 183.43% at 81.75% 60.49%, #B4E5FF 0%, #038AC8 66.35%, #0052A4 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+}
+.bg-gradient-red{
+  background: radial-gradient(108% 183.43% at 81.75% 60.49%, #ffebee -20%, #f44336 46.35%, #b71c1c 90%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+}
+
 .progress-bar {
   background: radial-gradient(108% 183.43% at 81.75% 60.49%, #B4E5FF 0%, #038AC8 66.35%, #0052A4 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
 box-shadow: 0px 134px 54px rgba(0, 132, 255, 0.02), 0px 76px 45px rgba(0, 132, 255, 0.06), 0px 34px 34px rgba(0, 132, 255, 0.1), 0px 8px 18px rgba(0, 132, 255, 0.12), 0px 0px 0px rgba(0, 132, 255, 0.12);

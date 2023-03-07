@@ -7,7 +7,7 @@ import { JsonRpcProvider, Network  } from '@mysten/sui.js';
 import Link from "next/link";
 import { convertToSui } from '../../utils/convertToSui';
 
-function Card({ i,name, twitter, website , discord, shortDesc, alocation }) {
+function Card({ i,name,role, twitter, website , discord, shortDesc, alocation }) {
   const provider = new JsonRpcProvider(Network.DEVNET);
   const [progres, setProgres] = useState()
   const [balance, setBalance] = useState()
@@ -31,8 +31,9 @@ function Card({ i,name, twitter, website , discord, shortDesc, alocation }) {
   ];
   const router = useRouter();
   return (
-    <div className='relative    -ml-[30px] lg:ml-0 z-20 scale-[0.8] lg:transform-none w-[306px] h-[308px] lg:h-[316px] bg-white rounded-[30px] py-[30px] px-[27px]'>
+    <div className='relative    -ml-[30px] lg:ml-0 z-20 scale-[0.8] lg:scale-[0.94] w-[306px] h-[308px] lg:h-[316px] bg-white rounded-[30px] py-[30px] px-[27px]'>
       
+      <div className={`absolute -top-[10px] -left-[10px] rounded-full bg-gradient z-40 text-white font-bold px-2 py-1 ${i == 0 ? "bg-gradient-red":"bg-gradient-blue"} flex items-center align-center `} > {role}</div>
         <div className=" relative " >
           <div className='w-[83px] h-[25px] flex flex-start space-x-[4px] opacity-60 absolute top-[33px]  z-30'>
                 {icons.map((icon, index) => (
@@ -51,16 +52,15 @@ function Card({ i,name, twitter, website , discord, shortDesc, alocation }) {
                 ))}
               </div>
 
-        <Link href={`/project/${i}`}>
-          <div className='flex justify-between items-center h-[50px]  mb-[26px] '>
+        <Link  href={`/project/${i}`}>
+          <div className=' relative flex justify-between items-center h-[50px]  mb-[26px] '>
+        
             <div className='space-y-[10px]  relative'>
               <div className="flex space-x-2 items-center  mb-[25px]" >
               <h2 className='font-extrabold text-[21px] leading-[20px] '>
                 {name}
               </h2>
-              <span className="text-[13px]">
-                 {i == 0 ? "(Private Round)":"(IDO test)"} 
-              </span>
+              
               </div>
               
               
@@ -103,7 +103,7 @@ function Card({ i,name, twitter, website , discord, shortDesc, alocation }) {
 
           {/* bar */}
           {
-            i == 0 ? (
+            true ? (
               <div className={`progress-bar-container-card   mt-[10px]   `}>
             
               <div className="progress-bar" style={{ width: `${0}%` }} />
@@ -120,7 +120,8 @@ function Card({ i,name, twitter, website , discord, shortDesc, alocation }) {
           
           {/* price */}
           <p className='laeding-[21px] text-[13px]  h-[21px] text-gray-3 '>
-            {i == 0 ? "0 USDT" : `${convertToSui(balance).toFixed(2)} SUI`}
+            {/* {i == 0 ? "0 USDT" : `${convertToSui(balance).toFixed(2)} SUI`} */}
+            {i == 0 ? "0 USDT" : `0 SUI`}
          
             
       </p>

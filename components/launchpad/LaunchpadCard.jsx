@@ -87,7 +87,7 @@ function Card({ i,name, twitter, website , discord, shortDesc, alocation }) {
           </div>
       {/* bar */}
       {
-            i == 0 ? (
+            true ? (
               <div className={`progress-bar-container-card   mt-[10px]   `}>
             
               <div className="progress-bar" style={{ width: `${0}%` }} />
@@ -103,7 +103,8 @@ function Card({ i,name, twitter, website , discord, shortDesc, alocation }) {
           }
       {/* price */}
       <p className='laeding-[21px] text-[13px]  h-[21px] text-gray-3 '>
-            {i == 0 ? "0 USDT" : `${convertToSui(balance).toFixed(2)} SUI`}
+            {/* {i == 0 ? "0 USDT" : `${convertToSui(balance).toFixed(2)} SUI`} */}
+            {i == 0 ? "0 USDT" : `0 SUI`}
          
             
       </p>

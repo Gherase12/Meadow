@@ -66,9 +66,9 @@ function Carusel() {
           spaceBetween={15}
           className='flex   space-x-[15px] w-full  h-full  z-50 '
         >
-          {ICOprojects.map(({name,alocation, twitter, website , discord, shortDesc}, i) => (
+          {ICOprojects.map(({name,alocation, twitter, website , discord, shortDesc, role}, i) => (
             <SwiperSlide key={i}>
-              <Card name={name} alocation={alocation} website={website} shortDesc={shortDesc} discord={discord}  twitter={twitter} i={i}  />
+              <Card name={name} alocation={alocation} role={role} website={website} shortDesc={shortDesc} discord={discord}  twitter={twitter} i={i}  />
             </SwiperSlide>
           ))}
         </Swiper>

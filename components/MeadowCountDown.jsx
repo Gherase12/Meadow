@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import  Image  from "next/image";
 import Link  from 'next/link';
 function MeadowCountDown({i}) {
 
@@ -42,9 +42,19 @@ function MeadowCountDown({i}) {
   const counterBoxTitleStyle = " orizontal-center font-bold -bottom-[70%] " 
 
   return (
-    <div className={`font-bold relative   flex flex-col  ${i != 1 ? "relative  z-[100]  w-full h-[200px] items-center space-y-[40px] justify-center   lg:transform-none lg:w-[381.85px]  lg:h-[320px]   3xl:h-[310.52px]  rounded-[30px]  mb-[30px] ": "mt-[20px]" }  md:rounded-[30px]  space-y-[10px] text-blue-1 z-30 md:bg-white  md:pb-10  `}>
+    <div className={`font-bold relative   flex flex-col  ${i != 1 ? "relative  z-[100] overflow-hidden w-full h-[200px] items-center space-y-[40px] justify-center   lg:transform-none lg:w-[381.85px]  lg:h-[320px]   3xl:h-[310.52px]  rounded-[30px] md:bg-white mb-[30px] ": "mt-[20px]" }  md:rounded-[30px]  space-y-[10px] text-blue-1 z-30   md:pb-10  `}>
       {/* <Image src={"/countdown-bg.png"} className="rounded-[30px]" fill /> */}
-    <p className={`font-black text-black  ${i != 1 && "text-[20px]"} `} > <span className="text-blue-1 font-black" >Meadow</span>  private round starts in:</p>
+      <div className={i == 1 && "hidden"} >
+
+      <Image src="/object-1.webp" width={170} height={100} className=" hidden lg:flex absolute -bottom-20 -left-10  " />
+      <Image src="/object-2.webp" width={150} height={100} className="hidden lg:flex absolute -top-10 right-10 " />
+      <Image src="/object-3.webp" width={150} height={100} className=" hidden lg:flex absolute top-0 -right-20 " />
+      </div>
+
+      <div className={`flex flex-col  ${i == 1 ? "items-start" : "items-center"} `}>
+      <Image src="/meadow-countdown.png" width={200} height={20}  className={i == 1 && "hidden"}/>
+    <p className={`font-black text-black  ${i != 1 && "text-[20px]"} `} >Private round starts in:</p>
+      </div>
     <div className='font-bold flex space-x-7'>
 
      
