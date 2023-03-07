@@ -1,6 +1,6 @@
 export const ICOprojects = [
     {
-        name: "Meadow",
+        name: "Meadow ",
         role:"Private",
         website:"https://meadowlaunch.com/",
         discord:"https://t.co/FLNKZU3ujp",

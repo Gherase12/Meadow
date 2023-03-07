@@ -5,7 +5,7 @@ function ProjectDetails({path, project}) {
     const prices = [
         {
           price: "$0.10",
-          totalAlocation: "$200.000",
+          totalAlocation: "$200,000",
           marketCap: " $155,000",
           startDate: "March 15, 1:00 PM UTC",
           endDate: "March 17, 1PM UTC",

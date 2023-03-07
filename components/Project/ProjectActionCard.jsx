@@ -167,7 +167,7 @@ console.log(project)
             </div>
             <div className='flex w-full justify-between font-bold text-sm pt-1 '>
               <p>0 USDT</p>
-              <p>200.000 USDT</p>
+              <p>200,000 USDT</p>
             </div>
           </div>
         ) : (
