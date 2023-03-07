@@ -15,9 +15,9 @@ function Card({ i,name,role, twitter, website , discord, shortDesc, alocation })
 
       const getObjectsForApp = async ()=>{
         const aloc = await provider.getObject(alocation)
-        const percentComplete = (Number(aloc.details.data.fields.balance) / Number(aloc.details.data.fields.finishAmount)) * 100;
+        const percentComplete = (Number(aloc?.details?.data?.fields?.balance) / Number(aloc?.details?.data?.fields?.finishAmount)) * 100;
         setProgres(percentComplete) 
-        setBalance(aloc.details.data.fields.balance)
+        setBalance(aloc?.details?.data?.fields?.balance)
     }
 
     getObjectsForApp()
@@ -33,7 +33,7 @@ function Card({ i,name,role, twitter, website , discord, shortDesc, alocation })
   return (
     <div className='relative    -ml-[30px] lg:ml-0 z-20 scale-[0.8] lg:scale-[0.94] w-[306px] h-[308px] lg:h-[316px] bg-white rounded-[30px] py-[30px] px-[27px]'>
       
-      <div className={`absolute -top-[10px] -left-[10px] rounded-full bg-gradient z-40 text-white font-bold px-2 py-1 ${i == 0 ? "bg-gradient-red":"bg-gradient-blue"} flex items-center align-center `} > {role}</div>
+      <div className={`absolute -top-[10px] left-[85%]  whitespace-nowrap  md:-left-[10px]   rounded-full bg-gradient z-40 text-white font-bold px-2 py-1 ${i == 0 ? "bg-gradient-red":"bg-gradient-blue"} flex items-center align-center `} > {role}</div>
         <div className=" relative " >
           <div className='w-[83px] h-[25px] flex flex-start space-x-[4px] opacity-60 absolute top-[33px]  z-30'>
                 {icons.map((icon, index) => (

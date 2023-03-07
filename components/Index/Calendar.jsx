@@ -26,7 +26,7 @@ function Calendar() {
   const events = [
     {
       id: 1,
-      name: "IDO test",
+      name: "IDOs test",
       img: "meadow",
       startDatetime: "2023-03-07T13:00",
       endDatetime: "2023-03-09T14:30",
@@ -125,7 +125,7 @@ function Calendar() {
             <div className='week-text'>Sa</div>
           </div>
           {/* grid */}
-          <div className='relative z-10  grid grid-cols-7 gap-[3px] overflow-y-scroll  scrollbar-hide day-text max-[375px]:w-full  w-[307px] justify-items-center '>
+          <div className='relative z-10 overflow-hidden  grid grid-cols-7 gap-[3px] overflow-y-scroll  scrollbar-hide day-text max-[375px]:w-full  w-[307px] justify-items-center '>
             {days.map((day, dayIdx) => (
               <div
                 key={day.toString()}
