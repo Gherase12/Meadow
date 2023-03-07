@@ -251,7 +251,7 @@ try {
 
 
               <div className=' flex flex-col scale-[0.8] '>
-                <div className='  grid grid-cols-2 lg:grid-cols-4 gap-y-4  '>
+                <div className='  grid grid-cols-2 lg:grid-cols-4 gap-y-4  gap-x-[60px]  '>
                   { router.query.project == "0" || router.query.project == "1" ?  (
                     <>
                     <TokenSaleDetail                      
