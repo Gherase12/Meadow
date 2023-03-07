@@ -363,7 +363,7 @@ try {
           </div>
           {/* right */}
 
-          <div className="max-w-[354px]" >
+          <div className="max-w-[354px] mx-auto" >
             <div className='font-avenir lg:w-[354px] h-auto   rounded-[30px] bg-white p-[30px] '>
               {/* details */}
               <div className='font-bold text-[27px] leading-[110%] font-avenir   '>
@@ -396,7 +396,7 @@ try {
 
 <div>
 
-<div className="flex w-full justify-between font-bold " >
+<div className="flex w-full justify-between font-bold  mt-[40px] md:mt-0 " >
   <p>Progress:</p>
   <p>{0}%</p>
 </div>
@@ -411,7 +411,7 @@ try {
               ):(
                 <div>
 
-                <div className="flex w-full justify-between font-bold " >
+                <div className="flex w-full justify-between font-bold mt-[40px] md:mt-0" >
                   <p>Progress:</p>
                   <p>{progres.toFixed(0)}%</p>
                 </div>
@@ -502,7 +502,7 @@ try {
 
                 <div className="m-5 flex items-center space-x-2" >
                 <AiOutlineWarning  />
-            <p>This is just an experimental demo</p>
+            <p>This is an IDO test</p>
                 </div>
               ) }
             
