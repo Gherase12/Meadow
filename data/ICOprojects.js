@@ -57,7 +57,7 @@ export const ICOprojects = [
         desc:"WispSwap is a decentralized exchange (DEX) built on the Sui blockchain that offers community-oriented features. As an automated market maker (AMM) DEX, it provides capital efficiency for users and liquidity providers while keeping transaction fees low./n With WispSwap, anyone can participate in DeFi without the need for intermediaries or centralized authorities. The platform is designed to be user-friendly, making it easy for beginners to navigate and trade cryptocurrencies.",
         package:"0x947d4a0033a23a2390894dd71e509b8443a49120",
         alocation:"0x76a7e13d8937c9db7138160d1290661d46358d29",
-        metadata:"0x93fa5e2933b81fb535170e0b1dc15a1df456311d",
+        metadata:"0xdc042bd28b46d191f0c366f1ed4c9974dff3c523",
         treasury:"0xc4052dc9a2594534b2d8c5b684b2dbb5e7997acf",
         coin:"WISP",
         symbol:"WISP",
@@ -128,3 +128,141 @@ export const ICOprojects = [
         module:"plsmd"
     },
 ]
+
+
+const ICOprojectsScr = [
+    {
+        name: "Meadow ",
+        role:"Private",
+        website:"https://meadowlaunch.com/",
+        discord:"https://t.co/FLNKZU3ujp",
+        twitter:"https://twitter.com/meadowlaunch",
+        shortDesc:"Built for the next generation of users, Meadow will Incubate and launch the most anticipated projects on the Sui Network",
+        desc:"Built for the next generation of users, Meadow will Incubate and launch the most anticipated projects on the Sui Network. With MystenLabs receiving a investment from the South Korean gaming giant NCSoft and Sui offering 0 latency. Sui Network is believed to be perfect for gaming, Meadow will utilize this network to host the most creative, game changing IGOS (Initial game offering). Meadow Team consist of Veterans and partners who bring years of qualified experience in the incubation space which puts us far ahead of our competition.\n \n More Details about Private Round 1: \n There will be 3 rounds of the Private Allocation. Private investors will be able to invest at a discount relative to public investors. To participate, you must increase your Crew3 level. We will create a white list based on experience points (XP). We will complete a specified number of Crew3 activities in order to whitelist you for our exclusive round. What role do I need to be whitelisted? There are four roles to be whitelisted for the private round: Veteran, Hero, Legend, and OG. The veteran is the lowest level of rank. The veteran role will permit participation in giveaways. This might be used for art IDO contests, moonsheet competitions, and more. We will also consider adding users with the lowest tier to the whitelist. This means that even the lowest role has a chance of being whitelisted for the private round based on how much they contribute to the community, for example by using Crew3 to finish missions.",
+        metadata: "0xed2c113365ffe17d629a2c8ecbc06433480703fc",
+        treasury: "0x8e161b86606614f655e989df5a18414d09dbefb7",
+        alocation:"0xb828e66718c388046740ac211fd44006e21af9c6",
+        package: "0xaa0d3bb66b085b7316b90bc32bef22d19eefb494",
+        coin:"MEADOW",
+        symbol:"MED",
+        module:"meadow"
+    },
+    {
+        name: "Meadow",
+        role:"IDO Test",
+        website:"https://meadowlaunch.com/",
+        discord:"https://t.co/FLNKZU3ujp",
+        twitter:"https://twitter.com/meadowlaunch",
+        shortDesc:"Meadow will incubate and launch the most anticipated projects on the Sui Network",
+        desc:"Built for the next generation of users, Meadow will Incubate and launch the most anticipated projects on the Sui Network. With MystenLabs receiving a investment from the South Korean gaming giant NCSoft and Sui offering 0 latency. Sui Network is believed to be perfect for gaming, Meadow will utltise this network to host the most creative, game changing IGOS (Initial game offering). Meadow Team consist of Veterans and partners who bring years of qualified experience in the incubation space which puts us far ahead of our competition.",
+        metadata: "0xed2c113365ffe17d629a2c8ecbc06433480703fc",
+        treasury: "0x8e161b86606614f655e989df5a18414d09dbefb7",
+        alocation:"0xb828e66718c388046740ac211fd44006e21af9c6",
+        package: "0xaa0d3bb66b085b7316b90bc32bef22d19eefb494",
+        coin:"MEADOW",
+        symbol:"MED",
+        module:"meadow"
+    },
+    {
+        name: "Suiheroes",
+        role:"IDO Test",
+        website:"https://suiheroes.com/",
+        discord:"https://discord.gg/suiheroes",
+        twitter:"https://twitter.com/Suiheroes_io",
+        shortDesc:"SuiHeroes is a blockchain-based game that allows players to collect and trade unique digital heroes. ",
+        desc:"Suiheroes, the first CoinFlip, Lottery & Revenue Share platform on Suinetwork Blockchain. A collection of 4000 Heroes with designs based upon the likeness of those behind the SuiNetwork ecosystem. Just owning and HODLing Suiheroes tokens and one of our NFTs will gain you access to a whole world of rewards.",
+        package:"0x3b7980d97a7a171db5d061a10d9ccd3206259d90",
+        alocation:"0xb70ebad8f545f210a53283d21cfeef8139a609e9",
+        metadata:"0x93fa5e2933b81fb535170e0b1dc15a1df456311d",
+        treasury:"0x6c1617c145b146a540160d09d07f3d5c4db262a2",
+        coin:"SUIHEROES",
+        symbol:"SHS",
+        module:"suiheros"
+    },
+    {
+        name: "Wisp Swap",
+        role:"IDO Test",
+        website:"https://www.wispswap.io/",
+        discord:"https://discord.com/invite/jf7jhgyrNh",
+        twitter:"https://twitter.com/WispSwap",
+        shortDesc:"WispSwap is a decentralized exchange (DEX) built on the Sui blockchain that offers community-oriented features",
+        desc:"WispSwap is a decentralized exchange (DEX) built on the Sui blockchain that offers community-oriented features. As an automated market maker (AMM) DEX, it provides capital efficiency for users and liquidity providers while keeping transaction fees low./n With WispSwap, anyone can participate in DeFi without the need for intermediaries or centralized authorities. The platform is designed to be user-friendly, making it easy for beginners to navigate and trade cryptocurrencies.",
+        package:"0x947d4a0033a23a2390894dd71e509b8443a49120",
+        alocation:"0x76a7e13d8937c9db7138160d1290661d46358d29",
+        metadata:"0xdc042bd28b46d191f0c366f1ed4c9974dff3c523",
+        treasury:"0xc4052dc9a2594534b2d8c5b684b2dbb5e7997acf",
+        coin:"WISP",
+        symbol:"WISP",
+        module:"wisp"
+    },
+    {
+        name: "Rage",
+        role:"IDO Test",
+        website:"https://rage.playcradle.com/",
+        discord:"https://discord.gg/welcometorage",
+        twitter:"https://twitter.com/ragebycradle",
+        shortDesc:"Rage is an online multiplayer strategy game for builders and Ragers!",
+        desc:"Rage is an online multiplayer strategy game for builders and Ragers! Gather resources, upgrade village towers and buildings, and battle & defend against other villages while exploring the Rage Universe. Earn trophies & NFTs, and you’ll be wrapped in a captivating experience that marries blockchain ownership with your progression and accomplishments!",
+        package:"0xde68e08d51ef7b2ef6853359891d414475fd59dc",
+        alocation:"0xc8307d2b98b114843edc918f76284e4026b97c37",
+        metadata:"0x865bb83e6f8827f7295f9b2cf18de2c45a89bc1a",
+        treasury:"0x0bd3864229e744f7208eebcd22384b175f211964",
+        coin:"RAGE",
+        symbol:"RAGE",
+        module:"rage"
+    },
+    {
+        name: "Suivivors",
+        role:"IDO Test",
+        website:"https://www.suivivors.com/",
+        discord:"https://discord.com/invite/pZZv2e7dJw",
+        twitter:"https://twitter.com/suivivors",
+        shortDesc:"Suivivors is a dynamic NFT collection on SUI that represents a paradigm shift in the way users will see and interact with NFTs",
+        desc:"Suivivors is a dynamic NFT collection on SUI that represents a paradigm shift in the way users will see and interact with NFTs. It is the first step in the roadmap towards creating a multiplayer game with governance elements. The second step involves building a community-driven ecosystem where users can participate in decision-making processes.",
+        package:"0xa22ec83ea9749c314f3da87f12484fb30378d29c",
+        alocation:"0x854f399eb7d91b5e0551e886a74d40e3bb8c6120",
+        metadata:"0x0dedbc59ef3fa15b13ce13ac420bb5385ae1763b",
+        treasury:"0xd3bd420cb22678bf926743c3e5015de3c10ec3e4",
+        coin:"SUIVIVORS",
+        symbol:"SUIVI",
+        module:"survivors"
+    },
+    {
+        name: "Final Stardust",
+        role:"IDO Test",
+        website:"https://finalstardust.com/",
+        discord:"https://discord.gg/finalstardust",
+        twitter:"https://twitter.com/finalstardustFR",
+        shortDesc:"Final Stardust is a decentralized NFT marketplace that operates on the Ethereum blockchain",
+        desc:"Final Stardust is a media franchise in the making, with its first installment being Final Stardust: Cosmic Nexus, a digital collectible card game inspired by big Japanese/Anime TCG games like Pokemon and Yu-Gi-Oh. Final Stardust is more than just a game. With 3 games, a manga, and merchandise in the roadmap, Final Stardust aims to become a global brand that creates a new lifestyle experience for its users. On PC? Play the card game Cosmic Nexus. On mobile? Play the 2v2 real time combat mobile game, Astral Link. Chilling in bed? Read the manga, Ardent Tales. By utilizing the power of the blockchain technology Final Stardust is on its way to become a pioneer in the next generation media franchises.",
+        package:"0xfefca39aac30848885efe1fac5672d19d67c2560",
+        alocation:"0x93690867834813b500ea0d757ca92917ce5bb8ff",
+        metadata:"0x47df4043e1212a7b8a1ff1f6ecfc20a1eb85e85f",
+        treasury:"0x311272044a4f66629e8726f4fc6d59e4b8f1d967",
+        coin:"FSD",
+        symbol:"FSD",
+        module:"fsd"
+    },
+    {
+        name: "PLASMAVERSE",
+        role:"IDO Test",
+        website:"https://www.plasmaverse.xyz/",
+        discord:"https://discord.com/invite/plasmaverse",
+        twitter:"https://twitter.com/plasmaversexyz",
+        shortDesc:"Plasmaverse is Multi-Phase ARPG Game on Metaverse built in Sui Network & Aptos.",
+        desc:"Plasmaverse is Multi-Phase ARPG Game on Metaverse built in Sui Network & Aptos. It offers an exciting and challenging game mode that unites elements of science, artificial forces, and residents who never give up. With its play-to-earn feature, players can earn rewards by playing in the game.",
+        package:"0xf1eb09e5d8ebd83fa37c43720993c50412602749",
+        alocation:"0x2663d237a86729b3796c9ab0267a35cbba284daa",
+        metadata:"0xc85214ff381c5c837a81c1381693aa0f06d092b5",
+        treasury:"0x652fa94b79935acb438a73b653272fe27ef1fbc7",
+        coin:"PLSMD",
+        symbol:"PLSMD",
+        module:"plsmd"
+    },
+]
+
+
+
+// ICOprojectsScr.forEach((i)=>{
+//     console.log(`sui client call --gas-budget 1000 --package ${i.package} --module "${i.module}" --function fondWithSuiheroes --args ${i.treasury} ${i.alocation} 20000000000\n`)
+// })
