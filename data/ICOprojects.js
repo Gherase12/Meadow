@@ -45,7 +45,7 @@ export const ICOprojects = [
         treasury:"0x6c1617c145b146a540160d09d07f3d5c4db262a2",
         coin:"SUIHEROES",
         symbol:"SHS",
-        module:"suiheroes"
+        module:"suiheros"
     },
     {
         name: "Wisp Swap",
