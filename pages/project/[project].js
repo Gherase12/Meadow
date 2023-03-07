@@ -238,7 +238,7 @@ try {
               </p>
             </div>
             {/* project details */}
-            <div className=' h-[369px] bg-white row-span-2 rounded-[30px] p-[30px] '>
+            <div className='  bg-white row-span-2 rounded-[30px] p-[30px] '>
               {/* prices */}
               <div className='font-bold text-[27px] leading-[110%] font-avenir mb-[30px]  '>
                 {router.query.project == "0" ? 
@@ -251,7 +251,7 @@ try {
 
 
               <div className=' flex flex-col scale-[0.8] '>
-                <div className=' h-[76px] flex space-x-[40px] '>
+                <div className='  grid grid-cols-2 lg:grid-cols-4 gap-y-4  '>
                   { router.query.project == "0" || router.query.project == "1" ?  (
                     <>
                     <TokenSaleDetail                      
