@@ -27,7 +27,7 @@ function ProjectActionCard({ path, project }) {
 
   const wallet = useWallet();
   const provider = new JsonRpcProvider(Network.DEVNET);
-
+console.log(project)
   useEffect(() => {
     const getObjectsForUser = async () => {
       if (!wallet.connected) return;
@@ -205,7 +205,7 @@ function ProjectActionCard({ path, project }) {
                     name="Meadow private round"
                     startDate="2023-03-15"
                     endDate="2023-03-17"
-                    options="'Apple','Google','iCal'"
+                    
                     lightMode="bodyScheme"
                     customCss="https://add-to-calendar-button.com/atcb.css"
                     buttonStyle="custom"
