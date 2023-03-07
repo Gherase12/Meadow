@@ -5,11 +5,11 @@ import AlocationBoard from "./../../components/Project/AlocationBoard";
 import { useWallet, useAccountBalance } from "@suiet/wallet-kit";
 import { JsonRpcProvider, Network } from "@mysten/sui.js";
 import WalletDetails from "./../../components/Project/WalletDetails";
-import CountdownTimer from "../../components/CountDown/CountDown";
+
 import MeadowCountDown from "../../components/MeadowCountDown";
 import { AiOutlineWarning } from "react-icons/ai";
 import Image from "next/image";
-import { AddToCalendarButton } from "add-to-calendar-button-react";
+
 
 import { convertToSui } from "./../../utils/convertToSui";
 
@@ -159,7 +159,7 @@ console.log(project)
         {path == "0" ? (
           <div>
             <div className='flex w-full justify-between font-bold  mt-[40px] md:mt-0 '>
-              <p>Progress:</p>
+              <p>Finished:</p>
               <p>{0}%</p>
             </div>
             <div className='progress-bar-container'>
@@ -174,7 +174,7 @@ console.log(project)
           <div>
             <div className='flex w-full justify-between font-bold mt-[40px] md:mt-0'>
               <p>Progress:</p>
-              <p>{progres.toFixed(0)}%</p>
+              <p>{progres.toFixed(0)}% Filled</p>
             </div>
             <div className='progress-bar-container'>
               <div className='progress-bar' style={{ width: `${progres}%` }} />
@@ -200,7 +200,7 @@ console.log(project)
 
         {/* <button onClick={handleAddEvent} className="p-2 bg-blue-1 rounded-full">Schedule</button> */}
         <div className="mt-10" > 
-                {path == "0" && (
+                {/* {path == "0" && (
                     <AddToCalendarButton
                     name="Meadow private round"
                     startDate="2023-03-15"
@@ -212,7 +212,7 @@ console.log(project)
                     listStyle="modal"
                     options={["Apple", "Google", "Yahoo", "Microsoft365"]}
                     ></AddToCalendarButton>
-                )}
+                )} */}
         
         </div>
 

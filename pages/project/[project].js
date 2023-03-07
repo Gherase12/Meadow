@@ -74,7 +74,7 @@ function Project() {
               <div className='font-bold text-[28px] leading-[110%] font-avenir mb-[20px]  '>
                 Project Summary
               </div>
-              <p className=' whitespace-pre-line overflow-y-scroll h-[265px] text-[16px] scrollbar-hide leading-[26px]  font-normal '>
+              <p className=' whitespace-pre-line overflow-y-scroll h-[265px] text-[16px] pr-10 leading-[26px]  scrollbar-thumb-blue-1 scrollbar-thumb-rounded-full scrollbar-thin scrollbar-track-rounded-full scrollbar-track-gray-1  font-normal   '>
                 {project?.desc}
               </p>
             </div>
