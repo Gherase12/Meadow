@@ -73,7 +73,7 @@ function WalletDetails({buttonClick,setButtonClick, coins,_module, _package,  sy
           <div>
               {participation && (<p> My contribution: { convertToSui(Number(participation?.details.data.fields.alocated)).toFixed(6).replace(/\.?0+$/, '')   } Sui</p>) } 
           </div>
-          <p>1 MED= 1 {symbol}</p>
+          {/* <p>1 MED= 1 {symbol}</p> */}
     </div>
   )
 }

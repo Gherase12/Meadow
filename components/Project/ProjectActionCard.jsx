@@ -236,22 +236,27 @@ console.log(project)
         <div>
           {path != "0" &&
             ((isFinished && !wallet.connected) ||
-            (isFinished && wallet.connecte && !participateing) ? (
+            (isFinished && wallet.connecte && !participateing)
+             ? (
               <div className='text-gray-1 w-fill h-[40px] flex items-center justify-center'>
                 Finished!
               </div>
-            ) : isFinished && !participateing && wallet.connected ? (
-              <div className='text-gray-1 w-fill h-[40px] flex items-center justify-center'>
-                Finished!
-              </div>
-            ) : isFinished && participateing ? (
-              <button
-                onClick={() => claim()}
-                className='h-[40px] bg-blue-1 w-full mt-[20px] rounded-[14px] text-white font-bold flex items-center justify-center shadow-lg shadow-blue-1'
-              >
-                Claim
-              </button>
-            ) : !participateing ? (
+            )
+            //  : isFinished && !participateing && wallet.connected ? (
+            //   <div className='text-gray-1 w-fill h-[40px] flex items-center justify-center'>
+            //     Finished!
+            //   </div>
+            // ) 
+            // : isFinished && participateing ? (
+            //   <button
+            //     onClick={() => claim()}
+            //     className='h-[40px] bg-blue-1 w-full mt-[20px] rounded-[14px] text-white font-bold flex items-center justify-center shadow-lg shadow-blue-1'
+            //   >
+            //     Claim
+            //   </button>
+            // ) 
+            : 
+            !participateing ? (
               <button
                 onClick={() => mintParticipation()}
                 className='h-[40px] bg-black w-full mt-[20px] rounded-[14px] flex items-center justify-center space-x-[10px]  '
@@ -284,14 +289,14 @@ console.log(project)
       <div className='bg-white rounded-xl w-full p-5 mt-4 flex justify-center space-x-[10px] text-blue-1 items-center'>
         <p className='whitespace-pre-line text-[13px] '>
           {path == "0"
-            ? "Starts: March 15, 1:00 PM UTC (OG roles can contribute in the first 15 mins (see below for OG details)\n Starts: March 15, 1:15 PM UTC (Public can contribute)"
+            ? "Starts: March 15th 1:00pm UTC \n(OGs can only contribute in the first 15 mins)\nStarts March 15th 1:15pm UTC (Public can contribute)"
             : "Before you start any action you need to have sui for gas fee, for that find the airdrop or faucet option in your sui wallet."}
         </p>
       </div>
       <div className='bg-white rounded-xl w-full  mt-4 flex  space-x-[10px] text-red items-center'>
         {path == "0" ? (
           <div className='m-5'>
-            <p>Contribution (per wallet)</p>
+            <p>Contribution per wallet:</p>
             <p>Min: $5</p>
             <p>Max: $5,000</p>
           </div>

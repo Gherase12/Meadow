@@ -52,7 +52,7 @@ function MeadowCountDown({i}) {
       </div>
 
       <div className={`flex flex-col  ${i == 1 ? "items-start" : "items-center"} `}>
-      <Image src="/meadow-countdown.png" width={200} height={20}  className={i == 1 && "hidden"}/>
+      <Image src="/meadow-countdown.png" width={200} height={20}  className={i == 1 ? "hidden" : ""}/>
     <p className={`font-black text-black  ${i != 1 && "text-[20px]"} `} >Private round starts in:</p>
       </div>
     <div className='font-bold flex space-x-7'>

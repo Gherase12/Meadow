@@ -56,7 +56,7 @@ function ProjectDetails({path, project}) {
                       />
                       <TokenSaleDetail
                         upText={`${prices[0].totalAlocation}`}
-                        downText={"Total alocation"}
+                        downText={"Raise amount"}
                       />
                       <TokenSaleDetail
                         upText={`${prices[0].network}`}
