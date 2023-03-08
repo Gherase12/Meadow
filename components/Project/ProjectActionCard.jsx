@@ -5,10 +5,10 @@ import AlocationBoard from "./../../components/Project/AlocationBoard";
 import { useWallet, useAccountBalance } from "@suiet/wallet-kit";
 import { JsonRpcProvider, Network } from "@mysten/sui.js";
 import WalletDetails from "./../../components/Project/WalletDetails";
-
 import MeadowCountDown from "../../components/MeadowCountDown";
 import { AiOutlineWarning } from "react-icons/ai";
 import Image from "next/image";
+import { AddToCalendarButton } from 'add-to-calendar-button-react';
 
 
 import { convertToSui } from "./../../utils/convertToSui";
@@ -200,7 +200,7 @@ console.log(project)
 
         {/* <button onClick={handleAddEvent} className="p-2 bg-blue-1 rounded-full">Schedule</button> */}
         <div className="mt-10" > 
-                {/* {path == "0" && (
+                {path == "0" && (
                     <AddToCalendarButton
                     name="Meadow private round"
                     startDate="2023-03-15"
@@ -212,7 +212,7 @@ console.log(project)
                     listStyle="modal"
                     options={["Apple", "Google", "Yahoo", "Microsoft365"]}
                     ></AddToCalendarButton>
-                )} */}
+                )}
         
         </div>
 
@@ -285,6 +285,19 @@ console.log(project)
             ))}
         </div>
       </div>
+
+
+      {/* {path ==0 && 
+      <AddToCalendarButton
+  name="Meadow private round 1"
+  options={['Apple','Google', 'Microsoft365', 'Outlook.com', 'Yahoo']}
+  // location="World Wide Web"
+  startDate="2023-03-15"
+  endDate="2023-03-17"
+  // startTime="10:15"
+  // endTime="23:30"
+  // timeZone="America/Los_Angeles"
+></AddToCalendarButton>} */}
 
       <div className='bg-white rounded-xl w-full p-5 mt-4 flex justify-center space-x-[10px] text-blue-1 items-center'>
         <p className='whitespace-pre-line text-[13px] '>

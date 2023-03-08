@@ -59,7 +59,7 @@ function Project() {
           />
           <h3 className='font-bold font-avenir text-[41px] flex items-center leading-[51px] space-x-5 text-black '>
             <p>{project?.name}</p> 
-            <span className={`rounded-full h-10 flex items-center justify-center text-[15px] ${project?.role == "IDO Test" ? "bg-gradient-blue" : "bg-gradient-red" } p-2 `} >
+            <span className={`rounded-full hidden h-10 md:flex items-center justify-center text-[15px] ${project?.role == "IDO Test" ? "bg-gradient-blue" : "bg-gradient-red" } p-2 `} >
             {project?.role == "IDO Test" ? "IDO Test" : "Private round 1"}
             </span>
             {/* {router.query.project == "1" && "(IDO Test only)"} */}
