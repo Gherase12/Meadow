@@ -9,14 +9,14 @@ import { convertToSui } from '../../utils/convertToSui';
 
 function Card({ i,name,role, twitter, website , discord, shortDesc, alocation, launchpad }) {
   const provider = new JsonRpcProvider(Network.DEVNET);
-  const [progres, setProgres] = useState()
+  const [progress, setProgress] = useState()
   const [balance, setBalance] = useState()
     useEffect(()=>{
 
       const getObjectsForApp = async ()=>{
         const aloc = await provider.getObject(alocation)
         const percentComplete = (Number(aloc?.details?.data?.fields?.balance) / Number(aloc?.details?.data?.fields?.finishAmount)) * 100;
-        setProgres(percentComplete) 
+        setProgress(percentComplete) 
         setBalance(aloc?.details?.data?.fields?.balance)
     }
 
@@ -112,7 +112,7 @@ function Card({ i,name,role, twitter, website , discord, shortDesc, alocation, l
             ):(
               <div className={`progress-bar-container-card   mt-[10px]   `}>
             
-              <div className="progress-bar" style={{ width: `${progres}%` }} />
+              <div className="progress-bar" style={{ width: `${progress}%` }} />
                 
                  </div>
             )
