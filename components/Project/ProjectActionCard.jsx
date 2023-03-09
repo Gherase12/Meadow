@@ -235,7 +235,8 @@ function ProjectActionCard({ path, project }) {
           <div className='text-[14px] leading-[18px] mt-4 text-gray-2 '></div>
         </div>
         <div>
-          {path != "0" &&
+          
+        {path != "0" &&
             ((isFinished && !wallet.connected) ||
             (isFinished && wallet.connecte && !participateing)
              ? (

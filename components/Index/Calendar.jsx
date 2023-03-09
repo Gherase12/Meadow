@@ -1,6 +1,4 @@
 import React from "react";
-
-import { useRouter } from 'next/navigation';
 import { BsChevronLeft } from "react-icons/bs";
 import {
   add,
@@ -17,12 +15,11 @@ import {
   startOfToday,
 } from "date-fns";
 import { useState } from "react";
-import  Image  from "next/image";
-import CalendrModal from './CalendrModal';
+
+
 
 function Calendar() {
-
-  const router = useRouter()
+  
   const events = [
     {
       id: 1,
@@ -30,9 +27,9 @@ function Calendar() {
       img: "meadow",
       startDatetime: "2023-03-07T13:00",
       endDatetime: "2023-03-09T14:30",
-      color:"bg-blue-1",
-      bgColor:"bg-blue-1/40",
-      desc: "IDO Test: March 7-March 9"
+      color: "bg-blue-1",
+      bgColor: "bg-blue-1/40",
+      desc: "IDO Test: March 7-March 9",
     },
     {
       id: 2,
@@ -40,11 +37,10 @@ function Calendar() {
       img: "nanopay",
       startDatetime: "2023-03-15T13:00",
       endDatetime: "2023-03-17T13:00",
-      color:"bg-red",
-      bgColor:"bg-red/40",
-      desc:"Meadow Private Round: March 15th - March 17th  "
+      color: "bg-red",
+      bgColor: "bg-red/40",
+      desc: "Meadow Private Round: March 15th - March 17th  ",
     },
-   
   ];
 
   let colStartClasses = [
@@ -81,11 +77,8 @@ function Calendar() {
     return classes.filter(Boolean).join(" ");
   }
 
-
-
   return (
     <div className='relative  pb-[70px] lg:pb-0   z-10'>
-      
       <div className='absolute dark:text-blue-1 text-[22px] font-extrabold -top-[46px] left-[-10px]  w-[190px] text-center   lg:hidden items-center justify-center'>
         Launch calendar
       </div>
@@ -167,37 +160,33 @@ function Calendar() {
                   </button>
 
                   <div className=''>
-                    {events.some(({startDatetime, img}) =>
+                    {events.some(({ startDatetime, img }) =>
                       isSameDay(parseISO(startDatetime), day)
                     ) && (
                       <>
-                      
-                      
-                        <div className={`w-[40px] h-[43px] group  cursor-pointer rounded-md absolute bottom-[0px]  left-[50%]  translate-x-[-50%]   ${
-                          
+                        <div
+                          className={`w-[40px] h-[43px] group  cursor-pointer rounded-md absolute bottom-[0px]  left-[50%]  translate-x-[-50%]   ${
                             events.find(({ startDatetime }) =>
-                            isSameDay(parseISO(startDatetime), day)
-                          ).bgColor
-                        
-                        } `}>
-                        
-        <div className={`absolute bg-blue-1 text-white text-[10px] -left-[30px]  hidden z-50 group-hover:flex rounded-xl -top-[30px] p-2   w-[200px] leading-[10px]  border-2 transition ease-out duration-300 translate-y-0.5 group-hover:translate-y-0  ${
-            events.find(({ startDatetime }) =>
-            isSameDay(parseISO(startDatetime), day)
-          ).color
-        }`}  >
-          {events.find(({ startDatetime }) =>
-  isSameDay(parseISO(startDatetime), day)
-).desc}
-        </div>
-      
+                              isSameDay(parseISO(startDatetime), day)
+                            ).bgColor
+                          } `}
+                        >
+                          <div
+                            className={`absolute bg-blue-1 text-white text-[10px] -left-[30px]  hidden z-50 group-hover:flex rounded-xl -top-[30px] p-2   w-[200px] leading-[10px]  border-2 transition ease-out duration-300 translate-y-0.5 group-hover:translate-y-0  ${
+                              events.find(({ startDatetime }) =>
+                                isSameDay(parseISO(startDatetime), day)
+                              ).color
+                            }`}
+                          >
+                            {
+                              events.find(({ startDatetime }) =>
+                                isSameDay(parseISO(startDatetime), day)
+                              ).desc
+                            }
+                          </div>
                         </div>
                       </>
-                        
-                      
-                    )
-                    
-                    }
+                    )}
                   </div>
                 </div>
               </div>
