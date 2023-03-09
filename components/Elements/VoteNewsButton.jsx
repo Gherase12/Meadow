@@ -47,7 +47,7 @@ function VoteNewsButton({ text, score, id }) {
   return (
     <button
       onClick={handleClick}
-      className={`bg-white w-[138px] h-[34px] border-2 border-blue-6 rounded-full flex items-center justify-around text-gray-4  `}
+      className={`bg-white dark:bg-black w-[138px] h-[34px] border-2 border-blue-6 rounded-full flex items-center justify-around text-gray-4  `}
     >
       <div className='flex space-x-[8px]  '>
         <Image

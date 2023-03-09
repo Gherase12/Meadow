@@ -129,9 +129,9 @@ function ProjectActionCard({ path, project }) {
 
   return (
     <div className='max-w-[354px] mx-auto'>
-      <div className='font-avenir lg:w-[354px] h-auto   rounded-[30px] bg-white p-[30px] '>
+      <div className='font-avenir lg:w-[354px] h-auto dark:bg-black dark:text-blue-1  rounded-[30px] bg-white p-[30px] '>
         {/* details */}
-        <div className='font-bold text-[27px] leading-[110%] font-avenir mb-[30px]  '>
+        <div className='font-bold text-[27px] leading-[110%] font-avenir mb-[30px] dark:text-blue-1  '>
           Sale Details
         </div>
 
@@ -177,7 +177,7 @@ function ProjectActionCard({ path, project }) {
               <p>Progress:</p>
               <p>{progres.toFixed(0)}% Filled</p>
             </div>
-            <div className='progress-bar-container'>
+            <div className='progress-bar-container dark:bg-gray-1'>
               <div className='progress-bar' style={{ width: `${progres}%` }} />
             </div>
             <div className='flex w-full justify-between font-bold text-sm pt-1 '>
@@ -288,26 +288,16 @@ function ProjectActionCard({ path, project }) {
       </div>
 
 
-      {/* {path ==0 && 
-      <AddToCalendarButton
-  name="Meadow private round 1"
-  options={['Apple','Google', 'Microsoft365', 'Outlook.com', 'Yahoo']}
-  // location="World Wide Web"
-  startDate="2023-03-15"
-  endDate="2023-03-17"
-  // startTime="10:15"
-  // endTime="23:30"
-  // timeZone="America/Los_Angeles"
-></AddToCalendarButton>} */}
+      
 
-      <div className='bg-white rounded-xl w-full p-5 mt-4 flex justify-center space-x-[10px] text-blue-1 items-center'>
+      <div className='bg-white dark:bg-black rounded-xl w-full p-5 mt-4 flex justify-center space-x-[10px] text-blue-1 items-center'>
         <p className='whitespace-pre-line text-[13px] '>
           {path == "0"
             ? "Starts: March 15th 1:00pm UTC \n \n(OGs can only contribute in the first 15 mins)\n \n Starts March 15th 1:15pm UTC (Public can contribute)"
             : "Before you start any action you need to have sui for gas fee, for that find the airdrop or faucet option in your sui wallet."}
         </p>
       </div>
-      <div className='bg-white rounded-xl w-full  mt-4 flex  space-x-[10px] text-red items-center'>
+      <div className='bg-white dark:bg-black rounded-xl w-full  mt-4 flex  space-x-[10px] text-red items-center'>
         {path == "0" ? (
           <div className='m-5'>
             <p>Contribution per wallet:</p><br/>

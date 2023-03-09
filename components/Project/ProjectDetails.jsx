@@ -34,7 +34,7 @@ function ProjectDetails({path}) {
 
 
   return (
-    <div className='  bg-white row-span-2 rounded-[30px] p-[30px] '>
+    <div className='  bg-white row-span-2 rounded-[30px] p-[30px] dark:text-blue-1 dark:bg-black '>
               {/* prices */}
               <div className='font-bold text-[27px] leading-[110%] font-avenir mb-[30px]  '>
                 {path == "0"

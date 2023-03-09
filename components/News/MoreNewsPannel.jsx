@@ -18,7 +18,7 @@ function MoreNewsPannel({ data, isLoading, newsIndex, closeModal }) {
       initial={{ opacity: 0, y: 200 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className='  space-x-[30px]     xl:pt-0    flex  bg-white lg:rounded-[45px]   pr-0 overflow-hidden lg:mb-[60px]  '
+      className='  space-x-[30px]     xl:pt-0    flex dark:bg-black dark:text-blue-1  bg-white lg:rounded-[45px]   pr-0 overflow-hidden lg:mb-[60px]  '
     >
       {/* new */}
       <div className=' lg:pt-[50px]  flex-1 overflow-y-scroll scrollbar-hide items-center flex flex-col  w-screen lg:w-auto overflow-x-hidden    '>

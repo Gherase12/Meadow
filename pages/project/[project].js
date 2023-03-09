@@ -43,13 +43,13 @@ function Project() {
           onClick={() => router.push("/")}
           className='ml-[20px] lg:ml-0 my-[36px] text-black flex space-x-[9px] items-center  h-[20px]'
         >
-          <AiOutlineArrowLeft />
-          <div className='text-[17px] font-avenir leading-[23px] font-extrabold'>
+          <AiOutlineArrowLeft className="dark:text-blue-1" />
+          <div className='text-[17px] font-avenir leading-[23px] font-extrabold dark:text-blue-1'>
             Back
           </div>
         </button>
         {/* project name */}
-        <div className=' ml-[20px] lg:ml-0 space-x-[20px] items-center flex  mb-[24px]'>
+        <div className=' ml-[20px] lg:ml-0 space-x-[20px] items-center flex   mb-[24px]'>
           <Image
             width={61}
             height={61}
@@ -57,7 +57,7 @@ function Project() {
             alt='meadow project'
             className=' rounded-full'
           />
-          <h3 className='font-bold font-avenir text-[41px] flex items-center leading-[51px] space-x-5 text-black '>
+          <h3 className='font-bold font-avenir text-[41px] flex items-center leading-[51px] space-x-5 text-black dark:text-blue-1'>
             <p>{project?.name}</p> 
             <span className={`rounded-full hidden h-10 md:flex items-center justify-center text-[15px] ${project?.role == "IDO Test" ? "bg-gradient-blue" : "bg-gradient-red" } p-2 `} >
             {project?.role == "IDO Test" ? "IDO Test" : "Private round 1"}
@@ -70,11 +70,11 @@ function Project() {
           {/* left */}
           <div className='flex flex-col space-y-[26px]  lg:w-[561.65px]'>
             {/* project description */}
-            <div className='bg-white rounded-[30px] h-[349px] p-[30px]  '>
-              <div className='font-bold text-[28px] leading-[110%] font-avenir mb-[20px]  '>
+            <div className='bg-white rounded-[30px] h-[349px] p-[30px]  dark:bg-black '>
+              <div className='font-bold text-[28px] leading-[110%] font-avenir mb-[20px] dark:text-blue-1  '>
                 Project Summary
               </div>
-              <p className=' whitespace-pre-line overflow-y-scroll h-[265px] text-[16px] pr-10 leading-[26px]  scrollbar-thumb-blue-1 scrollbar-thumb-rounded-full scrollbar-thin scrollbar-track-rounded-full scrollbar-track-gray-1  font-normal   '>
+              <p className=' whitespace-pre-line dark:text-blue-1 overflow-y-scroll h-[265px] text-[16px] pr-10 leading-[26px]  scrollbar-thumb-blue-1 scrollbar-thumb-rounded-full scrollbar-thin scrollbar-track-rounded-full scrollbar-track-gray-1  font-normal   '>
                 {project?.desc}
               </p>
             </div>

@@ -65,20 +65,20 @@ function Voting() {
             <Image src={"/object-6.webp"} fill alt='sphere-object' />
           </div>
 
-          <p className='mx-[30px] md:mx-0 mt-[23px] md:mt-0 relative  h-[23px] font-bold text-[17px] text-gray mb-[22.64px] '>
+          <p className='mx-[30px]  md:mx-0 mt-[23px] md:mt-0 relative  h-[23px] font-bold text-[17px] text-gray mb-[22.64px] '>
             Voting
           </p>
           <div className='mx-[30px] md:mx-0 z-30  mb-[15px] lg:mb-[17.26px] w-[347.89px] h-[68px] text-[5vw] lg:w-[708.49px]  lg:h-[52px]  lg:text-[41px] font-black leading-[34px] lg:leading-[51px]  '>
-            <h1 className='font-extrabold relative  text-[32px] lg:text-[41px] z-40'>
+            <h1 className='font-extrabold relative dark:text-blue-1  text-[32px] lg:text-[41px] z-40'>
             Vote for Projects
             </h1>
           </div>
-          <div className='px-[30px] md:px-0   text-[16px] text-gray-2  relative font-normal mb-[21px] items-center font-avenir  leading-[24px]  lg:h-[52px]  lg:w-[546px] z-40 '>
+          <div className='px-[30px] md:px-0 dark:border-blue-1  text-[16px] text-gray-2  relative font-normal mb-[21px] items-center font-avenir  leading-[24px]  lg:h-[52px]  lg:w-[546px] z-40 '>
           Users will have the opportunity to vote for their favourite project. The project with the most votes will be incubated by Meadow.
           </div>
 
           {/* voting */}
-          <div className=' mt-[28px]   max-w-[1200px]  lg:h-[720px]  bg-white rounded-t-[30px] px-[27px]  pt-[23px] lg:pt-[30px] z-40 relative '>
+          <div className=' mt-[28px] dark:bg-black   max-w-[1200px]  lg:h-[720px]  bg-white rounded-t-[30px] px-[27px]  pt-[23px] lg:pt-[30px] z-40 relative '>
             <div ref={arrowRef} >
             {/* <div  > */}
 
@@ -92,7 +92,7 @@ function Voting() {
 
             <div ref={descRef} 
             // <div
-            className='overflow-y-scroll scrollbar-hide h-auto lg:h-[660px]  relative '>
+            className='overflow-y-scroll scrollbar-hide h-auto lg:h-[660px]  relative  '>
               
               {data?.projects?.sort((a, b) => b.votes - a.votes).map(
                 ({ id, name, img, website, votes, twitter, discord }, i) => (

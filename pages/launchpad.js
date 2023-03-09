@@ -1,16 +1,17 @@
 import React from "react";
-import LaunchpadCard from "./../components/launchpad/LaunchpadCard";
+
 import Image from "next/image";
 import { ICOprojects } from '../data/ICOprojects';
 
 import PageAnimation from './../components/Golbal/PageAnimation';
+import Card from './../components/Index/Card';
 
 function Launchpad() {
   const filters = ["All", "Ongoing", "Upcoming", "Ended IDO"];
  
   return (
     <PageAnimation>
-      <div className=' lg:h-[947.31px]  overflow-hidden   w-full flex md:max-w-[1440px]   overflow-x-hidden  md:space-x-[62px] mx-auto my-auto  '>
+      <div className=' lg:h-[947.31px]  overflow-hidden    w-full flex md:max-w-[1440px]   overflow-x-hidden  md:space-x-[62px] mx-auto my-auto  '>
         <div className='    w-full md:mb-[11px] relative px-[30px]  md:px-0  '>
           {/* big object */}
           <div className='absolute left-[70vw] lg:left-[625px] lg:-top-[30px] -top-[70px]  z-20 w-[233px] h-[233px] lg:w-[466.15px] lg:h-[466.15px]  bg-image-1 scale-[1.5]   '>
@@ -30,22 +31,24 @@ function Launchpad() {
             Explore IDOs
           </p>
           <div className=' z-20   lg:mb-[17.26px] w-[347.89px] h-[68px] text-[5vw] lg:w-[708.49px]  lg:h-[102px] lg:text-[41px] font-extrabold leading-[34px] lg:leading-[51px]  '>
-            <h1 className='text-black text-[32px] lg:text-[41px] '>
+            <h1 className='text-black text-[32px] lg:text-[41px] dark:text-blue-1'>
               Launchpad
             </h1>
           </div>
           <ul className='mb-[25px]  items-center font-black  text-[15px] lg:text-[16px]  leading-[24px] h-[38px] md:w-[408px]  flex justify-between '>
             {filters.map((l, i) => (
-              <li key={i} className='first:bg-white hover:shadow-lg cursor-pointer hover:bg-white px-[17px] py-[7px] rounded-full   '>
+              <li key={i} className='first:bg-white hover:shadow-lg cursor-pointer hover:bg-white px-[17px] py-[7px] rounded-full dark:bg-black dark:text-blue-1   '>
                 {l}
               </li>
             ))}
           </ul>
 
-          <div className='overflow-y-scroll gap-[15px] h-[600px] lg:h-[700px]  scrollbar-hide      grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 '>
-            {ICOprojects.map(({name,alocation, twitter, website , discord, shortDesc}, i) => (
-              <LaunchpadCard key={i} name={name} alocation={alocation} website={website} shortDesc={shortDesc} discord={discord}  twitter={twitter} i={i}  />
+          <div className='overflow-y-scroll gap-[15px] h-[600px] lg:h-[700px]  justify-items-center  scrollbar-hide      grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 '>
+            {ICOprojects.map(({name,alocation, twitter, website , discord, shortDesc, role}, i) => (
+              
+              <Card name={name} alocation={alocation} role={role} website={website} shortDesc={shortDesc} discord={discord}  twitter={twitter} i={i} />
             ))}
+
           </div>
         </div>
       </div>

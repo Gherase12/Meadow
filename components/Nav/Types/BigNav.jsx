@@ -12,7 +12,7 @@ function BigNav({elements, socialMedia, openModal ,connected }) {
 
   return (
     <div
-        className={`text-gray-4 hidden  ${
+        className={`text-gray-4 hidden  dark:text-blue-1 dark:bg-black  dark:shadow-lg dark:shadow-blue-1 ${
           !isOnNews && "xl:flex"
         }  flex-col z-50 relative w-[295px]  rounded-[28px] bg-blue-2  px-[24.5px] py-[30px]  `}
       >
@@ -39,7 +39,7 @@ function BigNav({elements, socialMedia, openModal ,connected }) {
                 key={i}
                 onClick={() => router.push(`/${pagePath}`)}
                 className={`w-[246px] h-[88px]  ${
-                  path == `/${pagePath}` && "text-blue-1 bg-black"
+                  path == `/${pagePath}` && "text-blue-1 dark:text-white dark:bg-blue-1  bg-black"
                 }  flex items-center rounded-[12px] hover:bg-black group`}
               >
                 <Icon className=' mx-[20px] text-[24px]  ' />
@@ -79,13 +79,13 @@ function BigNav({elements, socialMedia, openModal ,connected }) {
         <div className='flex flex-col items-center w-[246px] absolute bottom-[30px]  '>
           {/* buttons */}
           <div className='w-[140px] flex justify-around h-[40px] mb-[35px] '>
-            {socialMedia.map(({ name, link, Icon }, i) => (
+            {socialMedia.map(({  link, Icon }, i) => (
               <Link
                 target='_blank'
                 rel='noreferrer noopener'
                 href={link}
                 key={i}
-                className='rounded-full w-[40px] h-[40px] flex items-center justify-center bg-black '
+                className='rounded-full w-[40px] h-[40px] flex items-center justify-center bg-black dark:border-2 dark:border-blue-1 '
               >
                 <Icon />
               </Link>
@@ -97,7 +97,7 @@ function BigNav({elements, socialMedia, openModal ,connected }) {
           {/* buttons */}
           <div className='w-[246px] text-white h-[110px]  flex flex-col justify-around space-y-[10px]  text-[15px] '>
             <Link href='https://meadowlaunch.com/'>
-              <button className='transition duration-700 ease-in-out hover:shadow-lg hover:shadow-white hover:bg-white hover:text-black flex items-center justify-center h-[50px] border-white w-[246px] bg-black rounded-[15px] btn-text '>
+              <button className='transition dark:text-blue-1 dark:border-2 dark:border-blue-1 duration-700 ease-in-out hover:shadow-lg hover:shadow-white hover:bg-white hover:text-black flex items-center justify-center h-[50px] border-white w-[246px] bg-black rounded-[15px] btn-text '>
                 {" "}
                 Home
               </button>

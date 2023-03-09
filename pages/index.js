@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Carusel from "../components/Index/Carusel";
-import VoteCard from "../components/Voting/VoteCard";
+import VoteCard from "../components/Index/VoteCard";
 import Calendar from "../components/Index/Calendar";
 
 import Image from "next/image";
@@ -42,9 +42,9 @@ export default function Home() {
           </p>
             
           </div>
-          <div className="flex flex-col md:flex-row" >
+          <div className="flex flex-col md:flex-row   " >
           <div className=' max-[375px]:text-[1.5rem]  text-[27px]  max-[375px]:w-auto max-[375px]:h-auto mb-[50px] z-20   lg:mb-[17.26px] w-[347.89px] h-[68px]  md:w-[708.49px]  md:h-[102px] md:text-[41px]   leading-[34px] lg:leading-[51px]  '>
-            <h1 className='text-black font-black'>
+            <h1 className='text-black dark:text-white font-black'>
               The Next Generation Web 3.0
               <span className='text-blue-1 font-black  md:hidden ml-[10px]'>
                 Multichain Launchpad
@@ -54,7 +54,7 @@ export default function Home() {
               Multichain Launchpad
             </h1>
           </div>
-          <div className=" md:hidden">
+          <div className="  md:hidden">
 
 <MeadowCountDown />
 </div>
@@ -73,7 +73,7 @@ export default function Home() {
 
             <div className='lg:hidden 3xl:flex  lg:h-[310px]  '>
               {/* <News /> */}
-              <div className="hidden md:flex">
+              <div className="hidden md:flex dark:border-2">
 
               <MeadowCountDown />
               </div>

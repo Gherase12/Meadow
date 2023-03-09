@@ -23,7 +23,7 @@ function News() {
             News
           </p>
           <div className=' z-20   lg:mb-[17.26px] w-[347.89px] h-[68px] text-[5vw] lg:w-[708.49px]  lg:h-[102px] lg:text-[41px] font-extrabold leading-[34px] lg:leading-[51px]  '>
-            <h1 className='text-black text-[20px]   md:text-[32px] lg:text-[42px] '>
+            <h1 className='text-black text-[20px] dark:text-white   md:text-[32px] lg:text-[42px] '>
               News from the
               <span  className="text-blue-1  ml-[10px]" >
 

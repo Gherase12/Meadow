@@ -30,19 +30,19 @@ function Carusel() {
       </div>
       {/* news end */}
       <div className=' flex items-center w-[276px] -mb-[20px]  lg:mb-[13px]  h-[40px] justify-between  '>
-        <h2 className=' text-[20px] lg:text-[22px] leading-[24px] font-black '>
+        <h2 className=' text-[20px] lg:text-[22px] dark:text-white leading-[24px] font-black '>
           Upcoming IDOs
         </h2>
         <div className='hidden lg:flex space-x-1    '>
           <button
             onClick={() => swipePreview()}
-            className='h-[40px] w-[40px] border-[1px]  border-gray-1 rounded-full flex items-center justify-center'
+            className='h-[40px] w-[40px] border-[1px] dark:text-white  border-gray-1 rounded-full flex items-center justify-center'
           >
             <AiOutlineArrowLeft />
           </button>
           <button
             onClick={() => swipeNext()}
-            className='h-[40px]  w-[40px] border-[1px]  border-gray-1 rounded-full flex items-center justify-center rotate-180'
+            className='h-[40px]  w-[40px] border-[1px]  dark:text-white border-gray-1 rounded-full flex items-center justify-center rotate-180'
           >
             <AiOutlineArrowRight className='rotate-180' />
           </button>

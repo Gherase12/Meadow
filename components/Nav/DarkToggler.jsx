@@ -10,7 +10,7 @@ const DarkToggler = () => {
       {theme === 'dark' ? (
         <button
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-          className="text-blue-1 dark:text-gray-400 bg-black shadow-none p-2 focus:outline-none text-lg rounded-lg outline-none ring-transparent cursor-pointer"
+          className="text-blue-1 border-2 border-blue-1 dark:text-gray-400 bg-black shadow-none p-2 focus:outline-none text-lg rounded-lg outline-none ring-transparent cursor-pointer"
         >
              <svg
             className="w-6 h-6"
@@ -31,7 +31,7 @@ const DarkToggler = () => {
       ) : (
         <button
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-          className="text-blue-1 dark:text-gray-400 bg-black focus:outline-none shadow-none p-2 text-lg rounded-lg outline-none ring-transparent cursor-pointer"
+          className="text-blue-1 border-2 border-blue-1 dark:text-gray-400 bg-black focus:outline-none shadow-none p-2 text-lg rounded-lg outline-none ring-transparent cursor-pointer"
         >
          
             <svg

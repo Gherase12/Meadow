@@ -28,8 +28,7 @@ const client = createClient({
 });
 
 export default function App({ Component, pageProps }) {
-  const router = useRouter();
-  const currentPagePath = router.pathname;
+  
 
   return (
     <ThemeProvider>
@@ -37,9 +36,8 @@ export default function App({ Component, pageProps }) {
         <SessionProvider session={pageProps.session} refetchInterval={0}>
           <WalletProvider>
             <QueryClientProvider client={queryClient}>
-              <div className='h-screen w-full pt-[70px] xl:pt-0 bg-white-1 flex items-center relative overflow-x-hidden  '>
+              <div className='h-screen w-full pt-[70px] xl:pt-0 bg-white-1 dark:bg-blue-2 flex items-center relative overflow-x-hidden  '>
                 <ToastContainer autoClose={1000} />
-
                 <Head>
                   <title>MEADOW</title>
                   <meta name='description' content='' />
@@ -50,8 +48,7 @@ export default function App({ Component, pageProps }) {
                   <link rel='icon' href='/logo-card.svg' />
                 </Head>
                 <div className='lg:h-[947.31px]   3xl:px-[40px] md:p-[11px] w-full flex md:max-w-[1450px]  3xl:max-w-[2050px] justify-start pr-0 overflow-hidden xl:space-x-[62px] 3xl:space-x-[30px] mx-auto   my-auto '>
-                  <Nav path={currentPagePath} />
-
+                  <Nav  />
                   <Component {...pageProps} />
                   {/* <Timeout /> */}
                   <Analytics />

@@ -42,7 +42,7 @@ function MeadowCountDown({i}) {
   const counterBoxTitleStyle = " orizontal-center font-bold -bottom-[70%] " 
 
   return (
-    <div className={`font-bold relative   flex flex-col  ${i != 1 ? "relative  z-[100] overflow-hidden w-full h-[200px] items-center space-y-[40px] justify-center   lg:transform-none lg:w-[381.85px]  lg:h-[320px]   3xl:h-[310.52px]  rounded-[30px] md:bg-white mb-[30px] ": "mt-[20px]" }  md:rounded-[30px]  space-y-[10px] text-blue-1 z-30   md:pb-10  `}>
+    <div className={`font-bold relative   flex flex-col  ${i != 1 ? "relative  dark:md:bg-black dark:shadow-lg dark:lg:shadow-blue-1 z-[100] overflow-hidden -ml-[20px] md:-ml-0 scale-[0.8] lg:border-2  w-full  items-center space-y-[40px] justify-center   lg:transform-none lg:w-[381.85px]  lg:h-[320px]   3xl:h-[310.52px]  rounded-[30px] md:bg-white mb-[30px] ": "mt-[20px]" }  md:rounded-[30px]  space-y-[10px] text-blue-1 z-30   md:pb-10  `}>
       {/* <Image src={"/countdown-bg.png"} className="rounded-[30px]" fill /> */}
       <div className={i == 1 && "hidden"} >
 
@@ -53,7 +53,7 @@ function MeadowCountDown({i}) {
 
       <div className={`flex flex-col  ${i == 1 ? "items-start" : "items-center"} `}>
       <Image src="/meadow-countdown.png" width={200} height={20}  className={i == 1 ? "hidden" : ""}/>
-    <p className={`font-black text-black  ${i != 1 && "text-[20px]"} `} >Private round starts in:</p>
+    <p className={`font-black text-black dark:text-blue-1  ${i != 1 && "text-[20px] "} `} >Private round starts in:</p>
       </div>
     <div className='font-bold flex space-x-7'>
 

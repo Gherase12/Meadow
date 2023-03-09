@@ -44,7 +44,7 @@ function Indicator({tierName }) {
         animate='end'
         variants={variants}
         transition={{ duration: 1, ease: "easeInOut" }}
-        className=' text-[50px] leading-[58px]   text-black absolute inset-0 flex items-center justify-center'
+        className=' text-[50px] leading-[58px] dark:text-white  text-black absolute inset-0 flex items-center justify-center'
       >
         {number}%
       </motion.div>

@@ -22,11 +22,11 @@ function VoteCard() {
     },
   ];
   return (
-    <div className='  relative w-full mb-[70px] lg:mb-0  lg:w-[591.99px]  lg:h-[310.52px] bg-white rounded-[30px] lg:py-[32px] lg:px-[30px] card1  '>
+    <div className='  relative w-full mb-[70px] lg:mb-0  lg:w-[591.99px]  lg:h-[310.52px] dark:shadow-lg dark:shadow-blue-1 bg-white dark:bg-black rounded-[30px] lg:py-[32px] lg:px-[30px] card1  '>
       {/* upper section mobile */}
 
       <div className='absolute  left-0 -top-[47px] w-full  lg:hidden   flex justify-between  mb-[35px]'>
-        <div className='w-[208px] h-[24px] font-extrabold text-[22px] leading-[24px] '>
+        <div className='w-[208px] dark:text-blue-1   h-[24px] font-extrabold text-[22px] leading-[24px] '>
           Upcoming Games
         </div>
         <Link href='/games' className='cursor-pointer flex space-x-[11px] '>
@@ -45,7 +45,7 @@ function VoteCard() {
 
       {/* upper section desktop */}
       <div className='hidden   lg:flex justify-between  mb-[35px]'>
-        <h2 className='w-[208px] h-[24px] font-extrabold text-[22px] leading-[24px] '>
+        <h2 className='w-[208px] dark:text-blue-1 h-[24px] font-extrabold text-[22px] leading-[24px] '>
           Upcoming Games
         </h2>
         <Link href='/games' className='flex space-x-[11px]'>

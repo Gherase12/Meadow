@@ -40,7 +40,7 @@ function Games() {
           Games
         </p>
         <div className=' z-20   lg:mb-[10.26px] w-[347.89px] h-[68px] text-[5vw] lg:w-[708.49px]   lg:text-[41px] font-extrabold leading-[34px] lg:leading-[51px]  '>
-          <h1 className='text-black text-[32px] lg:text-[41px] '>
+          <h1 className='text-black text-[32px] dark:text-blue-1 lg:text-[41px] '>
             Upcoming games
           </h1>
         </div>
@@ -56,16 +56,16 @@ function Games() {
         <div className=" w-full flex justify-center mt-[20px] " >
           <div className="flex items-center space-x-[21px]">
             {/*  */}
-            <button className="py-[6px] px-[9px] flex space-x-[5px] items-center border-[1px] rounded-full border-black/20" >
-              <BsArrowLeftShort className="text-[24px]" />
-              <div className="text-[14px] font-bold pr-[10px]" >New</div>
+            <button className="py-[6px] px-[9px] flex space-x-[5px] items-center border-[1px] rounded-full border-black/20 dark:border-blue-1" >
+              <BsArrowLeftShort className="text-[24px] dark:text-blue-1" />
+              <div className="text-[14px] font-bold pr-[10px] dark:text-blue-1" >New</div>
             </button>
               {/*  */}
-            <div className="text-black/20  " ><span className="text-blue-1 cursor-pointer " >1 </span>2 ... 8 9</div>
+            <div className="text-black/20 dark:text-blue-1 " ><span className="text-blue-1 cursor-pointer  " >1 </span >2 ... 8 9</div>
 
-            <button className="py-[6px] px-[9px] flex space-x-[5px] items-center border-[1px] rounded-full border-black/20" >
-              <div className="text-[14px] font-bold pl-[10px]" >Older</div>
-              <BsArrowLeftShort className="text-[24px] rotate-180 " />
+            <button className="py-[6px] px-[9px] flex space-x-[5px] items-center border-[1px] rounded-full border-black/20 dark:border-blue-1" >
+              <div className="text-[14px] font-bold pl-[10px] dark:text-blue-1" >Older</div>
+              <BsArrowLeftShort className="text-[24px] rotate-180  dark:text-blue-1" />
             </button>
           </div>
         </div>

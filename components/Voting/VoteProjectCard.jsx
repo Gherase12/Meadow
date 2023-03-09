@@ -50,16 +50,16 @@ function VoteProjectCard({
       : toast.error("Please connect your sui wallet");
 
   return (
-    <div className='relative h-[75px] lg:h-[88px] w-full  last:border-b-0   border-b-[1px] border-white-2 flex items-center justify-between  '>
+    <div className='relative h-[75px] lg:h-[88px] w-full  last:border-b-0 dark:border-blue-1   border-b-[1px] border-white-2 flex items-center justify-between  '>
       <div className='  flex space-x-[12px] lg:space-x-[18px] items-center  md:transform-none  '>
-        <p className='w-[18px] font-black text-[12px] md:text-[15px] leading-[24px] text-gray-3  '>
+        <p className='w-[18px] font-black text-[12px] md:text-[15px] leading-[24px] text-gray-3 dark:text-blue-1  '>
           #{index + 1}
         </p>
-        <div className='w-[30px] h-[23px]  md:w-[42px] relative  md:h-[42px]  lg:w-[60px] lg:h-[60px] '>
+        <div className='w-[30px] h-[23px]  md:w-[42px] relative  md:h-[42px]  lg:w-[60px] lg:h-[60px] dark:bg-black '>
           <Image
             fill
             src={img}
-            className='md:rounded-[14px] object-contain md:object-cover '
+            className='md:rounded-[14px] object-contain md:object-cover dark:bg-black '
             alt={name}
           />
         </div>
@@ -112,10 +112,10 @@ function VoteProjectCard({
           <button
             onClick={notify}
             disabled={isVoted}
-            className='border-white-2 cursor-pointer relative scale-[0.8]  md:scale-[1]  py-[11.5px] border-[1px] rounded-full flex justify-center space-x-[10px] items-center w-[82px]  '
+            className='border-white-2 cursor-pointer dark:border-blue-1 relative scale-[0.8]  md:scale-[1]  py-[11.5px] border-[1px] rounded-full flex justify-center space-x-[10px] items-center w-[82px]  '
           >
             {isVoted && (
-              <div className='absolute inset-0 z-20 flex items-center justify-center bg-blue-1 text-white font-bold rounded-full '>
+              <div className='absolute inset-0 z-20 flex items-center  justify-center bg-blue-1 text-white font-bold rounded-full '>
                 Voted
               </div>
             )}
@@ -125,7 +125,7 @@ function VoteProjectCard({
               height={10}
               alt='upper arrow '
             />
-            <div className=' text-[14px] leading-[19px] font-medium text-gray-2 w-[30px] h-[19px]  '>
+            <div className=' text-[14px] leading-[19px] dark:text-blue-1 font-medium text-gray-2 w-[30px] h-[19px]  '>
               Vote
             </div>
           </button>

@@ -28,7 +28,7 @@ function NewsGridCard({
   return (
     <div
       onClick={openModal}
-      className='hover:ring-[1px]  rounded-[30px] shadow-md bg-white p-[10px] max-h-[412px] max-w-[327px] relative'
+      className='hover:ring-[1px]  rounded-[30px] shadow-md bg-white dark:bg-black p-[10px] max-h-[412px] max-w-[327px] relative'
     >
       <img
         src={image ?? "/news.webp"}
@@ -37,17 +37,17 @@ function NewsGridCard({
       />
 
       <div className='w-full h-[220px] flex flex-col mx-auto px-[14px]  '>
-        <h3 className='font-bold text-[16px] leading-[130%] mb-[10px] '>
+        <h3 className='font-bold text-[16px] leading-[130%] mb-[10px] dark:text-blue-1 '>
           {title}
         </h3>
         <div className="flex-1" >
 
-        <p className='text-gray-2 font-normal leading-[18px]  text-[13px]  h-[70px]  truncate-5 mb-[5px] '>
+        <p className='text-gray-2 font-normal leading-[18px]  text-[13px]  h-[70px] dark:text-blue-1  truncate-5 mb-[5px] '>
           {description}
         </p>
         </div>
         <div className='flex justify-between mb-[10px] '>
-          <div className='font-black text-blue-6  text-[14px] leading-[19px]  truncate max-w-[100px]'>
+          <div className='font-black text-blue-6  text-[14px] leading-[19px] dark:text-blue-1  truncate max-w-[100px]'>
             {author}
           </div>
           <div className='font-medium text-gray-2  text-[14px] leading-[19px] '>

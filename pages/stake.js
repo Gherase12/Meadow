@@ -39,11 +39,11 @@ function Stake() {
           <p className='mt-[23px] ml-[30px] lg:ml-0 md:mt-0 w-[88px] h-[23px] font-bold text-[17px] text-gray mb-[22.64px] '>
             Staking
           </p>
-          <h1 className='text-[41px] ml-[30px] lg:ml-0 font-extrabold leading-[51px] mb-[49px] '>
+          <h1 className='text-[41px] dark:text-blue-1 ml-[30px] lg:ml-0 font-extrabold leading-[51px] mb-[49px] '>
             Stake
           </h1>
           {/* board */}
-          <div className='bg-white  max-w-[1011px] 3xl:mx-auto h-full  lg:h-[596px] relative z-50 rounded-[30px] shadow-md card1 flex pt-[30px] lg:pt-0 lg:items-center justify-center  '>
+          <div className='bg-white dark:bg-black dark:shadow-lg dark:shadow-blue-1  max-w-[1011px] 3xl:mx-auto h-full  lg:h-[596px] relative z-50 rounded-[30px] shadow-md card1 flex pt-[30px] lg:pt-0 lg:items-center justify-center  '>
             {/* <Image src="/stake-hidden.png" fill className="z-20 object-contain "  /> */}
             <div className="absolute inset-0 backdrop-blur-md bg-white/30 rounded-[30px] z-20" ></div>
             <div className="absolute inset-0  z-30 flex items-center justify-center " >

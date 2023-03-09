@@ -84,14 +84,14 @@ function Calendar() {
 
 
   return (
-    <div className='relative pb-[70px] lg:pb-0  z-10'>
+    <div className='relative  pb-[70px] lg:pb-0   z-10'>
       
-      <div className='absolute text-[22px] font-extrabold -top-[46px] left-[-10px]  w-[190px] text-center   lg:hidden items-center justify-center'>
+      <div className='absolute dark:text-blue-1 text-[22px] font-extrabold -top-[46px] left-[-10px]  w-[190px] text-center   lg:hidden items-center justify-center'>
         Launch calendar
       </div>
-      <div className='relative  w-full lg:m-0  lg:transform-none lg:w-[381.85px] h-[310.52px] bg-white rounded-[30px] card1 lg:px-[30px] py-[27px] flex flex-col items-center '>
+      <div className='relative   w-full lg:m-0  lg:transform-none lg:w-[381.85px] h-[310.52px] dark:shadow-blue-1 dark:shadow-lg dark:bg-black bg-white rounded-[30px] card1 lg:px-[30px] py-[27px] flex flex-col items-center '>
         <div className='flex justify-between w-full px-[10px]  items-center mb-[31px] lg:px-[10px] lg:w-full   '>
-          <div className=' w-[190px] font-extrabold text-[24px]  lg:w-[195px]   text-start hidden lg:flex items-center justify-start leading-[24px]'>
+          <div className='dark:text-blue-1 w-[190px] font-extrabold text-[24px]  lg:w-[195px]   text-start hidden lg:flex items-center justify-start leading-[24px]'>
             Launch calendar
           </div>
           <div className='max-[375px]:w-full   w-full lg:w-[101.05px] h-[24px] flex   items-center   justify-between lg:justify-between'>
@@ -99,10 +99,10 @@ function Calendar() {
               onClick={() => previousMonth()}
               className=' text-gray-2  font-black text-[20px] lg:text-[15px] cursor-pointer  '
             />
-            <div className='hidden lg:flex items-center  justify-center font-medium    text-[14px]  leading-[24px] text-black   h-[24px] w-[65px] tracking-[0.01em] text-center '>
+            <div className='hidden dark:text-blue-1 lg:flex items-center  justify-center font-medium    text-[14px]  leading-[24px] text-black   h-[24px] w-[65px] tracking-[0.01em] text-center '>
               {currentMonth.replace("-", " ")}
             </div>
-            <div className='  flex lg:hidden items-center  justify-center  font-bold text-[16px] lg:text-[12px]  leading-[24px] text-black   h-[24px]  tracking-[0.01em] text-center '>
+            <div className=' dark:text-blue-1 flex lg:hidden items-center  justify-center  font-bold text-[16px] lg:text-[12px]  leading-[24px] text-black   h-[24px]  tracking-[0.01em] text-center '>
               {format(firstDayCurrentMonth, "MMMM yyyy")}
             </div>
 
@@ -139,14 +139,14 @@ function Calendar() {
                     onClick={() => setSelectedDay(day)}
                     className={classNames(
                       isEqual(day, selectedDay) &&
-                        "text-black border-[1px] border-white-2",
+                        "text-black dark:text-white border-[1px] border-white-2",
                       !isEqual(day, selectedDay) &&
                         isToday(day) &&
-                        "text-black border-[1px] border-white-2 ",
+                        "text-black dark:text-white border-[1px] border-white-2 ",
                       !isEqual(day, selectedDay) &&
                         !isToday(day) &&
                         isSameMonth(day, firstDayCurrentMonth) &&
-                        " text-black ",
+                        " text-black  dark:text-white",
                       !isEqual(day, selectedDay) &&
                         !isToday(day) &&
                         !isSameMonth(day, firstDayCurrentMonth) &&

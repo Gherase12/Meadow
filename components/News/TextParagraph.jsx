@@ -48,7 +48,7 @@ function TextParagraph({ newsIndex, url }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{  duration: 0.5, delay: 0.8 }}
           key={index}>
-            <p className='font-medium text-[18px] text-gray-6 max-w-[800px] text-start'>{paragraph} </p>
+            <p className='font-medium text-[18px] text-gray-6 max-w-[800px] dark:text-blue-1 text-start'>{paragraph} </p>
             <br />
           </motion.div>)
        

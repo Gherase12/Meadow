@@ -14,7 +14,7 @@ import { SlGameController } from "react-icons/sl";
 import { GiNewspaper } from "react-icons/gi";
 import { FaDiscord } from "react-icons/fa";
 import Link from "next/link";
-import { useRouter } from "next/router";
+
 
 
 
@@ -27,7 +27,7 @@ import BigNav from "./Types/BigNav";
 import ConnectModalForWallets from './ConnectModalForWallets';
 import MobileNav from "./Types/MobileNav";
 
-function Nav({ path }) {
+function Nav() {
   // nav open
   const [open, setOpen] = useState(false);
   // connect wallet modal open
@@ -42,7 +42,7 @@ function Nav({ path }) {
     setIsOpen(true);
   }
 
-  const router = useRouter();
+  
 
   
 
@@ -103,7 +103,7 @@ function Nav({ path }) {
   const wallet = useWallet();
   const connected = wallet?.connected || isConnected;
 
-  console.log(router)
+  
 
   return (
     <>
@@ -144,11 +144,9 @@ function Nav({ path }) {
         )}
       </div>
 
-      {/* mobile nav open */}
-    
-      {/* mobile nav open */}
+      
           <MobileNav elements={elements} socialMedia={socialMedia} open={open} setOpen={setOpen}  connected={connected} />
-      {/* big nav */}
+      
 
       <BigNav elements={elements} socialMedia={socialMedia} openModal={openModal} connected={connected} />
       <ConnectModalForWallets isOpen={isOpen} closeModal={closeModal} />
