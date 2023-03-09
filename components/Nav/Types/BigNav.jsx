@@ -5,14 +5,14 @@ import Link  from 'next/link';
 import { useRouter } from "next/router";
 import AddressBoard from '../AddressBoard';
 
-function BigNav({elements, socialMedia, openModal ,connected={connected} }) {
+function BigNav({elements, socialMedia, openModal ,connected }) {
   const router = useRouter()
   const path =  router.pathname;
   const isOnNews = path == "/news/[news]" || path == "/blogs/[blog]";
 
   return (
     <div
-        className={`text-gray-4 hidden dark:bg-blue-1 ${
+        className={`text-gray-4 hidden  ${
           !isOnNews && "xl:flex"
         }  flex-col z-50 relative w-[295px]  rounded-[28px] bg-blue-2  px-[24.5px] py-[30px]  `}
       >
@@ -26,7 +26,7 @@ function BigNav({elements, socialMedia, openModal ,connected={connected} }) {
           className='mb-[38px]'
           alt='Meadown sui launchpad logo'
         />
-        {/* <DarkToggler /> */}
+        <DarkToggler />
         </div>
 
         {/* sectiune */}
