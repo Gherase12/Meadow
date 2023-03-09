@@ -2,12 +2,14 @@ import React ,{useEffect, useRef} from "react";
 
 import VoteProjectCard from "./../components/Voting/VoteProjectCard";
 import Image from "next/image";
-import PageAnimation from "../components/PageAnimation";
+
 import { useQuery } from 'react-query';
-import Loading from './../components/Loading';
+
 import { fetchProjects } from './../fetchers/projects';
 import { BiDownArrow } from 'react-icons/bi';
 import { useWallet } from '@suiet/wallet-kit';
+import Loading from './../components/Golbal/Loading';
+import PageAnimation from './../components/Golbal/PageAnimation';
 
 function Voting() {
   const wallet = useWallet()

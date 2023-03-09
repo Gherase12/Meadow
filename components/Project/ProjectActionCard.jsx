@@ -5,13 +5,14 @@ import AlocationBoard from "./../../components/Project/AlocationBoard";
 import { useWallet, useAccountBalance } from "@suiet/wallet-kit";
 import { JsonRpcProvider, Network } from "@mysten/sui.js";
 import WalletDetails from "./../../components/Project/WalletDetails";
-import MeadowCountDown from "../../components/MeadowCountDown";
+
 import { AiOutlineWarning } from "react-icons/ai";
 import Image from "next/image";
 import { AddToCalendarButton } from 'add-to-calendar-button-react';
 
 
 import { convertToSui } from "./../../utils/convertToSui";
+import MeadowCountDown from './../Golbal/MeadowCountDown';
 
 function ProjectActionCard({ path, project }) {
   const timestamp = Math.floor(Date.now() / 1000) + 151200;
@@ -27,13 +28,13 @@ function ProjectActionCard({ path, project }) {
 
   const wallet = useWallet();
   const provider = new JsonRpcProvider(Network.DEVNET);
-console.log(project)
+
   useEffect(() => {
     const getObjectsForUser = async () => {
       if (!wallet.connected) return;
-      const objects = await provider.getObjectsOwnedByAddress(wallet?.address);
+      const objects = await provider?.getObjectsOwnedByAddress(wallet?.address);
       // const part =  objects.some(obj => obj.type === `${package_}::meadow::Participation`)
-      console.log(objects);
+      
       const part = objects.some(
         (obj) =>
           obj.type === `${project?.package}::${project?.module}::Participation`
@@ -54,7 +55,7 @@ console.log(project)
     };
 
     const getObjectsForApp = async () => {
-      const aloc = await provider.getObject(project?.alocation);
+      const aloc = await provider?.getObject(project?.alocation);
       setAlocationObject(aloc);
       const percentComplete =
         (Number(aloc?.details?.data?.fields?.balance) /
@@ -221,8 +222,8 @@ console.log(project)
         {wallet.connected && path != "0" && (
           <WalletDetails
             symbol={project.symbol}
-            package={project?.package}
-            module={project?.module}
+            _package={project?.package}
+            _module={project?.module}
             setButtonClick={setButtonClick}
             buttonClick={buttonClick}
             coins={coins}
@@ -302,14 +303,14 @@ console.log(project)
       <div className='bg-white rounded-xl w-full p-5 mt-4 flex justify-center space-x-[10px] text-blue-1 items-center'>
         <p className='whitespace-pre-line text-[13px] '>
           {path == "0"
-            ? "Starts: March 15th 1:00pm UTC \n(OGs can only contribute in the first 15 mins)\nStarts March 15th 1:15pm UTC (Public can contribute)"
+            ? "Starts: March 15th 1:00pm UTC \n \n(OGs can only contribute in the first 15 mins)\n \n Starts March 15th 1:15pm UTC (Public can contribute)"
             : "Before you start any action you need to have sui for gas fee, for that find the airdrop or faucet option in your sui wallet."}
         </p>
       </div>
       <div className='bg-white rounded-xl w-full  mt-4 flex  space-x-[10px] text-red items-center'>
         {path == "0" ? (
           <div className='m-5'>
-            <p>Contribution per wallet:</p>
+            <p>Contribution per wallet:</p><br/>
             <p>Min: $5</p>
             <p>Max: $5,000</p>
           </div>

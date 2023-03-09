@@ -2,7 +2,8 @@ import React from "react";
 import LaunchpadCard from "./../components/launchpad/LaunchpadCard";
 import Image from "next/image";
 import { ICOprojects } from '../data/ICOprojects';
-import PageAnimation from "./../components/PageAnimation";
+
+import PageAnimation from './../components/Golbal/PageAnimation';
 
 function Launchpad() {
   const filters = ["All", "Ongoing", "Upcoming", "Ended IDO"];

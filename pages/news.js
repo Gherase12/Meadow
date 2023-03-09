@@ -2,10 +2,11 @@ import React from "react";
 
 import Image from "next/image";
 import { useQuery } from "react-query";
-import PageAnimation from "./../components/PageAnimation";
+
 import { fetchNews } from './../fetchers/news';
 import NewsGridCard from './../components/News/NewsGridCard';
 import FilterBar from './../components/Elements/FilterBar';
+import PageAnimation from './../components/Golbal/PageAnimation';
 
 function News() {
     const { isLoading,  data } = useQuery("news", fetchNews);

@@ -2,7 +2,8 @@ import React from 'react'
 import NewsRight from './NewsRight';
 import { useQuery } from 'react-query';
 import { fetchNews } from './../../fetchers/news';
-import Loading from './../Loading';
+
+import Loading from './../Golbal/Loading';
 
 function NewsRightContainer() {
   const { isLoading, data } = useQuery("news", fetchNews);

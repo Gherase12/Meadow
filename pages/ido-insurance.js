@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
-import PageAnimation from "../components/PageAnimation";
+
 import { useAccount } from "wagmi";
 import { getSession } from "next-auth/react";
 import InsuranceCard from "../components/insurance/InsuranceCard";
 import ConnectWalletInsurance from "../components/insurance/ConnectWalletInsurance";
 
-import ConnectModal from "../components/ConnectModalForWallets";
+
 
 import { useWallet } from "@suiet/wallet-kit";
+import PageAnimation from './../components/Golbal/PageAnimation';
+import ConnectModalForWallets from './../components/Nav/ConnectModalForWallets';
 
 function Stake() {
   
@@ -26,7 +28,7 @@ function Stake() {
   return (
     <PageAnimation>
       <div className='scrollbar-hide -mt-[70px] pt-[70px] lg:mt-0 lg:pt-0 lg:h-[947.31px] h-screen   w-full flex md:max-w-[1440px]   pr-0 overflow-x-hidden overflow-y-scroll  mx-auto my-auto relative'>
-        <ConnectModal isOpen={isOpen} closeModal={closeModal} />
+        <ConnectModalForWallets isOpen={isOpen} closeModal={closeModal} />
         {/* object-1 */}
         <div className='lg:w-[500px] lg:h-[500px]  w-[200px] h-[200px] lg:scale-[1.1] fixed -right-[50px]  lg:right-[100px] top-[60px] rotation -bottom-[250px]   bg-image-1'>
           <Image

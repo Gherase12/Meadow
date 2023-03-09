@@ -52,7 +52,7 @@ function AlocationBoard({
     getCoinId();
   }, [wallet?.connected,buttonClick, balance]);
     
-  console.log(minValue)
+  
 
   const alocate = async () => {
     setButtonClick(!buttonClick);
@@ -68,7 +68,7 @@ function AlocationBoard({
 
     const firstCoin = coins.shift();
     const remainingCoins = coins.slice();
-    console.log(firstCoin, remainingCoins )
+    
     try {
       
       const resData = await wallet.signAndExecuteTransaction({

@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 
-import Loading from "../Loading";
+
 import { motion } from "framer-motion";
 import { fetchNewsContent } from './../../fetchers/newsContent';
 function TextParagraph({ newsIndex, url }) {

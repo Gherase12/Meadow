@@ -33,7 +33,7 @@ function MoreNewsPannel({ data, isLoading, newsIndex, closeModal }) {
                 fill
               />
 
-              {/* <Loading /> */}
+              
             </div>
           ) : (
             <motion.img

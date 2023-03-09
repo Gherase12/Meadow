@@ -1,15 +1,11 @@
 import { Fragment, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
+import MetamaskButton from "../buttons/MetamaskButton";
 
-
-import MetamaskButton from "./buttons/MetamaskButton";
-
-import SuiButton from "./buttons/SuiButton";
+import SuiButton from "../buttons/SuiButton";
 
 function ConnectModalForWallets({ isOpen, closeModal }) {
- 
-
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as='div' className='relative z-50' onClose={closeModal}>
@@ -51,8 +47,6 @@ function ConnectModalForWallets({ isOpen, closeModal }) {
                 <div className='mt-4 relative'>
                   <SuiButton closeModal={closeModal} />
                 </div>
-
-              
               </Dialog.Panel>
             </Transition.Child>
           </div>

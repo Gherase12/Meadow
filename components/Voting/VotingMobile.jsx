@@ -2,10 +2,11 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import VoteProjectCard from "./VoteProjectCard";
-import Loading from "../Loading";
+
 import { fetchProjects } from "../../fetchers/projects";
 import { useQuery } from "react-query";
 import { useWallet } from "@suiet/wallet-kit";
+import Loading from './../Golbal/Loading';
 
 function VotingMobile() {
   const wallet = useWallet();

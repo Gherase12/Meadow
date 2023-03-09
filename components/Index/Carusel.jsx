@@ -8,7 +8,8 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import Image from "next/image";
 import News from "../News/News";
 import { ICOprojects } from './../../data/ICOprojects';
-import MeadowCountDown from './../MeadowCountDown';
+
+import MeadowCountDown from './../Golbal/MeadowCountDown';
 
 function Carusel() {
   const [swiper, setSwiper] = React.useState(null);

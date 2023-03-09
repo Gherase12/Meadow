@@ -1,10 +1,11 @@
 import {React, useState} from "react";
 import Image from "next/image";
 import { validateEmail } from './../utils/validateEmail';
-import { toast } from 'react-toastify';
-import PageAnimation from './../components/PageAnimation';
+
+
 import GameCard from './../components/Games/GameCard';
 import { BsArrowLeftShort } from 'react-icons/bs';
+import PageAnimation from './../components/Golbal/PageAnimation';
 function Games() {
   const footerItems = [
     "Privacy Policy",

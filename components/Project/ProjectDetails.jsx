@@ -1,7 +1,8 @@
 import React from 'react'
-import TokenSaleDetail from './../TokenSaleDetail';
+import TokenSaleDetail from './TokenSaleDetail';
 
-function ProjectDetails({path, project}) {
+
+function ProjectDetails({path}) {
     const prices = [
         {
           price: "$0.10",

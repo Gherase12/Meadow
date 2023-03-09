@@ -6,7 +6,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { fetchNews } from "../../fetchers/news";
-import Loading from "../Loading";
+
 
 function News() {
   const { isLoading,  data } = useQuery("news", fetchNews);
@@ -38,7 +38,7 @@ function News() {
 
       {isLoading ? (
         <div className='w-full h-full border-2 flex items-center justify-center bg-white rounded-[30px]'>
-          {/* <Loading /> */}
+          
           <Image src="/news.webp"  className="rounded-[30px]" fill />
         </div>
       ) : (

@@ -4,7 +4,7 @@ import { convertToSui } from './../../utils/convertToSui';
 import { cutDecimals } from './../../utils/cutDecimals';
 import { JsonRpcProvider, Network  } from '@mysten/sui.js';
 import { toast } from 'react-toastify';
-function WalletDetails({buttonClick,setButtonClick, coins,_module, _package,  symbol }) {
+function WalletDetails({buttonClick,setButtonClick, coins,_module, _package }) {
   const provider = new JsonRpcProvider(Network.DEVNET);
     const [participation, setParticipation] = useState();
     const wallet = useWallet()
@@ -15,12 +15,13 @@ function WalletDetails({buttonClick,setButtonClick, coins,_module, _package,  sy
     useEffect(()=>{
         if(!wallet.connected) return
         const getObjects = async ()=>{
-            const objects = await provider.getObjectsOwnedByAddress(
+            const objects = await provider?.getObjectsOwnedByAddress(
                 wallet?.address
                 );
+                console.log(objects)
+                console.log(`${_package}::${_module}::Participation`)
                 const Obj =  objects.find(obj => obj.type === `${_package}::${_module}::Participation`)
                 const partObj = Obj && await provider.getObject(Obj.objectId)
-                
                 setParticipation(partObj)
         }
 

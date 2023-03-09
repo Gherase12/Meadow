@@ -1,7 +1,8 @@
 import { React, useState } from "react";
 import Image from "next/image";
 
-import PageAnimation from "./../components/PageAnimation";
+
+import PageAnimation from './../components/Golbal/PageAnimation';
 
 function Stake() {
   const [minValue, setMinValue] = useState(0);
