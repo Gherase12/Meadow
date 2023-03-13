@@ -26,7 +26,7 @@ module.exports = {
       "blue-5": "#BEEFFF",
       "blue-6": "#4DA5FF",
       "blue-7": "#03326B",
-      
+
       red:"#FD6A6A",
       yellow:"#FFFF00",
 
@@ -35,12 +35,12 @@ module.exports = {
     extend: {
       screens: {
         '3xl': '1750px',
-        
+
       },
     },
   },
-  plugins: [require("tailwind-scrollbar-hide"), require('tailwind-scrollbar'),],
+  plugins: [require("tailwind-scrollbar-hide"), require('tailwind-scrollbar')({ nocompatible: true })],
   variants: {
-    scrollbar: ['rounded']
-}
+    scrollbar: []
+  }
 };
