@@ -15,7 +15,7 @@ function MetamaskWalletDetails({ usdtBalance, laodingAmount }) {
   }, [usdtBalance]);
 
   return (
-    <div className='w-full text-black my-5 font-bold'>
+    <div className='w-full text-black my-5 font-bold dark:text-blue-1'>
       <div className='flex justify-between  items-center'>
         <p> USDT balance: {laodingAmount ? "Loading..." : usdtBalance} </p>
       </div>

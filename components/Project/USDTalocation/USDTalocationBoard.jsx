@@ -11,11 +11,9 @@ import { getTotalAlocated } from "../../../fetchers/getTotalAlocated";
 import USDTalocationInput from "./USDTalocationInput";
 import { isAllowing } from "../../../fetchers/isAllowing";
 import { participate } from "../../../fetchers/participate";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 function USDTalocationBoard({ project }) {
-  
-  
   const { isConnected, address } = useAccount();
   const { data: usdtBalance, refetch } = useQuery("getBalance", () =>
     getUSDTbalance(address)
@@ -23,43 +21,46 @@ function USDTalocationBoard({ project }) {
   const { data: totalAlocated } = useQuery("getTotalAlocated", () =>
     getTotalAlocated()
   );
-  const { data: isAllowed , isLoading: loadingAllowed, refetch:refetchAllowed } = useQuery("isAllowing", () => isAllowing(address));
+  const {
+    data: isAllowed,
+    isLoading: loadingAllowed,
+    refetch: refetchAllowed,
+  } = useQuery("isAllowing", () => isAllowing(address));
   const [laodingAmount, setLoadingAmount] = useState(false);
 
   const progress = (totalAlocated / 200000) * 100;
   const icons = ["/pin.svg", "/twitter-gray.svg", "/discord-gray.svg"];
 
-  const refetchAll = ()=>{
+  const refetchAll = () => {
     refetch();
     refetchAllowed();
-  } 
+  };
 
- 
-
- const handleClick = ()=>{
-  if(!isConnected){
-    toast.error("Please connect your wallet!"); 
-  }
-   participate(address, refetchAll)
-
- }
-
+  const handleClick = () => {
+    if (!isConnected) {
+      toast.error("Please connect your wallet!");
+    }
+    participate(address, refetchAll);
+  };
 
   return (
-    <div className='max-w-[354px] mx-auto'>
-      <div className='font-avenir lg:w-[354px] h-auto dark:bg-black dark:text-blue-1  rounded-[30px] bg-white p-[30px] '>
+    <div className='max-w-[354px] mx-auto relative'>
+      <div className='font-avenir relative lg:w-[354px] h-auto dark:bg-black dark:text-blue-1  rounded-[30px] bg-white p-[30px] '>
+        <div className='inset-0 backdrop-blur-md rounded-[30px] '>
+          Please connect to bnb network
+        </div>
         {/* details */}
         <div className='font-bold text-[27px] leading-[110%] font-avenir mb-[30px] dark:text-blue-1  '>
           Sale Details
         </div>
 
         <div>
-          <div className='flex w-full justify-between font-bold  mt-[40px] md:mt-0 '>
+          <div className='flex w-full justify-between font-bold  mt-[40px] md:mt-0 dark:text-blue-1 '>
             <p>Finished:</p>
             <p>{0}%</p>
           </div>
           <div className='progress-bar-container'>
-            <div className='progress-bar' style={{ width: `${progress}%` }} />
+            <div className='progress-bar ' style={{ width: `${progress}%` }} />
           </div>
           <div className='flex w-full justify-between font-bold text-sm pt-1 '>
             <p>{totalAlocated} USDT</p>
@@ -82,11 +83,13 @@ function USDTalocationBoard({ project }) {
           />
         ) : (
           <button
-            onClick={() => { handleClick()}}
-            className='h-[40px] bg-black w-full mt-[20px] rounded-[14px] flex items-center justify-center space-x-[10px]  '
+            onClick={() => {
+              handleClick();
+            }}
+            className='h-[40px] dark:border-2 dark:border-blue-1 bg-black w-full mt-[20px] rounded-[14px] flex items-center justify-center space-x-[10px]  '
           >
             <div className='text-[18px] font-medium leading-[24px] text-white '>
-              {loadingAllowed? "Loading...": "Participate"}
+              {loadingAllowed ? "Loading..." : "Participate"}
             </div>
             <Image
               src='/upArrow.svg'
