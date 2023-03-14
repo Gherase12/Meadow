@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { alocate } from "../../../fetchers/alocate";
 import { useAccount } from "wagmi";
+import { toast } from 'react-toastify';
 
 function USDTalocationInput({laodingAmount,
   refetch,
@@ -11,8 +12,11 @@ function USDTalocationInput({laodingAmount,
   let [amount, setAmount] = useState(0);
   const { address } = useAccount();
   console.log(setLoadingAmount);
+
+
   const handleClick = async () => {
-    if (amount > usdtBalance && amount <= 5) {
+    if (amount > usdtBalance || amount <= 5) {
+      console.log(amount)
       toast.error("Please provide a valid amount");
       return;
     }
@@ -30,6 +34,7 @@ function USDTalocationInput({laodingAmount,
         />
 
         <button
+        
           onClick={() => handleClick()}
           className='h-[40px] bg-blue-1 w-full text-white  rounded-[14px] flex items-center justify-center space-x-[10px]'
         >
@@ -39,7 +44,7 @@ function USDTalocationInput({laodingAmount,
       {amount > usdtBalance && (
         <p className='text-red text-[14px] mt-5'>Over your usdt amount</p>
       )}
-      {amount < 5 && <p className='text-red text-[14px] mt-5 '>Please provide an amount greater than 5 USDT </p>}
+      {amount <= 5 && <p className='text-red text-[14px] mt-5 '>Please provide an amount greater than 5 USDT </p>}
     </>
   );
 }
