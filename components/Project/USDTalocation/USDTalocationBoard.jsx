@@ -18,7 +18,7 @@ function USDTalocationBoard({ project }) {
   const { data: usdtBalance, refetch } = useQuery("getBalance", () =>
     getUSDTbalance(address)
   );
-  const { data: totalAlocated } = useQuery("getTotalAlocated", () =>
+  const { data: totalAlocated, refetch: refetchTotalAlocated } = useQuery("getTotalAlocated", () =>
     getTotalAlocated()
   );
   const {
@@ -34,6 +34,7 @@ function USDTalocationBoard({ project }) {
   const refetchAll = () => {
     refetch();
     refetchAllowed();
+    refetchTotalAlocated();
   };
 
   const handleClick = () => {
@@ -46,9 +47,13 @@ function USDTalocationBoard({ project }) {
   return (
     <div className='max-w-[354px] mx-auto relative'>
       <div className='font-avenir relative lg:w-[354px] h-auto dark:bg-black dark:text-blue-1  rounded-[30px] bg-white p-[30px] '>
-        <div className='inset-0 backdrop-blur-md rounded-[30px] '>
+        {!totalAlocated && (
+          <div className='absolute inset-0 backdrop-blur-md rounded-[30px] z-30 flex-col font-bold flex items-center justify-center '>
           Please connect to bnb network
+          <Image src="/binance.png" width={100} height={100} />
         </div>
+        )}
+        
         {/* details */}
         <div className='font-bold text-[27px] leading-[110%] font-avenir mb-[30px] dark:text-blue-1  '>
           Sale Details
