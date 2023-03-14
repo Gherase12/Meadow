@@ -24,7 +24,7 @@ const MeadowCountDown = ({ i }) => {
     return () => clearInterval(interval);
   }, []);
 
-  const counterBoxStyle = "border-2 p-2 rounded-lg w-10 h-10 flex items-center justify-center relative"; 
+  const counterBoxStyle = " border-2 p-2 rounded-lg w-10 h-10 flex items-center justify-center relative"; 
   const counterBoxTitleStyle = "orizontal-center font-bold -bottom-[70%]"; 
 
   return (
