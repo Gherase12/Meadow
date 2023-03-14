@@ -1,4 +1,4 @@
-import { createClient, configureChains, goerli, WagmiConfig } from "wagmi";
+import { createClient, configureChains,  WagmiConfig } from "wagmi";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { publicProvider } from "wagmi/providers/public";
@@ -12,12 +12,13 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { WalletProvider } from "@suiet/wallet-kit";
 import Nav from "./../components/Nav/Nav";
 import { ThemeProvider } from "../context/themeContext";
+import { avalanche, bsc, mainnet } from '@wagmi/core/chains'
 
 
 
 const queryClient = new QueryClient();
 const { provider, webSocketProvider } = configureChains(
-  [goerli],
+  [bsc],
   [publicProvider()]
 );
 

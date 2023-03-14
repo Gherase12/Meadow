@@ -49,9 +49,9 @@ function ConnectModalForWallets({ isOpen, closeModal }) {
                   <WalletConnect closeModal={closeModal} />
                 </div>
                 {/* sui */}
-                <div className='mt-4 relative'>
+                {/* <div className='mt-4 relative'>
                   <SuiButton closeModal={closeModal} />
-                </div>
+                </div> */}
               </Dialog.Panel>
             </Transition.Child>
           </div>

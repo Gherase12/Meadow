@@ -5,6 +5,7 @@ import React from "react";
 import { ICOprojects } from "./../../data/ICOprojects";
 import ProjectActionCard from "../../components/Project/ProjectActionCard";
 import ProjectDetails from "../../components/Project/ProjectDetails";
+import USDTalocationBoard from "../../components/Project/USDTalocation/USDTalocationBoard";
 
 
 function Project() {
@@ -82,8 +83,11 @@ function Project() {
             <ProjectDetails path={router.query.project} project={project}/>
           </div>
           {/* right */}
-
+          {router.query.project == "0" ? (
+            <USDTalocationBoard project={project} />
+          ):(
           <ProjectActionCard path={router.query.project} project={project} />
+          )}
         </div>
       </div>
     </div>

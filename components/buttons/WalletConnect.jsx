@@ -51,10 +51,10 @@ function WalletConnect({ closeModal }) {
         src='/walletConnect.png'
         className='mr-[10px]'
         alt='metamask'
-        width='80'
+        width='20'
         height='20'
       />
-      
+      WalletConnect
     </button>
   );
 }
