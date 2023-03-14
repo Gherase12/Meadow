@@ -82,6 +82,7 @@ function USDTalocationBoard({ project }) {
         )}
         {isAllowed ? (
           <USDTalocationInput
+          laodingAmount={laodingAmount}
             setLoadingAmount={setLoadingAmount}
             usdtBalance={usdtBalance}
             refetch={refetchAll}

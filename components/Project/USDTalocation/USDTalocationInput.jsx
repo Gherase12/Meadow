@@ -3,7 +3,7 @@ import { useState } from "react";
 import { alocate } from "../../../fetchers/alocate";
 import { useAccount } from "wagmi";
 
-function USDTalocationInput({
+function USDTalocationInput({laodingAmount,
   refetch,
   usdtBalance,
   setLoadingAmount,
@@ -33,7 +33,7 @@ function USDTalocationInput({
           onClick={() => handleClick()}
           className='h-[40px] bg-blue-1 w-full text-white  rounded-[14px] flex items-center justify-center space-x-[10px]'
         >
-          Contribute
+         {laodingAmount ? "Loading" : "Contribute"} 
         </button>
       </div>
       {amount > usdtBalance && (
