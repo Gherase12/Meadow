@@ -49,7 +49,7 @@ function USDTalocationBoard({ project }) {
       <div className='font-avenir relative lg:w-[354px] h-auto dark:bg-black dark:text-blue-1  rounded-[30px] bg-white p-[30px] '>
         {!totalAlocated && (
           <div className='absolute inset-0 backdrop-blur-md rounded-[30px] z-30 flex-col font-bold flex items-center justify-center '>
-          Please connect to bnb network
+          Please connect to smart chain network
           <Image src="/binance.png" width={100} height={100} />
         </div>
         )}

@@ -39,7 +39,7 @@ function USDTalocationInput({
       {amount > usdtBalance && (
         <p className='text-red text-[14px] mt-5'>Over your usdt amount</p>
       )}
-      {amount < 5 && <p className='text-red text-[14px] mt-5 '>Please provide an amount grater than 5 USDT </p>}
+      {amount < 5 && <p className='text-red text-[14px] mt-5 '>Please provide an amount greater than 5 USDT </p>}
     </>
   );
 }
