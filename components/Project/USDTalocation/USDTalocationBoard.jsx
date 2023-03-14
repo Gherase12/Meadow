@@ -113,7 +113,7 @@ function USDTalocationBoard({ project }) {
           <div className='m-5'>
             <p>Contribution per wallet:</p>
             <br />
-            <p>Min: $5</p>
+            <p>Min: $5.1</p>
             <p>Max: $5,000</p>
           </div>
         </div>
