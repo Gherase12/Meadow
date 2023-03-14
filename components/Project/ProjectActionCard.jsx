@@ -136,7 +136,7 @@ function ProjectActionCard({ path, project }) {
         </div>
 
         {path == "0" && (
-          <MeadowCountDown i={1} />  
+          <MeadowCountDown i={1}  />  
         )}
 
         <div className='text-black hidden  space-x-[35px] mb-[20px] '>

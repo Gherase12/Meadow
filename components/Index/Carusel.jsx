@@ -26,7 +26,7 @@ function Carusel() {
       {/* news */}
       <div className='absolute left-[670px]  xl:left-[627px] top-[50px] hidden lg:flex 3xl:hidden'>
         {/* <News /> */}
-        <MeadowCountDown />
+        <MeadowCountDown   />
       </div>
       {/* news end */}
       <div className=' flex items-center w-[276px] -mb-[20px]  lg:mb-[13px]  h-[40px] justify-between  '>

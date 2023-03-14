@@ -9,7 +9,7 @@ const MeadowCountDown = ({ i }) => {
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    const target = new Date("3/16/2023 5:00:00");
+    const target = new Date("2023-03-15T13:00:00Z");
 
     const interval = setInterval(() => {
       const now = new Date();

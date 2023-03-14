@@ -56,7 +56,7 @@ export default function Home() {
           </div>
           <div className="  md:hidden">
 
-<MeadowCountDown />
+<MeadowCountDown  />
 </div>
 
           </div>
